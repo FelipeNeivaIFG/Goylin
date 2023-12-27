@@ -1,0 +1,413 @@
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports the include directive... yes (GNU style)
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to enable C11 features... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... gcc3
+checking for valac... /usr/bin/valac
+checking whether /usr/bin/valac supports at least API version 0.24.0... yes
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking whether make supports nested variables... (cached) yes
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.16... yes
+checking for
+    gtk+-3.0
+    gdk-x11-3.0
+    liblightdm-gobject-1 >= 1.12.0
+    freetype2
+    cairo-ft
+    libcanberra
+    pixman-1
+    x11
+    xext
+    xapp
+... yes
+checking whether NLS is requested... yes
+checking for intltool >= 0.35.0... 0.51.0 found
+checking for intltool-update... /usr/bin/intltool-update
+checking for intltool-merge... /usr/bin/intltool-merge
+checking for intltool-extract... /usr/bin/intltool-extract
+checking for xgettext... /usr/bin/xgettext
+checking for msgmerge... /usr/bin/msgmerge
+checking for msgfmt... /usr/bin/msgfmt
+checking for gmsgfmt... /usr/bin/msgfmt
+checking for perl... /usr/bin/perl
+checking for perl >= 5.8.1... 5.38.1
+checking for XML::Parser... ok
+checking for gtk+-3.0 >= 3.20.0 ... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating data/Makefile
+config.status: creating files/Makefile
+config.status: creating po/Makefile.in
+config.status: creating src/Makefile
+config.status: creating tests/Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing po/stamp-it commands
+make  all-recursive
+make[1]: Entering directory '/build/g-greeter/src/slick-greeter-2.0.2'
+Making all in data
+make[2]: Entering directory '/build/g-greeter/src/slick-greeter-2.0.2/data'
+  GEN      x.dm.slick-greeter.gschema.valid
+make[2]: Leaving directory '/build/g-greeter/src/slick-greeter-2.0.2/data'
+Making all in files
+make[2]: Entering directory '/build/g-greeter/src/slick-greeter-2.0.2/files'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/build/g-greeter/src/slick-greeter-2.0.2/files'
+Making all in po
+make[2]: Entering directory '/build/g-greeter/src/slick-greeter-2.0.2/po'
+grep: warning: stray \ before #
+grep: warning: stray \ before #
+grep: warning: stray \ before #
+  MSGFMT af.gmo
+  MSGFMT am.gmo
+  MSGFMT an.gmo
+  MSGFMT ar.gmo
+  MSGFMT ast.gmo
+  MSGFMT az.gmo
+  MSGFMT bem.gmo
+  MSGFMT be.gmo
+  MSGFMT bg.gmo
+  MSGFMT bn.gmo
+  MSGFMT bo.gmo
+  MSGFMT br.gmo
+  MSGFMT bs.gmo
+  MSGFMT ca.gmo
+  MSGFMT ca@valencia.gmo
+  MSGFMT ce.gmo
+  MSGFMT ckb.gmo
+  MSGFMT crh.gmo
+  MSGFMT cs.gmo
+  MSGFMT cv.gmo
+  MSGFMT cy.gmo
+  MSGFMT da.gmo
+  MSGFMT de.gmo
+  MSGFMT el.gmo
+  MSGFMT en_AU.gmo
+  MSGFMT en_CA.gmo
+  MSGFMT en_GB.gmo
+  MSGFMT eo.gmo
+  MSGFMT es.gmo
+  MSGFMT et.gmo
+  MSGFMT eu.gmo
+  MSGFMT fa.gmo
+  MSGFMT fil.gmo
+  MSGFMT fi.gmo
+  MSGFMT fo.gmo
+  MSGFMT fr_CA.gmo
+  MSGFMT fr.gmo
+  MSGFMT frp.gmo
+  MSGFMT fy.gmo
+  MSGFMT ga.gmo
+  MSGFMT gd.gmo
+  MSGFMT gl.gmo
+  MSGFMT gu.gmo
+  MSGFMT he.gmo
+  MSGFMT hi.gmo
+  MSGFMT hr.gmo
+  MSGFMT ht.gmo
+  MSGFMT hu.gmo
+  MSGFMT hy.gmo
+  MSGFMT ia.gmo
+  MSGFMT id.gmo
+  MSGFMT ie.gmo
+  MSGFMT is.gmo
+  MSGFMT it.gmo
+  MSGFMT ja.gmo
+  MSGFMT ka.gmo
+  MSGFMT kab.gmo
+  MSGFMT kk.gmo
+  MSGFMT kl.gmo
+  MSGFMT km.gmo
+  MSGFMT kn.gmo
+  MSGFMT ko.gmo
+  MSGFMT ku.gmo
+  MSGFMT kw.gmo
+  MSGFMT ky.gmo
+  MSGFMT la.gmo
+  MSGFMT lb.gmo
+  MSGFMT lo.gmo
+  MSGFMT lt.gmo
+  MSGFMT lv.gmo
+  MSGFMT mg.gmo
+  MSGFMT mhr.gmo
+  MSGFMT mi.gmo
+  MSGFMT ml.gmo
+  MSGFMT mr.gmo
+  MSGFMT ms.gmo
+  MSGFMT my.gmo
+  MSGFMT nap.gmo
+  MSGFMT nb.gmo
+  MSGFMT ne.gmo
+  MSGFMT nl.gmo
+  MSGFMT nn.gmo
+  MSGFMT oc.gmo
+  MSGFMT os.gmo
+  MSGFMT pa.gmo
+  MSGFMT pl.gmo
+  MSGFMT ps.gmo
+  MSGFMT pt_BR.gmo
+  MSGFMT pt.gmo
+  MSGFMT ro.gmo
+  MSGFMT ru.gmo
+  MSGFMT sa.gmo
+  MSGFMT sc.gmo
+  MSGFMT sd.gmo
+  MSGFMT se.gmo
+  MSGFMT shn.gmo
+  MSGFMT si.gmo
+  MSGFMT sk.gmo
+  MSGFMT sl.gmo
+  MSGFMT sq.gmo
+  MSGFMT sr.gmo
+  MSGFMT sr@latin.gmo
+  MSGFMT sv.gmo
+  MSGFMT sw.gmo
+  MSGFMT szl.gmo
+  MSGFMT ta.gmo
+  MSGFMT te.gmo
+  MSGFMT tg.gmo
+  MSGFMT th.gmo
+  MSGFMT ti.gmo
+  MSGFMT tr.gmo
+  MSGFMT ug.gmo
+  MSGFMT uk.gmo
+  MSGFMT ur.gmo
+  MSGFMT uz.gmo
+  MSGFMT vec.gmo
+  MSGFMT vi.gmo
+  MSGFMT wae.gmo
+  MSGFMT zgh.gmo
+  MSGFMT zh_CN.gmo
+  MSGFMT zh_HK.gmo
+  MSGFMT zh_TW.gmo
+make[2]: Leaving directory '/build/g-greeter/src/slick-greeter-2.0.2/po'
+Making all in src
+make[2]: Entering directory '/build/g-greeter/src/slick-greeter-2.0.2/src'
+  VALAC    logo_generator_vala.stamp
+  CC       logo_generator-logo-generator.o
+  CCLD     logo-generator
+  VALAC    slick_greeter_vala.stamp
+warning: C header and source files are ignored when -C or --ccode is set
+settings.vala:68.25-68.43: warning: `GLib.Settings.list_keys' has been deprecated since 2.46
+   68 |         string[] keys = gsettings.list_keys ();
+      |                         ^~~~~~~~~~~~~~~~~~~    
+menubar.vala:667.42-667.82: warning: Access to possible `null'. Perform a check or use an unsafe cast.
+  667 |                     Signal.emit_by_name ((get_toplevel () as Gtk.Window).get_focus ().get_accessible (), "focus-event", true);
+      |                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                            
+shutdown-dialog.vala:561.13-561.27: warning: `Gtk.Widget.override_font' has been deprecated since 3.16
+  561 |             l.override_font (Pango.FontDescription.from_string ("Ubuntu Light 12"));
+      |             ^~~~~~~~~~~~~~~                                                         
+shutdown-dialog.vala:562.13-562.28: warning: `Gtk.Widget.override_color' has been deprecated since 3.16
+  562 |             l.override_color (Gtk.StateFlags.NORMAL, { 1.0f, 1.0f, 1.0f, 0.0f });
+      |             ^~~~~~~~~~~~~~~~                                                     
+shutdown-dialog.vala:563.13-563.28: warning: `Gtk.Widget.override_color' has been deprecated since 3.16
+  563 |             l.override_color (Gtk.StateFlags.FOCUSED, { 1.0f, 1.0f, 1.0f, 1.0f });
+      |             ^~~~~~~~~~~~~~~~                                                      
+shutdown-dialog.vala:564.13-564.28: warning: `Gtk.Widget.override_color' has been deprecated since 3.16
+  564 |             l.override_color (Gtk.StateFlags.ACTIVE, { 1.0f, 1.0f, 1.0f, 1.0f });
+      |             ^~~~~~~~~~~~~~~~                                                     
+shutdown-dialog.vala:590.9-590.49: warning: Access to possible `null'. Perform a check or use an unsafe cast.
+  590 |         (get_toplevel () as Gtk.Window).set_focus (null);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~        
+shutdown-dialog.vala:107.13-107.37: warning: `Gtk.Widget.override_font' has been deprecated since 3.16
+  107 |             title_label.override_font (Pango.FontDescription.from_string ("Ubuntu Light 15"));
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~                                                         
+shutdown-dialog.vala:108.13-108.38: warning: `Gtk.Widget.override_color' has been deprecated since 3.16
+  108 |             title_label.override_color (Gtk.StateFlags.NORMAL, { 1.0f, 1.0f, 1.0f, 1.0f });
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~                                                     
+shutdown-dialog.vala:141.9-141.27: warning: `Gtk.Widget.override_font' has been deprecated since 3.16
+  141 |         label.override_font (Pango.FontDescription.from_string ("Ubuntu Light 12"));
+      |         ^~~~~~~~~~~~~~~~~~~                                                         
+shutdown-dialog.vala:142.9-142.28: warning: `Gtk.Widget.override_color' has been deprecated since 3.16
+  142 |         label.override_color (Gtk.StateFlags.NORMAL, { 1.0f, 1.0f, 1.0f, 1.0f });
+      |         ^~~~~~~~~~~~~~~~~~~~                                                     
+shutdown-dialog.vala:339.9-339.50: warning: Access to possible `null'. Perform a check or use an unsafe cast.
+  339 |         (get_toplevel () as Gtk.Window).move_focus (Gtk.DirectionType.TAB_FORWARD);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                 
+shutdown-dialog.vala:344.9-344.50: warning: Access to possible `null'. Perform a check or use an unsafe cast.
+  344 |         (get_toplevel () as Gtk.Window).move_focus (Gtk.DirectionType.TAB_BACKWARD);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                  
+shutdown-dialog.vala:349.22-349.62: warning: Access to possible `null'. Perform a check or use an unsafe cast.
+  349 |         var widget = (get_toplevel () as Gtk.Window).get_focus ();
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~    
+shutdown-dialog.vala:351.13-351.53: warning: Access to possible `null'. Perform a check or use an unsafe cast.
+  351 |             (get_toplevel () as Gtk.Window).set_focus (null);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~        
+menubar.vala:479.9-479.28: warning: `Gtk.Widget.override_color' has been deprecated since 3.16
+  479 |         label.override_color (Gtk.StateFlags.INSENSITIVE, keyboard_fg);
+      |         ^~~~~~~~~~~~~~~~~~~~                                           
+menubar.vala:154.13-154.38: warning: `Gtk.Widget.override_color' has been deprecated since 3.16
+  154 |             clock_label.override_color (Gtk.StateFlags.INSENSITIVE, clock_fg);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~                                        
+menubar.vala:178.13-178.38: warning: `Gtk.Widget.override_color' has been deprecated since 3.16
+  178 |             power_label.override_color (Gtk.StateFlags.INSENSITIVE, power_fg);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~                                        
+menubar.vala:218.13-218.32: warning: `Gtk.Widget.override_color' has been deprecated since 3.16
+  218 |             label.override_color (Gtk.StateFlags.INSENSITIVE, hostname_fg);
+      |             ^~~~~~~~~~~~~~~~~~~~                                           
+prompt-box.vala:178.9-178.32: warning: `Gtk.Widget.override_font' has been deprecated since 3.16
+  178 |         name_label.override_font (Pango.FontDescription.from_string ("Ubuntu 13"));
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~                                                   
+prompt-box.vala:179.9-179.33: warning: `Gtk.Widget.override_color' has been deprecated since 3.16
+  179 |         name_label.override_color (Gtk.StateFlags.NORMAL, { 1.0f, 1.0f, 1.0f, 1.0f });
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~                                                     
+prompt-box.vala:184.9-184.30: warning: `Gtk.Widget.margin_left' has been deprecated since 3.12
+  184 |         name_label.margin_left = 2;
+      |         ^~~~~~~~~~~~~~~~~~~~~~     
+prompt-box.vala:192.25-192.37: warning: `Gtk.Alignment' has been deprecated since 3.14
+  192 |         var align = new Gtk.Alignment (0.5f, 0.5f, 0.0f, 0.0f);
+      |                         ^~~~~~~~~~~~~                          
+prompt-box.vala:192.13-192.17: warning: `Gtk.Alignment' has been deprecated since 3.14
+  192 |         var align = new Gtk.Alignment (0.5f, 0.5f, 0.0f, 0.0f);
+      |             ^~~~~                                              
+prompt-box.vala:227.9-227.38: warning: `Gtk.Widget.override_font' has been deprecated since 3.16
+  227 |         small_name_label.override_font (Pango.FontDescription.from_string ("Ubuntu 13"));
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                                   
+prompt-box.vala:228.9-228.39: warning: `Gtk.Widget.override_color' has been deprecated since 3.16
+  228 |         small_name_label.override_color (Gtk.StateFlags.NORMAL, { 1.0f, 1.0f, 1.0f, 1.0f });
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                                     
+prompt-box.vala:231.9-231.36: warning: `Gtk.Widget.margin_left' has been deprecated since 3.12
+  231 |         small_name_label.margin_left = 2;
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~     
+prompt-box.vala:239.25-239.37: warning: `Gtk.Alignment' has been deprecated since 3.14
+  239 |         var align = new Gtk.Alignment (0.5f, 0.5f, 0.0f, 0.0f);
+      |                         ^~~~~~~~~~~~~                          
+prompt-box.vala:239.13-239.17: warning: `Gtk.Alignment' has been deprecated since 3.14
+  239 |         var align = new Gtk.Alignment (0.5f, 0.5f, 0.0f, 0.0f);
+      |             ^~~~~                                              
+dash-entry.vala:74.9-74.21: warning: `Gtk.Widget.override_font' has been deprecated since 3.16
+   74 |         override_font (Pango.FontDescription.from_string (font));
+      |         ^~~~~~~~~~~~~                                            
+prompt-box.vala:453.9-453.27: warning: `Gtk.Widget.override_font' has been deprecated since 3.16
+  453 |         label.override_font (Pango.FontDescription.from_string ("Ubuntu Bold 10"));
+      |         ^~~~~~~~~~~~~~~~~~~                                                        
+prompt-box.vala:458.9-458.28: warning: `Gtk.Widget.override_color' has been deprecated since 3.16
+  458 |         label.override_color (Gtk.StateFlags.NORMAL, color);
+      |         ^~~~~~~~~~~~~~~~~~~~                                
+prompt-box.vala:571.9-571.40: warning: `Gtk.Widget.override_font' has been deprecated since 3.16
+  571 |         combo.get_child ().override_font (Pango.FontDescription.from_string (DashEntry.font));
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                                                      
+list-stack.vala:77.13-77.50: warning: Access to possible `null'. Perform a check or use an unsafe cast.
+   77 |             (prev.data as GreeterList).greeter_box.pop ();
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~        
+main-window.vala:219.13-219.35: warning: `Gtk.Widget.margin_left' has been deprecated since 3.12
+  219 |             content_box.margin_left = get_grid_offset (get_allocated_width ()) + (content_align == "left" ? grid_size : 0);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~                                                                                        
+main-window.vala:220.13-220.36: warning: `Gtk.Widget.margin_right' has been deprecated since 3.12
+  220 |             content_box.margin_right = get_grid_offset (get_allocated_width ()) + (content_align == "right" ? grid_size : 0);
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~                                                                                         
+main-window.vala:229.33-229.48: warning: `Gdk.cairo_create' has been deprecated since 3.22
+  229 |         background.set_surface (Gdk.cairo_create (get_window ()).get_target ());
+      |                                 ^~~~~~~~~~~~~~~~                                
+user-list.vala:605.35-605.78: warning: Access to possible `null'. Perform a check or use an unsafe cast.
+  605 |             new_background_file = (selected_entry as UserPromptBox).background;
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+user-list.vala:654.23-654.63: warning: Access to possible `null'. Perform a check or use an unsafe cast.
+  654 |             session = (selected_entry as UserPromptBox).session;
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+main-window.vala:52.9-52.33: warning: `Gtk.Widget.override_background_color' has been deprecated since 3.16
+   52 |         override_background_color (Gtk.StateFlags.NORMAL, bg_color);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~                                   
+main-window.vala:54.9-54.23: warning: `Gtk.Window.has_resize_grip' has been deprecated since 3.14
+   54 |         has_resize_grip = false;
+      |         ^~~~~~~~~~~~~~~         
+main-window.vala:67.29-67.41: warning: `Gtk.Alignment' has been deprecated since 3.14
+   67 |         var menualign = new Gtk.Alignment (0.0f, 0.0f, 1.0f, 0.0f);
+      |                             ^~~~~~~~~~~~~                          
+main-window.vala:67.13-67.21: warning: `Gtk.Alignment' has been deprecated since 3.14
+   67 |         var menualign = new Gtk.Alignment (0.0f, 0.0f, 1.0f, 0.0f);
+      |             ^~~~~~~~~                                              
+main-window.vala:117.25-117.37: warning: `Gtk.Alignment' has been deprecated since 3.14
+  117 |         var align = new Gtk.Alignment (x_align, 0.0f, 0.0f, 1.0f);
+      |                         ^~~~~~~~~~~~~                             
+main-window.vala:117.13-117.17: warning: `Gtk.Alignment' has been deprecated since 3.14
+  117 |         var align = new Gtk.Alignment (x_align, 0.0f, 0.0f, 1.0f);
+      |             ^~~~~                                                 
+main-window.vala:122.13-122.30: warning: `Gtk.Widget.margin_right' has been deprecated since 3.12
+  122 |             align.margin_right = grid_size;
+      |             ^~~~~~~~~~~~~~~~~~             
+main-window.vala:133.21-133.33: warning: `Gtk.Alignment' has been deprecated since 3.14
+  133 |         align = new Gtk.Alignment (0.5f, 0.5f, 0.0f, 0.0f);
+      |                     ^~~~~~~~~~~~~                          
+main-window.vala:151.21-151.33: warning: `Gtk.Alignment' has been deprecated since 3.14
+  151 |         align = new Gtk.Alignment (0.0f, 0.5f, 0.0f, 1.0f);
+      |                     ^~~~~~~~~~~~~                          
+slick-greeter.vala:549.37-549.91: warning: Access to possible `null'. Perform a check or use an unsafe cast.
+  549 |         unowned X.Display display = (screen.get_display () as Gdk.X11.Display).get_xdisplay ();
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~    
+slick-greeter.vala:550.36-550.73: warning: Access to possible `null'. Perform a check or use an unsafe cast.
+  550 |         unowned X.Screen xscreen = (screen as Gdk.X11.Screen).get_xscreen ();
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~    
+slick-greeter.vala:553.38-553.90: warning: Access to possible `null'. Perform a check or use an unsafe cast.
+  553 |                                      (screen.get_root_window () as Gdk.X11.Window).get_xid (),
+      |                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~    
+slick-greeter.vala:561.46-561.83: warning: Access to possible `null'. Perform a check or use an unsafe cast.
+  561 |                                              (visual as Gdk.X11.Visual).get_xvisual (),
+      |                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~    
+slick-greeter.vala:490.36-490.112: warning: Access to possible `null'. Perform a check or use an unsafe cast.
+  490 |                     keyboard_xid = (main_window.menubar.keyboard_window.get_window () as Gdk.X11.Window).get_xid ();
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~    
+slick-greeter.vala:840.38-840.92: warning: Access to possible `null'. Perform a check or use an unsafe cast.
+  840 |         unowned X.Display xdisplay = (screen.get_display () as Gdk.X11.Display).get_xdisplay ();
+      |                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~    
+idle-monitor.vala:62.19-62.53: warning: Access to possible `null'. Perform a check or use an unsafe cast.
+   62 |         display = (d as Gdk.X11.Display).get_xdisplay ();
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~    
+dash-box.vala:115.9-115.21: warning: Switch does not handle `NORMAL' of enum `DashBox.Mode'
+  115 |         switch (mode)
+      |         ^~~~~~~~~~~~~
+animate-timer.vala:33.5-33.41: warning: Type `AnimateTimer.EasingFunc' can not be used for a GLib.Object property
+   33 |     public unowned EasingFunc easing_func { get; private set; }
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                      
+Compilation succeeded - 58 warning(s)
+  CC       slick_greeter-animate-timer.o
+  CC       slick_greeter-background.o
+  CC       slick_greeter-cached-image.o
+  CC       slick_greeter-cairo-utils.o
+  CC       slick_greeter-email-autocompleter.o
+  CC       slick_greeter-dash-box.o
+  CC       slick_greeter-dash-button.o
+  CC       slick_greeter-dash-entry.o
+  CC       slick_greeter-fadable.o
+  CC       slick_greeter-fadable-box.o
+  CC       slick_greeter-fading-label.o
+  CC       slick_greeter-flat-button.o
+  CC       slick_greeter-greeter-list.o
+  CC       slick_greeter-idle-monitor.o
+  CC       slick_greeter-list-stack.o
+  CC       slick_greeter-main-window.o
+  CC       slick_greeter-menu.o
+  CC       slick_greeter-menubar.o
+  CC       slick_greeter-prompt-box.o
+  CC       slick_greeter-session-list.o
+  CC       slick_greeter-remote-login-service.o
+  CC       slick_greeter-settings.o
+  CC       slick_greeter-shutdown-dialog.o
+  CC       slick_greeter-toggle-box.o
+  CC       slick_greeter-slick-greeter.o
+  CC       slick_greeter-user-list.o
+  CC       slick_greeter-user-prompt-box.o
+  CCLD     slick-greeter
+make[2]: Leaving directory '/build/g-greeter/src/slick-greeter-2.0.2/src'
+Making all in tests
+make[2]: Entering directory '/build/g-greeter/src/slick-greeter-2.0.2/tests'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/build/g-greeter/src/slick-greeter-2.0.2/tests'
+make[2]: Entering directory '/build/g-greeter/src/slick-greeter-2.0.2'
+make[2]: Leaving directory '/build/g-greeter/src/slick-greeter-2.0.2'
+make[1]: Leaving directory '/build/g-greeter/src/slick-greeter-2.0.2'

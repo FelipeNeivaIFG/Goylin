@@ -1,0 +1,12 @@
+
+   >>   Skel files...   <<
+
+install: creating directory '/build/gapp-cad/pkg/gapp-cad/etc'
+install: creating directory '/build/gapp-cad/pkg/gapp-cad/etc/skel'
+'skel.tar' -> '/build/gapp-cad/pkg/gapp-cad/etc/skel/skel.tar'
+./
+./.config/
+removed '/build/gapp-cad/pkg/gapp-cad/etc/skel/skel.tar'
+
+   >>   End of file installation   <<
+

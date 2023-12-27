@@ -1,0 +1,36 @@
+
+   >>   Skel files...   <<
+
+install: creating directory '/build/gapp-audio/pkg/gapp-audio/etc'
+install: creating directory '/build/gapp-audio/pkg/gapp-audio/etc/skel'
+'skel.tar' -> '/build/gapp-audio/pkg/gapp-audio/etc/skel/skel.tar'
+./
+./Documentos/
+./Documentos/lmms/
+./Documentos/lmms/samples/
+./Documentos/lmms/samples/soundfonts/
+./Documentos/lmms/samples/gig/
+./Documentos/lmms/templates/
+./Documentos/lmms/presets/
+./Documentos/lmms/plugins/
+./Documentos/lmms/plugins/ladspa/
+./Documentos/lmms/plugins/vst/
+./Documentos/lmms/projects/
+./.config/
+./.config/ardour8/
+./.config/ardour8/ui_config
+./.config/ardour8/plugin_metadata/
+./.config/ardour8/plugin_metadata/scan_log
+./.config/ardour8/plugin_metadata/plugin_order
+./.config/ardour8/config
+./.config/ardour8/ui_scripts
+./.config/ardour8/instant.xml
+./.config/audacity/
+./.config/audacity/pluginsettings.cfg
+./.config/audacity/audacity.cfg
+./.config/audacity/pluginregistry.cfg
+./.lmmsrc.xml
+removed '/build/gapp-audio/pkg/gapp-audio/etc/skel/skel.tar'
+
+   >>   End of file installation   <<
+

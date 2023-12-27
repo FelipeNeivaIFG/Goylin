@@ -1,0 +1,43 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='g-plasma'
+pkgdesc='Goylin: Plasma'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group=('goylin')
+
+pkgver=24.1
+pkgrel=1
+arch=('x86_64')
+
+source=('skel.tar' 'goylin-dark.desktop.tar' 'kdeglobals')
+
+noextract=('skel.tar' 'goylin-dark.desktop.tar')
+
+md5sums=('SKIP' 'SKIP' 'SKIP')
+
+depends=(
+    'plasma-desktop' 'kscreen' 'plasma-pa' 'kdegraphics-thumbnailers'
+    'plasma-nm' 'kde-gtk-config' 'konsole' 'powerdevil'
+    'xdg-desktop-portal-kde' 'bluedevil' 'plasma-browser-integration'
+    'plasma-disks' 'breeze-gtk' 'dolphin' 'kio-extras'
+    'audiocd-kio' 'kio-fuse' 'kio-gdrive' 'kio5' 'flameshot'
+)
+
+package() {
+    echo; echo "   >>   Config  files...   <<"; echo
+
+    install -vDm 644 -t ${pkgdir}/etc/xdg/ kdeglobals
+    
+    echo; echo "   >>   Skel files...   <<"; echo
+
+    install -vDm 644 -t ${pkgdir}/etc/skel skel.tar
+    tar xvf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
+    rm -v ${pkgdir}/etc/skel/skel.tar
+    
+    echo; echo "   >>   Plasma theme...   <<"; echo
+
+    install -vDm 644 -t ${pkgdir}/usr/share/plasma/look-and-feel/goylin-dark.desktop/ goylin-dark.desktop.tar
+    tar xvf ${pkgdir}/usr/share/plasma/look-and-feel/goylin-dark.desktop/goylin-dark.desktop.tar --overwrite --directory=${pkgdir}/usr/share/plasma/look-and-feel/goylin-dark.desktop/
+    rm -v ${pkgdir}/usr/share/plasma/look-and-feel/goylin-dark.desktop/goylin-dark.desktop.tar
+
+    echo; echo "   >>   End of file installation   <<"; echo
+}

@@ -1,0 +1,6 @@
+repo/goylin-repo
+repo/pkg-g/gapp-english-files
+repo/pkg-g/gapp-english
+repo/pkg-tp/*
+installer/gpasswd.sh
+iso/isoOut

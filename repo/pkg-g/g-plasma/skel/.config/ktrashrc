@@ -1,0 +1,6 @@
+[/home/_USERNAME_/.local/share/Trash]
+Days=30
+LimitReachedAction=0
+Percent=1
+UseSizeLimit=true
+UseTimeLimit=true

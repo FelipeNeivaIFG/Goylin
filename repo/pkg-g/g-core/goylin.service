@@ -1,0 +1,11 @@
+[Unit]
+Description=Update Goylin System files on Boot
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/gSysStartUp
+
+[Install]
+WantedBy=multi-user.target

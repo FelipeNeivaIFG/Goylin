@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=ShotCut
+Type=Application
+Exec=shotcut %F
+GenericName=Video Editor
+GenericName[pt_BR]=Editor de Video
+Comment=Nonlinear video editor
+Comment[pt_BR]=Editor de video não linear
+Icon=org.shotcut.Shotcut
+Categories=Video;AudioVideo;AudioVideoEditing;
+Terminal=false
+StartupWMClass=ShotCut

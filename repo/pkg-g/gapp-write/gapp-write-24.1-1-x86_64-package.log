@@ -1,0 +1,14 @@
+
+   >>   Skel files...   <<
+
+install: creating directory '/build/gapp-write/pkg/gapp-write/etc'
+install: creating directory '/build/gapp-write/pkg/gapp-write/etc/skel'
+'skel.tar' -> '/build/gapp-write/pkg/gapp-write/etc/skel/skel.tar'
+./
+./.config/
+./.config/DimkaNovikov labs./
+./.config/DimkaNovikov labs./Scenarist.conf
+removed '/build/gapp-write/pkg/gapp-write/etc/skel/skel.tar'
+
+   >>   End of file installation   <<
+

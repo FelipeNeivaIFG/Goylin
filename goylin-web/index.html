@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem vindo ao Goylin-24.1 Cora</title>
+    <style>
+        
+        header {
+            background: url('wall-24-1.jpg') center/cover no-repeat;
+            padding: 2em;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+    
+        #logo {
+            width: 100px; /* Ajuste o tamanho conforme necessário */
+            height: auto;
+            display: block;
+            margin: 0 auto; /* Centralize a imagem */
+        }
+    
+        section {
+            padding: 2em;
+        }
+
+        img {
+            max-width: 100%;
+        }
+    
+        .tab {
+            display: flex;
+            justify-content: center;
+            padding: 0px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 10px;
+        }
+
+        footer {
+            background-color: #297a25;
+            color: white;
+            text-align: center;
+            padding: 0em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-size: 14px;
+        }
+
+        body {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+        }
+        
+        h2, h2 {
+            color: #4CAF50;
+        }
+
+        h1 {
+            color: #cccccc;
+        }
+
+        footer {
+            background-color: #297a25;
+            color: white;
+            text-align: center;
+            padding: 0px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 50px;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        a {
+            color: #41993c;
+            text-decoration: none;
+        }
+
+        .alert {
+            background-color: #200000;
+            color: #ffffff; 
+            padding: 10px; 
+            margin-top: 10px;
+            border-radius: 5px;
+}
+    </style>
+
+    </head>
+
+    <body>
+        <header>
+            <img id="logo" src="goylin.svg" alt="Logo Goylin Linux">
+            <h1>Goylin Linux - 24.1 - Cora</h1>
+        </header>
+        <section>
+            <div class="tab" onclick="toggleTab('contribute-tab')">
+                <h1>Como contribuir?</h1>
+            </div>    
+            <div id="contribute-tab" class="tab-content">
+                <div class="tab" onclick="toggleTab('background-tab')">
+                    <h2>Fundos de Tela:</h2>
+                </div>
+                <div id="background-tab" class="tab-content">
+                    <img src="MariaClara_Cinema03.jpg" alt="wallpaper">
+                    <p>Quer ter sua arte exposta como fundo de tela?</p>
+                    <p>Envie um email: felipe.neiva@ifg.edu.br</p>
+                    <p>Contendo a imagem, seu nome, e vínculo com o IFG</p>
+                    <h2>Contribuintes:</h2>
+                    <blockquote>
+                        <h5>Joaquim Augusto - Estudande de Audio e Vídeo</h5>
+                        <h5>Maria Clara - Estudande de Audio e Vídeo</h5>
+                        <h5>Adriana Coinbra - Assistente de aluno</h5>
+                        <h5>Felipe Neiva - Tec. Lab. Informática</h5>
+                    </blockquote>
+                </div>
+                
+                <div class="tab" onclick="toggleTab('npdflix-tab')">
+                    <h2>NPDflix:</h2>
+                </div>
+                <div id="npdflix-tab" class="tab-content">
+                    <img src="npdflix.png" alt="npdflix">
+                    <p>NPDflix é um servidor de streaming com trabalhos produzidos no IFG e NPD de Goiás. O sistema também suporta ebooks funcionando como uma biblioteca de leitura virtual.</p>
+                    <p><a href="https://npd.goias.ifg.edu.br/" target="_blank">https://npd.goias.ifg.edu.br/</a></p>
+                    <p>Quer ter sua produção no NPDflix?</p>
+                    <p>Envie um email: felipe.neiva@ifg.edu.br</p>
+                    <p>Com o link para download do arquivo, seu nome, e vínculo com o IFG</p>
+                </div>
+
+                <div class="tab" onclick="toggleTab('radio-tab')">
+                    <h2>Radio Vozzes:</h2>
+                </div>
+                <div id="radio-tab" class="tab-content">
+                    <img src="radiovozzes.png" alt="radiovozzes">
+                    <p>A Radio Vozzes é a rádio interna que toca no pátio do IFG - Goiás</p>
+                    <p><a href="https://radio.goias.ifg.edu.br/" target="_blank">https://radio.goias.ifg.edu.br/</a></p>
+                    <p>Quer ter sua música tocando na Radio Vozzes?</p>
+                    <p>Envie um email: felipe.neiva@ifg.edu.br</p>
+                    <p>Com o arquivo mp3, seu nome, e vínculo com o IFG</p>
+                </div>
+            </div>  
+
+            <div class="tab" onclick="toggleTab('apps-tab')">
+                <h1>Programas disponiveis:</h1>
+            </div>
+            <div id="apps-tab" class="tab-content">
+                <div class="tab" onclick="toggleTab('office-tab')">
+                    <h2>Office</h2>
+                </div>
+                <div id="office-tab" class="tab-content">
+                    <!-- OnlyOffice -->
+                    <div>
+                        <h2>OnlyOffice</h2>
+                        <img src="onlyoffice.jpeg" alt="OnlyOffice">
+                        <p>
+                            OnlyOffice é uma suíte de escritório que oferece processador de texto,
+                            planilha, e ferramentas de apresentação. <a href="https://www.onlyoffice.com/" target="_blank">Saiba mais...</a>
+                        </p>
+                    </div>
+                    <p>----------------------------------------------------------------------------------------------------</p>
+                    <!-- KIT Scenarist -->
+                    <div>
+                        <h2>KIT Scenarist</h2>
+                        <img src="scenarist.png" alt="KIT Scenarist">
+                        <p>O KIT Scenarist é uma ferramenta poderosa para escritores de roteiros. Ele oferece recursos abrangentes para o desenvolvimento de roteiros, facilitando o processo de criação para escritores e cineastas.
+                            <a href="https://kitscenarist.ru/" target="_blank">Saiba mais...</a>
+                        </p>
+                    </div>
+                    <p>----------------------------------------------------------------------------------------------------</p>
+                    <!-- Scribus -->
+                    <div>
+                        <h2>Scribus</h2>
+                        <img src="scribus.jpg" alt="Scribus">
+                        <p>O Scribus é um software de editoração eletrônica de código aberto que permite a criação de layouts de página profissionais. É uma ferramenta poderosa para design gráfico e publicação, oferecendo recursos avançados para criar documentos impressos e digitais.
+                            <a href="https://www.scribus.net/" target="_blank">Saiba mais...</a>
+                        </p>
+                    </div>
+                </div>
+                    <div class="tab" onclick="toggleTab('browser-tab')">
+                        <h2>Navegadores</h2>
+                    </div>
+                    <div id="browser-tab" class="tab-content">
+                        <!-- Brave -->
+                        <div>
+                            <h2>Brave</h2>
+                            <img src="brave.jpg" alt="Brave">
+                            <p>O Brave é um navegador rápido, seguro e privado.
+                                <a href="https://brave.com/" target="_blank">Saiba mais...</a>
+                            </p>
+                        </div>
+                        <p>----------------------------------------------------------------------------------------------------</p>
+                        <!-- Firefox (1ª instância) -->
+                        <div>
+                            <h2>Firefox</h2>
+                            <img src="firefox.png" alt="Firefox">
+                            <p>O Firefox é um navegador web de código aberto.
+                                <a href="https://www.mozilla.org/" target="_blank">Saiba mais...</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="tab" onclick="toggleTab('vfx-tab')">
+                        <h2>3D / Animação</h2>
+                    </div>
+                    <div id="vfx-tab" class="tab-content">
+                        <!-- Blender -->
+                        <div>
+                            <h2>Blender</h2>
+                            <img src="blender.jpg" alt="Blender">
+                            <p><iframe width="560" height="315" src="https://www.youtube.com/embed/eoY1Mc70uTo?si=VejIuqrjgQN9QRTl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></p>
+                            <p>O Blender é um software de modelagem 3D, animação, renderização, composição, edição de vídeo e criação de jogos. É uma ferramenta poderosa e livre para artistas e desenvolvedores.
+                                <a href="https://www.blender.org/" target="_blank">Saiba mais...</a>
+                            </p>
+                        </div>
+                        <p>----------------------------------------------------------------------------------------------------</p>
+                                <!-- Natron -->
+                        <div>
+                            <h2>Natron</h2>
+                            <img src="natron.jpg" alt="Natron">
+                            <p><iframe width="560" height="315" src="https://www.youtube.com/embed/V2MvbfuITT8?si=0wgzH0zo63gxCiD8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></p>
+                            <p>O Natron é um software de composição de vídeo de código aberto. Ele oferece uma variedade de ferramentas poderosas para edição e composição de vídeo, sendo uma escolha popular entre profissionais de pós-produção.
+                                <a href="https://natrongithub.github.io/" target="_blank">Saiba mais...</a>
+                            </p>
+                        </div>
+                        <p>----------------------------------------------------------------------------------------------------</p>
+                        <!-- OpenToonz -->
+                        <div>
+                            <h2>OpenToonz</h2>
+                            <img src="opentoonz.jpg" alt="OpenToonz">
+                            <p><iframe width="560" height="315" src="https://www.youtube.com/embed/br94YgOdoBo?si=ZBladyA3G6ipih77" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></p>
+                            <p>O OpenToonz é um software de animação 2D gratuito e de código aberto que oferece uma ampla gama de recursos para artistas e animadores. Ele é utilizado para criar animações, desde desenhos animados simples até produções mais complexas.
+                                <a href="https://opentoonz.github.io/" target="_blank">Saiba mais...</a>
+                            </p>
+                        </div>
+                        <p>----------------------------------------------------------------------------------------------------</p>
+                        <!-- Synfig Studio -->
+                        <div>
+                            <h2>Synfig Studio</h2>
+                            <img src="synfigstudio.jpg" alt="Synfig Studio">
+                            <p><iframe width="560" height="315" src="https://www.youtube.com/embed/bdgiAbpfANk?si=d8YLm2m28W6eKZIz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></p>
+                            <p>O Synfig Studio é um software de animação 2D de código aberto. Ele permite a criação de animações vetoriais complexas e é uma escolha popular para animadores.
+                                <a href="https://www.synfig.org/" target="_blank">Saiba mais...</a>
+                            </p>
+                        </div>
+                        <p>----------------------------------------------------------------------------------------------------</p>
+                        <!-- MagicaVoxel -->
+                        <div>
+                            <h2>MagicaVoxel</h2>
+                            <img src="magicavoxel.png" alt="MagicaVoxel">
+                            <p><iframe width="560" height="315" src="https://www.youtube.com/embed/AYBA-VrMpg4?si=w-8jmCjR4I1MZ1S0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></p>
+                            <p>O MagicaVoxel é um software de criação de voxel que permite aos usuários criar modelos 3D de forma fácil e intuitiva. É especialmente popular para a criação de arte voxel e jogos.
+                                <a href="https://ephtracy.github.io/" target="_blank">Saiba mais...</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="tab" onclick="toggleTab('image-tab')">
+                        <h2>Imagem</h2>
+                    </div>
+                    <div id="image-tab" class="tab-content">
+                        <!-- GIMP -->
+                        <div>
+                            <h2>GIMP</h2>
+                            <img src="gimp.webp" alt="GIMP">
+                            <p>O GIMP (GNU Image Manipulation Program) é um software de edição de imagens poderoso e de código aberto. Ele oferece uma ampla gama de recursos para manipulação de fotos, ilustrações e gráficos.
+                                <a href="https://www.gimp.org/" target="_blank">Saiba mais...</a>
+                            </p>
+                        </div>
+                        <p>----------------------------------------------------------------------------------------------------</p>
+                        <!-- Inkscape -->
+                        <div class="program">
+                            <h2>Inkscape</h2>
+                            <img src="inkscape.png" alt="Inkscape">
+                            <p>O Inkscape é um software de edição de gráficos vetoriais de código aberto. Ele é utilizado para criar ilustrações, logotipos, diagramas e outros tipos de arte vetorial.
+                                <a href="https://inkscape.org/" target="_blank">Saiba mais...</a>
+                            </p>
+                        </div>
+                        <p>----------------------------------------------------------------------------------------------------</p>
+                        <!-- Krita -->
+                        <div class="program">
+                            <h2>Krita</h2>
+                            <img src="krita.png" alt="Krita">
+                            <p>O Krita é um software de pintura digital de código aberto, adequado para ilustradores, artistas conceituais e amantes da arte digital. Ele oferece uma variedade de pincéis e ferramentas para criar obras de arte impressionantes.
+                                <a href="https://krita.org/" target="_blank">Saiba mais...</a>
+                            </p>
+                        </div>
+                        <p>----------------------------------------------------------------------------------------------------</p>
+                        <!-- Darktable -->
+                        <div class="program">
+                            <h2>Darktable</h2>
+                            <img src="darktable.jpg" alt="Darktable">
+                            <p>O Darktable é um software de edição de fotos de código aberto, focado em fluxo de trabalho não destrutivo. Ele fornece ferramentas avançadas para manipulação de imagens e processamento RAW.
+                                <a href="https://www.darktable.org/" target="_blank">Saiba mais...</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="tab" onclick="toggleTab('video-tab')">
+                        <h2>Video</h2>
+                    </div>
+                    <div id="video-tab" class="tab-content">
+                        <!-- Kdenlive -->
+                        <div>
+                            <h2>Kdenlive</h2>
+                            <img src="kdenlive.png" alt="Kdenlive">
+                            <p>O Kdenlive é um software de edição de vídeo de código aberto. Ele oferece uma ampla gama de recursos para edição de vídeos, incluindo efeitos, transições e ferramentas de áudio.
+                                <a href="https://kdenlive.org/" target="_blank">Saiba mais...</a>
+                            </p>
+                        </div>
+                        <p>----------------------------------------------------------------------------------------------------</p>
+                        <!-- Shotcut -->
+                        <div>
+                            <h2>Shotcut</h2>
+                            <img src="shotcut.png" alt="Shotcut">
+                            <p>O Shotcut é um software de edição de vídeo de código aberto e gratuito, oferecendo uma variedade de recursos para editar e aprimorar vídeos. Ele suporta uma ampla gama de formatos de arquivo e é adequado para usuários iniciantes e avançados.
+                                <a href="https://www.shotcut.org/" target="_blank">Saiba mais...</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="tab" onclick="toggleTab('audio-tab')">
+                        <h2>Áudio</h2>
+                    </div>
+                    <div id="audio-tab" class="tab-content">
+                            <!-- Audacity -->
+                        <div>
+                            <h2>Audacity</h2>
+                            <img src="audacity.jpg" alt="Audacity">
+                            <p>O Audacity é um software de edição de áudio gratuito e de código aberto. Ele oferece uma ampla gama de recursos para gravação, edição e manipulação de áudio, sendo uma ferramenta popular para podcasters, músicos e produtores.
+                                <a href="https://www.audacityteam.org/" target="_blank">Saiba mais...</a>
+                            </p>
+                        </div>
+                        <p>----------------------------------------------------------------------------------------------------</p>
+                            <!-- Ardour -->
+                        <div>
+                            <h2>Ardour</h2>
+                            <img src="ardour.png" alt="Ardour">
+                            <p>O Ardour é um software de estação de trabalho de áudio digital de código aberto. Ele oferece ferramentas avançadas de gravação, edição e mixagem de áudio, sendo uma opção popular para músicos e engenheiros de som.
+                                <a href="https://ardour.org/" target="_blank">Saiba mais...</a>
+                            </p>
+                        </div>
+                        <p>----------------------------------------------------------------------------------------------------</p>
+                        <!-- LMMS -->
+                        <div>
+                            <h2>LMMS (Linux MultiMedia Studio)</h2>
+                            <img src="lmms.webp" alt="LMMS">
+                            <p><iframe width="560" height="315" src="https://www.youtube.com/embed/RfwYyMTOG6s?si=uEkPIl0APaa_a30H" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></p>
+                            <p>O LMMS é um software de produção musical de código aberto. Ele fornece ferramentas para criar, editar e produzir música, incluindo sequenciamento de áudio, síntese, amostragem e muito mais.
+                                <a href="https://lmms.io/" target="_blank">Saiba mais...</a>
+                            </p>
+                        </div>
+                        <p>----------------------------------------------------------------------------------------------------</p>
+                        <!-- Mixxx -->
+                        <div>
+                            <h2>Mixxx</h2>
+                            <img src="mixxx.png" alt="Mixxx">
+                            <p>Mixxx é um software de DJ de código aberto que oferece recursos para misturar e remixar música. Ele inclui uma variedade de ferramentas para DJs, como sincronização de batidas, loopings e crossfading.
+                                <a href="https://mixxx.org/" target="_blank">Learn more...</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="tab" onclick="toggleTab('utility-tab')">
+                        <h2>Utilitarios</h2>
+                    </div>
+                    <div id="utility-tab" class="tab-content">
+                        <!-- VLC -->
+                        <div>
+                            <h2>VLC Media Player</h2>
+                            <img src="vlc.png" alt="VLC Media Player">
+                            <p>O VLC Media Player é um reprodutor multimídia de código aberto, capaz de reproduzir uma variedade de formatos de áudio e vídeo.
+                                <a href="https://www.videolan.org/vlc/" target="_blank">Saiba mais...</a>
+                            </p>
+                        </div>
+                        <p>----------------------------------------------------------------------------------------------------</p>
+                        <!-- Handbrake -->
+                        <div class="program">
+                            <h2>Handbrake</h2>
+                            <img src="handbrake.png" alt="Handbrake">
+                            <p>O HandBrake é um conversor de vídeo de código aberto. Ele permite a conversão de vídeos para diferentes formatos e oferece opções avançadas de configuração para otimização de qualidade e tamanho.
+                                <a href="https://handbrake.fr/" target="_blank">Saiba mais...</a>
+                            </p>
+                        </div>
+                        <p>----------------------------------------------------------------------------------------------------</p>
+                        <!-- OBS Studio -->
+                        <div class="program">
+                            <h2>OBS Studio</h2>
+                            <img src="obstudio.webp" alt="OBS Studio">
+                            <p>O OBS Studio é um software de transmissão ao vivo e gravação de código aberto. É amplamente utilizado por streamers para transmitir conteúdo ao vivo na internet, oferecendo ferramentas poderosas e personalizáveis.
+                                <a href="https://obsproject.com/" target="_blank">Saiba mais...</a>
+                            </p>
+                        </div>
+                        <p>----------------------------------------------------------------------------------------------------</p>
+                        <!-- yt-dlp -->
+                        <div>
+                            <h2>yt-dlp</h2>
+                            <p>yt-dlp é uma ferramenta de linha de comando de código aberto para baixar vídeos do YouTube e de outros sites.
+                                <a href="https://github.com/yt-dlp/yt-dlp" target="_blank">Learn more...</a>
+                            </p>
+                        </div>
+                        <p>----------------------------------------------------------------------------------------------------</p>
+                        <!-- spot-dl -->
+                        <div>
+                            <h2>spot-dl</h2>
+                            <p>spot-dl é uma ferramenta de linha de comando de código aberto para baixar músicas do Spotify.
+                                <a href="https://github.com/spotDL/spotify-downloader" target="_blank">Saiba mais...</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="tab" onclick="toggleTab('geo-tab')">
+                        <h2>Geotecnologia</h2>
+                    </div>
+                    <div id="geo-tab" class="tab-content">
+                               <!-- Google Earth -->
+                        <div>
+                            <h2>Google Earth</h2>
+                            <img src="googleearth.jpg" alt="Google Earth">
+                            <p>O Google Earth é uma aplicação que permite explorar imagens de satélite, mapas, terrenos em 3D e edifícios em todo o mundo. É uma ferramenta poderosa para visualização geoespacial.
+                                <a href="https://www.google.com/earth/" target="_blank">Saiba mais...</a>
+                            </p>
+                        </div>
+                        <p>----------------------------------------------------------------------------------------------------</p>
+                                <!-- Marble -->
+                        <div>
+                            <h2>Marble</h2>
+                            <img src="marble.png" alt="Marble">
+                            <p>O Marble é um globo virtual e atlas mundial interativo. Ele oferece visualizações detalhadas de mapas terrestres, celestiais e submarinos, tornando a exploração geográfica uma experiência envolvente.
+                                <a href="https://marble.kde.org/" target="_blank">Saiba mais...</a>
+                            </p>
+                        </div>
+                        <p>----------------------------------------------------------------------------------------------------</p>
+                            <!-- QGIS -->
+                        <div>
+                            <h2>QGIS</h2>
+                            <img src="qgis.jpeg" alt="QGIS">
+                            <p>O QGIS (Quantum GIS) é um sistema de informações geográficas de código aberto que permite visualizar, editar e analisar dados geoespaciais. É uma ferramenta versátil para profissionais de GIS.
+                                <a href="https://qgis.org/" target="_blank">Saiba mais...</a>
+                          
+  </p>
+                        </div>
+                    </div>
+                    <div class="tab" onclick="toggleTab('cad-tab')">
+                        <h2>CAD</h2>
+                    </div>
+                    <div id="cad-tab" class="tab-content">
+                            <!-- LibreCAD -->
+                        <div class="program">
+                            <h2>LibreCAD</h2>
+                            <img src="librecad.jpg" alt="LibreCAD">
+                            <p>O LibreCAD é uma aplicação de desenho assistido por computador (CAD) de código aberto. Ele oferece ferramentas para criar desenhos precisos em 2D, sendo uma opção acessível para projetos de engenharia e arquitetura.
+                                <a href="https://librecad.org/" target="_blank">Saiba mais...</a>
+                            </p>
+                        </div>
+                        <p>----------------------------------------------------------------------------------------------------</p>
+                            <!-- FreeCAD -->
+                        <div class="program">
+                            <h2>FreeCAD</h2>
+                            <img src="freecad.jpg" alt="FreeCAD">
+                            <p>O FreeCAD é um modelador paramétrico 3D de código aberto. Ele é adequado para o design de objetos 3D, engenharia mecânica e modelagem paramétrica. Uma ferramenta versátil para profissionais e entusiastas.
+                                <a href="https://www.freecadweb.org/" target="_blank">Saiba mais...</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="tab" onclick="toggleTab('dev-tab')">
+                        <h2>Desenvolvimento</h2>
+                    </div>
+                    <div id="dev-tab" class="tab-content">
+                            <!-- Portugol Studio -->
+                        <div>
+                            <h2>Portugol Studio</h2>
+                            <img src="portugol.webp" alt="Portugol Studio">
+                            <p>O Portugol Studio é um ambiente de desenvolvimento para a linguagem Portugol, uma linguagem de programação educacional. É projetado para facilitar o aprendizado de programação.
+                                <a href="https://portugolstudio.com/" target="_blank">Saiba mais...</a>
+                            </p>
+                        </div>
+                        <p>----------------------------------------------------------------------------------------------------</p>
+                        <!-- VSCodium -->
+                        <div>
+                            <h2>VSCodium</h2>
+                            <img src="vscodium.jpg" alt="VSCodium">
+                            <p>O VSCodium é uma bifurcação (fork) do Visual Studio Code, mas sem a telemetria proprietária da Microsoft. É uma poderosa e extensível IDE para desenvolvimento de software em várias linguagens.
+                                <a href="https://vscodium.com/" target="_blank">Saiba mais...</a>
+                            </p>
+                        </div>
+                        <p>----------------------------------------------------------------------------------------------------</p>
+                            <!-- Scratch -->
+                        <div>
+                            <h2>Scratch</h2>
+                            <img src="scratch.jpeg" alt="Scratch">
+                            <p>O Scratch é uma plataforma de programação visual projetada para crianças. Permite criar histórias interativas, jogos e animações, tornando a programação acessível e divertida.
+                                <a href="https://scratch.mit.edu/" target="_blank">Saiba mais...</a>
+                            </p>
+                        </div>
+                        <p>----------------------------------------------------------------------------------------------------</p>
+                            <!-- Godot -->
+                        <div>
+                            <h2>Godot</h2>
+                            <img src="godot.jpg" alt="Godot">
+                            <p>O Godot é um motor de jogo de código aberto e gratuito. Ele oferece um ambiente de desenvolvimento integrado completo para a criação de jogos 2D e 3D, sendo uma escolha popular entre desenvolvedores de jogos independentes.
+                                <a href="https://godotengine.org/" target="_blank">Saiba mais...</a>
+                            </p>
+                        </div>
+                        <p>----------------------------------------------------------------------------------------------------</p>
+                            <!-- Unity3D -->
+                        <div>
+                            <h2>Unity3D</h2>
+                            <img src="unity3d.png" alt="Unity3D">
+                            <p>O Unity3D é um motor de jogo, oferecendo um ambiente de desenvolvimento poderoso para a criação de jogos 2D e 3D.
+                                <a href="https://unity.com/" target="_blank">Saiba mais...</a>
+                            </p>
+                            <div class="alert">
+                                <p><strong>Alerta:</strong> Unity3D é um software proprietário e requer registro para obter uma licença de uso e distribuição.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab" onclick="toggleTab('games-tab')">
+                        <h2>Jogos</h2>
+                    </div>
+                    <div id="games-tab" class="tab-content">
+                        <div class="games">
+                            <h2>0 A.D.</h2>
+                            <img src="0ad.jpg" alt="0 A.D.">
+                            <p>O 0 A.D. é um jogo de estratégia em tempo real de código aberto e gratuito. Ele oferece uma experiência de jogo envolvente, ambientada na antiguidade, com batalhas épicas e construção de civilizações.
+                                <a href="https://play0ad.com/" target="_blank">Saiba mais...</a>
+                            </p>
+                        </div>
+                        <p>----------------------------------------------------------------------------------------------------</p>
+                        <div class="games">
+                            <h2>Minecraft e ATLauncher</h2>
+                            <img src="minecraft.jpg" alt="Minecraft">
+                            <p>O Minecraft é um jogo sandbox popular que permite aos jogadores explorar, construir e sobreviver em um mundo aberto e expansivo. Com uma estética única de blocos, oferece liberdade criativa e aventuras infinitas.
+                                <a href="https://www.minecraft.net/" target="_blank">Saiba mais...</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab" onclick="toggleTab('help-tab')">
+                    <h1>Ajuda!</h1>
+                </div>
+                <div id="help-tab" class="tab-content">
+                    <h2>Duvidas, problemas, instalação de programas e sugestões:</h2>
+                    <p>Envie um email: felipe.neiva@ifg.edu.br</p>
+                    <p>WhatsApp: (62)99939-1667</p>
+                </div>
+            </div>
+    </section>
+    <section id="null">
+    </section>
+
+    <footer>
+        <p><a href="#top">Retornar ao Topo</a></p>
+    </footer>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                var topoLink = document.querySelector('footer a');
+
+                topoLink.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            function toggleTab(tabId) {
+                var tabContent = document.getElementById(tabId);
+                if (tabContent.style.display === 'none') {
+                    tabContent.style.display = 'block';
+                } else {
+                    tabContent.style.display = 'none';
+                }
+            }
+        </script>
+    </body>
+</html>

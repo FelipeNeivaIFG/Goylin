@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# Enable remote user login on Desktop Enviroment
+eval $(dbus-launch --sh-syntax)
+
+# User Home Update
+rsync -vurl /etc/skel/. $HOME #>> $HOME/.homeUpdate.log
+xdg-user-dirs-update
+
+# Fix Config File User Names
+# Goylin-Plasma
+[ -f ${HOME}/.config/ktrashrc ] && sed -i "s/_USERNAME_/$(whoami)/g" ${HOME}/.config/ktrashrc
+# Goylin-App-Audio
+[ -f ${HOME}/.config/ardour8/ui_config ] && sed -i "s/_USERNAME_/$(whoami)/g" ${HOME}/.config/ardour8/ui_config
+[ -f ${HOME}/.config/ardour8/config ] && sed -i "s/_USERNAME_/$(whoami)/g" ${HOME}/.config/ardour8/config
+[ -f ${HOME}/.lmmsrc.xml ] && sed -i "s/_USERNAME_/$(whoami)/g" ${HOME}/.lmmsrc.xml
+# Goylin-App-Image
+[ -f ${HOME}/.config/kritarc ] && sed -i "s/_USERNAME_/$(whoami)/g" ${HOME}/.config/kritarc
+
+# Ensure .desktop files execution
+chmod +x ${HOME}/Desktop/*.desktop
+chmod +x ${HOME}/.config/autostart/*.desktop

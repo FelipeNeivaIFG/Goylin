@@ -1,0 +1,34 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='gapp-video'
+pkgdesc='Goylin: Video Apps'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group=('goylin')
+
+pkgver=24.1
+pkgrel=1
+arch=('x86_64')
+
+source=('skel.tar')
+
+noextract=('skel.tar')
+
+md5sums=('SKIP')
+
+depends=(
+    'kdenlive' 'handbrake' 'obs-studio' 'yt-dlp'
+    'shotcut'
+    # EXTRAS
+    'ffmpeg' 'dvgrab' 'opencv' 'opentimelineio'
+    'bigsh0t' 'mediainfo' 'noise-suppression-for-voice' 'gst-plugins-good'
+    'gst-libav' 'libdvdcss' 'libfdk-aac' 
+)
+
+package() {
+    echo; echo "   >>   Skel files...   <<"; echo
+
+    install -vDm 644 -t ${pkgdir}/etc/skel skel.tar
+    tar xvf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
+    rm -v ${pkgdir}/etc/skel/skel.tar
+    
+    echo; echo "   >>   End of file installation   <<"; echo
+}

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+#set -e # Error == exit
+
+# Clock sync
+timedatectl set-ntp true
+hwclock --systohc
+
+# Goylin Update
+pacman -Sy
+pacman -S --overwrite "*" --noconfirm --needed $(/usr/bin/pacman -Qq | grep '^goylin')
+pacman -Syu --noconfirm --needed

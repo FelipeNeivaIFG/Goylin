@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Name=Scribus
+Comment=Software de publicação
+TryExec=scribus
+Exec=scribus %f
+Icon=scribus
+StartupWMClass=scribus
+Terminal=false
+MimeType=application/vnd.scribus
+Categories=Publishing;
+DocPath=scribus
+StartupNotify=false
+X-KDE-SubstituteUID=false

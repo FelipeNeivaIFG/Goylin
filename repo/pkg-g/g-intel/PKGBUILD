@@ -1,0 +1,25 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='g-intel'
+pkgdesc='Goylin: Intel'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group='goylin'
+
+pkgver=24.1
+pkgrel=1
+arch=('x86_64')
+
+depends=(
+    'intel-ucode'
+    'mesa'
+    'lib32-mesa'
+    'vulkan-intel'
+    'lib32-vulkan-intel'
+    'intel-media-driver'
+    'libva-intel-driver'
+    'vulkan-mesa-layers'
+    'lib32-vulkan-mesa-layers'
+    'intel-media-sdk'
+    'intel-compute-runtime'
+    'lib32-vulkan-icd-loader'
+    
+)

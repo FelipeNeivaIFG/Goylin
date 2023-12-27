@@ -1,0 +1,34 @@
+[Desktop Action Capture]
+Exec=flameshot gui --delay 500
+Name[pt_BT]=Capturar Tela
+Name=Take Screenshot
+
+[Desktop Action Configure]
+Exec=flameshot config
+Name[pt_BR]=Configurar
+Name=Configure
+
+[Desktop Action Launcher]
+Exec=flameshot launcher
+Name[pt_BR]=Abrir lançador
+Name=Open Launcher
+
+[Desktop Entry]
+Actions=Configure;Capture;Launcher;
+Categories=Graphics;
+Comment[pt_BR]=Software de captura de tela 
+Comment=Screenshot software
+Exec=/usr/bin/flameshot
+GenericName[pt_BR]=Ferramenta de captura de tela
+GenericName=Screenshot tool
+Icon=org.flameshot.Flameshot
+Keywords[pt_BR]=flameshot;screenshot;captura de tela;captura;shutter;
+Keywords=flameshot;screenshot;capture;shutter;
+Name=Flameshot
+StartupNotify=false
+StartupWMClass=flameshot
+Terminal=false
+Type=Application
+X-DBUS-ServiceName=org.flameshot.Flameshot
+X-DBUS-StartupType=Unique
+X-KDE-DBUS-Restricted-Interfaces=org.kde.kwin.Screenshot,org.kde.KWin.ScreenShot2

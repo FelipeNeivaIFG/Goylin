@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Mixxx
+Comment=Estação de discotecagem digital
+Exec=sh -c "pasuspender -- mixxx -platform xcb || mixxx -platform xcb"
+Icon=mixxx
+Terminal=false
+Type=Application
+Categories=AudioVideo;Audio;Midi;Mixer;Player;Sequencer;
+StartupNotify=true

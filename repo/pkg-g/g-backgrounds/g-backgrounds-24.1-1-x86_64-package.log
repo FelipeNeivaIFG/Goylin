@@ -1,0 +1,37 @@
+install: creating directory '/build/g-backgrounds/pkg/g-backgrounds/usr'
+install: creating directory '/build/g-backgrounds/pkg/g-backgrounds/usr/share'
+install: creating directory '/build/g-backgrounds/pkg/g-backgrounds/usr/share/goylin'
+'goylin.tar' -> '/build/g-backgrounds/pkg/g-backgrounds/usr/share/goylin/goylin.tar'
+./
+./backgrounds/
+./backgrounds/MariaClara_Cinema03.jpg
+./backgrounds/F07.jpg
+./backgrounds/AdrianaCoimbra01.jpg
+./backgrounds/F01.jpg
+./backgrounds/AdrianaCoimbra06.jpg
+./backgrounds/AdrianaCoimbra03.jpg
+./backgrounds/AdrianaCoimbra02.jpg
+./backgrounds/MariaClara_Cinema01.jpg
+./backgrounds/JoaquimAugusto_2AudioVideo_07.jpg
+./backgrounds/JoaquimAugusto_2AudioVideo_08.jpg
+./backgrounds/AdrianaCoimbra05.jpg
+./backgrounds/F06.jpg
+./backgrounds/F05.jpg
+./backgrounds/JoaquimAugusto_2AudioVideo_03.jpg
+./backgrounds/F02.jpg
+./backgrounds/JoaquimAugusto_2AudioVideo_05.jpg
+./backgrounds/F08.jpg
+./backgrounds/JoaquimAugusto_2AudioVideo_04.jpg
+./backgrounds/MariaClara_Cinema02.jpg
+./backgrounds/F09.jpg
+./backgrounds/JoaquimAugusto_2AudioVideo_09.jpg
+./backgrounds/F03.jpg
+./backgrounds/JoaquimAugusto_2AudioVideo_01.jpg
+./backgrounds/AdrianaCoimbra04.jpg
+./backgrounds/JoaquimAugusto_2AudioVideo_10.jpg
+./backgrounds/JoaquimAugusto_2AudioVideo_02.jpg
+./backgrounds/MariaClara_Cinema04.jpg
+./backgrounds/JoaquimAugusto_2AudioVideo_06.jpg
+./backgrounds/AdrianaCoimbra07.jpg
+./backgrounds/F04.jpg
+removed '/build/g-backgrounds/pkg/g-backgrounds/usr/share/goylin/goylin.tar'

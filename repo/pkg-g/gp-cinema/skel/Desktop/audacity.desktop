@@ -1,0 +1,15 @@
+[Desktop Entry]
+Name=Audacity
+GenericName=Sound Editor
+GenericName[pt_BR]=Editor de áudio
+Comment=Record and edit audio files
+Comment[pt_BR]=Gravar e editar arquivos de áudio
+Icon=audacity
+StartupWMClass=Audacity
+Type=Application
+Categories=AudioVideo;Audio;AudioVideoEditing;
+Keywords=sound;music editing;voice channel;frequency;modulation;audio trim;clipping;noise reduction;multi track audio editor;edit;mixing;WAV;AIFF;FLAC;MP2;MP3;
+Exec=env UBUNTU_MENUPROXY=0 audacity %F
+StartupNotify=true
+Terminal=false
+MimeType=application/x-audacity-project;application/x-audacity-project+sqlite3;audio/aac;audio/ac3;audio/mp4;audio/x-ms-wma;video/mpeg;audio/flac;audio/x-flac;audio/mpeg;application/ogg;audio/x-vorbis+ogg;

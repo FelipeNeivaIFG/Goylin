@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=marble
+Name[pt_PT]=marble
+NoDisplay=true
+Icon=marble
+TryExec=marble
+Exec=marble %F
+Terminal=false
+StartupNotify=false
+MimeType=application/x-esri-shape;

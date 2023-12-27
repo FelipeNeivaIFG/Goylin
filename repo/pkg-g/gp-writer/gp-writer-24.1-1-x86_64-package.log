@@ -1,0 +1,8 @@
+install: creating directory '/build/gp-writer/pkg/gp-writer/etc'
+install: creating directory '/build/gp-writer/pkg/gp-writer/etc/skel'
+'skel.tar' -> '/build/gp-writer/pkg/gp-writer/etc/skel/skel.tar'
+./
+./Desktop/
+./Desktop/scenarist.desktop
+./Desktop/scribus.desktop
+removed '/build/gp-writer/pkg/gp-writer/etc/skel/skel.tar'

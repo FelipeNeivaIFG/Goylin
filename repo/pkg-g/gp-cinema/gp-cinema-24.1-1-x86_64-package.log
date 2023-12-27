@@ -1,0 +1,14 @@
+install: creating directory '/build/gp-cinema/pkg/gp-cinema/etc'
+install: creating directory '/build/gp-cinema/pkg/gp-cinema/etc/skel'
+'skel.tar' -> '/build/gp-cinema/pkg/gp-cinema/etc/skel/skel.tar'
+./
+./Desktop/
+./Desktop/opentoonz.desktop
+./Desktop/inkscape.desktop
+./Desktop/audacity.desktop
+./Desktop/shotcut.desktop
+./Desktop/gimp.desktop
+./Desktop/blender.desktop
+./Desktop/krita.desktop
+./Desktop/kdenlive.desktop
+removed '/build/gp-cinema/pkg/gp-cinema/etc/skel/skel.tar'

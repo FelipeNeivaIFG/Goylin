@@ -1,0 +1,9 @@
+# GIMP gimp-vector-tool options
+
+(brush "2. Hardness 050")
+(dynamics "Dynamics Off")
+(pattern "Pine")
+(gradient "Frente para fundo (RGB) ")
+(palette "Histórico de cor")
+
+# end of gimp-vector-tool options

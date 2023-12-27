@@ -1,0 +1,371 @@
+
+   >>   Skel files...   <<
+
+install: creating directory '/build/gapp-base/pkg/gapp-base/etc'
+install: creating directory '/build/gapp-base/pkg/gapp-base/etc/skel'
+'skel.tar' -> '/build/gapp-base/pkg/gapp-base/etc/skel/skel.tar'
+./
+./.config/
+./.config/onlyoffice/
+./.config/onlyoffice/DesktopEditors.conf
+./.config/BraveSoftware/
+./.config/BraveSoftware/Brave-Browser/
+./.config/BraveSoftware/Brave-Browser/Default/
+./.config/BraveSoftware/Brave-Browser/Default/Network Action Predictor
+./.config/BraveSoftware/Brave-Browser/Default/LOG.old
+./.config/BraveSoftware/Brave-Browser/Default/Login Data
+./.config/BraveSoftware/Brave-Browser/Default/Shortcuts
+./.config/BraveSoftware/Brave-Browser/Default/Local Storage/
+./.config/BraveSoftware/Brave-Browser/Default/Local Storage/leveldb/
+./.config/BraveSoftware/Brave-Browser/Default/Local Storage/leveldb/LOG.old
+./.config/BraveSoftware/Brave-Browser/Default/Local Storage/leveldb/000003.log
+./.config/BraveSoftware/Brave-Browser/Default/Local Storage/leveldb/LOCK
+./.config/BraveSoftware/Brave-Browser/Default/Local Storage/leveldb/LOG
+./.config/BraveSoftware/Brave-Browser/Default/Local Storage/leveldb/CURRENT
+./.config/BraveSoftware/Brave-Browser/Default/Local Storage/leveldb/MANIFEST-000001
+./.config/BraveSoftware/Brave-Browser/Default/Extension State/
+./.config/BraveSoftware/Brave-Browser/Default/Extension State/LOG.old
+./.config/BraveSoftware/Brave-Browser/Default/Extension State/000003.log
+./.config/BraveSoftware/Brave-Browser/Default/Extension State/LOCK
+./.config/BraveSoftware/Brave-Browser/Default/Extension State/LOG
+./.config/BraveSoftware/Brave-Browser/Default/Extension State/CURRENT
+./.config/BraveSoftware/Brave-Browser/Default/Extension State/MANIFEST-000001
+./.config/BraveSoftware/Brave-Browser/Default/Web Data
+./.config/BraveSoftware/Brave-Browser/Default/Safe Browsing Cookies
+./.config/BraveSoftware/Brave-Browser/Default/Top Sites
+./.config/BraveSoftware/Brave-Browser/Default/Bookmarks.bak
+./.config/BraveSoftware/Brave-Browser/Default/SCT Auditing Pending Reports
+./.config/BraveSoftware/Brave-Browser/Default/Bookmarks
+./.config/BraveSoftware/Brave-Browser/Default/Reporting and NEL-journal
+./.config/BraveSoftware/Brave-Browser/Default/MediaDeviceSalts-journal
+./.config/BraveSoftware/Brave-Browser/Default/Reporting and NEL
+./.config/BraveSoftware/Brave-Browser/Default/ads_service/
+./.config/BraveSoftware/Brave-Browser/Default/ads_service/database.sqlite
+./.config/BraveSoftware/Brave-Browser/Default/ads_service/database.sqlite-journal
+./.config/BraveSoftware/Brave-Browser/Default/ads_service/confirmations.json
+./.config/BraveSoftware/Brave-Browser/Default/ads_service/client.json
+./.config/BraveSoftware/Brave-Browser/Default/sanitized_background_images/
+./.config/BraveSoftware/Brave-Browser/Default/sanitized_background_images/fica_pb.png
+./.config/BraveSoftware/Brave-Browser/Default/sanitized_background_images/F07.jpg
+./.config/BraveSoftware/Brave-Browser/Default/sanitized_background_images/F01.jpg
+./.config/BraveSoftware/Brave-Browser/Default/sanitized_background_images/F06.jpg
+./.config/BraveSoftware/Brave-Browser/Default/sanitized_background_images/F05.jpg
+./.config/BraveSoftware/Brave-Browser/Default/sanitized_background_images/F02.jpg
+./.config/BraveSoftware/Brave-Browser/Default/sanitized_background_images/F08.jpg
+./.config/BraveSoftware/Brave-Browser/Default/sanitized_background_images/F09.jpg
+./.config/BraveSoftware/Brave-Browser/Default/sanitized_background_images/F03.jpg
+./.config/BraveSoftware/Brave-Browser/Default/sanitized_background_images/F04.jpg
+./.config/BraveSoftware/Brave-Browser/Default/BudgetDatabase/
+./.config/BraveSoftware/Brave-Browser/Default/BudgetDatabase/LOG.old
+./.config/BraveSoftware/Brave-Browser/Default/BudgetDatabase/LOCK
+./.config/BraveSoftware/Brave-Browser/Default/BudgetDatabase/LOG
+./.config/BraveSoftware/Brave-Browser/Default/Site Characteristics Database/
+./.config/BraveSoftware/Brave-Browser/Default/Site Characteristics Database/LOG.old
+./.config/BraveSoftware/Brave-Browser/Default/Site Characteristics Database/000003.log
+./.config/BraveSoftware/Brave-Browser/Default/Site Characteristics Database/LOCK
+./.config/BraveSoftware/Brave-Browser/Default/Site Characteristics Database/LOG
+./.config/BraveSoftware/Brave-Browser/Default/Site Characteristics Database/CURRENT
+./.config/BraveSoftware/Brave-Browser/Default/Site Characteristics Database/MANIFEST-000001
+./.config/BraveSoftware/Brave-Browser/Default/DawnCache/
+./.config/BraveSoftware/Brave-Browser/Default/DawnCache/data_0
+./.config/BraveSoftware/Brave-Browser/Default/DawnCache/data_1
+./.config/BraveSoftware/Brave-Browser/Default/DawnCache/data_3
+./.config/BraveSoftware/Brave-Browser/Default/DawnCache/data_2
+./.config/BraveSoftware/Brave-Browser/Default/DawnCache/index
+./.config/BraveSoftware/Brave-Browser/Default/Safe Browsing Cookies-journal
+./.config/BraveSoftware/Brave-Browser/Default/coupon_db/
+./.config/BraveSoftware/Brave-Browser/Default/coupon_db/LOG.old
+./.config/BraveSoftware/Brave-Browser/Default/coupon_db/LOCK
+./.config/BraveSoftware/Brave-Browser/Default/coupon_db/LOG
+./.config/BraveSoftware/Brave-Browser/Default/heavy_ad_intervention_opt_out.db
+./.config/BraveSoftware/Brave-Browser/Default/Cookies
+./.config/BraveSoftware/Brave-Browser/Default/Feature Engagement Tracker/
+./.config/BraveSoftware/Brave-Browser/Default/Feature Engagement Tracker/EventDB/
+./.config/BraveSoftware/Brave-Browser/Default/Feature Engagement Tracker/EventDB/LOG.old
+./.config/BraveSoftware/Brave-Browser/Default/Feature Engagement Tracker/EventDB/LOCK
+./.config/BraveSoftware/Brave-Browser/Default/Feature Engagement Tracker/EventDB/LOG
+./.config/BraveSoftware/Brave-Browser/Default/Feature Engagement Tracker/AvailabilityDB/
+./.config/BraveSoftware/Brave-Browser/Default/Feature Engagement Tracker/AvailabilityDB/LOG.old
+./.config/BraveSoftware/Brave-Browser/Default/Feature Engagement Tracker/AvailabilityDB/LOCK
+./.config/BraveSoftware/Brave-Browser/Default/Feature Engagement Tracker/AvailabilityDB/LOG
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/action_popup.js
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/extension-purpose.js
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/extension.js
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/content-script.js
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/manifest.json
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/content-utils.js
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/permission_request.css
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/extension-downloads.js
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/extension-utils.js
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/options.css
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/extension-tabsrunner.js
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/extension-mpris.js
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/utils.js
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/action_popup.html
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/permission_request.html
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/icons/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/icons/plasma-32.png
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/icons/document-share.png
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/icons/plasma-dark-128.png
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/icons/document-share-failed.png
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/icons/plasma.svg
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/icons/plasma-disabled.svg
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/icons/plasma-dark-32.png
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/icons/plasma-disabled-32.png
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/icons/call-start-symbolic.svg
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/icons/sad-face.svg
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/icons/plasma-disabled-dark-48.png
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/icons/smartphone-symbolic.svg
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/icons/plasma-disabled-48.png
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/icons/plasma-dark-16.png
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/icons/computer-laptop-symbolic.svg
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/icons/plasma-disabled-dark-128.png
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/icons/plasma-128.png
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/icons/plasma-dark-48.png
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/icons/plasma-disabled-16.png
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/icons/plasma-disabled-dark.svg
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/icons/plasma-disabled-128.png
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/icons/aboutkde.svg
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/icons/document-share.svg
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/icons/plasma-48.png
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/icons/plasma-dark.svg
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/icons/document-share-symbolic.svg
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/icons/tablet-symbolic.svg
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/icons/plasma-disabled-dark-16.png
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/icons/computer-symbolic.svg
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/icons/plasma-disabled-dark-32.png
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/icons/document-share-failed.svg
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/icons/plasma-16.png
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/constants.js
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/hu/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/hu/messages.json
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/lt/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/lt/messages.json
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/en_GB/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/en_GB/messages.json
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/sv/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/sv/messages.json
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/el/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/el/messages.json
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/gl/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/gl/messages.json
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/fi/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/fi/messages.json
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/tr/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/tr/messages.json
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/es/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/es/messages.json
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/ca/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/ca/messages.json
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/ml/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/ml/messages.json
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/nl/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/nl/messages.json
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/sl/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/sl/messages.json
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/da/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/da/messages.json
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/ia/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/ia/messages.json
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/de/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/de/messages.json
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/pt_BR/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/pt_BR/messages.json
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/zh_TW/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/zh_TW/messages.json
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/ro/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/ro/messages.json
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/ja/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/ja/messages.json
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/ko/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/ko/messages.json
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/pl/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/pl/messages.json
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/fr/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/fr/messages.json
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/id/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/id/messages.json
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/zh_CN/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/zh_CN/messages.json
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/nn/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/nn/messages.json
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/et/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/et/messages.json
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/eu/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/eu/messages.json
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/sk/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/sk/messages.json
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/uk/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/uk/messages.json
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/ast/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/ast/messages.json
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/cs/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/cs/messages.json
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/az/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/az/messages.json
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/it/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/it/messages.json
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/ru/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/ru/messages.json
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/ca@valencia/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/ca@valencia/messages.json
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/pt/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/pt/messages.json
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/en/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_locales/en/messages.json
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/options.js
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_metadata/
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_metadata/computed_hashes.json
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/_metadata/verified_contents.json
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/extension-kdeconnect.js
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/options.html
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/i18n.js
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/extension-historyrunner.js
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/permission-request.js
+./.config/BraveSoftware/Brave-Browser/Default/Extensions/cimiefiiaegbelhefglklhhakcgmhkai/1.8.0.1_0/action_popup.css
+./.config/BraveSoftware/Brave-Browser/Default/Favicons
+./.config/BraveSoftware/Brave-Browser/Default/Preferences
+./.config/BraveSoftware/Brave-Browser/Default/Top Sites-journal
+./.config/BraveSoftware/Brave-Browser/Default/TransportSecurity
+./.config/BraveSoftware/Brave-Browser/Default/Web Data-journal
+./.config/BraveSoftware/Brave-Browser/Default/LOCK
+./.config/BraveSoftware/Brave-Browser/Default/Network Action Predictor-journal
+./.config/BraveSoftware/Brave-Browser/Default/Login Data For Account
+./.config/BraveSoftware/Brave-Browser/Default/Favicons-journal
+./.config/BraveSoftware/Brave-Browser/Default/Affiliation Database-journal
+./.config/BraveSoftware/Brave-Browser/Default/Shortcuts-journal
+./.config/BraveSoftware/Brave-Browser/Default/Extension Scripts/
+./.config/BraveSoftware/Brave-Browser/Default/Extension Scripts/LOG.old
+./.config/BraveSoftware/Brave-Browser/Default/Extension Scripts/000003.log
+./.config/BraveSoftware/Brave-Browser/Default/Extension Scripts/LOCK
+./.config/BraveSoftware/Brave-Browser/Default/Extension Scripts/LOG
+./.config/BraveSoftware/Brave-Browser/Default/Extension Scripts/CURRENT
+./.config/BraveSoftware/Brave-Browser/Default/Extension Scripts/MANIFEST-000001
+./.config/BraveSoftware/Brave-Browser/Default/Login Data-journal
+./.config/BraveSoftware/Brave-Browser/Default/Session Storage/
+./.config/BraveSoftware/Brave-Browser/Default/Session Storage/LOG.old
+./.config/BraveSoftware/Brave-Browser/Default/Session Storage/000003.log
+./.config/BraveSoftware/Brave-Browser/Default/Session Storage/LOCK
+./.config/BraveSoftware/Brave-Browser/Default/Session Storage/LOG
+./.config/BraveSoftware/Brave-Browser/Default/Session Storage/CURRENT
+./.config/BraveSoftware/Brave-Browser/Default/Session Storage/MANIFEST-000001
+./.config/BraveSoftware/Brave-Browser/Default/PreferredApps
+./.config/BraveSoftware/Brave-Browser/Default/databases/
+./.config/BraveSoftware/Brave-Browser/Default/databases/Databases.db
+./.config/BraveSoftware/Brave-Browser/Default/databases/Databases.db-journal
+./.config/BraveSoftware/Brave-Browser/Default/BraveWallet/
+./.config/BraveSoftware/Brave-Browser/Default/BraveWallet/Brave Wallet Storage/
+./.config/BraveSoftware/Brave-Browser/Default/BraveWallet/Brave Wallet Storage/LOG.old
+./.config/BraveSoftware/Brave-Browser/Default/BraveWallet/Brave Wallet Storage/000003.log
+./.config/BraveSoftware/Brave-Browser/Default/BraveWallet/Brave Wallet Storage/LOCK
+./.config/BraveSoftware/Brave-Browser/Default/BraveWallet/Brave Wallet Storage/LOG
+./.config/BraveSoftware/Brave-Browser/Default/BraveWallet/Brave Wallet Storage/CURRENT
+./.config/BraveSoftware/Brave-Browser/Default/BraveWallet/Brave Wallet Storage/MANIFEST-000001
+./.config/BraveSoftware/Brave-Browser/Default/LOG
+./.config/BraveSoftware/Brave-Browser/Default/Extension Rules/
+./.config/BraveSoftware/Brave-Browser/Default/Extension Rules/LOG.old
+./.config/BraveSoftware/Brave-Browser/Default/Extension Rules/000003.log
+./.config/BraveSoftware/Brave-Browser/Default/Extension Rules/LOCK
+./.config/BraveSoftware/Brave-Browser/Default/Extension Rules/LOG
+./.config/BraveSoftware/Brave-Browser/Default/Extension Rules/CURRENT
+./.config/BraveSoftware/Brave-Browser/Default/Extension Rules/MANIFEST-000001
+./.config/BraveSoftware/Brave-Browser/Default/trusted_vault.pb
+./.config/BraveSoftware/Brave-Browser/Default/Network Persistent State
+./.config/BraveSoftware/Brave-Browser/Default/Affiliation Database
+./.config/BraveSoftware/Brave-Browser/Default/GPUCache/
+./.config/BraveSoftware/Brave-Browser/Default/GPUCache/data_0
+./.config/BraveSoftware/Brave-Browser/Default/GPUCache/data_1
+./.config/BraveSoftware/Brave-Browser/Default/GPUCache/data_3
+./.config/BraveSoftware/Brave-Browser/Default/GPUCache/data_2
+./.config/BraveSoftware/Brave-Browser/Default/GPUCache/index
+./.config/BraveSoftware/Brave-Browser/Default/Visited Links
+./.config/BraveSoftware/Brave-Browser/Default/AutofillStrikeDatabase/
+./.config/BraveSoftware/Brave-Browser/Default/AutofillStrikeDatabase/LOG.old
+./.config/BraveSoftware/Brave-Browser/Default/AutofillStrikeDatabase/LOCK
+./.config/BraveSoftware/Brave-Browser/Default/AutofillStrikeDatabase/LOG
+./.config/BraveSoftware/Brave-Browser/Default/Sync Data/
+./.config/BraveSoftware/Brave-Browser/Default/Sync Data/LevelDB/
+./.config/BraveSoftware/Brave-Browser/Default/Sync Data/LevelDB/LOG.old
+./.config/BraveSoftware/Brave-Browser/Default/Sync Data/LevelDB/000003.log
+./.config/BraveSoftware/Brave-Browser/Default/Sync Data/LevelDB/LOCK
+./.config/BraveSoftware/Brave-Browser/Default/Sync Data/LevelDB/LOG
+./.config/BraveSoftware/Brave-Browser/Default/Sync Data/LevelDB/CURRENT
+./.config/BraveSoftware/Brave-Browser/Default/Sync Data/LevelDB/MANIFEST-000001
+./.config/BraveSoftware/Brave-Browser/Default/WebrtcVideoStats/
+./.config/BraveSoftware/Brave-Browser/Default/WebrtcVideoStats/LOG.old
+./.config/BraveSoftware/Brave-Browser/Default/WebrtcVideoStats/LOCK
+./.config/BraveSoftware/Brave-Browser/Default/WebrtcVideoStats/LOG
+./.config/BraveSoftware/Brave-Browser/Default/README
+./.config/BraveSoftware/Brave-Browser/Default/shared_proto_db/
+./.config/BraveSoftware/Brave-Browser/Default/shared_proto_db/LOG.old
+./.config/BraveSoftware/Brave-Browser/Default/shared_proto_db/000003.log
+./.config/BraveSoftware/Brave-Browser/Default/shared_proto_db/LOCK
+./.config/BraveSoftware/Brave-Browser/Default/shared_proto_db/metadata/
+./.config/BraveSoftware/Brave-Browser/Default/shared_proto_db/metadata/LOG.old
+./.config/BraveSoftware/Brave-Browser/Default/shared_proto_db/metadata/000003.log
+./.config/BraveSoftware/Brave-Browser/Default/shared_proto_db/metadata/LOCK
+./.config/BraveSoftware/Brave-Browser/Default/shared_proto_db/metadata/LOG
+./.config/BraveSoftware/Brave-Browser/Default/shared_proto_db/metadata/CURRENT
+./.config/BraveSoftware/Brave-Browser/Default/shared_proto_db/metadata/MANIFEST-000001
+./.config/BraveSoftware/Brave-Browser/Default/shared_proto_db/LOG
+./.config/BraveSoftware/Brave-Browser/Default/shared_proto_db/CURRENT
+./.config/BraveSoftware/Brave-Browser/Default/shared_proto_db/MANIFEST-000001
+./.config/BraveSoftware/Brave-Browser/Default/Sessions/
+./.config/BraveSoftware/Brave-Browser/Default/Sessions/Session_13343154434479824
+./.config/BraveSoftware/Brave-Browser/Default/Sessions/Session_13343154434479823
+./.config/BraveSoftware/Brave-Browser/Default/Sessions/Tabs_13343154421072618
+./.config/BraveSoftware/Brave-Browser/Default/Sessions/Tabs_13343154421072617
+./.config/BraveSoftware/Brave-Browser/Default/Secure Preferences
+./.config/BraveSoftware/Brave-Browser/Default/Cookies-journal
+./.config/BraveSoftware/Brave-Browser/Default/Download Service/
+./.config/BraveSoftware/Brave-Browser/Default/Download Service/Files/
+./.config/BraveSoftware/Brave-Browser/Default/Download Service/EntryDB/
+./.config/BraveSoftware/Brave-Browser/Default/Download Service/EntryDB/LOG.old
+./.config/BraveSoftware/Brave-Browser/Default/Download Service/EntryDB/LOCK
+./.config/BraveSoftware/Brave-Browser/Default/Download Service/EntryDB/LOG
+./.config/BraveSoftware/Brave-Browser/Default/GCM Store/
+./.config/BraveSoftware/Brave-Browser/Default/GCM Store/Encryption/
+./.config/BraveSoftware/Brave-Browser/Default/GCM Store/Encryption/LOG.old
+./.config/BraveSoftware/Brave-Browser/Default/GCM Store/Encryption/000003.log
+./.config/BraveSoftware/Brave-Browser/Default/GCM Store/Encryption/LOCK
+./.config/BraveSoftware/Brave-Browser/Default/GCM Store/Encryption/LOG
+./.config/BraveSoftware/Brave-Browser/Default/GCM Store/Encryption/CURRENT
+./.config/BraveSoftware/Brave-Browser/Default/GCM Store/Encryption/MANIFEST-000001
+./.config/BraveSoftware/Brave-Browser/Default/History
+./.config/BraveSoftware/Brave-Browser/Default/History-journal
+./.config/BraveSoftware/Brave-Browser/Default/commerce_subscription_db/
+./.config/BraveSoftware/Brave-Browser/Default/commerce_subscription_db/LOG.old
+./.config/BraveSoftware/Brave-Browser/Default/commerce_subscription_db/LOCK
+./.config/BraveSoftware/Brave-Browser/Default/commerce_subscription_db/LOG
+./.config/BraveSoftware/Brave-Browser/Default/Login Data For Account-journal
+./.config/BraveSoftware/Brave-Browser/Default/Sync Extension Settings/
+./.config/BraveSoftware/Brave-Browser/Default/Sync Extension Settings/cimiefiiaegbelhefglklhhakcgmhkai/
+./.config/BraveSoftware/Brave-Browser/Default/Sync Extension Settings/cimiefiiaegbelhefglklhhakcgmhkai/LOG.old
+./.config/BraveSoftware/Brave-Browser/Default/Sync Extension Settings/cimiefiiaegbelhefglklhhakcgmhkai/000003.log
+./.config/BraveSoftware/Brave-Browser/Default/Sync Extension Settings/cimiefiiaegbelhefglklhhakcgmhkai/LOCK
+./.config/BraveSoftware/Brave-Browser/Default/Sync Extension Settings/cimiefiiaegbelhefglklhhakcgmhkai/LOG
+./.config/BraveSoftware/Brave-Browser/Default/Sync Extension Settings/cimiefiiaegbelhefglklhhakcgmhkai/CURRENT
+./.config/BraveSoftware/Brave-Browser/Default/Sync Extension Settings/cimiefiiaegbelhefglklhhakcgmhkai/MANIFEST-000001
+./.config/BraveSoftware/Brave-Browser/Default/MediaDeviceSalts
+./.config/BraveSoftware/Brave-Browser/Default/WebStorage/
+./.config/BraveSoftware/Brave-Browser/Default/WebStorage/QuotaManager-journal
+./.config/BraveSoftware/Brave-Browser/Default/WebStorage/QuotaManager
+./.config/BraveSoftware/Brave-Browser/Default/heavy_ad_intervention_opt_out.db-journal
+./.config/BraveSoftware/Brave-Browser/Default/VideoDecodeStats/
+./.config/BraveSoftware/Brave-Browser/Default/VideoDecodeStats/LOG.old
+./.config/BraveSoftware/Brave-Browser/Default/VideoDecodeStats/LOCK
+./.config/BraveSoftware/Brave-Browser/Default/VideoDecodeStats/LOG
+./.config/BraveSoftware/Brave-Browser/Dictionaries/
+./.config/BraveSoftware/Brave-Browser/Dictionaries/pt-BR-3-0.bdic
+./.config/BraveSoftware/Brave-Browser/Last Version
+./.config/BraveSoftware/Brave-Browser/Local State
+./.config/BraveSoftware/Brave-Browser/Variations
+./.config/BraveSoftware/Brave-Browser/First Run
+removed '/build/gapp-base/pkg/gapp-base/etc/skel/skel.tar'
+
+   >>   End of file installation   <<
+

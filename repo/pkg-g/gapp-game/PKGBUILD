@@ -1,0 +1,11 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='gapp-game'
+pkgdesc='Goylin: Games'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group='goylin'
+
+pkgver=24.1
+pkgrel=1
+arch=('x86_64')
+
+depends=('0ad' 'minecraft-launcher' 'atlauncher-bin')

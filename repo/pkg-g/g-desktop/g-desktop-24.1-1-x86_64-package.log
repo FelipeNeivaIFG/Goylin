@@ -1,0 +1,63 @@
+
+   >>   Config  files   <<
+
+install: creating directory '/build/g-desktop/pkg/g-desktop/etc'
+install: creating directory '/build/g-desktop/pkg/g-desktop/etc/gtk-2.0'
+'gtkrc' -> '/build/g-desktop/pkg/g-desktop/etc/gtk-2.0/gtkrc'
+install: creating directory '/build/g-desktop/pkg/g-desktop/etc/gtk-3.0'
+'settings.ini' -> '/build/g-desktop/pkg/g-desktop/etc/gtk-3.0/settings.ini'
+install: creating directory '/build/g-desktop/pkg/g-desktop/etc/gtk-4.0'
+'settings.ini' -> '/build/g-desktop/pkg/g-desktop/etc/gtk-4.0/settings.ini'
+'xprofile' -> '/build/g-desktop/pkg/g-desktop/etc/xprofile'
+install: creating directory '/build/g-desktop/pkg/g-desktop/etc/lightdm'
+'lightdm.conf' -> '/build/g-desktop/pkg/g-desktop/etc/lightdm/lightdm.conf'
+'slick-greeter.conf' -> '/build/g-desktop/pkg/g-desktop/etc/lightdm/slick-greeter.conf'
+install: creating directory '/build/g-desktop/pkg/g-desktop/etc/pam.d'
+'lightdm' -> '/build/g-desktop/pkg/g-desktop/etc/pam.d/lightdm'
+install: creating directory '/build/g-desktop/pkg/g-desktop/etc/xdg'
+'user-dirs.defaults' -> '/build/g-desktop/pkg/g-desktop/etc/xdg/user-dirs.defaults'
+install: creating directory '/build/g-desktop/pkg/g-desktop/etc/X11'
+install: creating directory '/build/g-desktop/pkg/g-desktop/etc/X11/xorg.conf.d'
+'00-keyboard.conf' -> '/build/g-desktop/pkg/g-desktop/etc/X11/xorg.conf.d/00-keyboard.conf'
+install: creating directory '/build/g-desktop/pkg/g-desktop/usr'
+install: creating directory '/build/g-desktop/pkg/g-desktop/usr/bin'
+'gLogoutScript' -> '/build/g-desktop/pkg/g-desktop/usr/bin/gLogoutScript'
+install: creating directory '/build/g-desktop/pkg/g-desktop/var'
+install: creating directory '/build/g-desktop/pkg/g-desktop/var/lib'
+install: creating directory '/build/g-desktop/pkg/g-desktop/var/lib/lightdm'
+install: creating directory '/build/g-desktop/pkg/g-desktop/var/lib/lightdm/.cache'
+install: creating directory '/build/g-desktop/pkg/g-desktop/var/lib/lightdm/.cache/slick-greeter'
+'state' -> '/build/g-desktop/pkg/g-desktop/var/lib/lightdm/.cache/slick-greeter/state'
+
+   >>   Goylin files   <<
+
+install: creating directory '/build/g-desktop/pkg/g-desktop/usr/share'
+install: creating directory '/build/g-desktop/pkg/g-desktop/usr/share/goylin'
+'goylin.tar' -> '/build/g-desktop/pkg/g-desktop/usr/share/goylin/goylin.tar'
+./
+./icons/
+./icons/moodle_icon.svg
+./icons/google.ico
+./icons/ifg.svgz
+./icons/suap_icon.png
+./icons/npdflix.svg
+./icons/goylin.svg
+./icons/radioVozzes.svg
+./icons/qacademico.ico
+./wallpapers/
+./wallpapers/wall-24-1.jpg
+removed '/build/g-desktop/pkg/g-desktop/usr/share/goylin/goylin.tar'
+'gWelcome' -> '/build/g-desktop/pkg/g-desktop/usr/bin/gWelcome'
+
+   >>   Skel files...   <<
+
+install: creating directory '/build/g-desktop/pkg/g-desktop/etc/skel'
+'skel.tar' -> '/build/g-desktop/pkg/g-desktop/etc/skel/skel.tar'
+./
+./.config/
+./.config/flameshot/
+./.config/flameshot/flameshot.ini
+removed '/build/g-desktop/pkg/g-desktop/etc/skel/skel.tar'
+
+   >>   End of file installation   <<
+

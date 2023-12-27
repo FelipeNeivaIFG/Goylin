@@ -1,0 +1,59 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='g-core'
+pkgdesc='Goylin: Core'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group=('goylin')
+
+pkgver=24.1
+pkgrel=1
+arch=('x86_64')
+
+source=(
+    'sudoers' 'os-release' 'grub' 'issue'
+    'motd' 'pacman.conf' 'vconsole.conf' 'sleep.conf'
+    'timesyncd.conf' 'goylin.service' 'gSysStartUp' '.bashrc'
+)
+
+md5sums=(
+    'SKIP' 'SKIP' 'SKIP' 'SKIP'
+    'SKIP' 'SKIP' 'SKIP' 'SKIP'
+    'SKIP' 'SKIP' 'SKIP' 'SKIP'
+)
+
+install='pkg.install'
+
+depends=(
+    'base' 'linux' 'linux-firmware' 'mkinitcpio' 'base-devel'
+    #
+    'grub' 'sudo' 'bash-completion' 'networkmanager'
+    'openssh' 'rsync' 'git' 'unrar'
+    'tldr' 'nano' 'wget' 'curl'
+    'vim' 'man-db' 'man-pages' 'broadcom-wl'
+    'dialog' 'zip' 'unzip' 'p7zip'
+    # EXTRAS
+    'hdf5-openmpi' 'ffmpeg'
+)
+
+package() {
+    echo; echo "   >>   Config  files   <<"; echo
+
+    install -vDm 440 -t ${pkgdir}/etc/ sudoers
+    install -vDm 644 -t ${pkgdir}/etc/ issue
+    install -vDm 644 -t ${pkgdir}/etc/ motd
+    install -vDm 644 -t ${pkgdir}/etc/ pacman.conf
+    install -vDm 644 -t ${pkgdir}/etc/ vconsole.conf
+
+    install -vDm 644 -t ${pkgdir}/etc/skel/ .bashrc
+    
+    install -vDm 644 -t ${pkgdir}/etc/default/ grub
+
+    install -vDm 644 -t ${pkgdir}/etc/systemd/ sleep.conf
+    install -vDm 644 -t ${pkgdir}/etc/systemd/ timesyncd.conf
+
+    install -vDm 644 -t ${pkgdir}/etc/systemd/system/ goylin.service
+    install -vDm 755 -t ${pkgdir}/usr/bin/ gSysStartUp
+
+    install -vDm 644 -t ${pkgdir}/usr/lib/ os-release
+
+    echo; echo "   >>   End of file installation   <<"; echo
+}

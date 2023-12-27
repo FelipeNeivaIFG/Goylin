@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=OpenToonz
+Exec=opentoonz
+Comment=2D animation
+Comment[pt_BR]=Animação 2D
+Type=Application
+Icon=io.github.OpenToonz
+Categories=Graphics;2DGraphics;
+Terminal=false

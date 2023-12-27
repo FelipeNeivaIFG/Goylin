@@ -1,0 +1,12 @@
+[Desktop Entry]
+Comment=...
+Name=GoylinDark
+X-KDE-PluginInfo-Author=Felipe Neiva
+X-KDE-PluginInfo-Category=Plasma Look And Feel
+X-KDE-PluginInfo-Email=felipe.neiva@ifg.edu
+X-KDE-PluginInfo-EnabledByDefault=true
+X-KDE-PluginInfo-License=LGPL 2.1+
+X-KDE-PluginInfo-Name=goylin-dark
+X-KDE-PluginInfo-Version=0.1
+X-KDE-PluginInfo-Website=ifg.br
+X-KDE-ServiceTypes=Plasma/LookAndFeel

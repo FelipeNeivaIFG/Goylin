@@ -1,0 +1,11 @@
+[Desktop Entry]
+Exec=dolphin %u
+Icon=user-home
+Name=Arquivos
+StartupWMClass=dolphin
+Type=Application
+X-DocPath=dolphin/index.html
+X-DBUS-ServiceName=org.kde.dolphin
+X-KDE-Shortcuts=Meta+E
+MimeType=inode/directory;
+InitalPreference=10

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=OBS Studio
+Comment=Programa de streaming e gravação
+Exec=obs
+Icon=com.obsproject.Studio
+Terminal=false
+Type=Application
+Categories=AudioVideo;Recorder;
+StartupNotify=true
+StartupWMClass=obs

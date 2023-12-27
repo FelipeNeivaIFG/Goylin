@@ -1,0 +1,7 @@
+#!/bin/bash
+
+post_install() {
+    systemctl enable NetworkManager
+    systemctl enable sshd
+    systemctl enable goylin.service
+}

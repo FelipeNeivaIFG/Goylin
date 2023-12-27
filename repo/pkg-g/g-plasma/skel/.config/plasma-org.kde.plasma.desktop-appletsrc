@@ -1,0 +1,21 @@
+[ActionPlugins][0]
+RightButton;NoModifier=org.kde.contextmenu
+
+[ActionPlugins][0][RightButton;NoModifier]
+_add panel=false
+_context=true
+_display_settings=false
+_lock_screen=false
+_logout=true
+_open_terminal=false
+_run_command=false
+_sep1=false
+_sep2=true
+_sep3=false
+_wallpaper=false
+add widgets=false
+configure=false
+configure shortcuts=false
+edit mode=false
+manage activities=true
+remove=true

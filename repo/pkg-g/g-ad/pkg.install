@@ -1,0 +1,7 @@
+#!/bin/bash
+
+post_install() {
+    systemctl disable systemd-resolved
+    systemctl enable smb
+    systemctl enable nmb
+}

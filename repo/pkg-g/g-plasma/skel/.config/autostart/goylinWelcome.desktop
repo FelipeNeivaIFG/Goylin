@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/bin/gWelcome
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enable=true
+Name=GoylinWelcome

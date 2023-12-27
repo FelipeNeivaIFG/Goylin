@@ -1,0 +1,6 @@
+#!/bin/bash
+
+post_install() {
+    sudo rm /usr/share/xsessions/i3-with-shmlog.desktop
+    sudo rm /etc/xdg/autostart/picom.desktop
+}
