@@ -2,4 +2,4 @@
 Icon=/usr/share/goylin/icons/radioVozzes.svg
 Name=Radio Vozzes
 Type=Link
-URL[$e]=http://10.11.0.100/public/radiovozzes
+URL[$e]=https://radio.goias.ifg.edu.br/public/radiovozzes

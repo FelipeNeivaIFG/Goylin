@@ -11,4 +11,5 @@ function tarFiles() {
 }
 
 tarFiles skel
-tarFiles goylin-dark.desktop
+tarFiles goylin.desktop
+tarFiles goylindark.desktop

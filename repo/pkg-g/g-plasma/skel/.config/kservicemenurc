@@ -1,7 +1,7 @@
 [Show]
 forgetfileitemaction=false
 gdrivecontextmenuaction=true
-installFont=false
+installFont=true
 kactivitymanagerd_fileitem_linking_plugin=false
 mountisoaction=false
 plasmavaultfileitemaction=false

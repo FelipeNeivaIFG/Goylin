@@ -4,11 +4,13 @@
 eval $(dbus-launch --sh-syntax)
 
 # User Home Update
-rsync -vurl /etc/skel/. $HOME #>> $HOME/.homeUpdate.log
+cp -vru /etc/skel/. $HOME #>> $HOME/.homeUpdate.log
 xdg-user-dirs-update
+[ -d "${HOME}/Área de trabalho" ] && rm -r "${HOME}/Área de trabalho"
 
 # Fix Config File User Names
 # Goylin-Plasma
+[ -f ${HOME}/.local/share/user-places.xbel ] && sed -i "s/_USERNAME_/$(whoami)/g" ${HOME}/.local/share/user-places.xbel
 [ -f ${HOME}/.config/ktrashrc ] && sed -i "s/_USERNAME_/$(whoami)/g" ${HOME}/.config/ktrashrc
 # Goylin-App-Audio
 [ -f ${HOME}/.config/ardour8/ui_config ] && sed -i "s/_USERNAME_/$(whoami)/g" ${HOME}/.config/ardour8/ui_config

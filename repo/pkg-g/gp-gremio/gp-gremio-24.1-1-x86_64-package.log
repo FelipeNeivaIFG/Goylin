@@ -1,9 +1,0 @@
-install: creating directory '/build/gp-gremio/pkg/gp-gremio/etc'
-install: creating directory '/build/gp-gremio/pkg/gp-gremio/etc/skel'
-'skel.tar' -> '/build/gp-gremio/pkg/gp-gremio/etc/skel/skel.tar'
-./
-./Desktop/
-./Desktop/gdrive.desktop
-./Desktop/gmail.desktop
-./Desktop/radioVozzesAdm.desktop
-removed '/build/gp-gremio/pkg/gp-gremio/etc/skel/skel.tar'

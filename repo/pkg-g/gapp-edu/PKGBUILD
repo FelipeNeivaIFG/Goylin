@@ -1,0 +1,16 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='gapp-edu'
+pkgdesc='Goylin: Educational Apps'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group=('goylin')
+
+pkgver=24.2
+pkgrel=1
+arch=('x86_64')
+
+depends=(
+    'scratch' 'portugol-studio-bin' 'kbruch' 'geogebra'
+    'kalzium' 'kgeography' 'duolingo-desktop-bin' 'step'
+    'kstars' 'ktouch' 'minuet' 'nootka'
+    'leocad'
+)

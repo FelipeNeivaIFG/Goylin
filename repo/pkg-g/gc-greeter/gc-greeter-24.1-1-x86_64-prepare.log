@@ -1,0 +1,37 @@
+/usr/bin/gnome-autogen.sh
+[1mchecking for automake >= 1.7...
+(B[m  testing automake... found 1.16.5
+[1mchecking for autoreconf >= 2.53...
+(B[m  testing autoreconf... found 2.72
+[1mchecking for intltool >= 0.25...
+(B[m  testing intltoolize... found 0.51.0
+[1mchecking for pkg-config >= 0.14.0...
+(B[m  testing pkg-config... found 2.1.0
+[1mChecking for required M4 macros...
+(B[m[1mProcessing ./configure.ac
+(B[m[1mRunning intltoolize...
+(B[m[1mRunning autoreconf...
+(B[mautoreconf: export WARNINGS=no-portability
+autoreconf: Entering directory '.'
+autoreconf: configure.ac: not using Gettext
+autoreconf: running: aclocal --force 
+autoreconf: configure.ac: tracing
+autoreconf: configure.ac: not using Libtool
+autoreconf: running: intltoolize --copy --force
+You should update your 'aclocal.m4' by running aclocal.
+autoreconf: configure.ac: not using Gtkdoc
+autoreconf: running: /usr/bin/autoconf --force
+configure.ac:10: warning: 'AM_CONFIG_HEADER': this macro is obsolete.
+configure.ac:10: You should use the 'AC_CONFIG_HEADERS' macro instead.
+./lib/autoconf/general.m4:2434: AC_DIAGNOSE is expanded from...
+aclocal.m4:1247: AM_CONFIG_HEADER is expanded from...
+configure.ac:10: the top level
+autoreconf: running: /usr/bin/autoheader --force
+autoreconf: running: automake --add-missing --copy --force-missing
+configure.ac:8: installing './compile'
+configure.ac:7: installing './install-sh'
+configure.ac:7: installing './missing'
+src/Makefile.am: installing './depcomp'
+autoreconf: './install-sh' is updated
+autoreconf: Leaving directory '.'
+Skipping configure process.

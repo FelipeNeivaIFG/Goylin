@@ -1,6 +1,14 @@
 #!/bin/bash
 
 post_install() {
-    systemctl enable lightdm
-    sudo chattr +i /var/lib/lightdm/.cache/slick-greeter/state
+	systemctl enable lightdm
+	chattr +i /var/lib/lightdm/.cache/slick-greeter/state
+}
+
+pre_upgrade() {
+	chattr -i /var/lib/lightdm/.cache/slick-greeter/state
+}
+
+post_upgrade() {
+	chattr +i /var/lib/lightdm/.cache/slick-greeter/state
 }

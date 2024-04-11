@@ -1,11 +1,12 @@
 [Unit]
 Description=Update Goylin System files on Boot
 Wants=network-online.target
-After=network-online.target
+Before=plymouth-quit.service display-manager.service
+After=network-online.target plymouth-start.service
 
 [Service]
 Type=oneshot
 ExecStart=/usr/bin/gSysStartUp
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=multi-user.target plymouth-quit-wait.service

@@ -5,7 +5,31 @@ url='https://github.com/FelipeNeivaIFG/Goylin'
 group='goylin'
 
 pkgver=24.1
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 
-depends=('0ad' 'minecraft-launcher' 'atlauncher-bin')
+source=('tlauncher.tar' 'tlauncher.desktop')
+
+noextract=('tlauncher.tar')
+
+md5sums=('SKIP' 'SKIP')
+
+depends=(
+    'minecraft-launcher' 'jdk-openjdk'
+    'ddnet' 'ltris' 'mari0' 'nottetris2'
+    'kpat' 'ksquares' 'knights' 'project-sushi'
+    'gnome-klotski' 'gnome-mahjongg' 'gnome-mines'
+    'gnome-sudoku' 'lix' 'vvvvvv' 'maniadrive'
+    'koifarm-git' 'atomix' '0ad' 'clonekeen'
+
+    #hollowknight openblack orbiter2016-git principia-git
+    #thrive  cytopia-git openloco vegastrike roblox
+)
+
+package() {
+    install -Dm 755 -t ${pkgdir}/usr/share/applications tlauncher.desktop
+    install -Dm 777 -t ${pkgdir}/opt/tlauncher tlauncher.tar
+	tar xf ${pkgdir}/opt/tlauncher/tlauncher.tar --overwrite --directory=${pkgdir}/opt/tlauncher/
+    chown 777 ${pkgdir}/opt/tlauncher/TLauncher-2.895.jar
+    rm ${pkgdir}/opt/tlauncher/tlauncher.tar
+}

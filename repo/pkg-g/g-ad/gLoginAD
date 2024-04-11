@@ -16,4 +16,6 @@ read -p '?: ' -e adminID; echo
 
 net ads join -v -U $adminID
 
+systemctl enable smb
+systemctl enable nmb
 systemctl enable winbind

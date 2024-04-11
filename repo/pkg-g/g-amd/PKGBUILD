@@ -1,25 +1,33 @@
 # Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
-pkgname='g-amd'
-pkgdesc='Goylin: AMD'
-url='https://github.com/FelipeNeivaIFG/Goylin'
-group='goylin'
+pkgname="g-amd"
+pkgdesc="Goylin: AMD"
+url="https://github.com/FelipeNeivaIFG/Goylin"
+group="goylin"
 
-pkgver=24.1
+pkgver=24.2
 pkgrel=1
-arch=('x86_64')
+arch=("x86_64")
+
+source=("mkinitcpio.conf")
+
+md5sums=("SKIP")
 
 depends=(
-    'amd-ucode'
-    'xf86-video-amdgpu'
-    'mesa'
-    'lib32-mesa'
-    'vulkan-radeon'
-    'lib32-vulkan-radeon'
-    'vulkan-mesa-layers'
-    'lib32-vulkan-mesa-layers'
-    'libva-mesa-driver'
-    'lib32-libva-mesa-driver'
-    'mesa-vdpau'
-    'lib32-mesa-vdpau' 
-    'lib32-vulkan-icd-loader'
+	"amd-ucode"
+	"xf86-video-amdgpu"
+	"mesa"
+	"lib32-mesa"
+	"vulkan-radeon"
+	"lib32-vulkan-radeon"
+	"vulkan-mesa-layers"
+	"lib32-vulkan-mesa-layers"
+	"libva-mesa-driver"
+	"lib32-libva-mesa-driver"
+	"mesa-vdpau"
+	"lib32-mesa-vdpau" 
+	"lib32-vulkan-icd-loader"
 )
+
+package() {
+	install -Dm 644 -t ${pkgdir}/etc/ mkinitcpio.conf
+}

@@ -2,4 +2,4 @@
 Icon=/usr/share/goylin/icons/radioVozzes.svg
 Name=ADM Radio Vozzes
 Type=Link
-URL[$e]=http://10.11.0.100/login
+URL[$e]=http://radio.goias.ifg.edu.br/login

@@ -4,41 +4,44 @@ pkgdesc='Goylin: AD'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.1
-pkgrel=1
+pkgver=24.2
+pkgrel=2
 arch=('x86_64')
 
 source=(
-    'gLoginAD' 'krb5.conf' 'nsswitch.conf' 'pam_winbind.conf'
-    'smb.conf' 'su' 'system-auth' 'sshd_config'
-    'no-systemd-resolved.conf'
+	'gLoginAD' 'krb5.conf' 'nsswitch.conf' 'pam_winbind.conf'
+	'smb.conf' 'su' 'system-auth' 'sshd_config'
+	'90-mount.rules'
 )
 
 md5sums=(
-    'SKIP' 'SKIP' 'SKIP' 'SKIP'
-    'SKIP' 'SKIP' 'SKIP' 'SKIP'
-    'SKIP'
+	'SKIP' 'SKIP' 'SKIP' 'SKIP'
+	'SKIP' 'SKIP' 'SKIP' 'SKIP'
+	'SKIP'
 )
 
 install='pkg.install'
 
 depends=(
-    'samba' 'smbclient' 'dnsutils' 'python-dnspython'
-    'pam-krb5' 'bind' 'krb5' 'polkit'
-)   
+	'samba' 'smbclient' 'dnsutils' 'python-dnspython'
+	'bind' 'krb5' 'pam-krb5' 'polkit'
+)
 
 package() {
-    echo; echo "   >>   Config  files...   <<"; echo
+	install -Dm 644 -t ${pkgdir}/etc/ krb5.conf
+	install -Dm 644 -t ${pkgdir}/etc/ nsswitch.conf
 
-    install -vDm 644 -t ${pkgdir}/etc/ krb5.conf
-    install -vDm 644 -t ${pkgdir}/etc/ nsswitch.conf
-    install -vDm 644 -t ${pkgdir}/etc/samba/ smb.conf
-    install -vDm 644 -t ${pkgdir}/etc/sshd/ sshd_config
-    install -vDm 644 -t ${pkgdir}/etc/security/ pam_winbind.conf
-    install -vDm 750 -t ${pkgdir}/usr/bin/ gLoginAD
-    install -vDm 644 -t ${pkgdir}/etc/pam.d/ system-auth
-    install -vDm 644 -t ${pkgdir}/etc/pam.d/ su
-    install -vDm 644 -t ${pkgdir}/etc/NetworkManager/conf.d/ no-systemd-resolved.conf
+	install -Dm 644 -t ${pkgdir}/etc/samba/ smb.conf
 
-    echo; echo "   >>   End of file installation   <<"; echo
+	install -Dm 644 -t ${pkgdir}/etc/sshd/ sshd_config
+
+	install -Dm 644 -t ${pkgdir}/etc/security/ pam_winbind.conf
+
+	install -Dm 750 -t ${pkgdir}/usr/bin/ gLoginAD
+
+	install -Dm 644 -t ${pkgdir}/etc/pam.d/ system-auth
+	install -Dm 644 -t ${pkgdir}/etc/pam.d/ su
+
+	install -Dm 644 -t ${pkgdir}/etc/polkit-1/rules.d/ 90-mount.rules
+	chmod 750 ${pkgdir}/etc/polkit-1/rules.d/
 }

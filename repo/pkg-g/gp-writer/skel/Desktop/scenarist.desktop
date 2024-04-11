@@ -1,9 +1,0 @@
-[Desktop Entry]
-Terminal=false
-Type=Application
-Icon=scenarist.png
-Categories=Office;
-Exec=scenarist %f
-MimeType=application/x-kit-scenarist-project;
-Name=KIT Scenarist
-Comment=Software de roteiro

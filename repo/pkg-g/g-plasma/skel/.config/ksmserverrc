@@ -1,5 +1,2 @@
 [General]
 confirmLogout=false
-
-[LegacySession: saved at previous logout]
-count=0

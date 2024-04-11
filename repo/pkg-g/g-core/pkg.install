@@ -4,4 +4,17 @@ post_install() {
     systemctl enable NetworkManager
     systemctl enable sshd
     systemctl enable goylin.service
+    systemctl enable systemd-timesyncd.service
+
+    chattr +i /usr/share/plymouth/plymouthd.defaults
+    cp -f /usr/share/goylin/icons/goylin.svg /usr/share/pixmaps/archlinux-logo.svg
+	cp -f /usr/share/goylin/icons/goylin.png /usr/share/pixmaps/archlinux-logo.png
+}
+
+pre_upgrade() {
+	chattr -i /usr/share/plymouth/plymouthd.defaults
+}
+
+post_upgrade() {
+	chattr +i /usr/share/plymouth/plymouthd.defaults
 }

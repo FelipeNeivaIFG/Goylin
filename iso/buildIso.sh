@@ -27,8 +27,10 @@ function _msgOk() {
 function _buildIso() {
     echo; _msgInfo 'Preparing ISO build'
 
-    _msg 'Copying Installer to airootfs'
+    _msg 'Copying clean Installer to airootfs'
+    [ -d releng/airootfs/gInstaller ] && rm -rf releng/airootfs/gInstaller
     cp -rv ../installer releng/airootfs/gInstaller
+    chmod +x releng/airootfs/gInstaller/gInstaller.sh
 
     _msg 'Ensuring clean work folder'
     [ -d isoWork ] && rm -rf isoWork
@@ -40,8 +42,9 @@ function _buildIso() {
     echo; _msgInfo 'Starting ISO build'
     mkarchiso -v -w isoWork -o isoOut releng
 
-    _msg 'Cleaning work folder'
+    _msg 'Cleaning'
     rm -rf isoWork
+    rm -rf releng/airootfs/gInstaller
 }
 
 ####################################################################################################

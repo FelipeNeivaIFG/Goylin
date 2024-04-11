@@ -1,12 +1,24 @@
 #!/bin/bash
 
-#set -e # Error == exit
+plymouth change-mode --updates
 
 # Clock sync
+plymouth display-message --text="Sincronizando relógio..."
 timedatectl set-ntp true
 hwclock --systohc
 
 # Goylin Update
+plymouth display-message --text="Buscando updates..."
 pacman -Sy
-pacman -S --overwrite "*" --noconfirm --needed $(/usr/bin/pacman -Qq | grep '^goylin')
-pacman -Syu --noconfirm --needed
+
+plymouth display-message --text="Atualizando o sistema..."
+pacman -S --overwrite "*" --noconfirm --needed $(pacman -Qe | grep "^g-" | cut -d" " -f1)
+
+plymouth display-message --text="Atualizando configurações..."
+pacman -S --overwrite "*" --noconfirm --needed $(pacman -Qe | grep "^gapp-" | cut -d" " -f1)
+
+plymouth display-message --text="Atualizando o perfil..."
+pacman -S --overwrite "*" --noconfirm --needed $(pacman -Qe | grep "^gp-" | cut -d" " -f1)
+
+plymouth display-message --text="Atualizando pacotes..."
+pacman -Su --noconfirm --needed

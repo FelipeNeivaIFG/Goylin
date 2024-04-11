@@ -1,8 +1,0 @@
-install: creating directory '/build/gp-adm/pkg/gp-adm/etc'
-install: creating directory '/build/gp-adm/pkg/gp-adm/etc/skel'
-'skel.tar' -> '/build/gp-adm/pkg/gp-adm/etc/skel/skel.tar'
-./
-./Desktop/
-./Desktop/gdrive.desktop
-./Desktop/gmail.desktop
-removed '/build/gp-adm/pkg/gp-adm/etc/skel/skel.tar'

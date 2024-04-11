@@ -73,7 +73,7 @@
 # Defaults maxseq = 1000
 
 Defaults	insults
-Defaults	timestamp_timeout=30
+# Defaults	timestamp_timeout=60
 
 ##
 ## Runas alias specification

@@ -1,8 +1,8 @@
-#
-# ~/.bashrc
-#
-
 ### EXPORT ###
+export EDITOR='vim'
+export VISUAL='vim'
+export HISTCONTROL=ignoreboth:erasedups
+
 PS1='[\u@\h \W]\$ '
 
 # If not running interactively, don't do anything
@@ -82,4 +82,4 @@ ex ()
   fi
 }
 
-[[ -f ~/.bashrc-personal ]] && . ~/.bashrc-personal
+[[ -f ~/bashrc ]] && . ~/bashrc

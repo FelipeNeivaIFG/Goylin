@@ -1,0 +1,6 @@
+#!/bin/bash
+
+gRootPasswd=""
+gAdminPasswd=""
+gRadioPasswd=""
+gGremioPasswd=""

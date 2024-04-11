@@ -1,0 +1,5 @@
+#!/bin/bash
+
+pre_upgrade() {
+	[ -d /usr/share/goylin/backgrounds ] && rm /usr/share/goylin/backgrounds/*
+}

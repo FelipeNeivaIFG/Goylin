@@ -2,4 +2,4 @@
 Icon=/usr/share/goylin/icons/npdflix.svg
 Name=NPDFlix
 Type=Link
-URL[$e]=http://10.11.0.101:8096
+URL[$e]=https://npd.goias.ifg.edu.br/

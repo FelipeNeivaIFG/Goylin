@@ -4,14 +4,14 @@ pkgdesc='Goylin: Base Laptop'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group='goylin'
 
-pkgver=24.1
+pkgver=24.2
 pkgrel=1
 arch=('x86_64')
 
 depends=(
     'tlp' 'tlp-rdw' 'powertop' 'acpi'
     'acpid' 'bluez' 'bluez-utils' 'blueman'
-    'pulseaudio-bluetooth'
+    'xf86-input-synaptics'
 )
 
 install='pkg.install'

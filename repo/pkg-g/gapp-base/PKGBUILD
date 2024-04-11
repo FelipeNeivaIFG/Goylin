@@ -4,7 +4,7 @@ pkgdesc='Goylin: Base Apps'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.1
+pkgver=24.2
 pkgrel=1
 arch=('x86_64')
 
@@ -15,29 +15,19 @@ noextract=('skel.tar')
 md5sums=('SKIP')
 
 depends=(
-    'evince' 'onlyoffice-bin' 'brave-bin' 'vlc'
-    'kate' 'firefox'
-    # EXTRAS
-    'ttf-ms-fonts' 'libnotify' 'gst-plugins-base-libs' 'dav1d'
-    'libdvdcss' 'libbluray' 'flac' 'twolame'
-    'libgme' 'vcdimager' 'libmtp' 'smbclient'
-    'libcdio' 'gnu-free-fonts' 'ttf-dejavu' 'libssh2'
-    'libnfs' 'mpg123' 'protobuf' 'libdvdread' 
-    'libdvdnav' 'libogg' 'libshout' 'libmodplug'
-    'libvpx' 'libvorbis' 'speex' 'opus'
-    'libtheora' 'libpng' 'libjpeg-turbo' 'librsvg'
-    'x264' 'x265' 'zvbi' 'libass'
-    'libkate' 'sdl_image' 'srt' 'aalib' 'libcaca'
-    'libpulse' 'alsa-lib' 'jack' 'libsamplerate'
-    'libsoxr' 'ncurses' 'gtk3'
+	'evince' 'onlyoffice-bin' 'brave-bin' 'vlc'
+	'shotwell' 'firefox' 'libreoffice-fresh' 'kate'
+	'python-spotdl' 'yt-dlp' 'elisa' 'font-manager'
+	
+	# EXTRAS
+	'aalib' 'lib32-flac' 'libcaca' 'libdvdcss'
+	'libdvdnav' 'libdvdread' 'libkate' 'lib32-libogg'
+	'lib32-libpng' 'lib32-libpulse' 'libshout' 'protobuf'
+	'sdl12-compat' 'sdl_image' 'twolame'
 )
 
 package() {
-    echo; echo "   >>   Skel files...   <<"; echo
-
-    install -vDm 644 -t ${pkgdir}/etc/skel skel.tar
-    tar xvf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
-    rm -v ${pkgdir}/etc/skel/skel.tar
-    
-    echo; echo "   >>   End of file installation   <<"; echo
+	install -Dm 644 -t ${pkgdir}/etc/skel skel.tar
+	tar xf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
+	rm ${pkgdir}/etc/skel/skel.tar
 }

@@ -3,18 +3,18 @@
 GRUB_DEFAULT=0
 GRUB_TIMEOUT=0
 GRUB_DISTRIBUTOR="Goylin"
-GRUB_CMDLINE_LINUX_DEFAULT="quiet"
+GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet audit=0 splash udev.log_priority=3 vt.global_cursor_default=1"
 GRUB_CMDLINE_LINUX=""
 
 # Preload both GPT and MBR modules so that they are not missed
-GRUB_PRELOAD_MODULES="part_msdos"
+GRUB_PRELOAD_MODULES="part_gpt part_msdos"
 
 # Uncomment to enable booting from LUKS encrypted devices
 #GRUB_ENABLE_CRYPTODISK=y
 
 # Set to 'countdown' or 'hidden' to change timeout behavior,
 # press ESC key to display menu.
-GRUB_TIMEOUT_STYLE=hidden
+GRUB_TIMEOUT_STYLE=menu
 
 # Uncomment to use basic console
 GRUB_TERMINAL_INPUT=console
@@ -28,7 +28,7 @@ GRUB_TERMINAL_INPUT=console
 GRUB_GFXMODE=auto
 
 # Uncomment to allow the kernel use the same resolution used by grub
-#GRUB_GFXPAYLOAD_LINUX=keep
+GRUB_GFXPAYLOAD_LINUX=keep
 
 # Uncomment if you want GRUB to pass to the Linux kernel the old parameter
 # format "root=/dev/xxx" instead of "root=/dev/disk/by-uuid/xxx"
@@ -39,11 +39,11 @@ GRUB_DISABLE_RECOVERY=true
 
 # Uncomment and set to the desired menu colors.  Used by normal and wallpaper
 # modes only.  Entries specified as foreground/background.
-#GRUB_COLOR_NORMAL="green/black"
-#GRUB_COLOR_HIGHLIGHT="black/green"
+# GRUB_COLOR_NORMAL="green/black"
+# GRUB_COLOR_HIGHLIGHT="black/green"
 
 # Uncomment one of them for the gfx desired, a image background or a gfxtheme
-#GRUB_BACKGROUND="/usr/share/goylin/wallpapers/wallpaper-dark.jpg"
+# GRUB_BACKGROUND="/usr/share/goylin/wallpaper.jpg"
 #GRUB_THEME="/boot/grub/themes/starfield/theme.txt"
 
 # Uncomment to get a beep at GRUB start
@@ -60,4 +60,4 @@ GRUB_DISABLE_RECOVERY=true
 # documentation on GRUB_DISABLE_OS_PROBER, if still want to enable this
 # functionality install os-prober and uncomment to detect and include other
 # operating systems.
-GRUB_DISABLE_OS_PROBER=true
+GRUB_DISABLE_OS_PROBER=false

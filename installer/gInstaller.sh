@@ -1,58 +1,58 @@
 #!/bin/bash
 
-# set -u # Unbound Variables == exit
+set -u # Unbound Variables == exit
 set -e # Error == exit
-# set -o pipefail # Error on pipe end == exit
+set -o pipefail # Error on pipe end == exit
 
 ####################################################################################################
-###                                        MSGs                                                  ###
+###                                        Source                                                ###
 ####################################################################################################
 
-function _msgAlert() { 
-  echo -e "\e[1;31m !: ${1} \e[0m"
-}
-function _msg() {
-  echo -e "\e[1;34m >: ${1} \e[0m"
-}
-function _msgInfo() {
-  echo -e "\e[1;33m #: ${1} \e[0m"
-}
-function _msgOk() {
-  echo -e "\e[1;32m $: ${1} \e[0m"
+source utils/gMsg.sh
+source utils/gPasswd.sh
+source utils/installConf.sh
+
+####################################################################################################
+###                                        Help                                                  ###
+####################################################################################################
+
+function _help() {
+	_msgInfo "Goylin installer flags:"
+	_msgOpt "-s : Skip bootstrap."
+	_msgOpt "-d : Use default install configuration."
+	echo; exit 0
 }
 
-function _msgLogo() {
-  _msgOk "  ██████╗  ██████╗ ██╗   ██╗██╗     ██╗███╗   ██╗ "
-  _msgOk " ██╔════╝ ██╔═══██╗╚██╗ ██╔╝██║     ██║████╗  ██║ "
-  _msgOk " ██║  ███╗██║   ██║ ╚████╔╝ ██║     ██║██╔██╗ ██║ "
-  _msgOk " ██║   ██║██║   ██║  ╚██╔╝  ██║     ██║██║╚██╗██║ "
-  _msgOk " ╚██████╔╝╚██████╔╝   ██║   ███████╗██║██║ ╚████║ "
-  _msgOk "  ╚═════╝  ╚═════╝    ╚═╝   ╚══════╝╚═╝╚═╝  ╚═══╝ "
-}
+####################################################################################################
+###                                        Flags                                                 ###
+####################################################################################################
 
-function _msgWelcome() {
-    clear; echo
-    _msgLogo
-    _msgOk "Version: ${goylinVersion}"
-    _msgOk "Goylin Installer"; echo
-}
+while getopts "sdh" opt; do
+    case $opt in
+        s) skipBootstrap=1 ;;
+        d) useDefaultConf=1 ;;
+		*) _help ;;
+    esac
+done
 
 ####################################################################################################
 ###                               Bootstrap Installer                                            ###
 ####################################################################################################
 
 function _bootstrap() {
-  echo; _msgInfo '###   Bootstraping Installer  ###'; echo
-  
-  _msg 'Pacman Setup'
-  pacman-key --init 1> /dev/null
-  pacman-key --populate archlinux 1> /dev/null
-  pacman -Sy --noconfirm --needed reflector #1> /dev/null
-  reflector --latest 5 --sort rate --save /etc/pacman.d/mirrorlist #1> /dev/null
-  pacman -Su --noconfirm 1> /dev/null
-  
-  _msg 'Checking installer Deppendencies'
-  pacman -S --noconfirm --needed arch-install-scripts dosfstools e2fsprogs base-devel mtools #1> /dev/null
+	_msgInfo "###   Bootstraping Installer  ###"
+
+	_msg "Time Sync"
+	timedatectl set-ntp true
+	hwclock --systohc
+	
+	_msg "Pacman Sync"
+	pacman -Sy --noconfirm --config utils/pacman_local.conf 1> /dev/null
+	
+	# _msg "Checking installer Deppendencies"
+	# pacman -S --noconfirm --needed arch-install-scripts dosfstools e2fsprogs base-devel mtools 1> /dev/null
+
+	return 0
 }
 
 ####################################################################################################
@@ -60,61 +60,114 @@ function _bootstrap() {
 ####################################################################################################
 
 function _setTarget() {
-    protectTarget=$(lsblk -no PKNAME $(findmnt -n -o SOURCE /))
-    
-    _msg 'Available Target devices:'
-    lsblk -o NAME,SIZE,TYPE,MOUNTPOINT | awk '$3 == "disk"' | grep -v $protectTarget
-    
-    echo; _msg 'Target name? ( eg. sdx )'
-    read -p '<: ' -e target
-    
-    [ ! $target ] && _msgAlert 'Target Device Required!' && exit
-    [ $target == $protectTarget ] && _msgAlert 'WTF!? This device belongs to current system!' && exit
-    targetPath="/dev/${target}"
-    [ ! -b $targetPath ] && _msgAlert 'Null device!' && exit
-    
-    echo
+	# Protect Target won't work on Live-USB installation
+	protectTarget=$(lsblk -no PKNAME $(findmnt -n -o SOURCE /))
+
+	_msg "Available Target devices:"
+	lsblk -o NAME,SIZE,TYPE,MOUNTPOINT | awk '$3 == "disk"' | grep -v $protectTarget
+
+	echo; _msg "Target name? ( eg. sdx )"
+	read -p "?: " -e target
+
+	[ "$target" == "" ] && _msgAlert "Target Device Required!" && exit 1
+	[ "$target" == "$protectTarget" ] && _msgAlert 'WTF!? This device belongs to current system!' && exit 1
+	[ ! -b "/dev/$target" ] && _msgAlert 'Null device!' && exit 1
+
+	return 0
 }
 
 function _setTargetType() {
-  _msg "Target type:"
-  _msgOk '1) SSD'
-  _msgOk '*) HDD'
-  read -p '?: ' -e targetType; echo
+	_msg "Target type:"
+	_msgOpt "1) HDD"
+	_msgOpt "*) SSD"
+	read -p "?: " -e optTargetType
+
+	case $optTargetType in
+		1) targetType="hdd" ;;
+		*) targetType="ssd" ;;
+	esac
+
+	return 0
 }
 
 function _setKeepHome() {
-  _msg 'Keep Home Partition and Update Goylin? [y/N]'
-  read -p '?: ' -e keepHome; echo
+	_msg "Keep Home Partition and Update Goylin? (y/N)"
+	read -p "?: " -e optKeepHome
+	[[ "$optKeepHome" == "y" || "$optKeepHome" == "Y" ]] && keepHome=1 
+
+	return 0
 }
 
 function _setCPU() {
-  _msg 'ucode CPU:'
-  _msgOk '1) AMD'
-  _msgOk '*) Intel'
-  read -p '?: ' -e cpuType; echo
+	_msg "CPU:"
+	_msgOpt "1) AMD"
+	_msgOpt "*) Intel"
+	read -p '?: ' -e optCpuType
+
+	case $optCpuType in
+		1) cpuType="amd" ;;
+		*) cpuType="intel" ;;
+	esac
+
+	return 0
 }
 
 function _setProfile() {
-  _msg 'Profile:'
-  _msgOk '1) Administrative'
-  _msgOk '2) Cinema'
-  _msgOk '3) Geo'
-  _msgOk '4) Radio'
-  _msgOk '5) Gremio'
-  _msgOk '6) Writer'
-  _msgOk '7) Library'
-  _msgOk '8) Laptop'
-  _msgOk '*) Base'
-  read -p '?: ' -e profile; echo
+	_msg "Profile:"
+	_msgOpt "1) Administrative"
+	_msgOpt "2) Cinema"
+	_msgOpt "3) Geotec"
+	_msgOpt "4) Radio"
+	_msgOpt "5) Gremio"
+	_msgOpt "6) Library"
+	_msgOpt "7) Laptop"
+	_msgOpt "*) Base"
+	read -p '?: ' -e optProfile
+
+  	case $optProfile in
+		1) profile="adm" ;;
+		2) profile="cine" ;;
+		3) profile="geo" ;;
+		4) profile="radio" ;;
+		5) profile="gremio" ;;
+		6) profile="lib" ;;
+		7) profile="laptop" ;;
+		*) profile="base" ;;
+	esac
+
+	return 0
+}
+
+function _setConfirm() {
+	_msgAlert "Confirm settings: (y/N)"
+	_msgOpt "Target: $target"
+	_msgOpt "Type: $targetType"
+	_msgOpt "KeepHome: $keepHome"
+	_msgOpt "CPU: $cpuType"
+	_msgOpt "Profile: $profile"
+	
+	_msgOk "Confirm (y/N)"
+	read -p "?: " -e setConfirm
+	[ ! "$setConfirm" == "y" ] && _msgAlert "Aborting" && exit 1
+
+	return 0
 }
 
 function _setup() {
-  _setTarget
-  _setTargetType
-  _setKeepHome
-  _setCPU
-  _setProfile 
+	_msgInfo "###   Install settings  ###"
+
+	_setTarget
+
+	if [ "$useDefaultConf" -eq 0 ]; then
+		_setTargetType
+		_setKeepHome
+		_setCPU
+		_setProfile
+	else
+		_setProfile
+	fi
+
+	_setConfirm
 }
 
 ####################################################################################################
@@ -122,151 +175,177 @@ function _setup() {
 ####################################################################################################
 
 function _prepUmount() {
-  _msg "Unmounting Target"
-  sync
-  [[ $(mount | grep "/mnt") ]] && umount -Rl /mnt
-  [[ $(mount | grep "${target}1") ]] && umount -Rl "/dev/${target}1"
-  [[ $(mount | grep "${target}2") ]] && umount -Rl "/dev/${target}2"
-  [[ $(mount | grep "${target}3") ]] && umount -Rl "/dev/${target}3"
-  [[ $(mount | grep "${target}4") ]] && umount -Rl "/dev/${target}4"
-  swapoff -a
+	_msg "Unmounting Target"
+	sync
+	[[ $(mount | grep "/mnt") ]] && umount -lR /mnt
+	[[ $(mount | grep "${target}1") ]] && umount -lR "/dev/${target}1"
+	[[ $(mount | grep "${target}2") ]] && umount -lR "/dev/${target}2"
+	[[ $(mount | grep "${target}3") ]] && umount -lR "/dev/${target}3"
+	[[ $(mount | grep "${target}4") ]] && umount -lR "/dev/${target}4"
+	[[ $(swapon | grep "${target}2") ]] && swapoff "/dev/${target}2"
+	sync
 }
 
 function _prepWipe(){
-  _msg "Wiping target"
-  wipefs -af $targetPath
-  dd if=/dev/zero of=$targetPath bs=1M count=1024
-  sync
+	_msg "Wiping target"
+
+	wipefs -af /dev/$target* 1> /dev/null
+	dd if=/dev/zero of=/dev/$target bs=1M count=1024
+}
+
+function _prepPartBIOS() {
+	_msg 'Partitioning (BIOS) (SWAP; /; /boot; /home)'
+
+	(
+		echo 'o'
+		echo 'n'; echo 'p'; echo; echo; echo $grubSize; echo 'a';
+		echo 'n'; echo 'p'; echo; echo; echo $swapSize
+		echo 't'; echo '2'; echo 'swap'
+		echo 'n'; echo 'p'; echo; echo; echo $systemSize
+		echo 'n'; echo 'p'; echo; echo
+		echo 'w';
+	) | fdisk /dev/$target 1> /dev/null
+}
+
+function _prepFormat() {
+	_msg "Formating"
+
+	mkfs.ext4 -q "/dev/${target}1"
+	mkfs.ext4 -q "/dev/${target}3"
+	mkfs.ext4 -q "/dev/${target}4"
+	mkswap -q "/dev/${target}2"
+}
+
+function _prepFormatKeepHome() {
+	_msg "Formating - Keeping /home"
+	
+	mkfs.ext4 -q "/dev/${target}1"
+	mkfs.ext4 -q "/dev/${target}3"
+	mkswap -q "/dev/${target}2"
 }
 
 function _prepMount() {
-  _msg 'Mounting'
-  swapon "${targetPath}2"
-  mount "${targetPath}3" /mnt
-  mkdir -p /mnt/{boot,home}
-  mount "${targetPath}4" /mnt/home
-  mount "${targetPath}1" /mnt/boot
+	_msg 'Mounting'
+
+	mount /dev/${target}3 /mnt
+	mkdir -p /mnt/{boot,home}
+
+	mount /dev/${target}4 /mnt/home
+	mount /dev/${target}1 /mnt/boot
+
+	swapon /dev/${target}2
+
+	return 0
 }
 
-function _prepGRUB() {
-  grubSize='+250M'
-  swapSize='+16G'
-  systemSize='+50G'
-
-  _msg 'Partitioning (BIOS) (SWAP; /; /boot; /home)'
-  (
-    echo 'o'
-    echo 'n'; echo 'p'; echo; echo; echo $grubSize; echo 'a';
-    echo 'n'; echo 'p'; echo; echo; echo $swapSize
-    echo 't'; echo '2'; echo 'swap'
-    echo 'n'; echo 'p'; echo; echo; echo $systemSize
-    echo 'n'; echo 'p'; echo; echo
-    echo 'w';
-  ) | fdisk $targetPath 1> /dev/null
-  sync
-
-  _msg "Formating (ext4)"
-  mkfs.ext4 -F "${targetPath}1" 1> /dev/null
-  mkfs.ext4 -F "${targetPath}3" 1> /dev/null
-  mkfs.ext4 -F "${targetPath}4" 1> /dev/null
-  mkswap "${targetPath}2" 1> /dev/null
-  sync
-
-  _prepMount
-}
-
-function _prepUpdate() {
-  _msg "Formating (ext4) - Keeping /home"
-  mkfs.ext4 -F "${targetPath}1" 1> /dev/null
-  mkfs.ext4 -F "${targetPath}3" 1> /dev/null
-  mkswap "${targetPath}2" 1> /dev/null
-  sync
-
-  _prepMount
+function _prepCleanHomeDots () {
+	_msgInfo '###   Cleaning User Dots   ###'
+	[ -d /mnt/home/lost+found ] && rm -rfv /mnt/home/lost+found
+	for userInHome in /mnt/home/*; do
+		userHome=$(basename $userInHome)
+		_msg $userHome
+    	rm -rf /mnt/home/${userHome}/.*
+		rm -f /mnt/home/${userHome}/Desktop/*.desktop
+	done
 }
 
 function _prepTarget() {
-  echo; _msgInfo '###   Preparing Target   ###'; echo
-  _prepUmount
-  if [ "$keepHome" == 'y' ] || [ "$keepHome" == 'Y' ]; then
-    _prepUpdate
-  else
-    _prepWipe
-    _prepGRUB
-  fi
+	_msgInfo "###   Preparing Target   ###"
+
+	_prepUmount
+	if [ $keepHome -eq 1 ]; then
+		_prepFormatKeepHome
+	else
+		_prepWipe
+		_prepPartBIOS
+		_prepFormat
+	fi
+	_prepMount
+	[ $keepHome -eq 1 ] && _prepCleanHomeDots
+
+	return 0
 }
 
 ####################################################################################################
 ###                                  System Install                                              ###
 ####################################################################################################
 
-function _installCore() {
-  echo; _msgInfo '###   Instaling Goylin   ###'; echo
-  
-  _msg 'Pacstraping'
-  pacstrap -K -C root/etc/pacman.conf /mnt base base-devel linux linux-firmware mkinitcpio 1> /dev/null
-  sync
+function _instPacstrap() {
+	_msg "Pacstraping"
 
-  _msg 'Installing /gchroot'
-  install -Dm 700 -t /mnt gchroot.sh
-  sync
-  sed -i "s/_TARGET_/${target}/g" /mnt/gchroot.sh
-  sed -i "s/_TARGETTYPE_/${targetType}/g" /mnt/gchroot.sh
-  sed -i "s/_PROFILE_/${profile}/g" /mnt/gchroot.sh
-  sed -i "s/_CPUTYPE_/${cpuType}/g" /mnt/gchroot.sh
-  sed -i "s/_ROOTPASSWD_/${gRootPasswd}/g" /mnt/gchroot.sh
-  sed -i "s/_ADMINPASSWD_/${gAdminPasswd}/g" /mnt/gchroot.sh
-  sed -i "s/_RADIOPASSWD_/${gRadioPasswd}/g" /mnt/gchroot.sh
-  sed -i "s/_GREMIOPASSWD_/${gGremioPasswd}/g" /mnt/gchroot.sh
-  
-  _msg 'Installing /etc'
-  install -Dm 644 -t /mnt/etc root/etc/hostname
-  install -Dm 644 -t /mnt/etc root/etc/hosts
-  install -Dm 644 -t /mnt/etc root/etc/locale.conf
-  install -Dm 644 -t /mnt/etc root/etc/locale.gen
-  install -Dm 644 -t /mnt/etc root/etc/pacman.conf
-  sync
-
-  _msg 'Generating fstab'
-  genfstab -U /mnt > /mnt/etc/fstab
-  if [ "$targetType" == '1' ]; then
-    sed -i "s/relatime/noatime/g" /mnt/etc/fstab
-  fi
+	pacstrap -K -C utils/pacman_local.conf /mnt base linux linux-firmware mkinitcpio grub 1> /dev/null
 }
 
-function _chroot() {
-  echo; _msgOk '###   CHROOT   ###'
-  arch-chroot /mnt /gchroot.sh
-  rm -f /mnt/gchroot.sh
-  echo
+_instFiles() {
+	_msg "Installing files"
+
+	install -Dm 0700 -t /mnt/gChroot gChroot.sh
+	install -Dm 0700 -t /mnt/gChroot/utils utils/gMsg.sh
+
+	echo "
+#!/bin/bash
+target="$target"
+targetType="$targetType"
+profile="$profile"
+cpuType="$cpuType"
+gRootPasswd="$gRootPasswd"
+gAdminPasswd="$gAdminPasswd"
+gRadioPasswd="$gRadioPasswd"
+gGremioPasswd="$gGremioPasswd"
+keepHome="$keepHome"
+" >> /mnt/gChroot/utils/chrConfig.sh
+
+	install -Dm 0644 -t /mnt/etc root/etc/hostname
+	install -Dm 0644 -t /mnt/etc root/etc/hosts
+	install -Dm 0644 -t /mnt/etc root/etc/locale.conf
+	install -Dm 0644 -t /mnt/etc root/etc/locale.gen
+
+	install -Dm 0644 -t /mnt/etc utils/pacman_local.conf
+	mv -f /mnt/etc/pacman_local.conf /mnt/etc/pacman.conf
+}
+
+_instFstab() {
+	_msg "Generating fstab"
+
+	genfstab -U /mnt >> /mnt/etc/fstab
+	sed -i '/^\/swapfile/d' /mnt/etc/fstab
+	if [ "$targetType" == "ssd" ]; then
+		sed -i "s/relatime/noatime/g" /mnt/etc/fstab
+	fi
+}
+
+_instChroot() {
+	_msgOk "###   CHROOT   ###"
+
+	arch-chroot /mnt /gChroot/gChroot.sh
+
+	_msg "Cleaning installer files"
+	rm -r /mnt/gChroot
+}
+
+function _installGoylin() {
+	_msgInfo "###   Instaling Goylin   ###"
+
+	_instPacstrap
+	_instFiles
+	_instFstab
+	_instChroot
 }
 
 ####################################################################################################
 ###                                       INIT                                                   ###
 ####################################################################################################
 
-[ "$(id -u)" -ne 0 ] && _msgAlert "Run with root permissions: 'sudo !!'" && echo && exit
-
-goylinVersion="24.1"
-source gpasswd.sh
-
-timedatectl set-ntp true
-hwclock --systohc
-
-# while getopts 'b' inFlag; do
-#   case "$inFlag" in
-#     b) _bootstrap;;
-#   esac
-# done
+[ "$(id -u)" -ne 0 ] && _msgAlert "Run with root permissions: 'sudo !!'" && exit
 
 _msgWelcome
+
+[ "$skipBootstrap" -eq 0 ] && _bootstrap
+
 _setup
 _prepTarget
-_installCore
-_chroot
-_prepUmount
+_installGoylin
 
-sync
-echo; _msgOk 'Goylin is Installed!'
-_msgOk '\,,/_(o.O)_\,,/'; echo
-exit 1
+sync && _prepUmount
+_msgDone
+exit 0

@@ -1,37 +1,16 @@
-[Compositing]
-LatencyPolicy=Low
-
 [Desktops]
-Number=1
+Number=2
 Rows=1
 
-[Effect-blur]
-BlurStrength=2
-NoiseStrength=1
-
-[Effect-kwin4_effect_login]
-FadeToBlack=true
-
-[Effect-kwin4_effect_translucency]
-Dialogs=95
-Menus=95
-MoveResize=100
+[Effect-diminactive]
+Strength=5
 
 [Plugins]
-blurEnabled=false
-contrastEnabled=false
-kwin4_effect_dimscreenEnabled=true
-kwin4_effect_translucencyEnabled=true
-
-[ScreenEdges]
-RemainActiveOnFullscreen=true
+dimscreenEnabled=true
+translucencyEnabled=true
 
 [Tiling]
 padding=4
-tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
-[org.kde.kdecoration2]
-BorderSize=None
-BorderSizeAuto=false
-ButtonsOnLeft=
-ButtonsOnRight=IAX
+[Xwayland]
+Scale=1

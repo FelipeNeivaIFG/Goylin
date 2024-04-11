@@ -4,56 +4,62 @@ pkgdesc='Goylin: Core'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.1
+pkgver=24.2
 pkgrel=1
 arch=('x86_64')
 
 source=(
-    'sudoers' 'os-release' 'grub' 'issue'
-    'motd' 'pacman.conf' 'vconsole.conf' 'sleep.conf'
-    'timesyncd.conf' 'goylin.service' 'gSysStartUp' '.bashrc'
+	'sudoers' 'os-release' 'issue' '.bashrc'
+	'motd' 'pacman.conf' 'gSysStartUp' 'grub'
+	'goylin.service' 'vconsole.conf' 'timesyncd.conf' 'plyGoylin.plymouth'
+	'plymouthd.defaults' 'goylin.tar'
+
 )
 
+noextract=('goylin.tar')
+
 md5sums=(
-    'SKIP' 'SKIP' 'SKIP' 'SKIP'
-    'SKIP' 'SKIP' 'SKIP' 'SKIP'
-    'SKIP' 'SKIP' 'SKIP' 'SKIP'
+	'SKIP' 'SKIP' 'SKIP' 'SKIP'
+	'SKIP' 'SKIP' 'SKIP' 'SKIP'
+	'SKIP' 'SKIP' 'SKIP' 'SKIP'
+	'SKIP' 'SKIP'
 )
 
 install='pkg.install'
 
 depends=(
-    'base' 'linux' 'linux-firmware' 'mkinitcpio' 'base-devel'
-    #
-    'grub' 'sudo' 'bash-completion' 'networkmanager'
-    'openssh' 'rsync' 'git' 'unrar'
-    'tldr' 'nano' 'wget' 'curl'
-    'vim' 'man-db' 'man-pages' 'broadcom-wl'
-    'dialog' 'zip' 'unzip' 'p7zip'
-    # EXTRAS
-    'hdf5-openmpi' 'ffmpeg'
+	'base' 'linux' 'linux-firmware' 'linux-headers'
+	'terminus-font' 'base-devel' 'vim' 'grub'
+	'sudo' 'bash-completion' 'networkmanager' 'openssh'
+	'rsync' 'git' 'tldr' 'nano' 'wget' 'curl'
+	'man-db' 'man-pages' 'broadcom-wl' 'zsh'
+	'zsh-completions' 'mkinitcpio' 'os-prober' 'mtools'
+	'dosfstools' 'dialog' 'plymouth' 'wireless-regdb'
+	'nmap' 'dnsutils' 'python-dnspython' 'b43-firmware'
 )
 
 package() {
-    echo; echo "   >>   Config  files   <<"; echo
+	install -Dm 440 -t ${pkgdir}/etc/ sudoers
+	install -Dm 644 -t ${pkgdir}/etc/ issue
+	install -Dm 644 -t ${pkgdir}/etc/ motd
+	install -Dm 644 -t ${pkgdir}/etc/ vconsole.conf
 
-    install -vDm 440 -t ${pkgdir}/etc/ sudoers
-    install -vDm 644 -t ${pkgdir}/etc/ issue
-    install -vDm 644 -t ${pkgdir}/etc/ motd
-    install -vDm 644 -t ${pkgdir}/etc/ pacman.conf
-    install -vDm 644 -t ${pkgdir}/etc/ vconsole.conf
+	install -Dm 644 -t ${pkgdir}/etc/default/ grub
 
-    install -vDm 644 -t ${pkgdir}/etc/skel/ .bashrc
-    
-    install -vDm 644 -t ${pkgdir}/etc/default/ grub
+	install -Dm 644 -t ${pkgdir}/etc/skel/ .bashrc
 
-    install -vDm 644 -t ${pkgdir}/etc/systemd/ sleep.conf
-    install -vDm 644 -t ${pkgdir}/etc/systemd/ timesyncd.conf
+	install -Dm 644 -t ${pkgdir}/etc/systemd/system/ goylin.service
 
-    install -vDm 644 -t ${pkgdir}/etc/systemd/system/ goylin.service
-    install -vDm 755 -t ${pkgdir}/usr/bin/ gSysStartUp
+	install -Dm 755 -t ${pkgdir}/usr/bin/ gSysStartUp
 
-    install -vDm 644 -t ${pkgdir}/usr/lib/ os-release
+	install -Dm 644 -t ${pkgdir}/usr/lib/ os-release
 
-    echo; echo "   >>   End of file installation   <<"; echo
+	install -Dm 644 -t ${pkgdir}/etc/systemd/ timesyncd.conf
+
+	install -Dm 644 -t ${pkgdir}/usr/share/plymouth/themes/plyGoylin/ plyGoylin.plymouth
+	install -Dm 644 -t ${pkgdir}/usr/share/plymouth/ plymouthd.defaults
+
+	install -Dm 644 -t ${pkgdir}/usr/share/goylin/ goylin.tar
+	tar xf ${pkgdir}/usr/share/goylin/goylin.tar --overwrite --directory=${pkgdir}/usr/share/goylin/
+	rm ${pkgdir}/usr/share/goylin/goylin.tar
 }

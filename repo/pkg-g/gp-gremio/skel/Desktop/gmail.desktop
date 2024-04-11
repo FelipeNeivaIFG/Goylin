@@ -1,6 +1,5 @@
 [Desktop Entry]
-Icon=gnumeric-link-email
-Name[pt_BR]=Gmail
+Icon=kube-mail
 Name=Gmail
 Type=Link
 URL[$e]=https://mail.google.com
