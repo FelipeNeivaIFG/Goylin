@@ -5,7 +5,7 @@ url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
 pkgver=24.2
-pkgrel=1
+pkgrel=3
 arch=('x86_64')
 
 source=('skel.tar')
@@ -15,7 +15,7 @@ noextract=('skel.tar')
 md5sums=('SKIP')
 
 depends=(
-	'google-earth-pro' 'qgis' 'marble'
+	'google-earth-pro' 'qgis' 'marble' 'gapp-geo-sisvar'
 	# EXTRAS
 	'fcgi' 'gpsbabel' 'marble-maps' 'python-yaml'
 	'python-jinja' 'python-gdal' 'python-psycopg2' 'python-pygments'

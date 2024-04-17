@@ -1,0 +1,27 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='gapp-geo-sisvar'
+pkgdesc='Goylin: Geotecnologia App Sisvar'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group=('goylin')
+
+pkgver=24.2
+pkgrel=1
+arch=('x86_64')
+
+source=('sisvar.tar' 'sisvar.desktop' 'sisvaricon.png')
+
+noextract=('sisvar.tar')
+
+md5sums=('SKIP' 'SKIP' 'SKIP')
+
+depends=('wine' 'wine-mono')
+
+package() {
+	# mkdir -vpm 755 ${pkgdir}/etc/skel/.sisvar
+	install -vDm 755 -t ${pkgdir}/etc/skel/.sisvar sisvar.tar
+	tar vxf ${pkgdir}/etc/skel/.sisvar/sisvar.tar --overwrite --directory=${pkgdir}/etc/skel/.sisvar
+	rm -v ${pkgdir}/etc/skel/.sisvar/sisvar.tar
+
+	install -vDm 644 -t ${pkgdir}/usr/share/applications sisvar.desktop
+	install -vDm 644 -t ${pkgdir}/usr/share/icons sisvaricon.png
+}
