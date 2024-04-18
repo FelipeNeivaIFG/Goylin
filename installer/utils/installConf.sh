@@ -9,3 +9,4 @@ keepHome=0
 grubSize="+1G"
 swapSize="+16G"
 systemSize="+50G"
+isLiveUSB=0

@@ -49,8 +49,8 @@ function _bootstrap() {
 	_msg "Pacman Sync"
 	pacman -Sy --noconfirm --config utils/pacman_local.conf 1> /dev/null
 	
-	# _msg "Checking installer Deppendencies"
-	# pacman -S --noconfirm --needed arch-install-scripts dosfstools e2fsprogs base-devel mtools 1> /dev/null
+	_msg "Checking installer Deppendencies"
+	pacman -S --noconfirm --needed arch-install-scripts dosfstools e2fsprogs base-devel mtools 1> /dev/null
 
 	return 0
 }
@@ -60,7 +60,6 @@ function _bootstrap() {
 ####################################################################################################
 
 function _setTarget() {
-	# Protect Target won't work on Live-USB installation
 	protectTarget=$(lsblk -no PKNAME $(findmnt -n -o SOURCE /))
 
 	_msg "Available Target devices:"
@@ -71,6 +70,19 @@ function _setTarget() {
 
 	[ "$target" == "" ] && _msgAlert "Target Device Required!" && exit 1
 	[ "$target" == "$protectTarget" ] && _msgAlert 'WTF!? This device belongs to current system!' && exit 1
+	[ ! -b "/dev/$target" ] && _msgAlert 'Null device!' && exit 1
+
+	return 0
+}
+
+function _setTargetLiveUSB() {
+	_msg "Available Target devices:"
+	lsblk -o NAME,SIZE,TYPE,MOUNTPOINT | awk '$3 == "disk"'
+
+	echo; _msg "Target name? ( eg. sdx )"
+	read -p "?: " -e target
+
+	[ "$target" == "" ] && _msgAlert "Target Device Required!" && exit 1
 	[ ! -b "/dev/$target" ] && _msgAlert 'Null device!' && exit 1
 
 	return 0
@@ -156,7 +168,7 @@ function _setConfirm() {
 function _setup() {
 	_msgInfo "###   Install settings  ###"
 
-	_setTarget
+	[ $isLiveUSB -eq 0 ] && _setTarget || _setTargetLiveUSB
 
 	if [ "$useDefaultConf" -eq 0 ]; then
 		_setTargetType
@@ -240,7 +252,9 @@ function _prepMount() {
 
 function _prepCleanHomeDots () {
 	_msgInfo '###   Cleaning User Dots   ###'
+
 	[ -d /mnt/home/lost+found ] && rm -rfv /mnt/home/lost+found
+
 	for userInHome in /mnt/home/*; do
 		userHome=$(basename $userInHome)
 		_msg $userHome
@@ -346,6 +360,7 @@ _setup
 _prepTarget
 _installGoylin
 
-sync && _prepUmount
+sync
+_prepUmount
 _msgDone
 exit 0
