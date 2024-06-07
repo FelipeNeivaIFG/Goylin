@@ -4,23 +4,32 @@ pkgdesc='Goylin: Intel'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group='goylin'
 
-pkgver=24.2
+pkgver=24.3
 pkgrel=1
 arch=('x86_64')
 
-source=('mkinitcpio.conf' 'i915.conf')
+source=('mkinitcpio.conf')
 
-md5sums=('SKIP' 'SKIP')
+md5sums=('SKIP')
 
 depends=(
-	'intel-ucode' 'mesa' 'lib32-mesa' 'vulkan-intel'
-	'onevpl-intel-gpu' 'lib32-vulkan-intel' 'intel-media-driver' 'libva-intel-driver'
-	'vulkan-mesa-layers' 'lib32-vulkan-mesa-layers' 'intel-media-sdk' 'intel-compute-runtime'
+	'intel-ucode'
+	'mesa'
+	'lib32-mesa'
+	'vulkan-intel'
+	'onevpl-intel-gpu'
+	'lib32-vulkan-intel'
+	'intel-media-driver'
+	'libva-intel-driver'
+	'vulkan-mesa-layers'
+	'lib32-vulkan-mesa-layers'
+	'intel-media-sdk'
+	'intel-compute-runtime'
 	'lib32-vulkan-icd-loader'
-	# 'lib32-mesa-amber' 'mesa-amber' 'xf86-video-intel'
 )
+
+install='pkg.install'
 
 package() {
 	install -Dm 644 -t ${pkgdir}/etc/ mkinitcpio.conf
-	install -Dm 644 -t ${pkgdir}/etc/modprobe.d/ i915.conf
 }

@@ -4,7 +4,7 @@ pkgdesc='Goylin: Profile - Cinema'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.2
+pkgver=24.3
 pkgrel=1
 arch=('x86_64')
 
@@ -13,6 +13,8 @@ source=('skel.tar')
 noextract=('skel.tar')
 
 md5sums=('SKIP')
+
+install='pkg.install'
 
 package() {
 	install -Dm 644 -t ${pkgdir}/etc/skel/ skel.tar

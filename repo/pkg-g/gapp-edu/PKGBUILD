@@ -12,5 +12,5 @@ depends=(
     'scratch' 'portugol-studio-bin' 'kbruch' 'geogebra'
     'kalzium' 'kgeography' 'duolingo-desktop-bin' 'step'
     'kstars' 'ktouch' 'minuet' 'nootka'
-    'leocad'
+    'leocad' 'magicavoxel'
 )

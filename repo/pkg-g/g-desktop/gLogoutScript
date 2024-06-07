@@ -1,3 +1,9 @@
 #!/bin/bash
 
 rm -rf /home/guest/.*
+chmod a+rw -R /home/guest/*
+chmod a+rwx -R /home/shared/*
+
+# TODO: Test & Fix
+# find /home/guest/. -name '.*' -not -path './.local/share/fonts' -exec rm -r {} +
+# cleanUpDirList=find /home/guest/. -type d -name '.*' -not -name '.wine' -not -path './.local/share/fonts' # -exec rm -r {}

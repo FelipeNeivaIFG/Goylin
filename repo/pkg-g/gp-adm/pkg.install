@@ -1,0 +1,13 @@
+#!/bin/bash
+
+post_install() {
+	chattr -i /usr/lib/os-release
+	sed -i "s/core/administrative/g" /usr/lib/os-release
+	chattr +i /usr/lib/os-release
+}
+
+post_upgrade() {
+	chattr -i /usr/lib/os-release
+	sed -i "s/core/administrative/g" /usr/lib/os-release
+	chattr +i /usr/lib/os-release
+}

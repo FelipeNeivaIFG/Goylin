@@ -41,6 +41,7 @@ function _msgWelcome() {
 	clear; echo
 	_msgLogo
 	_msg "Version: ${goylinVersion}"
+	_msg "Name: ${goylinVName}"
 	_msgOk "Goylin Installer"
 }
 

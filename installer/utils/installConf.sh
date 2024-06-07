@@ -1,6 +1,7 @@
 #!/bin/bash
 
-goylinVersion="24.2"
+goylinVersion="24.3"
+goylinVName="Papilio"
 skipBootstrap=0
 useDefaultConf=0
 targetType="ssd"

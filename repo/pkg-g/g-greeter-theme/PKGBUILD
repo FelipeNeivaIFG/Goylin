@@ -1,0 +1,42 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='g-greeter-theme'
+srcver=2.0.3
+pkgver=24.3
+pkgrel=1
+pkgdesc='A Goylin slick-looking LightDM greeter'
+arch=('x86_64')
+url="https://github.com/linuxmint/slick-greeter"
+license=('GPL3')
+
+depends=(
+  'cairo' 'freetype2' 'gtk3' 'libcanberra' 'libxext' 'lightdm' 'pixman'
+  'python' 'xorg-server' 'xapp' 'gtk2'
+)
+
+makedepends=('intltool' 'vala' 'gnome-common')
+
+source=('g-greeter-2.0.3.tar.gz' 'pt_BR.po')
+
+sha512sums=('SKIP' 'SKIP')
+b2sums=('SKIP' 'SKIP')
+
+prepare() {
+	cp -f pt_BR.po slick-greeter-${srcver}/po
+	cd slick-greeter-${srcver}
+	NOCONFIGURE=1 ./autogen.sh
+}
+
+build() {
+  	cd slick-greeter-${srcver}
+	./configure --prefix=/usr --sysconfdir=/etc --sbindir=/usr/bin \
+             --libexecdir=/usr/lib/lightdm
+	make
+}
+
+package() {
+	cd slick-greeter-${srcver}
+	make DESTDIR="${pkgdir}" install
+	# adjust launcher name
+	mv $pkgdir/usr/share/xgreeters/slick-greeter.desktop \
+    $pkgdir/usr/share/xgreeters/goylin-lightdm-greeter.desktop
+}

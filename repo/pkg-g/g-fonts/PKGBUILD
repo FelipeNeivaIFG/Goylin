@@ -1,15 +1,16 @@
 # Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
-pkgname="g-fonts"
-pkgdesc="Goylin: Fonts"
-url="https://github.com/FelipeNeivaIFG/Goylin"
-group=("goylin")
+pkgname='g-fonts'
+pkgdesc='Goylin: Fonts'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group=('goylin')
 
-pkgver=24.2
+pkgver=24.3
 pkgrel=1
-arch=("x86_64")
+arch=('x86_64')
 
 depends=(
-	"noto-fonts" "noto-fonts-emoji" "noto-fonts-extra" "adobe-source-code-pro-fonts"
-	"adobe-source-sans-fonts" "ttf-ms-fonts" "gnu-free-fonts" "adobe-source-serif-fonts"
-	"ttf-dejavu"
+    'adobe-source-sans-fonts' 'ttf-ms-fonts' 'adobe-source-serif-fonts' 'ttf-dejavu-nerd'
+    'ttf-liberation' 'ttf-carlito' 'ttf-hack-nerd' 'otf-hermit-nerd'
+    'adobe-source-code-pro-fonts' 'ttf-roboto-mono-nerd' 'ttf-droid' 'ttf-ms-fonts'
+    'ttf-dejavu' 'gnu-free-fonts'
 )

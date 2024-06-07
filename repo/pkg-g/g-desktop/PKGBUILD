@@ -4,20 +4,18 @@ pkgdesc='Goylin: Desktop'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.2
+pkgver=24.3
 pkgrel=1
 arch=('x86_64')
 
 source=(
 	'skel.tar' 'user-dirs.defaults' 'goylin.tar' 'gWelcome'
-	'lightdm.conf' 'slick-greeter.conf' 'lightdm' 'gLogoutScript'
-	'xprofile' '00-keyboard.conf' 'sleep.conf' 'state'
+	'gLogoutScript' 'xprofile' '00-keyboard.conf'
 )
 
 md5sums=(
 	'SKIP' 'SKIP' 'SKIP' 'SKIP'
-	'SKIP' 'SKIP' 'SKIP' 'SKIP'
-	'SKIP' 'SKIP' 'SKIP' 'SKIP'
+	'SKIP' 'SKIP' 'SKIP'
 )
 
 install='pkg.install'
@@ -25,33 +23,18 @@ install='pkg.install'
 noextract=('goylin.tar' 'skel.tar')
 
 depends=(
-	'xdg-user-dirs' 'pam' 'xdg-desktop-portal' 'kitty'
-	# GREETER
-	'lightdm' 'gc-greeter' 'numlockx'
-	# WAYLAND
-	'wayland' 'lib32-wayland' 'xorg-xwayland'
-	# AUDIO
-	'pipewire' 'lib32-pipewire' 'pipewire-jack' 'lib32-pipewire-jack'
-	'wireplumber' 'pipewire-audio' 'pipewire-alsa' 'pipewire-zeroconf'
-	'pipewire-pulse'
-	# TABLET
-	'opentabletdriver'
-	# 'huiontablet'
+	'xdg-user-dirs' 'xdg-desktop-portal' 'unarchiver' 'ark'
+	'gvfs' 'gvfs-afc' 'gvfs-goa' 'gvfs-gphoto2'
+	'gvfs-mtp' 'gvfs-nfs' 'gvfs-google' 'gvfs-smb'
+	'gvfs-wsdd' 'gvfs-onedrive' 'libnotify'
+	'cups' 'cups-browsed' 'libusb' 'ipp-usb' 'xdg-utils'
+	'bluez' 'bluez-obex' 'libsecret'
 )
 
 package() {
 	install -Dm 644 -t ${pkgdir}/etc/ xprofile
 
-	install -Dm 644 -t ${pkgdir}/etc/lightdm/ lightdm.conf
-	install -Dm 644 -t ${pkgdir}/etc/lightdm/ slick-greeter.conf
-	install -Dm 644 -t ${pkgdir}/var/lib/lightdm/.cache/slick-greeter state
-	chmod 1770 ${pkgdir}/var/lib/lightdm/
-	
-	install -Dm 644 -t ${pkgdir}/etc/pam.d/ lightdm
-
 	install -Dm 644 -t ${pkgdir}/etc/xdg/ user-dirs.defaults
-
-	install -Dm 644 -t ${pkgdir}/etc/systemd/ sleep.conf
 
 	install -Dm 644 -t ${pkgdir}/etc/X11/xorg.conf.d/ 00-keyboard.conf
 

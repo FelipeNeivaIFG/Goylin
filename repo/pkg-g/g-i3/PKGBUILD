@@ -1,0 +1,32 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='g-i3'
+pkgdesc='Goylin: i3'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group=('goylin')
+
+pkgver=24.3
+pkgrel=1
+arch=('x86_64')
+
+source=('skel.tar' 'gi3Theme')
+
+noextract=('skel.tar')
+
+md5sums=('SKIP' 'SKIP')
+
+depends=(
+    'i3-wm' 'i3status' 'dmenu' 'kitty'
+    'imagemagick' 'python-pygments' 'rofi' 'maim'
+    'picom' 'xorg-xprop' 'xorg-xwininfo' 'xwallpaper'
+    'python-pywal' 'feh' 'jpegexiforient'
+)
+
+install='pkg.install'
+
+package() {
+    install -Dm 755 -t ${pkgdir}/usr/bin/ gi3Theme
+
+    install -Dm 644 -t ${pkgdir}/etc/skel skel.tar
+    tar xf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
+    rm ${pkgdir}/etc/skel/skel.tar
+}

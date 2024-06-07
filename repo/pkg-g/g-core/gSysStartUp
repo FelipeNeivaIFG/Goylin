@@ -1,24 +1,43 @@
 #!/bin/bash
 
 plymouth change-mode --updates
+gSysUpdateMsg=""
 
 # Clock sync
-plymouth display-message --text="Sincronizando relógio..."
+gSysUpdateMsg="Sincronizando relógio..."
+echo "${gSysUpdateMsg}"
+plymouth display-message --text="${gSysUpdateMsg}"
 timedatectl set-ntp true
 hwclock --systohc
 
-# Goylin Update
-plymouth display-message --text="Buscando updates..."
+# Goylin System Update
+gSysUpdateMsg="Buscando updates..."
+echo "${gSysUpdateMsg}"
+plymouth display-message --text="${gSysUpdateMsg}"
 pacman -Sy
 
-plymouth display-message --text="Atualizando o sistema..."
+gSysUpdateMsg="Atualizando Configuração do Sistema..."
+echo "${gSysUpdateMsg}"
+plymouth display-message --text="${gSysUpdateMsg}"
 pacman -S --overwrite "*" --noconfirm --needed $(pacman -Qe | grep "^g-" | cut -d" " -f1)
 
-plymouth display-message --text="Atualizando configurações..."
+gSysUpdateMsg="Atualizando Programas..."
+echo "${gSysUpdateMsg}"
+plymouth display-message --text="${gSysUpdateMsg}"
 pacman -S --overwrite "*" --noconfirm --needed $(pacman -Qe | grep "^gapp-" | cut -d" " -f1)
 
-plymouth display-message --text="Atualizando o perfil..."
+gSysUpdateMsg="Atualizando o Perfil..."
+echo "${gSysUpdateMsg}"
+plymouth display-message --text="${gSysUpdateMsg}"
 pacman -S --overwrite "*" --noconfirm --needed $(pacman -Qe | grep "^gp-" | cut -d" " -f1)
 
-plymouth display-message --text="Atualizando pacotes..."
+# PKGs Update
+gSysUpdateMsg="Instalando Atualizações, aguarde..."
+echo "${gSysUpdateMsg}"
+plymouth display-message --text="${gSysUpdateMsg}"
 pacman -Su --noconfirm --needed
+
+# Init System
+gSysUpdateMsg="Inicializando Sistema..."
+echo "${gSysUpdateMsg}"
+plymouth display-message --text="${gSysUpdateMsg}"

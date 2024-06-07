@@ -28,8 +28,8 @@ depends=(
 
 package() {
     install -Dm 755 -t ${pkgdir}/usr/share/applications tlauncher.desktop
-    install -Dm 777 -t ${pkgdir}/opt/tlauncher tlauncher.tar
+    install -Dm 644 -t ${pkgdir}/opt/tlauncher tlauncher.tar
 	tar xf ${pkgdir}/opt/tlauncher/tlauncher.tar --overwrite --directory=${pkgdir}/opt/tlauncher/
-    chown 777 ${pkgdir}/opt/tlauncher/TLauncher-2.895.jar
+    chown 755 ${pkgdir}/opt/tlauncher/TLauncher-2.895.jar
     rm ${pkgdir}/opt/tlauncher/tlauncher.tar
 }

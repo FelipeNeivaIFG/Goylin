@@ -4,7 +4,7 @@ pkgdesc='Goylin: Base Apps'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.2
+pkgver=24.3
 pkgrel=1
 arch=('x86_64')
 
@@ -15,15 +15,31 @@ noextract=('skel.tar')
 md5sums=('SKIP')
 
 depends=(
-	'evince' 'onlyoffice-bin' 'brave-bin' 'vlc'
-	'shotwell' 'firefox' 'libreoffice-fresh' 'kate'
-	'python-spotdl' 'yt-dlp' 'elisa' 'font-manager'
-	
-	# EXTRAS
-	'aalib' 'lib32-flac' 'libcaca' 'libdvdcss'
-	'libdvdnav' 'libdvdread' 'libkate' 'lib32-libogg'
-	'lib32-libpng' 'lib32-libpulse' 'libshout' 'protobuf'
-	'sdl12-compat' 'sdl_image' 'twolame'
+	'evince' 'onlyoffice-bin' 'libreoffice-fresh'
+	'pstoedit' 'libwpg' 'sane' 'sane-airscan'
+	'unixodbc' 'libpaper' 'coin-or-mp' 'postgresql-libs'
+	'mariadb-libs' 'gtk4' 'qt6-base' 'libavif'
+	'libheif' 'libjxl' 'libraw' 'libappimage'
+	'openexr' 'qt6-imageformats' 'taglib' 'imath'
+	'brave-bin' 'shotwell' 'firefox' 'kate'
+	'elisa' 'freetube-bin' 'muffon-bin' 'vlc'
+	'aalib' 'aom' 'dav1d' 'zvbi'
+	'flac' 'fluidsynth' 'gst-plugins-base-libs' 'gstreamer'
+	'libass' 'libavc1394' 'libbluray' 'libcaca'
+	'libcdio' 'libdc1394' 'libdvdcss' 'libdvdnav'
+	'libdvdread' 'libgme' 'libgoom2' 'libjpeg-turbo'
+	'libkate' 'libmodplug' 'libmicrodns' 'libmtp'
+	'libnfs' 'libogg' 'libpng' 'libpulse'
+	'libraw1394' 'librsvg' 'libsamplerate' 'libshout'
+	'libsoxr' 'libssh2' 'libtheora' 'libtiger'
+	'libva-vdpau-driver' 'libvorbis' 'libvpx' 'lirc'
+	'live-media' 'lua-socket' 'mpg123' 'ncurses'
+	'opus' 'pcsclite' 'projectm' 'protobuf'
+	'sdl12-compat' 'sdl_image' 'speex' 'speexdsp'
+	'srt' 'systemd-libs' 'twolame' 'vcdimager'
+	'x264' 'x265' 'gst-plugins-bad' 'gst-plugins-ugly'
+	'gst-libav' 'gst-plugins-bad' 'wine' 'wine-gecko'
+	'wine-mono'
 )
 
 package() {

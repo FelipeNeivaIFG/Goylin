@@ -1,5 +1,39 @@
 #!/bin/bash
 
+_lockGFiles() {
+	chattr +i /etc/mkinitcpio.conf
+	chattr +i /etc/krb5.conf
+	chattr +i /etc/nsswitch.conf
+	chattr +i /etc/samba/smb.conf
+	chattr +i /etc/sshd/sshd_config
+	chattr +i /etc/security/pam_winbind.conf
+	chattr +i /etc/pam.d/system-auth
+	chattr +i /etc/pam.d/su
+	chattr +i /etc/polkit-1/rules.d/90-mount.rules
+	
+}
+
+_unlockGFiles() {
+	chattr -i /etc/mkinitcpio.conf
+	chattr -i /etc/krb5.conf
+	chattr -i /etc/nsswitch.conf
+	chattr -i /etc/samba/smb.conf
+	chattr -i /etc/sshd/sshd_config
+	chattr -i /etc/security/pam_winbind.conf
+	chattr -i /etc/pam.d/system-auth
+	chattr -i /etc/pam.d/su
+	chattr -i /etc/polkit-1/rules.d/90-mount.rules
+}
+
 post_install() {
-	systemctl enable systemd-timesyncd.service
+	systemctl enable avahi-daemon
+	_lockGFiles
+}
+
+pre_upgrade() {
+	_unlockGFiles
+}
+
+post_upgrade() {
+	_lockGFiles
 }

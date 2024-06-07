@@ -4,26 +4,25 @@ pkgdesc='Goylin: Geotecnologia Apps'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.2
-pkgrel=3
+pkgver=24.3
+pkgrel=1
 arch=('x86_64')
 
-source=('skel.tar')
+# source=('skel.tar')
 
-noextract=('skel.tar')
+# noextract=('skel.tar')
 
-md5sums=('SKIP')
+# md5sums=('SKIP')
 
 depends=(
-	'google-earth-pro' 'qgis' 'marble' 'gapp-geo-sisvar'
-	# EXTRAS
-	'fcgi' 'gpsbabel' 'marble-maps' 'python-yaml'
-	'python-jinja' 'python-gdal' 'python-psycopg2' 'python-pygments'
-	'python-owslib' 'python-lxml'
+	'google-earth-pro' 'qgis' 'marble' 'fcgi'
+	'gpsbabel' 'marble-maps' 'marble-common'
+	'grass'
+	#'qgis-grass-plugin'
 )
 
-package() {
-	install -Dm 644 -t ${pkgdir}/etc/skel skel.tar
-	tar xf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
-	rm ${pkgdir}/etc/skel/skel.tar
-}
+# package() {
+# 	install -Dm 644 -t ${pkgdir}/etc/skel skel.tar
+# 	tar xf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
+# 	rm ${pkgdir}/etc/skel/skel.tar
+# }

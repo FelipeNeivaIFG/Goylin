@@ -25,52 +25,59 @@ function _configSys() {
 	[ "$targetType" == "ssd" ] && _msg "SSD fstrim" && systemctl enable fstrim.timer
 
 	_msg "Bootstrap Pacman"
-	pacman --noconfirm -Syyu 1> /dev/null
+	pacman --disable-download-timeout --noconfirm -Syyu 1> /dev/null
 }
 
 function _configUsers() {
 	_msgInfo "###   Users & groups   ###"
 
+	pacman --disable-download-timeout --noconfirm --needed -S zsh 1> /dev/null
+
 	_msg "Root"
 	echo -e "${gRootPasswd}\n${gRootPasswd}" | passwd root
 
 	_msg "admin"
-	useradd -mG wheel admin
+	useradd -mG wheel admin -s /usr/bin/zsh
 	echo -e "${gAdminPasswd}\n${gAdminPasswd}" | passwd admin
 
 	_msg "guest"
 	groupadd -r nopasswdlogin
-	useradd -mG nopasswdlogin guest
+	useradd -mG nopasswdlogin guest -s /usr/bin/zsh
 	chfn -f "Público" guest
+	chmod a+rw -R /home/guest/
 
 	case $profile in
 		"radio")
 			_msg "radiovozes"
-			useradd -m radiovozzes
+			useradd -m radiovozzes # -s /usr/bin/zsh
 			echo -e "$gRadioPasswd\n$gRadioPasswd" | passwd radiovozzes
 			chfn -f "Radio Vozzes" radiovozzes
 		;;
 		"gremio")
 			_msg "gremio"
-			useradd -m gremio
+			useradd -m gremio # -s /usr/bin/zsh
 			echo -e "${gGremioPasswd}\n${gGremioPasswd}" | passwd gremio
 			chfn -f "Grêmio" gremio
 		;;
 		*) ;;
 	esac
+
+	_msg "Shared Home"
+	mkdir -vp /home/shared/
+	chmod a+r /home/shared/
 }
 
 function _configCPIO() {
 	_msgInfo "###   mkinitcpio   ###"
 
-	pacman --noconfirm --needed -S mkinitcpio 1> /dev/null
+	pacman --disable-download-timeout --noconfirm --needed -S mkinitcpio 1> /dev/null
 	mkinitcpio -P 1> /dev/null
 }
 
 function _configGRUB() {
 	_msgInfo "###   GRUB   ###"
 
-	pacman --noconfirm --needed -S grub 1> /dev/null
+	pacman --disable-download-timeout --noconfirm --needed -S grub 1> /dev/null
 	grub-install --target=i386-pc /dev/${target} 1> /dev/null
 	grub-mkconfig -o /boot/grub/grub.cfg 1> /dev/null
 }
@@ -79,197 +86,138 @@ function _configGRUB() {
 ###                                      Base PKGs                                               ###
 ####################################################################################################
 
+function _install_PKG() {
+	pacman --disable-download-timeout --noconfirm --needed --overwrite "*" -S $1 1> /dev/null
+}
+
 function _pkgCore() {
 	_msgInfo "###   Core PKGs   ###"
 
+	_msg "Core"; _install_PKG g-core
+
 	case $cpuType in
-		"intel") _msg "Intel"; pacman --noconfirm --needed --overwrite "*" -S g-intel 1> dev/null ;;
-		"amd") _msg "AMD"; pacman --noconfirm --needed --overwrite "*" -S g-amd 1> /dev/null ;;
+		"intel") _msg "Intel"; _install_PKG g-intel;;
+		"amd") _msg "AMD"; _install_PKG g-amd;;
 	esac
 
-	_msg "Core"
-	pacman --noconfirm --needed --overwrite "*" -S g-core 1> /dev/null
-	_msg "AD"
-	pacman --noconfirm --needed --overwrite "*" -S g-ad 1> /dev/null
+	_msg "AD"; _install_PKG g-ad
 
-	_msg "Desktop"
-	pacman --noconfirm --needed --overwrite "*" -S g-desktop 1> /dev/null
-	_msg "Backgrounds"
-	pacman --noconfirm --needed --overwrite "*" -S g-backgrounds 1> /dev/null
-	_msg "Fonts"
-	pacman --noconfirm --needed --overwrite "*" -S g-fonts 1> /dev/null
+	# _msg "Greeter"; _install_PKG g-greeter
+	# _msg "Desktop"; _install_PKG g-desktop
+	# _msg "Backgrounds"; _install_PKG g-backgrounds
+	# _msg "Fonts"; _install_PKG g-fonts
 
-	_msg "Plasma"
-	pacman --noconfirm --needed --overwrite "*" -S g-plasma 1> /dev/null
-	#   _msg 'i3'
-	#   pacman --noconfirm --needed --overwrite "*" -S g-i3 1> /dev/null
-	#   _msg 'hyprland'
-	#   pacman --noconfirm --needed --overwrite "*" -S g-hyprland 1> /dev/null
-	#   _msg 'gnome'
-	#   pacman --noconfirm --needed --overwrite "*" -S g-gnome 1> /dev/nullW
+	# _msg "DE: Plasma"; _install_PKG g-plasma
+	# _msg "DE: i3"; _install_PKG g-i3
 
-	_msg "App: Base"
-	pacman --noconfirm --needed --overwrite "*" -S gapp-base 1> /dev/null
-	_msg "Profile: Base"
-	pacman --noconfirm --needed --overwrite "*" -S gp-base 1> /dev/null
+	# _msg "App: Base"; _install_PKG gapp-base
+	# _msg "Profile: Base"; _install_PKG gp-base
 }
 
 ####################################################################################################
 ###                                    Profiles                                                  ###
 ####################################################################################################
 
-function _pAdm() {
-	_msgInfo "###   Profile: Administrative   ###"
+# function _pAdm() {
+# 	_msgInfo "###   Profile: Administrative   ###"
 
-	_msg "Profile"
-	pacman --noconfirm --needed --overwrite "*" -S gp-adm 1> /dev/null
+# 	_msg "Profile"; _install_PKG gp-adm
+# }
 
-	sed -i "s/core/Administrative/g" /usr/lib/os-release
-}
+# function _pCinema() {
+# 	_msgInfo "###   Profile: Cinema   ###"
 
-function _pCinema() {
-	_msgInfo "###   Profile: Cinema   ###"
+	# _msg "App: Audio"; _install_PKG gapp-audio
+	# _msg "App: Code"; _install_PKG gapp-code
+	# _msg "App: Image"; _install_PKG gapp-image
+	# _msg "App: Write"; _install_PKG gapp-write
+	# _msg "App: Game Dev"; _install_PKG gapp-gamedev
+	# _msg "App: VFX"; _install_PKG gapp-vfx
+	# _msg "App: Video"; _install_PKG gapp-video
+	# _msg "App: CLI"; _install_PKG gapp-cli
 
-	_msg "App: VFX"
-	pacman --noconfirm --needed --overwrite "*" -S gapp-vfx 1> /dev/null
-	_msg "App: Audio"
-	pacman --noconfirm --needed --overwrite "*" -S gapp-audio 1> /dev/null
-	_msg "App: Image"
-	pacman --noconfirm --needed --overwrite "*" -S gapp-image 1> /dev/null
-	_msg "App: Video"
-	pacman --noconfirm --needed --overwrite "*" -S gapp-video 1> /dev/null
-	_msg "App: Write"
-	pacman --noconfirm --needed --overwrite "*" -S gapp-write 1> /dev/null
-	_msg "App: Code"
-	pacman --noconfirm --needed --overwrite "*" -S gapp-code 1> /dev/null
-	_msg "App: GameDev"
-	pacman --noconfirm --needed --overwrite "*" -S gapp-gameDev 1> /dev/null
+	# _msg "Profile"; _install_PKG gp-cinema
+# }
 
-	_msg "Profile"
-	pacman --noconfirm --needed --overwrite "*" -S gp-cinema 1> /dev/null
+# function _pGeo() {
+# 	_msgInfo "###   Profile: Geo   ###"
 
-	sed -i "s/core/cinema/g" /usr/lib/os-release
-	sed -i 's/goylin.desktop/goylindark.desktop/g' /etc/xdg/kdeglobals
-}
+# 	_msg "App: Cad"; _install_PKG gapp-cad
+# 	_msg "App: Geo"; _install_PKG gapp-geo
 
-function _pGeo() {
-	_msgInfo "###   Profile: Geo   ###"
+# # 	_msg "Profile"; _install_PKG gp-geo
+# }
 
-	_msg "App: Geo"
-	pacman --noconfirm --needed --overwrite "*" -S gapp-geo 1> /dev/null
-	_msg "App: Cad"
-	pacman --noconfirm --needed --overwrite "*" -S gapp-cad 1> /dev/null
+# function _pRadio() {
+# 	_msgInfo "###   Profile: Radio   ###"
 
-	_msg "Profile"
-	pacman --noconfirm --needed --overwrite "*" -S gp-geo 1> /dev/null
+# 	_msg "App: Audio"; _install_PKG gapp-audio
+# 	_msg "App: Image"; _install_PKG gapp-image
+# 	_msg "App: Video"; _install_PKG gapp-video
 
-	sed -i "s/core/geotecnologia/g" /usr/lib/os-release
-}
+# 	_msg "Profile"; _install_PKG gp-radio
+# }
 
-function _pRadio() {
-	_msgInfo "###   Profile: Radio   ###"
+# function _pGremio() {
+# 	_msgInfo "###   Profile: Gremio   ###"
 
-	_msg "App: Audio"
-	pacman --noconfirm --needed --overwrite "*" -S gapp-audio 1> /dev/null
-	_msg "App: Video"
-	pacman --noconfirm --needed --overwrite "*" -S gapp-video 1> /dev/null
-	_msg "App: Image"
-	pacman --noconfirm --needed --overwrite "*" -S gapp-image 1> /dev/null
-
-	_msg "Profile"
-	pacman --noconfirm --needed --overwrite "*" -S gp-radio 1> /dev/null
-
-	sed -i "s/core/radio/g" /usr/lib/os-release
-	sed -i 's/goylin.desktop/goylindark.desktop/g' /etc/xdg/kdeglobals
-}
-
-function _pGremio() {
-	_msgInfo "###   Profile: Gremio   ###"
-
-	_msg "App: Geo"
-	pacman --noconfirm --needed --overwrite "*" -S gapp-geo 1> /dev/null
-	_msg "App: Code"
-	pacman --noconfirm --needed --overwrite "*" -S gapp-code 1> /dev/null
-	_msg "App: Cad"
-	pacman --noconfirm --needed --overwrite "*" -S gapp-cad 1> /dev/null
-	_msg "App: VFX"
-	pacman --noconfirm --needed --overwrite "*" -S gapp-vfx 1> /dev/null
-	_msg "App: Audio"
-	pacman --noconfirm --needed --overwrite "*" -S gapp-audio 1> /dev/null
-	_msg "App: Video"
-	pacman --noconfirm --needed --overwrite "*" -S gapp-video 1> /dev/null
-	_msg "App: Image"
-	pacman --noconfirm --needed --overwrite "*" -S gapp-image 1> /dev/null
-	_msg "App: Game"
-	pacman --noconfirm --needed --overwrite "*" -S gapp-game 1> /dev/null
-	_msg "App: Write"
-	pacman --noconfirm --needed --overwrite "*" -S gapp-write 1> /dev/null
-	_msg "App: GameDev"
-	pacman --noconfirm --needed --overwrite "*" -S gapp-gameDev 1> /dev/null
-	_msg "App: Educational"
-	pacman --noconfirm --needed --overwrite "*" -S gapp-edu 1> /dev/null
-
-	_msg "Profile"
-	pacman --noconfirm --needed --overwrite "*" -S gp-gremio 1> /dev/null
-
-	sed -i "s/core/gremio/g" /usr/lib/os-release
-}
-
-function _pLibrary() {
-	_msgInfo "###   Profile: Library   ###"
-
-	_msg "App: Geo"
-	pacman --noconfirm --needed --overwrite "*" -S gapp-geo 1> /dev/null
-	_msg "App: Code"
-	pacman --noconfirm --needed --overwrite "*" -S gapp-code 1> /dev/null
-	_msg "App: Cad"
-	pacman --noconfirm --needed --overwrite "*" -S gapp-cad 1> /dev/null
-	_msg "App: VFX"
-	pacman --noconfirm --needed --overwrite "*" -S gapp-vfx 1> /dev/null
-	_msg "App: Audio"
-	pacman --noconfirm --needed --overwrite "*" -S gapp-audio 1> /dev/null
-	_msg "App: Video"
-	pacman --noconfirm --needed --overwrite "*" -S gapp-video 1> /dev/null
-	_msg "App: Image"
-	pacman --noconfirm --needed --overwrite "*" -S gapp-image 1> /dev/null
-	_msg "App: Game"
-	pacman --noconfirm --needed --overwrite "*" -S gapp-game 1> /dev/null
-	_msg "App: Write"
-	pacman --noconfirm --needed --overwrite "*" -S gapp-write 1> /dev/null
-	_msg "App: GameDev"
-	pacman --noconfirm --needed --overwrite "*" -S gapp-gameDev 1> /dev/null
-	_msg "App: Educational"
-	pacman --noconfirm --needed --overwrite "*" -S gapp-edu 1> /dev/null
-
-	sed -i "s/core/library/g" /usr/lib/os-release
-}
-
-function _pLaptop() {
-	_msgInfo "###   Profile: Laptop   ###"
-
-	_msg "Laptop"
-	pacman --noconfirm --needed --overwrite "*" -S g-laptop 1> /dev/null
-	_msg "App: Educational"
-	pacman --noconfirm --needed --overwrite "*" -S gapp-edu 1> /dev/null
+# 	_msg "App: Audio"; _install_PKG gapp-audio
+# 	_msg "App: Cad"; _install_PKG gapp-cad
+# 	_msg "App: Code"; _install_PKG gapp-code
+# 	_msg "App: Image"; _install_PKG gapp-image
+# 	_msg "App: Write"; _install_PKG gapp-write
+# 	_msg "App: Game Dev"; _install_PKG gapp-gamedev
+# 	_msg "App: Geo"; _install_PKG gapp-geo
+# 	_msg "App: VFX"; _install_PKG gapp-vfx
+# 	_msg "App: Video"; _install_PKG gapp-video
+# 	_msg "App: Game"; _install_PKG gapp-game
+# 	_msg "App: Educational"; _install_PKG gapp-edu
 	
-	_msg "Profile: adm"
-	pacman --noconfirm --needed --overwrite "*" -S gp-adm 1> /dev/null
+# 	_msg "Profile"; _install_PKG gp-gremio
+# }
 
-	sed -i "s/core/laptop/g" /usr/lib/os-release
-}
+# function _pLibrary() {
+# 	_msgInfo "###   Profile: Library   ###"
 
-function _getProfile() {
-	case $profile in
-		"adm") _pAdm ;;
-		"cine") _pCinema ;;
-		"geo") _pGeo ;;
-		"radio") _pRadio ;;
-		"gremio") _pGremio ;;
-		"lib") _pLibrary ;;
-		"laptop") _pLaptop ;;
-		*) ;;
-	esac
-}
+# 	_msg "App: Audio"; _install_PKG gapp-audio
+# 	_msg "App: Cad"; _install_PKG gapp-cad
+# 	_msg "App: Code"; _install_PKG gapp-code
+# 	_msg "App: Image"; _install_PKG gapp-image
+# 	_msg "App: Write"; _install_PKG gapp-write
+# 	_msg "App: Game Dev"; _install_PKG gapp-gamedev
+# 	_msg "App: Geo"; _install_PKG gapp-geo
+# 	_msg "App: Code"; _install_PKG gapp-code
+# 	_msg "App: VFX"; _install_PKG gapp-vfx
+# 	_msg "App: Video"; _install_PKG gapp-video
+# 	_msg "App: Game"; _install_PKG gapp-game
+# 	_msg "App: Educational"; _install_PKG gapp-edu
+
+# 	_msg "Profile"; _install_PKG gp-lib
+# }
+
+# function _pLaptop() {
+# 	_msgInfo "###   Profile: Laptop   ###"
+
+	# 	_msg "Laptop"; _install_PKG gapp-laptop
+	# 	_msg "App: Educational"; _install_PKG gapp-edu
+	
+	# _msg "Profile"; _install_PKG gp-laptop
+
+	# sed -i "s/core/laptop/g" /usr/lib/os-release
+# }
+
+# function _pkgProfile() {
+# 	case $profile in
+# 		"adm") _pAdm ;;
+# 		"cine") _pCinema ;;
+# 		"geo") _pGeo ;;
+# 		"radio") _pRadio ;;
+# 		"gremio") _pGremio ;;
+# 		"lib") _pLibrary ;;
+# 		"laptop") _pLaptop ;;
+# 		*) ;;
+# 	esac
+# }
 
 ####################################################################################################
 ###                                     GCHROOT INIT                                             ###
@@ -278,10 +226,12 @@ function _getProfile() {
 _configSys
 
 _pkgCore
-_getProfile
+# _pkgProfile
+
 _configUsers
 _configCPIO
 _configGRUB
 
 _msgOk "###   Exiting CHROOT   ###"
+
 sync

@@ -21,7 +21,8 @@ function _help() {
 	_msg "-a: AUR PKGs"
 	_msg "-g: Goylin PKGs"
 	echo
-	exit 2
+
+	exit 0
 }
 
 ####################################################################################################
@@ -93,26 +94,28 @@ function _bootstrapChroot() {
 	chroot="/pkgRoot"
 	[ -d $chroot ] && rm -rf $chroot
 
-	_msg "Pacman update"
-	if [ "$pkgType" == "pkg-a" ]; then
-		pacman --config ../utils/pacman_update.conf -Sy #1> /dev/null
-	else
-		pacman --config ../utils/pacman_local.conf -Sy #1> /dev/null
-	fi
+	pacman --config ../utils/pacman_local.conf -Syy 1> /dev/null
 
-	_msg "Installing needed dependencies"
-	pacman --config ../utils/pacman_local.conf --noconfirm --needed -Sy devtools git 1> /dev/null
+	# _msg "Pacman update"
+	# if [ "$pkgType" == "pkg-a" ]; then
+	# 	pacman --config ../utils/pacman_update.conf -Sy 1> /dev/null
+	# else
+	# 	pacman --config ../utils/pacman_local.conf -Sy 1> /dev/null
+	# fi
 
 	_msg "Creating chroot"
 	mkdir -p $chroot
 
-	if [ "$pkgType" == "pkg-a" ]; then
-		mkarchroot -C ../utils/pacman_update.conf ${chroot}/root base-devel 1> /dev/null
-		cp ../utils/pacman_update.conf ${chroot}/root/etc/pacman.conf
-	else
-		mkarchroot -C ../utils/pacman_local.conf ${chroot}/root base-devel 1> /dev/null
-		cp ../utils/pacman_local.conf ${chroot}/root/etc/pacman.conf
-	fi
+	mkarchroot -C ../utils/pacman_local.conf ${chroot}/root base-devel 1> /dev/null
+	cp ../utils/pacman_local.conf ${chroot}/root/etc/pacman.conf
+
+	# if [ "$pkgType" == "pkg-a" ]; then
+	# 	mkarchroot -C ../utils/pacman_update.conf ${chroot}/root base-devel 1> /dev/null
+	# 	cp ../utils/pacman_update.conf ${chroot}/root/etc/pacman.conf
+	# else
+	# 	mkarchroot -C ../utils/pacman_local.conf ${chroot}/root base-devel 1> /dev/null
+	# 	cp ../utils/pacman_local.conf ${chroot}/root/etc/pacman.conf
+	# fi
 }
 
 function _buildPKG() {
@@ -122,11 +125,13 @@ function _buildPKG() {
 	[ -f build.sh ] && _msg 'Running local build.sh' && . build.sh
 
 	_msg "Spawning chroot"
-	if [ "$pkgType" == "pkg-a" ]; then
-		arch-nspawn -C ../../utils/pacman_update.conf $chroot/root pacman -Syu 1> /dev/null
-	else
-		arch-nspawn -C ../../utils/pacman_local.conf $chroot/root pacman -Syu 1> /dev/null
-	fi
+	arch-nspawn -C ../../utils/pacman_local.conf $chroot/root pacman -Syu 1> /dev/null
+
+	# if [ "$pkgType" == "pkg-a" ]; then
+	# 	arch-nspawn -C ../../utils/pacman_update.conf $chroot/root pacman -Syu 1> /dev/null
+	# else
+	# 	arch-nspawn -C ../../utils/pacman_local.conf $chroot/root pacman -Syu 1> /dev/null
+	# fi
 
 	_msgInfo "Building..."
 	makechrootpkg -c -r $chroot #1> /dev/null
@@ -136,7 +141,7 @@ function _checkBuild() {
 	if [ ! -f ${pkgName}*.pkg.tar.zst ]; then
 		_msgAlert "Final .pkg file not found!"
 		_msgAlert "Build Error!"
-		echo; exit 2
+		echo; exit 1
 	fi
 }
 
@@ -148,9 +153,14 @@ function _addToRepo() {
 
 	_repoSyncDown
 
+	_msg "Removing Old Version"
+	[ -f ${repoName}/${pkgName}*.pkg.* ] && rm -v ${repoName}/${pkgName}*.pkg.*
+
 	_msg "Moving PKG to local Repo"
-	mv -vf ${pkgType}/${pkgName}/${pkgName}*.pkg.tar.zst "${repoName}/"
+	mv -vf ${pkgType}/${pkgName}/${pkgName}*.pkg.tar.zst ${repoName}
+
 	_repoAddSingle $pkgName
+
 	_repoSyncUp
 }
 

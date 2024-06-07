@@ -1,5 +1,19 @@
 #!/bin/bash
 
+_unpackTar() {
+	tar vxf /usr/share/goylin/goylin.tar --overwrite --directory=/usr/share/goylin
+	rm -v /usr/share/goylin/goylin.tar
+	chmod -R a+r /usr/share/goylin/backgrounds/
+}
+
 pre_upgrade() {
-	[ -d /usr/share/goylin/backgrounds ] && rm /usr/share/goylin/backgrounds/*
+	[ -d /usr/share/goylin/backgrounds ] && rm -v /usr/share/goylin/backgrounds/*
+}
+
+post_install() {
+	_unpackTar
+}
+
+post_upgrade() {
+	_unpackTar
 }

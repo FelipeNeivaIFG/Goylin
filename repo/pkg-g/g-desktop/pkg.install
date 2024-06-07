@@ -1,14 +1,27 @@
 #!/bin/bash
 
+_lockGFiles() {
+	chattr +i /etc/xprofile
+	chattr +i /etc/xdg/user-dirs.defaults
+	chattr +i /etc/X11/xorg.conf.d/00-keyboard.conf
+}
+
+_unlockGFiles() {
+	chattr -i /etc/xprofile
+	chattr -i /etc/xdg/user-dirs.defaults
+	chattr -i /etc/X11/xorg.conf.d/00-keyboard.conf
+}
+
 post_install() {
-	systemctl enable lightdm
-	chattr +i /var/lib/lightdm/.cache/slick-greeter/state
+	_lockGFiles
+	systemctl enable cups
+	systemctl enable bluetooth
 }
 
 pre_upgrade() {
-	chattr -i /var/lib/lightdm/.cache/slick-greeter/state
+	_unlockGFiles
 }
 
 post_upgrade() {
-	chattr +i /var/lib/lightdm/.cache/slick-greeter/state
+	_lockGFiles
 }

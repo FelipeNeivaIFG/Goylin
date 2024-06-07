@@ -18,8 +18,10 @@ source utils/installConf.sh
 
 function _help() {
 	_msgInfo "Goylin installer flags:"
+
 	_msgOpt "-s : Skip bootstrap."
 	_msgOpt "-d : Use default install configuration."
+
 	echo; exit 0
 }
 
@@ -45,12 +47,12 @@ function _bootstrap() {
 	_msg "Time Sync"
 	timedatectl set-ntp true
 	hwclock --systohc
-	
+
 	_msg "Pacman Sync"
-	pacman -Sy --noconfirm --config utils/pacman_local.conf 1> /dev/null
-	
+	pacman -Syy --noconfirm --config utils/pacman_local.conf #1> /dev/null
+
 	_msg "Checking installer Deppendencies"
-	pacman -S --noconfirm --needed arch-install-scripts dosfstools e2fsprogs base-devel mtools 1> /dev/null
+	pacman -S --noconfirm --needed arch-install-scripts dosfstools e2fsprogs base-devel mtools #1> /dev/null
 
 	return 0
 }
@@ -63,16 +65,16 @@ function _setTarget() {
 	protectTarget=$(lsblk -no PKNAME $(findmnt -n -o SOURCE /))
 
 	_msg "Available Target devices:"
-	lsblk -o NAME,SIZE,TYPE,MOUNTPOINT | awk '$3 == "disk"' | grep -v $protectTarget
+	lsblk -o NAME,SIZE,TYPE | awk '$3 == "disk"' | grep -v $protectTarget
 
 	echo; _msg "Target name? ( eg. sdx )"
 	read -p "?: " -e target
 
 	[ "$target" == "" ] && _msgAlert "Target Device Required!" && exit 1
-	[ "$target" == "$protectTarget" ] && _msgAlert 'WTF!? This device belongs to current system!' && exit 1
-	[ ! -b "/dev/$target" ] && _msgAlert 'Null device!' && exit 1
+	[ "$target" == "$protectTarget" ] && _msgAlert "WTF!? This device belongs to current system!" && exit 1
+	[ ! -b "/dev/$target" ] && _msgAlert "Null device!" && exit 1
 
-	return 0
+	echo; return 0
 }
 
 function _setTargetLiveUSB() {
@@ -188,20 +190,38 @@ function _setup() {
 
 function _prepUmount() {
 	_msg "Unmounting Target"
+
 	sync
-	[[ $(mount | grep "/mnt") ]] && umount -lR /mnt
-	[[ $(mount | grep "${target}1") ]] && umount -lR "/dev/${target}1"
-	[[ $(mount | grep "${target}2") ]] && umount -lR "/dev/${target}2"
-	[[ $(mount | grep "${target}3") ]] && umount -lR "/dev/${target}3"
-	[[ $(mount | grep "${target}4") ]] && umount -lR "/dev/${target}4"
-	[[ $(swapon | grep "${target}2") ]] && swapoff "/dev/${target}2"
+
+	[[ $(mount | grep "/mnt") ]] && umount -qlfR /mnt
+	[[ $(mount | grep "${target}1") ]] && umount -qlf /dev/${target}1
+	[[ $(mount | grep "${target}2") ]] && umount -qlf /dev/${target}2
+	[[ $(mount | grep "${target}3") ]] && umount -qlf /dev/${target}3
+	[[ $(mount | grep "${target}4") ]] && umount -qlf /dev/${target}4
+	[[ $(swapon | grep "${target}1") ]] && swapoff /dev/${target}1
+	[[ $(swapon | grep "${target}2") ]] && swapoff /dev/${target}2
+	[[ $(swapon | grep "${target}3") ]] && swapoff /dev/${target}3
+	[[ $(swapon | grep "${target}4") ]] && swapoff /dev/${target}4
+
 	sync
+
+	return 0
+}
+
+function _prepHardUmount() {
+	if [[ $(mount | grep "/mnt") ]]; then
+		_msg "lsof KILL for umount"
+		lsof | grep "/mnt" | awk '{print $2}'| xargs sudo kill
+		umount -qfR /mnt
+	fi
+
+	_prepUmount
 }
 
 function _prepWipe(){
 	_msg "Wiping target"
 
-	wipefs -af /dev/$target* 1> /dev/null
+	wipefs -a /dev/$target 1> /dev/null
 	dd if=/dev/zero of=/dev/$target bs=1M count=1024
 }
 
@@ -222,18 +242,18 @@ function _prepPartBIOS() {
 function _prepFormat() {
 	_msg "Formating"
 
-	mkfs.ext4 -q "/dev/${target}1"
-	mkfs.ext4 -q "/dev/${target}3"
-	mkfs.ext4 -q "/dev/${target}4"
-	mkswap -q "/dev/${target}2"
+	mkfs.ext4 -q /dev/${target}4
+	mkfs.ext4 -q /dev/${target}3
+	mkfs.ext4 -q /dev/${target}1
+	mkswap -q /dev/${target}2
 }
 
 function _prepFormatKeepHome() {
 	_msg "Formating - Keeping /home"
-	
-	mkfs.ext4 -q "/dev/${target}1"
-	mkfs.ext4 -q "/dev/${target}3"
-	mkswap -q "/dev/${target}2"
+
+	mkfs.ext4 -q /dev/${target}3
+	mkfs.ext4 -q /dev/${target}1
+	mkswap -q /dev/${target}2
 }
 
 function _prepMount() {
@@ -241,11 +261,11 @@ function _prepMount() {
 
 	mount /dev/${target}3 /mnt
 	mkdir -p /mnt/{boot,home}
-
 	mount /dev/${target}4 /mnt/home
 	mount /dev/${target}1 /mnt/boot
-
 	swapon /dev/${target}2
+
+	lsblk | grep $target
 
 	return 0
 }
@@ -253,7 +273,7 @@ function _prepMount() {
 function _prepCleanHomeDots () {
 	_msgInfo '###   Cleaning User Dots   ###'
 
-	[ -d /mnt/home/lost+found ] && rm -rfv /mnt/home/lost+found
+	[ -d /mnt/home/lost+found ] && rm -rf /mnt/home/lost+found
 
 	for userInHome in /mnt/home/*; do
 		userHome=$(basename $userInHome)
@@ -266,7 +286,7 @@ function _prepCleanHomeDots () {
 function _prepTarget() {
 	_msgInfo "###   Preparing Target   ###"
 
-	_prepUmount
+	_prepHardUmount
 	if [ $keepHome -eq 1 ]; then
 		_prepFormatKeepHome
 	else
@@ -287,14 +307,14 @@ function _prepTarget() {
 function _instPacstrap() {
 	_msg "Pacstraping"
 
-	pacstrap -K -C utils/pacman_local.conf /mnt base linux linux-firmware mkinitcpio grub 1> /dev/null
+	pacstrap -KMC utils/pacman_local.conf /mnt base linux linux-firmware mkinitcpio grub 1> /dev/null
 }
 
 _instFiles() {
-	_msg "Installing files"
+	_msg "Installing gChroot Script"
 
-	install -Dm 0700 -t /mnt/gChroot gChroot.sh
-	install -Dm 0700 -t /mnt/gChroot/utils utils/gMsg.sh
+	install -Dm 700 -t /mnt/gChroot gChroot.sh
+	install -D -t /mnt/gChroot/utils utils/gMsg.sh
 
 	echo "
 #!/bin/bash
@@ -309,12 +329,18 @@ gGremioPasswd="$gGremioPasswd"
 keepHome="$keepHome"
 " >> /mnt/gChroot/utils/chrConfig.sh
 
-	install -Dm 0644 -t /mnt/etc root/etc/hostname
-	install -Dm 0644 -t /mnt/etc root/etc/hosts
-	install -Dm 0644 -t /mnt/etc root/etc/locale.conf
-	install -Dm 0644 -t /mnt/etc root/etc/locale.gen
+	_msg "Installing Config Files"
 
-	install -Dm 0644 -t /mnt/etc utils/pacman_local.conf
+	install -Dm 644 -t /mnt/etc root/etc/hostname
+	install -Dm 644 -t /mnt/etc root/etc/hosts
+
+	install -Dm 644 -t /mnt/etc root/etc/locale.conf
+	chattr +i /mnt/etc/locale.conf
+
+	install -Dm 644 -t /mnt/etc root/etc/locale.gen
+	chattr +i /mnt/etc/locale.gen
+
+	install -Dm 644 -t /mnt/etc utils/pacman_local.conf
 	mv -f /mnt/etc/pacman_local.conf /mnt/etc/pacman.conf
 }
 
@@ -322,10 +348,13 @@ _instFstab() {
 	_msg "Generating fstab"
 
 	genfstab -U /mnt >> /mnt/etc/fstab
+
 	sed -i '/^\/swapfile/d' /mnt/etc/fstab
 	if [ "$targetType" == "ssd" ]; then
 		sed -i "s/relatime/noatime/g" /mnt/etc/fstab
 	fi
+
+	chattr +i /mnt/etc/fstab
 }
 
 _instChroot() {
@@ -361,6 +390,7 @@ _prepTarget
 _installGoylin
 
 sync
+cd /
 _prepUmount
 _msgDone
 exit 0

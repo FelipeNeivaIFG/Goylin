@@ -4,28 +4,24 @@ pkgdesc='Goylin: Video Apps'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.2
+pkgver=24.3
 pkgrel=1
 arch=('x86_64')
 
-source=('skel.tar')
+# source=('skel.tar')
 
-noextract=('skel.tar')
+# noextract=('skel.tar')
 
-md5sums=('SKIP')
+# md5sums=('SKIP')
 
 depends=(
-	'kdenlive' 'handbrake' 'obs-studio'
-	'shotcut' 'dcpomatic' 'olive'
-	# 'lightworks'
-	# EXTRAS
-	'ffmpeg' 'dvgrab' 'opencv' 'opentimelineio'
-	'bigsh0t' 'mediainfo' 'noise-suppression-for-voice' 'gst-plugins-good'
-	'gst-libav' 'libdvdcss' 'libfdk-aac' 
+    'kdenlive' 'handbrake' 'obs-studio' 'shotcut'
+    'bigsh0t' 'dvgrab' 'mediainfo' 'noise-suppression-for-voice'
+    'opencv' 'opentimelineio' 'sndio' 'swh-plugins'
 )
 
-package() {
-	install -Dm 644 -t ${pkgdir}/etc/skel skel.tar
-	tar xf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
-	rm ${pkgdir}/etc/skel/skel.tar
-}
+# package() {
+# 	install -Dm 644 -t ${pkgdir}/etc/skel skel.tar
+# 	tar xf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
+# 	rm ${pkgdir}/etc/skel/skel.tar
+# }

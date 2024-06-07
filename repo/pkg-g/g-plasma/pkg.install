@@ -1,0 +1,18 @@
+#!/bin/bash
+
+post_install() {
+	chattr +i /etc/xdg/kdeglobals
+}
+
+pre_upgrade() {
+	chattr -i /etc/xdg/kdeglobals
+}
+
+post_upgrade() {
+	chattr +i /etc/xdg/kdeglobals
+
+	source /etc/os-release
+	if [[ $VARIANT == "cinema" || $VARIANT == "radio" ]]; then;
+		sed -i "s/goylin.desktop/goylindark.desktop/g" /etc/xdg/kdeglobals
+	fi
+}

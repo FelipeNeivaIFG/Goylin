@@ -1,20 +1,57 @@
 #!/bin/bash
+_lockGFiles() {
+	chattr +i /usr/share/pixmaps/archlinux-logo.svg
+	chattr +i /usr/share/pixmaps/archlinux-logo.png
+	chattr +i /usr/share/plymouth/plymouthd.defaults
+	chattr +i /etc/sudoers
+	chattr +i /etc/issue
+	chattr +i /etc/motd
+	chattr +i /etc/vconsole.conf
+	chattr +i /etc/pacman.conf
+	chattr +i /etc/systemd/timesyncd.conf
+	chattr +i /usr/lib/systemd/system/getty@.service
+	chattr +i /usr/lib/os-release
+	chattr +i /etc/systemd/sleep.conf
+}
+
+_unlockGFiles() {
+	chattr -i /usr/share/pixmaps/archlinux-logo.svg
+	chattr -i /usr/share/pixmaps/archlinux-logo.png
+	chattr -i /usr/share/plymouth/plymouthd.defaults
+	chattr -i /etc/sudoers
+	chattr -i /etc/issue
+	chattr -i /etc/motd
+	chattr -i /etc/vconsole.conf
+	chattr -i /etc/pacman.conf
+	chattr -i /etc/systemd/timesyncd.conf
+	chattr -i /usr/lib/systemd/system/getty@.service
+	chattr -i /usr/lib/os-release
+	chattr -i /etc/systemd/sleep.conf
+}
 
 post_install() {
-    systemctl enable NetworkManager
-    systemctl enable sshd
-    systemctl enable goylin.service
-    systemctl enable systemd-timesyncd.service
+	systemctl enable NetworkManager
+	systemctl enable sshd
+	systemctl enable goylin.service
+	systemctl enable systemd-timesyncd.service
+	systemctl enable tlp
+	systemctl mask systemd-rfkill.service
+	systemctl mask systemd-rfkill.socket
+	systemctl enable bluetooth
 
-    chattr +i /usr/share/plymouth/plymouthd.defaults
-    cp -f /usr/share/goylin/icons/goylin.svg /usr/share/pixmaps/archlinux-logo.svg
+	cp -f /usr/share/goylin/icons/goylin.svg /usr/share/pixmaps/archlinux-logo.svg
 	cp -f /usr/share/goylin/icons/goylin.png /usr/share/pixmaps/archlinux-logo.png
+
+	_lockGFiles
 }
 
 pre_upgrade() {
-	chattr -i /usr/share/plymouth/plymouthd.defaults
+	_unlockGFiles
 }
 
 post_upgrade() {
-	chattr +i /usr/share/plymouth/plymouthd.defaults
+	cp -f /usr/share/goylin/icons/goylin.svg /usr/share/pixmaps/archlinux-logo.svg
+	cp -f /usr/share/goylin/icons/goylin.png /usr/share/pixmaps/archlinux-logo.png
+
+	_lockGFiles
 }

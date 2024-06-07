@@ -4,8 +4,8 @@ pkgdesc='Goylin: Plasma'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.2
-pkgrel=3
+pkgver=24.3
+pkgrel=1
 arch=('x86_64')
 
 source=('kdeglobals' 'skel.tar' 'goylin.desktop.tar' 'goylindark.desktop.tar')
@@ -14,43 +14,35 @@ noextract=('skel.tar' 'goylin.desktop.tar' 'goylindark.desktop.tar')
 
 md5sums=('SKIP' 'SKIP' 'SKIP' 'SKIP')
 
+install='pkg.install'
+
 depends=(
-	'plasma-desktop' 'bluedevil' 'breeze-gtk' 'kde-gtk-config'
-	'kgamma' 'kscreen' 'kwrited' 'plasma-browser-integration'
-	'plasma-nm' 'plasma-pa' 'powerdevil' 'xdg-desktop-portal-kde'
-	'kdegraphics-thumbnailers' 'kio-gdrive' 'audiocd-kio' 'kio5'
-	'kio-extras' 'kio-fuse' 'spectacle' 'konsole'
-	# FILE MANAGER
-	'dolphin' 'dolphin-plugins' 'startup-notification'
-	'ark' 'gvfs-afc' 'gvfs-goa' 'gvfs-gphoto2'
-	'gvfs-mtp' 'gvfs-nfs' 'gvfs' 'gvfs-google'
-	'gvfs-smb' 'zip' 'unzip' 'p7zip'
-	'unrar' 'unarchiver'
+	'plasma-desktop' 'bluedevil' 'kscreen' 'plasma-nm'
+	'plasma-pa' 'kde-gtk-config' 'kgamma' 'kscreen'
+	'plasma-browser-integration' 'powerdevil' 'kinfocenter'
+	'xdg-desktop-portal-kde' 'spectacle' 'konsole'
+	'print-manager' 'system-config-printer' 'python-pysmbc' 'polkit-kde-agent'
+	'plasma5support' 'plasma-integration' 'kwin' 'maliit-keyboard'
+	'libplasma' 'libksysguard' 'libkscreen' 'layer-shell-qt'
+	'kwayland-integration' 'kwayland' 'kdeplasma-addons' 'qt6-webengine'
+	'kdeclarative' 'kde-cli-tools' 'dolphin' 'ffmpegthumbs'
+	'kdegraphics-thumbnailers' 'purpose' 'dolphin-plugins' 'startup-notification'
+	'plasma-disks' 'plasma-systemmonitor' 'drkonqi' 'breeze'
+	'breeze5' 'breeze-gtk' 'kio' 'kio-extras'
+	'audiocd-kio' 'kio-admin' 'kio-fuse' 'kio-gdrive'
+	'kio-zeroconf' 'kio5' 'kio5-extras'
+	'kimageformats' 'karchive' 'qt5-imageformats' 'kimageformats5'
+	'icoutils' 'qt6-imageformats'
 
 	#DEV
-	# 'kinfocenter'
-	# 'plasma-disks'
-	# 'plasma-firewall'
-	# 'plasma-systemmonitor'
-	# 'plasma-sdk' - Development tools
-
-	#MAYBE
-	# 'drkonqi'
-	# 'ksshaskpass'
-	# 'kwallet-pam'
-	# 'ocean-sound-theme'
-	# 'oxygen'
-	# 'oxygen-sounds'
-	# 'plasma-thunderbolt'
-	# 'plasma-vault'
-	# 'print-manager'
+	# 'plasma-sdk'
 )
 
 package() {
 	install -Dm 644 -t ${pkgdir}/etc/xdg/ kdeglobals
 
 	install -Dm 644 -t ${pkgdir}/etc/skel skel.tar
-	tar xf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
+	tar  xf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
 	rm ${pkgdir}/etc/skel/skel.tar
 
 	install -Dm 644 -t ${pkgdir}/usr/share/plasma/look-and-feel/goylin.desktop/ goylin.desktop.tar
@@ -61,13 +53,3 @@ package() {
 	tar xf ${pkgdir}/usr/share/plasma/look-and-feel/goylindark.desktop/goylindark.desktop.tar --overwrite --directory=${pkgdir}/usr/share/plasma/look-and-feel/goylindark.desktop/
 	rm ${pkgdir}/usr/share/plasma/look-and-feel/goylindark.desktop/goylindark.desktop.tar
 }
-
-# Unused from plasma:
-# discover
-# plasma-welcome
-# plasma-workspace-wallpapers
-# sddm-kcm
-# breeze-grub (optional) - Breeze theme for GRUB
-# breeze-plymouth (optional) - Breeze theme for Plymouth
-# flatpak-kcm (optional) - Manage Flatpak applications from systemsettings
-# plymouth-kcm (optional) - Configure Plymouth from systemsettings

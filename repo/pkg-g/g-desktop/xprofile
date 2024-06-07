@@ -4,20 +4,23 @@
 eval $(dbus-launch --sh-syntax)
 
 # User Home Update
-cp -vru /etc/skel/. $HOME #>> $HOME/.homeUpdate.log
+cp -fru /etc/skel/. $HOME
 xdg-user-dirs-update
-[ -d "${HOME}/Área de trabalho" ] && rm -r "${HOME}/Área de trabalho"
+[ -d "${HOME}/Área de trabalho" ] && rm -vr "${HOME}/Área de trabalho"
 
 # Fix Config File User Names
 # Goylin-Plasma
 [ -f ${HOME}/.local/share/user-places.xbel ] && sed -i "s/_USERNAME_/$(whoami)/g" ${HOME}/.local/share/user-places.xbel
 [ -f ${HOME}/.config/ktrashrc ] && sed -i "s/_USERNAME_/$(whoami)/g" ${HOME}/.config/ktrashrc
 # Goylin-App-Audio
-[ -f ${HOME}/.config/ardour8/ui_config ] && sed -i "s/_USERNAME_/$(whoami)/g" ${HOME}/.config/ardour8/ui_config
-[ -f ${HOME}/.config/ardour8/config ] && sed -i "s/_USERNAME_/$(whoami)/g" ${HOME}/.config/ardour8/config
-[ -f ${HOME}/.lmmsrc.xml ] && sed -i "s/_USERNAME_/$(whoami)/g" ${HOME}/.lmmsrc.xml
+# [ -f ${HOME}/.config/ardour8/ui_config ] && sed -i "s/_USERNAME_/$(whoami)/g" ${HOME}/.config/ardour8/ui_config
+# [ -f ${HOME}/.config/ardour8/config ] && sed -i "s/_USERNAME_/$(whoami)/g" ${HOME}/.config/ardour8/config
+# [ -f ${HOME}/.lmmsrc.xml ] && sed -i "s/_USERNAME_/$(whoami)/g" ${HOME}/.lmmsrc.xml
 # Goylin-App-Image
-[ -f ${HOME}/.config/kritarc ] && sed -i "s/_USERNAME_/$(whoami)/g" ${HOME}/.config/kritarc
+# [ -f ${HOME}/.config/kritarc ] && sed -i "s/_USERNAME_/$(whoami)/g" ${HOME}/.config/kritarc
+
+# Remove Unused Guest files
+[ "$(whoami)" == "guest" ] && [ -f ${HOME}/Desktop/guestFiles.desktop ] && rm -v ${HOME}/Desktop/guestFiles.desktop
 
 # Ensure .desktop files execution
 chmod +x ${HOME}/Desktop/*.desktop

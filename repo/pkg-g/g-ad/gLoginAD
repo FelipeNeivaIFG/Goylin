@@ -9,6 +9,8 @@ read -p '?: ' -e newHostname; echo
 oldHostname=$(cat /etc/hostname)
 hostnamectl set-hostname $newHostname
 sed -i "s/${oldHostname}/${newHostname}/g" /etc/hosts
+chattr +i /etc/hostname
+chattr +i /etc/hosts
 
 echo 'Admin ID:'
 read -p '?: ' -e adminID; echo

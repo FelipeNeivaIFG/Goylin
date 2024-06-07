@@ -4,25 +4,20 @@ pkgdesc='Goylin: VFX Apps'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.2
+pkgver=24.3
 pkgrel=1
 arch=('x86_64')
 
-source=('skel.tar')
+# source=('skel.tar')
 
-noextract=('skel.tar')
+# noextract=('skel.tar')
 
-md5sums=('SKIP')
+# md5sums=('SKIP')
 
-depends=(
-	'blender-3.6-bin' 'natron-bin' 'synfigstudio' 'magicavoxel'
-	'opentoonz'
-	# EXTRAS'
-	'python-aiohttp'
-)
+depends=('blender-3.6-bin' 'natron-bin' 'synfigstudio' 'opentoonz')
 
-package() {
-	install -Dm 644 -t ${pkgdir}/etc/skel skel.tar
-	tar xf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
-	rm ${pkgdir}/etc/skel/skel.tar
-}
+# package() {
+# 	install -vDm 644 -t ${pkgdir}/etc/skel skel.tar
+# 	tar vxf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
+# 	rm -v ${pkgdir}/etc/skel/skel.tar
+# }

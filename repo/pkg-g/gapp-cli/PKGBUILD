@@ -1,0 +1,11 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='gapp-cli'
+pkgdesc='Goylin: Audio Apps'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group=('goylin')
+
+pkgver=24.3
+pkgrel=1
+arch=('x86_64')
+
+depends=('spotdl' 'yt-dlp')

@@ -4,7 +4,7 @@
 # will be translated on a per-path-element basis into the users locale
 DESKTOP=Desktop
 DOWNLOAD=Downloads
-# PUBLICSHARE=Publico
+#PUBLICSHARE=Publico
 DOCUMENTS=Documentos
 MUSIC=Musicas
 PICTURES=Imagens

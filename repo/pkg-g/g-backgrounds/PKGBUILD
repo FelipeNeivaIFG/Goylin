@@ -4,8 +4,8 @@ pkgdesc='Goylin: Backgrounds'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.2
-pkgrel=4
+pkgver=24.3
+pkgrel=1
 arch=('x86_64')
 
 source=('goylin.tar')
@@ -17,7 +17,5 @@ install='pkg.install'
 md5sums=('SKIP')
 
 package() {
-    install -Dm 644 -t ${pkgdir}/usr/share/goylin goylin.tar
-    tar xf ${pkgdir}/usr/share/goylin/goylin.tar --overwrite --directory=${pkgdir}/usr/share/goylin
-    rm ${pkgdir}/usr/share/goylin/goylin.tar
+    install -vDm 644 -t ${pkgdir}/usr/share/goylin goylin.tar
 }

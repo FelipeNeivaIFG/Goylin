@@ -4,8 +4,8 @@ pkgdesc='Goylin: AD'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.2
-pkgrel=2
+pkgver=24.3
+pkgrel=1
 arch=('x86_64')
 
 source=(
@@ -23,8 +23,17 @@ md5sums=(
 install='pkg.install'
 
 depends=(
-	'samba' 'smbclient' 'dnsutils' 'python-dnspython'
-	'bind' 'krb5' 'pam-krb5' 'polkit'
+	'samba'
+	'smbclient'
+	'bind'
+	'python-dnspython'
+	'bind'
+	'krb5'
+	'pam-krb5'
+	'polkit'
+	'avahi'
+	'pam'
+	
 )
 
 package() {

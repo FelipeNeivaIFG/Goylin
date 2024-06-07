@@ -4,13 +4,12 @@ pkgdesc='Goylin: Image Apps'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.2
+pkgver=24.3
 pkgrel=1
 arch=('x86_64')
 
 depends=(
-	'gimp' 'inkscape' 'krita' 'darktable'
-	# EXTRAS
-	'kimageformats5' 'libheif' 'libjxl'
-	'libmypaint' 'poppler-qt5' 'python-pyqt5'
+    'gimp' 'inkscape' 'krita' 'darktable' 'krita-plugin-gmic'
+    'libmypaint' 'gimp-plugin-gmic' 'potrace' 'xsane'
+    'xsane-gimp'
 )

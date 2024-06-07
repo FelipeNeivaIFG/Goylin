@@ -10,8 +10,8 @@ arch=('x86_64')
 
 depends=(
     'tlp' 'tlp-rdw' 'powertop' 'acpi'
-    'acpid' 'bluez' 'bluez-utils' 'blueman'
-    'xf86-input-synaptics'
+    'acpid' 'xf86-input-synaptics'
+    'tp_smapi'
 )
 
 install='pkg.install'

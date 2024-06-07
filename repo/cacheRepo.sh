@@ -11,6 +11,31 @@ source utils/gMsg.sh
 source utils/updateRepo.sh
 
 ####################################################################################################
+###                                        Help                                                  ###
+####################################################################################################
+
+function _help() {
+	_msgInfo "Cache Repo flags:"
+
+	_msgOpt "-c : Start Clean Repo"
+
+	echo; exit 0
+}
+
+####################################################################################################
+###                                        Flags                                                 ###
+####################################################################################################
+
+newRepo=0
+
+while getopts "n" opt; do
+    case $opt in
+        n) newRepo=1 ;;
+        *) _help ;;
+    esac
+done
+
+####################################################################################################
 ###                                       INIT                                                   ###
 ####################################################################################################
 
@@ -20,8 +45,12 @@ clear
 _msgInfo "Caching..."
 
 _repoBlankDb
-_repoBetterMirrors
-_repoSyncDown
+if [ $newRepo -eq 1 ]; then
+    _repoBetterMirrors
+    _CleanUpLocalRepo
+else
+    _repoSyncDown
+fi
 _repoCacheList
 _repoAddPKGs
 _repoSyncUp
@@ -33,4 +62,4 @@ pacman -Syy 1> /dev/null
 _msgOk "PKGs cached!"
 _msgOk "\,,/_(o.O)_\,,/"
 
-exit 1
+exit 0
