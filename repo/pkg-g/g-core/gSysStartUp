@@ -37,6 +37,12 @@ echo "${gSysUpdateMsg}"
 plymouth display-message --text="${gSysUpdateMsg}"
 pacman -Su --noconfirm --needed
 
+# PKGs Cache Clean Up
+gSysUpdateMsg="Limpando Cache..."
+echo "${gSysUpdateMsg}"
+plymouth display-message --text="${gSysUpdateMsg}"
+pacman -Scc --noconfirm
+
 # Init System
 gSysUpdateMsg="Inicializando Sistema..."
 echo "${gSysUpdateMsg}"

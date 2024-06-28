@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=GRASS GIS 8
+GenericName=Sistema de Informação Geográfica
+Icon=grass
+TryExec=/usr/bin/grass
+Exec=grass
+Terminal=true
+Keywords=gis;spatial;geospatial;database;remote;sensing;hydrology;vector;raster;virtualization;maps;wms;wfs;ogc;osgeo;
+Categories=Qt;Education;Science;Geography;Geoscience;
+StartupNotify=false

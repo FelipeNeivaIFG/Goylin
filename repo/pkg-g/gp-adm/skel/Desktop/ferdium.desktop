@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Ferdium
+Exec=/usr/bin/ferdium %U
+Terminal=false
+Type=Application
+Icon=ferdium
+StartupWMClass=Ferdium
+Comment=Aplicativo genérico de menssagens
+MimeType=x-scheme-handler/ferdium;
+Categories=Network;InstantMessaging;

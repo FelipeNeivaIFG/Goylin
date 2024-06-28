@@ -30,7 +30,7 @@ function _buildIso() {
     _msg 'Copying clean Installer to airootfs'
     [ -d releng/airootfs/gInstaller ] && rm -rf releng/airootfs/gInstaller
     cp -rv ../installer releng/airootfs/gInstaller
-    chmod +x releng/airootfs/gInstaller/gInstaller.sh
+    chmod a+x releng/airootfs/gInstaller/gInstaller.sh
 
     _msg 'Ensuring clean work folder'
     [ -d isoWork ] && rm -rf isoWork

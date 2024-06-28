@@ -1,6 +1,6 @@
 # Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
-pkgname='gp-base'
-pkgdesc='Goylin: Profile - Base'
+pkgname='gp-lib'
+pkgdesc='Goylin: Profile - Library'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
@@ -13,6 +13,8 @@ source=('skel.tar')
 noextract=('skel.tar')
 
 md5sums=('SKIP')
+
+install='pkg.install'
 
 package() {
     install -Dm 644 -t ${pkgdir}/etc/skel/ skel.tar

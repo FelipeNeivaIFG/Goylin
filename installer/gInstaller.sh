@@ -134,18 +134,16 @@ function _setProfile() {
 	_msgOpt "4) Radio"
 	_msgOpt "5) Gremio"
 	_msgOpt "6) Library"
-	_msgOpt "7) Laptop"
 	_msgOpt "*) Base"
 	read -p '?: ' -e optProfile
 
   	case $optProfile in
 		1) profile="adm" ;;
-		2) profile="cine" ;;
-		3) profile="geo" ;;
+		2) profile="cinema" ;;
+		3) profile="geotec" ;;
 		4) profile="radio" ;;
 		5) profile="gremio" ;;
-		6) profile="lib" ;;
-		7) profile="laptop" ;;
+		6) profile="library" ;;
 		*) profile="base" ;;
 	esac
 
@@ -221,7 +219,7 @@ function _prepHardUmount() {
 function _prepWipe(){
 	_msg "Wiping target"
 
-	wipefs -a /dev/$target 1> /dev/null
+	wipefs --all /dev/$target* 1> /dev/null
 	dd if=/dev/zero of=/dev/$target bs=1M count=1024
 }
 

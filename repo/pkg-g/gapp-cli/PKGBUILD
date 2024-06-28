@@ -8,4 +8,21 @@ pkgver=24.3
 pkgrel=1
 arch=('x86_64')
 
-depends=('spotdl' 'yt-dlp')
+depends=(
+	'fastfetch'
+	'spotdl'
+	'yt-dlp'
+	# 4FUN
+	'sl'
+	'cmatrix'
+	'cowsay'
+	'lolcat'
+	'toilet'
+	'oneko'
+	'asciiquarium'
+	'pv'
+	'xorg-xeyes'
+	'figlet'
+	'funny-manpages'
+	'bb'
+)

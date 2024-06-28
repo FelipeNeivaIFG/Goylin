@@ -20,7 +20,7 @@ xdg-user-dirs-update
 # [ -f ${HOME}/.config/kritarc ] && sed -i "s/_USERNAME_/$(whoami)/g" ${HOME}/.config/kritarc
 
 # Remove Unused Guest files
-[ "$(whoami)" == "guest" ] && [ -f ${HOME}/Desktop/guestFiles.desktop ] && rm -v ${HOME}/Desktop/guestFiles.desktop
+[ "$(whoami)" == "guest" ] && [ -f ${HOME}/Desktop/public.desktop ] && rm -v ${HOME}/Desktop/public.desktop
 
 # Ensure .desktop files execution
 chmod +x ${HOME}/Desktop/*.desktop

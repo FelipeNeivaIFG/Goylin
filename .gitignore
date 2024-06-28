@@ -1,5 +1,5 @@
 .gitignore
-.vscode/
+.vscode
 
 *.tar
 *.log
@@ -8,15 +8,9 @@
 installer/utils/gPasswd.sh
 
 repo/goylin-repo
+repo/goylin-repo-g
+repo/goylin-repo-aur
 repo/pkg-a
-
-repo/pkg-g/gapp-english.wip
-repo/pkg-g/gapp-english-files.wip
-repo/pkg-g/g-ad.ldap
-repo/pkg-g/g-ad.realmd
-repo/pkg-g/g-ad.sssd
-
-repo/pkg-g/gapp-geo-sisvar/sisvar
 
 repo/pkgRoot
 repo/blankdb

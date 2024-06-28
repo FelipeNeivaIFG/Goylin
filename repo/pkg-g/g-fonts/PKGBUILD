@@ -9,8 +9,17 @@ pkgrel=1
 arch=('x86_64')
 
 depends=(
-    'adobe-source-sans-fonts' 'ttf-ms-fonts' 'adobe-source-serif-fonts' 'ttf-dejavu-nerd'
-    'ttf-liberation' 'ttf-carlito' 'ttf-hack-nerd' 'otf-hermit-nerd'
-    'adobe-source-code-pro-fonts' 'ttf-roboto-mono-nerd' 'ttf-droid' 'ttf-ms-fonts'
-    'ttf-dejavu' 'gnu-free-fonts'
+	'adobe-source-sans-fonts'
+	'ttf-ms-fonts'
+	'adobe-source-serif-fonts'
+	'ttf-dejavu-nerd'
+	'ttf-liberation'
+	'ttf-carlito'
+	'ttf-hack-nerd'
+	'otf-hermit-nerd'
+	'adobe-source-code-pro-fonts'
+	'ttf-roboto-mono-nerd'
+	'ttf-droid'
+	'ttf-dejavu'
+	'gnu-free-fonts'
 )

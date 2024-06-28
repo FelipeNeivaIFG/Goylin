@@ -4,8 +4,8 @@ pkgdesc='Goylin: Games'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group='goylin'
 
-pkgver=24.1
-pkgrel=2
+pkgver=24.3
+pkgrel=1
 arch=('x86_64')
 
 source=('tlauncher.tar' 'tlauncher.desktop')
@@ -15,21 +15,45 @@ noextract=('tlauncher.tar')
 md5sums=('SKIP' 'SKIP')
 
 depends=(
-    'minecraft-launcher' 'jdk-openjdk'
-    'ddnet' 'ltris' 'mari0' 'nottetris2'
-    'kpat' 'ksquares' 'knights' 'project-sushi'
-    'gnome-klotski' 'gnome-mahjongg' 'gnome-mines'
-    'gnome-sudoku' 'lix' 'vvvvvv' 'maniadrive'
-    'koifarm-git' 'atomix' '0ad' 'clonekeen'
+	'0ad'
+	'mari0'
+	'kpat'
+	'ksquares'
+	'knights'
+	'gnome-mines'
+	'gnome-mahjongg'
+	'gnome-klotski'
+	'gnome-sudoku'
 
-    #hollowknight openblack orbiter2016-git principia-git
-    #thrive  cytopia-git openloco vegastrike roblox
+	'atomix'
+
+	'jdk-openjdk'
+	'discord-game-sdk'
+
+	'minecraft-launcher'
+	'ddnet'
+	'ltris'
+	'grapejuice'
+
+	# 'maniadrive'
+	# 'lix'
+	# 'clonekeen'
+	# 'vvvvvv'
+	# 'koifarm-git'
+	# 'hollowknight'
+	# 'openblack'
+	# 'orbiter2016-git'
+	# 'principia-git'
+	# 'thrive'
+	# 'cytopia-git'
+	# 'openloco'
+	# 'vegastrike'
 )
 
 package() {
-    install -Dm 755 -t ${pkgdir}/usr/share/applications tlauncher.desktop
-    install -Dm 644 -t ${pkgdir}/opt/tlauncher tlauncher.tar
+	install -Dm 755 -t ${pkgdir}/usr/share/applications tlauncher.desktop
+	install -Dm 644 -t ${pkgdir}/opt/tlauncher tlauncher.tar
 	tar xf ${pkgdir}/opt/tlauncher/tlauncher.tar --overwrite --directory=${pkgdir}/opt/tlauncher/
-    chown 755 ${pkgdir}/opt/tlauncher/TLauncher-2.895.jar
-    rm ${pkgdir}/opt/tlauncher/tlauncher.tar
+	chmod 755 ${pkgdir}/opt/tlauncher/TLauncher.jar
+	rm ${pkgdir}/opt/tlauncher/tlauncher.tar
 }

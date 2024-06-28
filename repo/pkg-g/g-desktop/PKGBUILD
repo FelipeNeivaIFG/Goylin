@@ -9,8 +9,13 @@ pkgrel=1
 arch=('x86_64')
 
 source=(
-	'skel.tar' 'user-dirs.defaults' 'goylin.tar' 'gWelcome'
-	'gLogoutScript' 'xprofile' '00-keyboard.conf'
+	'skel.tar'
+	'user-dirs.defaults'
+	'goylin.tar'
+	'gWelcome'
+	'gLogoutScript'
+	'xprofile'
+	'00-keyboard.conf'
 )
 
 md5sums=(
@@ -23,12 +28,19 @@ install='pkg.install'
 noextract=('goylin.tar' 'skel.tar')
 
 depends=(
-	'xdg-user-dirs' 'xdg-desktop-portal' 'unarchiver' 'ark'
-	'gvfs' 'gvfs-afc' 'gvfs-goa' 'gvfs-gphoto2'
-	'gvfs-mtp' 'gvfs-nfs' 'gvfs-google' 'gvfs-smb'
-	'gvfs-wsdd' 'gvfs-onedrive' 'libnotify'
-	'cups' 'cups-browsed' 'libusb' 'ipp-usb' 'xdg-utils'
-	'bluez' 'bluez-obex' 'libsecret'
+	'xdg-user-dirs'
+	'xdg-desktop-portal'
+	'libnotify'
+	'cups'
+	'cups-browsed'
+	'libusb'
+	'ipp-usb'
+	'xdg-utils'
+	'bluez'
+	'bluez-obex'
+	'print-manager'
+	'system-config-printer'
+	'python-pysmbc'
 )
 
 package() {

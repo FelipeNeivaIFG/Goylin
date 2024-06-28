@@ -8,7 +8,23 @@ pkgver=24.3
 pkgrel=1
 arch=('x86_64')
 
+source=('skel.tar')
+
+noextract=('skel.tar')
+
+md5sums=('SKIP')
+
 depends=(
-    'audacity' 'ardour' 'mixxx' 'lmms'
-    # 'audacity-plugins'
+	'audacity'
+	'ardour'
+	'mixxx'
+	'lmms'
+	# 'audacity-plugins' <- FIX
+	'harvid'
 )
+
+package() {
+	install -Dm 644 -t ${pkgdir}/etc/skel skel.tar
+	tar xf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
+	rm ${pkgdir}/etc/skel/skel.tar
+}

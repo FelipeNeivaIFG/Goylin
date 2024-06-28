@@ -1,7 +1,0 @@
-#!/bin/bash
-
-post_install() {
-    systemctl enable tlp
-    systemctl mask systemd-rfkill.service
-    systemctl mask systemd-rfkill.socket
-}

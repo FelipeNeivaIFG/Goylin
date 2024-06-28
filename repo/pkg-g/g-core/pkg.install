@@ -34,9 +34,6 @@ post_install() {
 	systemctl enable sshd
 	systemctl enable goylin.service
 	systemctl enable systemd-timesyncd.service
-	systemctl enable tlp
-	systemctl mask systemd-rfkill.service
-	systemctl mask systemd-rfkill.socket
 	systemctl enable bluetooth
 
 	cp -f /usr/share/goylin/icons/goylin.svg /usr/share/pixmaps/archlinux-logo.svg

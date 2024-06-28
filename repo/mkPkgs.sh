@@ -9,7 +9,10 @@ set -o pipefail # Error on pipe end == exit
 ####################################################################################################
 
 source utils/gMsg.sh
-source utils/updateRepo.sh
+
+repoUser="suporte"
+repoSrv="10.11.0.111"
+repoRemotePath="/var/www/html/"
 
 ####################################################################################################
 ###                                        HELP                                                  ###
@@ -94,44 +97,23 @@ function _bootstrapChroot() {
 	chroot="/pkgRoot"
 	[ -d $chroot ] && rm -rf $chroot
 
-	pacman --config ../utils/pacman_local.conf -Syy 1> /dev/null
-
-	# _msg "Pacman update"
-	# if [ "$pkgType" == "pkg-a" ]; then
-	# 	pacman --config ../utils/pacman_update.conf -Sy 1> /dev/null
-	# else
-	# 	pacman --config ../utils/pacman_local.conf -Sy 1> /dev/null
-	# fi
+	pacman --config ../utils/pacman_local.conf -Syy #1> /dev/null
 
 	_msg "Creating chroot"
 	mkdir -p $chroot
 
-	mkarchroot -C ../utils/pacman_local.conf ${chroot}/root base-devel 1> /dev/null
+	mkarchroot -C ../utils/pacman_local.conf ${chroot}/root base-devel #1> /dev/null
 	cp ../utils/pacman_local.conf ${chroot}/root/etc/pacman.conf
-
-	# if [ "$pkgType" == "pkg-a" ]; then
-	# 	mkarchroot -C ../utils/pacman_update.conf ${chroot}/root base-devel 1> /dev/null
-	# 	cp ../utils/pacman_update.conf ${chroot}/root/etc/pacman.conf
-	# else
-	# 	mkarchroot -C ../utils/pacman_local.conf ${chroot}/root base-devel 1> /dev/null
-	# 	cp ../utils/pacman_local.conf ${chroot}/root/etc/pacman.conf
-	# fi
 }
 
 function _buildPKG() {
 	_msgInfo "Preparing ${pkgName} for build"
 	cd $pkgName
 
-	[ -f build.sh ] && _msg 'Running local build.sh' && . build.sh
+	[ "$pkgType" != "pkg-a" ] && [ -f build.sh ] && _msg 'Running local build.sh' && . build.sh
 
 	_msg "Spawning chroot"
-	arch-nspawn -C ../../utils/pacman_local.conf $chroot/root pacman -Syu 1> /dev/null
-
-	# if [ "$pkgType" == "pkg-a" ]; then
-	# 	arch-nspawn -C ../../utils/pacman_update.conf $chroot/root pacman -Syu 1> /dev/null
-	# else
-	# 	arch-nspawn -C ../../utils/pacman_local.conf $chroot/root pacman -Syu 1> /dev/null
-	# fi
+	arch-nspawn -C ../../utils/pacman_local.conf $chroot/root pacman -Syu --disable-download-timeout #1> /dev/null
 
 	_msgInfo "Building..."
 	makechrootpkg -c -r $chroot #1> /dev/null
@@ -151,17 +133,21 @@ function _addToRepo() {
 
 	[ ! -d ${repoName} ] && mkdir -p ${repoName}
 
-	_repoSyncDown
+	_msg "Syncing server repository to local"
+	wget -qr -np -nH --cut-dirs=1 -N -P $repoName http://${repoSrv}/${repoName}
 
 	_msg "Removing Old Version"
 	[ -f ${repoName}/${pkgName}*.pkg.* ] && rm -v ${repoName}/${pkgName}*.pkg.*
 
 	_msg "Moving PKG to local Repo"
-	mv -vf ${pkgType}/${pkgName}/${pkgName}*.pkg.tar.zst ${repoName}
+	mv -f ${pkgType}/${pkgName}/${pkgName}*.pkg.tar.zst ${repoName}
 
-	_repoAddSingle $pkgName
+	_msg "Adding $pkgName to Repo"
+	[ ! -f ${repoName}/${repoName}.db.tar.gz ] && touch ${repoName}/${repoName}.db.tar.gz
+	repo-add ${repoName}/${repoName}.db.tar.gz ${repoName}/${pkgName}*.pkg.tar.zst
 
-	_repoSyncUp
+	_msgInfo "Syncing local repository to server"
+	rsync -aru --delete --human-readable --progress "${repoName}" "${repoUser}"@"${repoSrv}":"${repoRemotePath}"
 }
 
 function _finishUp() {
@@ -188,8 +174,11 @@ pkgName=$2
 cd $pkgType
 
 if [ "$pkgType" == "pkg-a" ]; then
+	repoName="goylin-repo-aur"
 	_checkVersion
 	_gitpkg
+else
+	repoName="goylin-repo-g"
 fi
 
 _msgOk "${pkgName} build will start"

@@ -1,0 +1,46 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='gapp-wine'
+pkgdesc='Goylin: Wine'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group=('goylin')
+
+pkgver=24.3
+pkgrel=1
+arch=('x86_64')
+
+depends=(
+	'wine'
+	'wine-gecko'
+	'wine-mono'
+	'icoutils'
+	'alsa-lib'
+	'lib32-alsa-lib'
+	'alsa-plugins'
+	'lib32-alsa-plugins'
+	'lib32-libcups'
+	'dosbox'
+	'gnutls'
+	'lib32-gnutls'
+	'gst-plugins-bad'
+	'gst-plugins-base'
+	'lib32-gst-plugins-base'
+	'lib32-gst-plugins-base-libs'
+	'lib32-gst-plugins-good'
+	'libgphoto2'
+	'lib32-libpulse'
+	'libxcomposite'
+	'lib32-libxcomposite'
+	'libxinerama'
+	'lib32-libxinerama'
+	'opencl-icd-loader'
+	'lib32-opencl-icd-loader'
+	'pcsclite'
+	'lib32-pcsclite'
+	'sdl2'
+	'lib32-sdl2'
+	'unixodbc'
+	'v4l-utils'
+	'lib32-v4l-utils'
+	'lib32-nettle'
+	'nettle'
+)

@@ -8,21 +8,44 @@ pkgver=24.3
 pkgrel=1
 arch=('x86_64')
 
-# source=('skel.tar')
-
-# noextract=('skel.tar')
-
-# md5sums=('SKIP')
-
-depends=(
-	'google-earth-pro' 'qgis' 'marble' 'fcgi'
-	'gpsbabel' 'marble-maps' 'marble-common'
-	'grass'
-	#'qgis-grass-plugin'
+source=(
+	'skel.tar'
+	'sisvar.desktop'
+	'sisvaricon.png'
 )
 
-# package() {
-# 	install -Dm 644 -t ${pkgdir}/etc/skel skel.tar
-# 	tar xf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
-# 	rm ${pkgdir}/etc/skel/skel.tar
-# }
+noextract=('skel.tar')
+
+md5sums=('SKIP' 'SKIP' 'SKIP')
+
+depends=(
+	'google-earth-pro'
+	'qgis'
+	'marble'
+	'saga-gis'
+	#
+	'fcgi'
+	'gpsbabel'
+	'marble-maps'
+	'marble-common'
+	'wine'
+	'python-gdal'
+	'python-psycopg2'
+	'python-owslib'
+	'python-pygments'
+	'python-lxml'
+	'gdal'
+	'liblas'
+	'python-jinja'
+	'grass'
+	# 'qgis-grass-plugin' 'gdal-grass' <-FIX
+)
+
+package() {
+	install -Dm 644 -t ${pkgdir}/etc/skel skel.tar
+	tar xf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
+	rm ${pkgdir}/etc/skel/skel.tar
+
+	install -Dm 644 -t ${pkgdir}/usr/share/applications sisvar.desktop
+	install -Dm 644 -t ${pkgdir}/usr/share/icons sisvaricon.png
+}

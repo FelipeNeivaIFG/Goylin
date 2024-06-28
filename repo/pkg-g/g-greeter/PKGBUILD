@@ -8,7 +8,12 @@ pkgver=24.3
 pkgrel=1
 arch=('x86_64')
 
-source=('lightdm.conf' 'slick-greeter.conf' 'lightdm' 'state')
+source=(
+	'lightdm.conf'
+	'slick-greeter.conf'
+	'lightdm'
+	'state'
+)
 
 md5sums=('SKIP' 'SKIP' 'SKIP' 'SKIP')
 

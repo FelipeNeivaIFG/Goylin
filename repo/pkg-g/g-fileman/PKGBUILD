@@ -1,0 +1,43 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='g-fileman'
+pkgdesc='Goylin: File Manager'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group=('goylin')
+
+pkgver=24.3
+pkgrel=1
+arch=('x86_64')
+
+source=('skel.tar')
+
+noextract=('skel.tar')
+
+md5sums=('SKIP')
+
+depends=(
+	'dolphin'
+	'dolphin-plugins'
+	'ffmpegthumbs'
+	'kdegraphics-thumbnailers'
+	'kio'
+	'kio-gdrive'
+	'audiocd-kio'
+	'kio-extras'
+	'kio-fuse'
+	'kio-zeroconf'
+	'kio5'
+	'kio5-extras'
+	'kio-admin'
+	'purpose'
+	'ark'
+	'unarchiver'
+	'p7zip'
+	'unzip'
+	'unrar'
+)
+
+package() {
+	install -Dm 644 -t ${pkgdir}/etc/skel skel.tar
+	tar  xf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
+	rm ${pkgdir}/etc/skel/skel.tar
+}

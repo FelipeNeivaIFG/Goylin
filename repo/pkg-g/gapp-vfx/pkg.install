@@ -1,6 +1,6 @@
 #!/bin/bash
 
 post_install() {
-	mkdir -p /home/shared/blenderKitAssets/
-	chmod a+rwx -R /home/shared/blenderKitAssets/
+	mkdir -p /home/shared/blender/{blenderKitAssets,AssetLib}
+	chmod a+rwx -R /home/shared/blender/
 }

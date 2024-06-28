@@ -62,6 +62,7 @@ depends=(
 	'ca-certificates'
 	'man-db'
 	'man-pages'
+	'man-pages-pt_br'
 	'broadcom-wl'
 	'smartmontools'
 	'mkinitcpio'
@@ -70,8 +71,6 @@ depends=(
 	'b43-firmware'
 	'zsh'
 	'zsh-completions'
-	'unrar'
-	'p7zip'
 	'btrfs-progs'
 	'exfatprogs'
 	'f2fs-tools'
@@ -79,6 +78,7 @@ depends=(
 	'udftools'
 	'xfsprogs'
 	'e2fsprogs'
+	'xf86-input-libinput'
 )
 
 package() {

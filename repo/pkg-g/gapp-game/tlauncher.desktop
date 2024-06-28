@@ -2,7 +2,7 @@
 Name=TLauncher
 GenericName=TLauncher
 Comment=A launcher for Minecraft which integrates multiple different modpacks to allow you to download and install modpacks easily and quickly.
-Exec=java -jar /opt/tlauncher/TLauncher-2.895.jar
+Exec=java -jar /opt/tlauncher/TLauncher.jar
 Icon=/opt/tlauncher/tlauncher.ico
 Terminal=false
 Type=Application

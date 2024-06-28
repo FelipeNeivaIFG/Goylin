@@ -8,4 +8,10 @@ pkgver=24.3
 pkgrel=1
 arch=('x86_64')
 
-depends=('librecad' 'freecad' 'openscad' 'graphviz')
+depends=(
+	'librecad'
+	'freecad'
+	#
+	'openscad'
+	'graphviz'
+)

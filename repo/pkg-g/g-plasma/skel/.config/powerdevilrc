@@ -5,3 +5,6 @@ UseProfileSpecificDisplayBrightness=true
 
 [AC][SuspendAndShutdown]
 PowerButtonAction=8
+
+[AC][Performance]
+PowerProfile=performance

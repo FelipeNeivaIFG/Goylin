@@ -8,20 +8,29 @@ pkgver=24.3
 pkgrel=1
 arch=('x86_64')
 
-# source=('skel.tar')
+source=('skel.tar')
 
-# noextract=('skel.tar')
+noextract=('skel.tar')
 
-# md5sums=('SKIP')
+md5sums=('SKIP')
 
 depends=(
-    'kdenlive' 'handbrake' 'obs-studio' 'shotcut'
-    'bigsh0t' 'dvgrab' 'mediainfo' 'noise-suppression-for-voice'
-    'opencv' 'opentimelineio' 'sndio' 'swh-plugins'
+	'kdenlive'
+	'handbrake'
+	'obs-studio'
+	'shotcut'
+	# 'dcpomatic' <--FIX
+	'bigsh0t'
+	'dvgrab'
+	'mediainfo'
+	'opencv'
+	'opentimelineio'
+	'swh-plugins'
+	'python-pip'
 )
 
-# package() {
-# 	install -Dm 644 -t ${pkgdir}/etc/skel skel.tar
-# 	tar xf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
-# 	rm ${pkgdir}/etc/skel/skel.tar
-# }
+package() {
+	install -Dm 644 -t ${pkgdir}/etc/skel skel.tar
+	tar xf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
+	rm ${pkgdir}/etc/skel/skel.tar
+}

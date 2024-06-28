@@ -44,18 +44,18 @@ function _configUsers() {
 	groupadd -r nopasswdlogin
 	useradd -mG nopasswdlogin guest -s /usr/bin/zsh
 	chfn -f "Público" guest
-	chmod a+rw -R /home/guest/
+	chmod a+rw -R /home/guest
 
 	case $profile in
 		"radio")
 			_msg "radiovozes"
-			useradd -m radiovozzes # -s /usr/bin/zsh
+			useradd -m radiovozzes -s /usr/bin/zsh
 			echo -e "$gRadioPasswd\n$gRadioPasswd" | passwd radiovozzes
 			chfn -f "Radio Vozzes" radiovozzes
 		;;
 		"gremio")
 			_msg "gremio"
-			useradd -m gremio # -s /usr/bin/zsh
+			useradd -m gremio -s /usr/bin/zsh
 			echo -e "${gGremioPasswd}\n${gGremioPasswd}" | passwd gremio
 			chfn -f "Grêmio" gremio
 		;;
@@ -64,7 +64,7 @@ function _configUsers() {
 
 	_msg "Shared Home"
 	mkdir -vp /home/shared/
-	chmod a+r /home/shared/
+	chmod a+rw /home/shared/
 }
 
 function _configCPIO() {
@@ -102,122 +102,123 @@ function _pkgCore() {
 
 	_msg "AD"; _install_PKG g-ad
 
-	# _msg "Greeter"; _install_PKG g-greeter
-	# _msg "Desktop"; _install_PKG g-desktop
-	# _msg "Backgrounds"; _install_PKG g-backgrounds
-	# _msg "Fonts"; _install_PKG g-fonts
+	_msg "Greeter"; _install_PKG g-greeter
+	_msg "Desktop"; _install_PKG g-desktop
+	_msg "File Manager"; _install_PKG g-fileman
 
-	# _msg "DE: Plasma"; _install_PKG g-plasma
-	# _msg "DE: i3"; _install_PKG g-i3
+	_msg "Plasma"; _install_PKG g-plasma
+	_msg "i3"; _install_PKG g-i3
 
-	# _msg "App: Base"; _install_PKG gapp-base
-	# _msg "Profile: Base"; _install_PKG gp-base
+	_msg "Backgrounds"; _install_PKG g-backgrounds
+	_msg "Fonts"; _install_PKG g-fonts
+
+	# Use to apply quick dirty fixes if needed =)
+	_msg "Patches"; _install_PKG g-patch
+
+	_msg "App: Base"; _install_PKG gapp-base
+	_msg "App: Wine"; _install_PKG gapp-wine
+	_msg "Profile: Base"; _install_PKG gp-base
 }
 
 ####################################################################################################
 ###                                    Profiles                                                  ###
 ####################################################################################################
 
-# function _pAdm() {
-# 	_msgInfo "###   Profile: Administrative   ###"
+function _pAdm() {
+	_msgInfo "###   Profile: Administrative   ###"
 
-# 	_msg "Profile"; _install_PKG gp-adm
-# }
+	_msg "Profile"; _install_PKG gp-adm
+}
 
-# function _pCinema() {
-# 	_msgInfo "###   Profile: Cinema   ###"
+function _pCinema() {
+	_msgInfo "###   Profile: Cinema   ###"
 
-	# _msg "App: Audio"; _install_PKG gapp-audio
-	# _msg "App: Code"; _install_PKG gapp-code
-	# _msg "App: Image"; _install_PKG gapp-image
-	# _msg "App: Write"; _install_PKG gapp-write
-	# _msg "App: Game Dev"; _install_PKG gapp-gamedev
-	# _msg "App: VFX"; _install_PKG gapp-vfx
-	# _msg "App: Video"; _install_PKG gapp-video
-	# _msg "App: CLI"; _install_PKG gapp-cli
+	_msg "App: Audio"; _install_PKG gapp-audio
+	_msg "App: Code"; _install_PKG gapp-code
+	_msg "App: Image"; _install_PKG gapp-image
+	_msg "App: VFX"; _install_PKG gapp-vfx
+	_msg "App: Animation"; _install_PKG gapp-anim
+	_msg "App: Video"; _install_PKG gapp-video
+	_msg "App: Write"; _install_PKG gapp-write
+	_msg "App: Game Dev"; _install_PKG gapp-gamedev
+	_msg "App: CLI"; _install_PKG gapp-cli
 
-	# _msg "Profile"; _install_PKG gp-cinema
-# }
+	_msg "Profile"; _install_PKG gp-cinema
+}
 
-# function _pGeo() {
-# 	_msgInfo "###   Profile: Geo   ###"
+function _pGeotec() {
+	_msgInfo "###   Profile: Geotec   ###"
 
-# 	_msg "App: Cad"; _install_PKG gapp-cad
-# 	_msg "App: Geo"; _install_PKG gapp-geo
+	_msg "App: Cad"; _install_PKG gapp-cad
+	_msg "App: Geo"; _install_PKG gapp-geo
 
-# # 	_msg "Profile"; _install_PKG gp-geo
-# }
+	_msg "Profile"; _install_PKG gp-geotec
+}
 
-# function _pRadio() {
-# 	_msgInfo "###   Profile: Radio   ###"
+function _pRadio() {
+	_msgInfo "###   Profile: Radio   ###"
 
-# 	_msg "App: Audio"; _install_PKG gapp-audio
-# 	_msg "App: Image"; _install_PKG gapp-image
-# 	_msg "App: Video"; _install_PKG gapp-video
+	_msg "App: Audio"; _install_PKG gapp-audio
+	_msg "App: Image"; _install_PKG gapp-image
+	_msg "App: Video"; _install_PKG gapp-video
+	_msg "App: Animation"; _install_PKG gapp-anim
+	_msg "App: VFX"; _install_PKG gapp-vfx
+	_msg "App: CLI"; _install_PKG gapp-cli
 
-# 	_msg "Profile"; _install_PKG gp-radio
-# }
+	_msg "Profile"; _install_PKG gp-radio
+}
 
-# function _pGremio() {
-# 	_msgInfo "###   Profile: Gremio   ###"
+function _pGremio() {
+	_msgInfo "###   Profile: Gremio   ###"
 
-# 	_msg "App: Audio"; _install_PKG gapp-audio
-# 	_msg "App: Cad"; _install_PKG gapp-cad
-# 	_msg "App: Code"; _install_PKG gapp-code
-# 	_msg "App: Image"; _install_PKG gapp-image
-# 	_msg "App: Write"; _install_PKG gapp-write
-# 	_msg "App: Game Dev"; _install_PKG gapp-gamedev
-# 	_msg "App: Geo"; _install_PKG gapp-geo
-# 	_msg "App: VFX"; _install_PKG gapp-vfx
-# 	_msg "App: Video"; _install_PKG gapp-video
-# 	_msg "App: Game"; _install_PKG gapp-game
-# 	_msg "App: Educational"; _install_PKG gapp-edu
-	
-# 	_msg "Profile"; _install_PKG gp-gremio
-# }
+	_msg "App: Audio"; _install_PKG gapp-audio
+	_msg "App: Cad"; _install_PKG gapp-cad
+	_msg "App: Code"; _install_PKG gapp-code
+	_msg "App: Geo"; _install_PKG gapp-geo
+	_msg "App: Image"; _install_PKG gapp-image
+	_msg "App: VFX"; _install_PKG gapp-vfx
+	_msg "App: Animation"; _install_PKG gapp-anim
+	_msg "App: Video"; _install_PKG gapp-video
+	_msg "App: Write"; _install_PKG gapp-write
+	_msg "App: Game Dev"; _install_PKG gapp-gamedev
+	_msg "App: Educational"; _install_PKG gapp-edu
+	_msg "App: CLI"; _install_PKG gapp-cli
+	_msg "App: Game"; _install_PKG gapp-game
 
-# function _pLibrary() {
-# 	_msgInfo "###   Profile: Library   ###"
+	_msg "Profile"; _install_PKG gp-gremio
+}
 
-# 	_msg "App: Audio"; _install_PKG gapp-audio
-# 	_msg "App: Cad"; _install_PKG gapp-cad
-# 	_msg "App: Code"; _install_PKG gapp-code
-# 	_msg "App: Image"; _install_PKG gapp-image
-# 	_msg "App: Write"; _install_PKG gapp-write
-# 	_msg "App: Game Dev"; _install_PKG gapp-gamedev
-# 	_msg "App: Geo"; _install_PKG gapp-geo
-# 	_msg "App: Code"; _install_PKG gapp-code
-# 	_msg "App: VFX"; _install_PKG gapp-vfx
-# 	_msg "App: Video"; _install_PKG gapp-video
-# 	_msg "App: Game"; _install_PKG gapp-game
-# 	_msg "App: Educational"; _install_PKG gapp-edu
+function _pLibrary() {
+	_msgInfo "###   Profile: Library   ###"
 
-# 	_msg "Profile"; _install_PKG gp-lib
-# }
+	_msg "App: Audio"; _install_PKG gapp-audio
+	_msg "App: Cad"; _install_PKG gapp-cad
+	_msg "App: Code"; _install_PKG gapp-code
+	_msg "App: Geo"; _install_PKG gapp-geo
+	_msg "App: Image"; _install_PKG gapp-image
+	_msg "App: VFX"; _install_PKG gapp-vfx
+	_msg "App: Video"; _install_PKG gapp-video
+	_msg "App: Write"; _install_PKG gapp-write
+	_msg "App: Game Dev"; _install_PKG gapp-gamedev
+	_msg "App: Educational"; _install_PKG gapp-edu
+	_msg "App: CLI"; _install_PKG gapp-cli
+	_msg "App: Game"; _install_PKG gapp-game
+	_msg "App: Animation"; _install_PKG gapp-anim
 
-# function _pLaptop() {
-# 	_msgInfo "###   Profile: Laptop   ###"
+	_msg "Profile"; _install_PKG gp-lib
+}
 
-	# 	_msg "Laptop"; _install_PKG gapp-laptop
-	# 	_msg "App: Educational"; _install_PKG gapp-edu
-	
-	# _msg "Profile"; _install_PKG gp-laptop
-
-	# sed -i "s/core/laptop/g" /usr/lib/os-release
-# }
-
-# function _pkgProfile() {
-# 	case $profile in
-# 		"adm") _pAdm ;;
-# 		"cine") _pCinema ;;
-# 		"geo") _pGeo ;;
-# 		"radio") _pRadio ;;
-# 		"gremio") _pGremio ;;
-# 		"lib") _pLibrary ;;
-# 		"laptop") _pLaptop ;;
-# 		*) ;;
-# 	esac
-# }
+function _pkgProfile() {
+	case $profile in
+		"adm") _pAdm ;;
+		"cinema") _pCinema ;;
+		"geotec") _pGeotec ;;
+		"radio") _pRadio ;;
+		"gremio") _pGremio ;;
+		"library") _pLibrary ;;
+		*) ;;
+	esac
+}
 
 ####################################################################################################
 ###                                     GCHROOT INIT                                             ###
@@ -226,7 +227,7 @@ function _pkgCore() {
 _configSys
 
 _pkgCore
-# _pkgProfile
+_pkgProfile
 
 _configUsers
 _configCPIO

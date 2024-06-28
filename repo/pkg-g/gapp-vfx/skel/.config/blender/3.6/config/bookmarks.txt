@@ -1,0 +1,6 @@
+[Bookmarks]
+[Recent]
+/home/shared/blender/blenderKitAssets/
+/home/guest/Downloads/
+/home/shared/blender/AssetLib/
+/usr/bin/

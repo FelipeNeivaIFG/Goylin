@@ -8,16 +8,22 @@ pkgver=24.3
 pkgrel=1
 arch=('x86_64')
 
-# source=('skel.tar')
+source=('skel.tar')
 
-# noextract=('skel.tar')
+noextract=('skel.tar')
 
-# md5sums=('SKIP')
+md5sums=('SKIP')
 
-depends=('blender-3.6-bin' 'natron-bin' 'synfigstudio' 'opentoonz')
+depends=(
+	'blender-3.6-bin'
+	'natron-bin'
+	'magicavoxel'
+)
 
-# package() {
-# 	install -vDm 644 -t ${pkgdir}/etc/skel skel.tar
-# 	tar vxf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
-# 	rm -v ${pkgdir}/etc/skel/skel.tar
-# }
+install='pkg.install'
+
+package() {
+	install -vDm 644 -t ${pkgdir}/etc/skel skel.tar
+	tar vxf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
+	rm -v ${pkgdir}/etc/skel/skel.tar
+}

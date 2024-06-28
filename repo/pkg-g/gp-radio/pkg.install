@@ -1,0 +1,25 @@
+#!/bin/bash
+
+_lockGFiles() {
+	chattr +i /usr/lib/os-release
+	chattr +i /etc/xdg/kdeglobals
+}
+
+_unlockGFiles() {
+	chattr -i /usr/lib/os-release
+	chattr -i /etc/xdg/kdeglobals
+}
+
+post_install() {
+	_unlockGFiles
+	sed -i "s/core/radio/g" /usr/lib/os-release
+	sed -i "s/goylin.desktop/goylindark.desktop/g" /etc/xdg/kdeglobals
+	_lockGFiles
+}
+
+post_upgrade() {
+	_unlockGFiles
+	sed -i "s/core/radio/g" /usr/lib/os-release
+	sed -i "s/goylin.desktop/goylindark.desktop/g" /etc/xdg/kdeglobals
+	_lockGFiles
+}

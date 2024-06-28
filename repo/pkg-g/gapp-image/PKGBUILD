@@ -8,8 +8,30 @@ pkgver=24.3
 pkgrel=1
 arch=('x86_64')
 
+source=('skel.tar')
+
+noextract=('skel.tar')
+
+md5sums=('SKIP')
+
 depends=(
-    'gimp' 'inkscape' 'krita' 'darktable' 'krita-plugin-gmic'
-    'libmypaint' 'gimp-plugin-gmic' 'potrace' 'xsane'
-    'xsane-gimp'
+	'gimp'
+	'inkscape'
+	'krita'
+	'darktable'
+	#
+	'krita-plugin-gmic'
+	'libmypaint'
+	'mypaint-brushes'
+	'potrace'
+	'xsane-gimp'
+	'fig2dev'
+	'gnuplot'
+	'gimp-plugin-gmic'
 )
+
+package() {
+	install -Dm 644 -t ${pkgdir}/etc/skel skel.tar
+	tar xf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
+	rm ${pkgdir}/etc/skel/skel.tar
+}

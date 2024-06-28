@@ -4,13 +4,25 @@ pkgdesc='Goylin: Educational Apps'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.2
+pkgver=24.3
 pkgrel=1
 arch=('x86_64')
 
 depends=(
-    'scratch' 'portugol-studio-bin' 'kbruch' 'geogebra'
-    'kalzium' 'kgeography' 'duolingo-desktop-bin' 'step'
-    'kstars' 'ktouch' 'minuet' 'nootka'
-    'leocad' 'magicavoxel'
+	'scratch'
+	'kbruch'
+	'geogebra'
+	'kalzium'
+	'kgeography'
+	'step'
+	'kstars'
+	'ktouch'
+	'minuet'
+	'leocad'
+	#
+	'duolingo-desktop-bin'
+	'portugol-studio-bin'
+	#
+	'xplanet'
+	'povray'
 )
