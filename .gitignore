@@ -1,4 +1,3 @@
-.gitignore
 .vscode
 
 *.tar
@@ -17,3 +16,5 @@ repo/blankdb
 repo/PKGBUILD.proto
 repo/proto.install
 iso/isoOut/
+
+repo/pkg-g/gapp-geo/skel/Documentos/.sisvar
