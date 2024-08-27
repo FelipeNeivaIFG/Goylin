@@ -4,11 +4,15 @@ echo
 [ "$(id -u)" -ne 0 ] && echo "Run with root permissions: 'sudo !!'" && echo && exit
 
 echo 'Hostname:'
-read -p '?: ' -e newHostname; echo
-[ ! $newHostname ] && echo 'HostName Required!' && exit
-oldHostname=$(cat /etc/hostname)
-hostnamectl set-hostname $newHostname
-sed -i "s/${oldHostname}/${newHostname}/g" /etc/hosts
+read -p '?: ' -e newHostName; echo
+[ ! $newHostName ] && echo 'HostName Required!' && exit
+
+oldHostName=$(cat /etc/hostname)
+chattr -i /etc/hostname
+chattr -i /etc/hosts
+
+hostnamectl set-hostname $newHostName
+sed -i "s/${oldHostName}/${newHostName}/g" /etc/hosts
 chattr +i /etc/hostname
 chattr +i /etc/hosts
 
@@ -16,8 +20,8 @@ echo 'Admin ID:'
 read -p '?: ' -e adminID; echo
 [ ! $adminID ] && echo 'Admin ID Required!' && exit
 
-net ads join -v -U $adminID
+net ads join -U $adminID
 
-systemctl enable smb
-systemctl enable nmb
-systemctl enable winbind
+systemctl enable --now smb
+systemctl enable --now nmb
+systemctl enable --now winbind

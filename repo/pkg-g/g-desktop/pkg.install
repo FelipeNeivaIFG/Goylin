@@ -4,17 +4,18 @@ _lockGFiles() {
 	chattr +i /etc/xprofile
 	chattr +i /etc/xdg/user-dirs.defaults
 	chattr +i /etc/X11/xorg.conf.d/00-keyboard.conf
+	chattr +i /etc/X11/xorg.conf.d/10-c3tech.conf
 }
 
 _unlockGFiles() {
 	chattr -i /etc/xprofile
 	chattr -i /etc/xdg/user-dirs.defaults
 	chattr -i /etc/X11/xorg.conf.d/00-keyboard.conf
+	chattr -i /etc/X11/xorg.conf.d/10-c3tech.conf
 }
 
 post_install() {
 	_lockGFiles
-	systemctl enable cups
 	systemctl enable bluetooth
 }
 

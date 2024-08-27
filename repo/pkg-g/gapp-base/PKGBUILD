@@ -4,7 +4,7 @@ pkgdesc='Goylin: Base Apps'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.3
+pkgver=24.4
 pkgrel=1
 arch=('x86_64')
 
@@ -30,10 +30,6 @@ depends=(
 	'muffon-bin'
 	'ferdium-bin'
 	#
-	'adwaita-cursors'
-	'adwaita-icon-theme'
-	'adwaita-icon-theme-legacy'
-	'libadwaita'
 	'pstoedit'
 	'libwpg'
 	'gst-plugins-base-libs'
@@ -108,8 +104,6 @@ depends=(
 	'libfdk-aac'
 	'mediainfo'
 	'trash-cli'
-	'sane'
-	'sane-airscan'
 )
 
 package() {

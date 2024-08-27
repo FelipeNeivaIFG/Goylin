@@ -8,14 +8,8 @@ PS1='[\u@\h \W]\$ '
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-
-if [ -d "$HOME/.bin" ] ;
-  then PATH="$HOME/.bin:$PATH"
-fi
-
-if [ -d "$HOME/.local/bin" ] ;
-  then PATH="$HOME/.local/bin:$PATH"
-fi
+[ -d "$HOME/.bin" ] && export PATH="$HOME/.bin:$PATH"
+[ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:$PATH"
 
 #ignore upper and lowercase when TAB completion
 bind "set completion-ignore-case on"
@@ -36,14 +30,6 @@ alias ll='ls -alFh'
 alias l='ls'
 alias l.="ls -A | egrep '^\.'"
 alias ldir="ls -d */ > list"
-
-alias sps='sudo pacman -S'
-alias spr='sudo pacman -Rs'
-alias pkgcleanup='sudo pacman -Rns $(pacman -Qtdq)'
-alias pkglist="sudo pacman -Qqet"
-alias pkgaurlist="sudo pacman -Qqem"
-
-alias userlist="cut -d: -f1 /etc/passwd | sort"
 
 alias psa="ps auxf"
 alias psgrep="ps aux | grep -v grep | grep -i -e VSZ -e"
@@ -82,4 +68,4 @@ ex ()
   fi
 }
 
-[[ -f ~/.bashrc-personal ]] && . ~/.bashrc-personal
+[[ -f ~/.bashrc-personal ]] && . ~/.mybashrc

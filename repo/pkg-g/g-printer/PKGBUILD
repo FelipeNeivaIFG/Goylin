@@ -1,0 +1,34 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='g-printer'
+pkgdesc='Goylin: Printer'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group='goylin'
+
+pkgver=24.4
+pkgrel=1
+arch=('x86_64')
+
+source=('printers.conf')
+
+md5sums=('SKIP')
+
+depends=(
+	'cups'
+	'cups-browsed'
+	'ipp-usb'
+	'sane'
+	'sane-airscan'
+	'cups-pdf'
+	'cups-filters'
+	'ghostscript'
+	'gsfonts'
+	'print-manager'
+	'hplip'
+	'rpcbind'
+)
+
+install='pkg.install'
+
+package() {
+	install -Dm 640 -g cups -t ${pkgdir}/etc/cups/ printers.conf
+}

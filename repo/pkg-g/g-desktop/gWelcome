@@ -1,7 +1,10 @@
 #!/bin/bash
 
+[ -f "${HOME}/.welcomed" ] && exit 0
+
 response_code=$(curl -s -o /dev/null -w "%{http_code}" "http://repo.goias.ifg.edu.br/goylin-web/index.html")
 
 if [ "$response_code" == "200" ]; then
     /usr/bin/brave --app=http://repo.goias.ifg.edu.br/goylin-web/index.html --window-size=700,800
+    touch ${HOME}/.welcomed
 fi

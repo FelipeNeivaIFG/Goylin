@@ -4,7 +4,7 @@ pkgdesc='Goylin: Core'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.3
+pkgver=24.4
 pkgrel=1
 arch=('x86_64')
 
@@ -12,7 +12,6 @@ source=(
 	'sudoers'
 	'os-release'
 	'issue'
-	'getty@.service'
 	'motd'
 	'pacman.conf'
 	'gSysStartUp'
@@ -34,7 +33,7 @@ md5sums=(
 	'SKIP' 'SKIP' 'SKIP' 'SKIP'
 	'SKIP' 'SKIP' 'SKIP' 'SKIP'
 	'SKIP' 'SKIP' 'SKIP' 'SKIP'
-	'SKIP' 'SKIP' 'SKIP' 'SKIP'
+	'SKIP' 'SKIP' 'SKIP'
 )
 
 install='pkg.install'
@@ -78,7 +77,7 @@ depends=(
 	'udftools'
 	'xfsprogs'
 	'e2fsprogs'
-	'xf86-input-libinput'
+	'nfs-utils'
 )
 
 package() {
@@ -88,7 +87,7 @@ package() {
 	install -Dm 644 -t ${pkgdir}/etc/ vconsole.conf
 	install -Dm 644 -t ${pkgdir}/etc pacman.conf
 
-	install -vDm 644 -t ${pkgdir}/root/ .bashrc
+	install -Dm 644 -t ${pkgdir}/root/ .bashrc
 	chmod 750 ${pkgdir}/root/
 
 	install -Dm 644 -t ${pkgdir}/etc/default/ grub
@@ -104,8 +103,6 @@ package() {
 
 	install -Dm 644 -t ${pkgdir}/usr/share/plymouth/themes/plyGoylin/ plyGoylin.plymouth
 	install -Dm 644 -t ${pkgdir}/usr/share/plymouth/ plymouthd.defaults
-
-	install -Dm 644 -t ${pkgdir}/usr/lib/systemd/system/ getty@.service
 
 	install -Dm 644 -t ${pkgdir}/usr/share/goylin/ goylin.tar
 	tar xf ${pkgdir}/usr/share/goylin/goylin.tar --overwrite --directory=${pkgdir}/usr/share/goylin/

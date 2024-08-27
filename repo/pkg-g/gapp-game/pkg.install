@@ -1,0 +1,9 @@
+#!/bin/bash
+
+post_install() {
+	chmod a+rx -R /home/shared/lutris/
+	ln /home/shared/lutris/banners /etc/skel/.local/share/lutris/
+	ln /home/shared/lutris/coverart /etc/skel/.local/share/lutris/
+	ln /home/shared/lutris/runners /etc/skel/.local/share/lutris/
+	ln /home/shared/lutris/runtime /etc/skel/.local/share/lutris/
+}

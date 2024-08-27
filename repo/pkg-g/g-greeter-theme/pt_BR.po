@@ -24,7 +24,7 @@ msgstr "Informe a senha para %s"
 
 #: src/greeter-list.vala:305
 msgid "Enter your username"
-msgstr "Entre seu IFG-ID"
+msgstr "Entre seu IFG-ID@ifg.br"
 
 #: src/greeter-list.vala:815 src/user-list.vala:720
 msgid "Password:"
@@ -32,7 +32,7 @@ msgstr "Senha:"
 
 #: src/greeter-list.vala:817 src/user-list.vala:714
 msgid "Username:"
-msgstr "IFG-ID:"
+msgstr "IFG-ID@ifg.br"
 
 #: src/greeter-list.vala:872
 msgid "Invalid password, please try again"
@@ -238,4 +238,4 @@ msgstr "Tentar novamente como %s"
 
 #: src/user-list.vala:892
 msgid "Login"
-msgstr "Matrícula"
+msgstr "Matrícula@ifg.br"

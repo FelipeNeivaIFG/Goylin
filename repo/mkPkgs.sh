@@ -115,7 +115,7 @@ function _buildPKG() {
 	_msg "Spawning chroot"
 	arch-nspawn -C ../../utils/pacman_local.conf $chroot/root pacman -Syu --disable-download-timeout #1> /dev/null
 
-	_msgInfo "Building..."
+	_msgInfo "Building"
 	makechrootpkg -c -r $chroot #1> /dev/null
 }
 
@@ -137,7 +137,11 @@ function _addToRepo() {
 	wget -qr -np -nH --cut-dirs=1 -N -P $repoName http://${repoSrv}/${repoName}
 
 	_msg "Removing Old Version"
-	[ -f ${repoName}/${pkgName}*.pkg.* ] && rm -v ${repoName}/${pkgName}*.pkg.*
+	# [ -f ${repoName}/${pkgName}*.pkg.* ] && rm -v ${repoName}/${pkgName}*.pkg.*
+	files=$(ls ${repoName}/${pkgName}*.pkg.* 2>/dev/null)
+	if [ -n "$files" ]; then
+		rm -v ${repoName}/${pkgName}*.pkg.*
+	fi
 
 	_msg "Moving PKG to local Repo"
 	mv -f ${pkgType}/${pkgName}/${pkgName}*.pkg.tar.zst ${repoName}
@@ -151,12 +155,12 @@ function _addToRepo() {
 }
 
 function _finishUp() {
-	_msgInfo "Finishing up"
+	_msgInfo "Finishing"
 
-	_msg "Cleaning up"
+	_msg "Cleaning build files"
 	rm -rf $chroot
 
-	_msg "Updating Pacman..."
+	_msg "Updating Pacman"
 	pacman -Sy 1> /dev/null
 	echo; pacman -Ss $pkgName
 	pkgInstalled="$(pacman -Ss $pkgName)"

@@ -82,6 +82,10 @@ mltpath[$e]=/usr/share/mlt-7/profiles
 
 [project]
 SupportedHWCodecs=h264_vaapi
+enableproxy=true
+externalProxyProfile=./;;.LRV;./;;.MP4
+generateimageproxy=true
+generateproxy=true
 
 [timeline]
 trackheight=67

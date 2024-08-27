@@ -4,8 +4,14 @@ pkgdesc='Goylin: Code Apps'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.3
-pkgrel=1
+pkgver=24.4
+pkgrel=2
 arch=('x86_64')
 
-depends=('vscodium-bin')
+depends=(
+	'vscodium-bin'
+	'neovim'
+	'python-pynvim'
+	'xclip'
+	'wl-clipboard'
+)

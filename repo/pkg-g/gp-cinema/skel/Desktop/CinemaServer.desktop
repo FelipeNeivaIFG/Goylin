@@ -1,0 +1,6 @@
+[Desktop Entry]
+Icon=network-server
+Name[pt_BR]=CinemaServer
+Name=CinemaServer
+Type=Link
+URL[$e]=smb://goi118634/CinemaServer

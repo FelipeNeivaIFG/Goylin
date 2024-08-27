@@ -9,8 +9,6 @@ _lockGFiles() {
 	chattr +i /etc/security/pam_winbind.conf
 	chattr +i /etc/pam.d/system-auth
 	chattr +i /etc/pam.d/su
-	chattr +i /etc/polkit-1/rules.d/90-mount.rules
-	
 }
 
 _unlockGFiles() {
@@ -22,11 +20,9 @@ _unlockGFiles() {
 	chattr -i /etc/security/pam_winbind.conf
 	chattr -i /etc/pam.d/system-auth
 	chattr -i /etc/pam.d/su
-	chattr -i /etc/polkit-1/rules.d/90-mount.rules
 }
 
 post_install() {
-	systemctl enable avahi-daemon
 	_lockGFiles
 }
 

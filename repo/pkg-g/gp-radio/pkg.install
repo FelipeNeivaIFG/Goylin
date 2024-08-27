@@ -10,16 +10,19 @@ _unlockGFiles() {
 	chattr -i /etc/xdg/kdeglobals
 }
 
-post_install() {
-	_unlockGFiles
+_setProfile() {
 	sed -i "s/core/radio/g" /usr/lib/os-release
 	sed -i "s/goylin.desktop/goylindark.desktop/g" /etc/xdg/kdeglobals
+}
+
+post_install() {
+	_unlockGFiles
+	_setProfile
 	_lockGFiles
 }
 
 post_upgrade() {
 	_unlockGFiles
-	sed -i "s/core/radio/g" /usr/lib/os-release
-	sed -i "s/goylin.desktop/goylindark.desktop/g" /etc/xdg/kdeglobals
+	_setProfile
 	_lockGFiles
 }

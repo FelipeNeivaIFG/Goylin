@@ -1,7 +1,9 @@
 #!/bin/bash
 
 plymouth change-mode --updates
-gSysUpdateMsg=""
+gSysUpdateMsg="Inicializando Sistema..."
+echo "${gSysUpdateMsg}"
+plymouth display-message --text="${gSysUpdateMsg}"
 
 # Clock sync
 gSysUpdateMsg="Sincronizando relógio..."
@@ -44,6 +46,6 @@ plymouth display-message --text="${gSysUpdateMsg}"
 pacman -Scc --noconfirm
 
 # Init System
-gSysUpdateMsg="Inicializando Sistema..."
+gSysUpdateMsg="Bem Vindo!"
 echo "${gSysUpdateMsg}"
 plymouth display-message --text="${gSysUpdateMsg}"

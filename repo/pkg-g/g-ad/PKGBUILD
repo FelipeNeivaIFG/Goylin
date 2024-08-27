@@ -4,36 +4,37 @@ pkgdesc='Goylin: AD'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.3
-pkgrel=1
+pkgver=24.4
+pkgrel=2
 arch=('x86_64')
 
 source=(
 	'gLoginAD' 'krb5.conf' 'nsswitch.conf' 'pam_winbind.conf'
 	'smb.conf' 'su' 'system-auth' 'sshd_config'
-	'90-mount.rules'
 )
 
 md5sums=(
 	'SKIP' 'SKIP' 'SKIP' 'SKIP'
 	'SKIP' 'SKIP' 'SKIP' 'SKIP'
-	'SKIP'
 )
 
 install='pkg.install'
 
 depends=(
+	# AD
 	'samba'
 	'smbclient'
-	'bind'
-	'python-dnspython'
-	'bind'
-	'krb5'
 	'pam-krb5'
-	'polkit'
-	'avahi'
 	'pam'
-	
+
+	# For debug
+	# 'bind'
+	# 'python-dnspython'
+	# 'bind'
+	# 'krb5'
+
+	# Network discovery
+	# 'avahi'
 )
 
 package() {
@@ -50,7 +51,4 @@ package() {
 
 	install -Dm 644 -t ${pkgdir}/etc/pam.d/ system-auth
 	install -Dm 644 -t ${pkgdir}/etc/pam.d/ su
-
-	install -Dm 644 -t ${pkgdir}/etc/polkit-1/rules.d/ 90-mount.rules
-	chmod 750 ${pkgdir}/etc/polkit-1/rules.d/
 }

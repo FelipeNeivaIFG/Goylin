@@ -1,0 +1,16 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='gapp-adm'
+pkgdesc='Goylin: Administrative Apps'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group=('goylin')
+
+pkgver=24.4
+pkgrel=1
+arch=('x86_64')
+
+depends=(
+	'thunderbird'
+	'thunderbird-ublock-origin'
+	'thunderbird-i18n-pt-br'
+	'pdfarranger'
+)

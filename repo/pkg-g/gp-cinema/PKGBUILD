@@ -4,8 +4,8 @@ pkgdesc='Goylin: Profile - Cinema'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.3
-pkgrel=1
+pkgver=24.4
+pkgrel=2
 arch=('x86_64')
 
 source=('skel.tar')

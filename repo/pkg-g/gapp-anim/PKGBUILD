@@ -4,12 +4,12 @@ pkgdesc='Goylin: Animation Apps'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.3
+pkgver=24.4
 pkgrel=1
 arch=('x86_64')
 
 depends=(
 	'synfigstudio'
 	'opentoonz'
-	# 'glaxnimate' <-FIX
+	'glaxnimate'
 )

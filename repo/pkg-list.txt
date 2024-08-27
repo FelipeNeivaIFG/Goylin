@@ -37,6 +37,7 @@ xfsprogs
 e2fsprogs
 b43-fwcutter
 xf86-input-libinput
+nfs-utils
 
 intel-ucode
 mesa
@@ -112,7 +113,14 @@ xdg-desktop-portal
 libnotify
 cups
 cups-browsed
+cups-pdf
+cups-filters
+ghostscript
+gsfonts
+hplip
+rpcbind
 libusb
+usbutils
 ipp-usb
 xdg-utils
 bluez
@@ -160,8 +168,6 @@ kwrited
 plasma-browser-integration
 plasma-nm
 plasma-pa
-powerdevil
-xdg-desktop-portal-kde
 spectacle
 konsole
 kinfocenter
@@ -212,6 +218,7 @@ libreoffice-fresh-pt-br
 kate
 elisa
 vlc
+systray-x-kde
 adwaita-cursors
 adwaita-icon-theme
 adwaita-icon-theme-legacy
@@ -266,6 +273,7 @@ aribb25
 aom
 aalib
 re2
+electron31
 electron30
 asar
 ffmpeg
@@ -293,6 +301,14 @@ mediainfo
 trash-cli
 sane
 sane-airscan
+xf86-input-wacom
+xf86-input-libinput
+
+thunderbird
+thunderbird-ublock-origin
+thunderbird-i18n-pt-br
+pdfarranger
+remmina
 
 audacity
 ardour
@@ -304,6 +320,11 @@ librecad
 freecad
 openscad
 graphviz
+
+neovim
+python-pynvim
+xclip
+wl-clipboard
 
 qgis
 gpsbabel
@@ -328,7 +349,6 @@ darktable
 libmypaint
 mypaint-brushes
 potrace
-xsane-gimp
 fig2dev
 gnuplot
 
@@ -435,6 +455,8 @@ lib32-wavpack
 lib32-glibc
 lib32-gmp
 
+steam
+lutris
 0ad
 0ad-data
 mari0
@@ -446,8 +468,38 @@ gnome-mahjongg
 gnome-klotski
 gnome-sudoku
 atomix
+retroarch
+retroarch-assets-glui
+retroarch-assets-ozone
+retroarch-assets-xmb
+libretro-beetle-psx
+libretro-citra
+libretro-desmume
+libretro-dolphin
+libretro-flycast
+libretro-genesis-plus-gx
+libretro-kronos
+libretro-mame
+libretro-melonds
+libretro-mgba
+libretro-mupen64plus-next
+libretro-pcsx2
+libretro-ppsspp
+libretro-retrodream
+libretro-sameboy
+libretro-scummvm
+libretro-snes9x
+libretro-overlays
+libretro-shaders
+gamemode
+lib32-gamemode
+lib32-vkd3d
+vkd3d
+xorg-xgamma
+vulkan-tools
 
 yt-dlp
+ytfzf
 sl
 cmatrix
 cowsay
@@ -508,3 +560,25 @@ xorg-fonts-misc
 arch-install-scripts
 python-wxpython
 txt2tags
+python-distutils-extra
+libfakekey
+reflector
+electron
+npm
+go
+wayland-protocols
+help2man
+tidy
+sdl2_image
+sdl2_mixer
+sdl2_ttf
+glfw
+glm
+cxxopts
+stb
+spdlog
+glm
+bullet
+libnoise
+vulkan-icd-loader
+webkit2gtk

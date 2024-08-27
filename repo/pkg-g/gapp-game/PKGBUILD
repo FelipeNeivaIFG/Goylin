@@ -4,8 +4,8 @@ pkgdesc='Goylin: Games'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group='goylin'
 
-pkgver=24.3
-pkgrel=1
+pkgver=24.4
+pkgrel=2
 arch=('x86_64')
 
 source=('tlauncher.tar' 'tlauncher.desktop')
@@ -24,29 +24,37 @@ depends=(
 	'gnome-mahjongg'
 	'gnome-klotski'
 	'gnome-sudoku'
-
+	# 'steam' <- This will make a mess for sure... ^_^
+	#
 	'atomix'
-
-	'jdk-openjdk'
-	'discord-game-sdk'
-
 	'minecraft-launcher'
 	'ddnet'
 	'ltris'
-	'grapejuice'
+	'lix'
+	'koifarm-git'
 
-	# 'maniadrive'
-	# 'lix'
-	# 'clonekeen'
-	# 'vvvvvv'
-	# 'koifarm-git'
-	# 'hollowknight'
-	# 'openblack'
-	# 'orbiter2016-git'
-	# 'principia-git'
-	# 'thrive'
-	# 'cytopia-git'
-	# 'openloco'
+	'jdk-openjdk'
+	'discord-game-sdk'
+	'dosbox'
+	'fluidsynth'
+	'gamemode'
+	'lib32-gamemode'
+	'lib32-vkd3d'
+	'lib32-vulkan-icd-loader'
+	'vkd3d'
+	'vulkan-icd-loader'
+	'vulkan-tools'
+	'xorg-xgamma'
+
+	# 'maniadrive' <- Exec error with domain users (local/domain username conflict?)
+	# 'clonekeen' <- Build Error
+	# 'vvvvvv' <- Build Error
+	# 'gog-hollow-knight' <- Upstream PKGBUILD missing deps lgogdownloader
+	# 'openblack-git' <- Missing deps
+	# 'orbiter2016-git' <- Missing build deps
+	# 'principia' <- Missing deps
+	# 'thrive-bin' <- Failed download Src
+	# 'openloco' <- Missing deps
 	# 'vegastrike'
 )
 

@@ -1,0 +1,29 @@
+## Scripts
+
+# repo/mkPkgs.sh:
+- remove log files on end
+
+## PKGs:
+
+# gapp-game-extra:
+- Fix n64 analog stick to keyboard mapping
+- Configure USB Joystick
+- Fix dconf defaults for gamehub
+
+# g-ad
+- Fix $HOME group permission of ad users on creation
+
+#### 24.5 ####
+
+# DE
+- use wayland
+
+# g-desktop
+- Use profile insted of xprofile
+
+# Alternative DE
+- Gnome?
+- Hyprland?
+
+# gapp-game-extra 
+- Change ../games to ../roms

@@ -9,7 +9,6 @@ _lockGFiles() {
 	chattr +i /etc/vconsole.conf
 	chattr +i /etc/pacman.conf
 	chattr +i /etc/systemd/timesyncd.conf
-	chattr +i /usr/lib/systemd/system/getty@.service
 	chattr +i /usr/lib/os-release
 	chattr +i /etc/systemd/sleep.conf
 }
@@ -24,7 +23,6 @@ _unlockGFiles() {
 	chattr -i /etc/vconsole.conf
 	chattr -i /etc/pacman.conf
 	chattr -i /etc/systemd/timesyncd.conf
-	chattr -i /usr/lib/systemd/system/getty@.service
 	chattr -i /usr/lib/os-release
 	chattr -i /etc/systemd/sleep.conf
 }
@@ -34,7 +32,6 @@ post_install() {
 	systemctl enable sshd
 	systemctl enable goylin.service
 	systemctl enable systemd-timesyncd.service
-	systemctl enable bluetooth
 
 	cp -f /usr/share/goylin/icons/goylin.svg /usr/share/pixmaps/archlinux-logo.svg
 	cp -f /usr/share/goylin/icons/goylin.png /usr/share/pixmaps/archlinux-logo.png

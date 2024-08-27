@@ -4,15 +4,24 @@
 *.log
 *.xcf
 
+art/wallpapers/
+
 installer/utils/gPasswd.sh
 
-repo/goylin-repo
-repo/goylin-repo-g
-repo/goylin-repo-aur
-repo/pkg-a
+repo/goylin-repo/
+repo/goylin-repo-g/
+repo/goylin-repo-aur/
+repo/pkg-a/
+
+repo/pkg-g/gapp-game-extra/
 
 repo/pkgRoot
 repo/blankdb
 repo/PKGBUILD.proto
 repo/proto.install
+
+repo/pkg-g/gapp-base/skel/.config/BraveSoftware/
+repo/pkg-g/gapp-geo/skel/Documentos/.sisvar/
+repo/pkg-g/gapp-vfx/skel/.config/blender/
+
 iso/isoOut/

@@ -4,8 +4,8 @@ pkgdesc='Goylin: Desktop'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.3
-pkgrel=1
+pkgver=24.4
+pkgrel=6
 arch=('x86_64')
 
 source=(
@@ -16,11 +16,12 @@ source=(
 	'gLogoutScript'
 	'xprofile'
 	'00-keyboard.conf'
+	'10-c3tech.conf'
 )
 
 md5sums=(
 	'SKIP' 'SKIP' 'SKIP' 'SKIP'
-	'SKIP' 'SKIP' 'SKIP'
+	'SKIP' 'SKIP' 'SKIP' 'SKIP'
 )
 
 install='pkg.install'
@@ -31,16 +32,22 @@ depends=(
 	'xdg-user-dirs'
 	'xdg-desktop-portal'
 	'libnotify'
-	'cups'
-	'cups-browsed'
 	'libusb'
-	'ipp-usb'
 	'xdg-utils'
+	'python-pysmbc'
+	'xf86-input-libinput'
+	# Bluetooth
 	'bluez'
 	'bluez-obex'
-	'print-manager'
-	'system-config-printer'
-	'python-pysmbc'
+	# Graphic Tablet
+	'xf86-input-wacom'
+	'xf86-input-libinput'
+	'usbutils'
+	# Backup theme
+	'adwaita-cursors'
+	'adwaita-icon-theme'
+	'adwaita-icon-theme-legacy'
+	'libadwaita'
 )
 
 package() {
@@ -49,6 +56,7 @@ package() {
 	install -Dm 644 -t ${pkgdir}/etc/xdg/ user-dirs.defaults
 
 	install -Dm 644 -t ${pkgdir}/etc/X11/xorg.conf.d/ 00-keyboard.conf
+	install -Dm 644 -t ${pkgdir}/etc/X11/xorg.conf.d/ 10-c3tech.conf
 
 	install -Dm 755 -t ${pkgdir}/usr/bin/ gLogoutScript
 

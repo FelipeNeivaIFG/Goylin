@@ -31,31 +31,28 @@ function _configSys() {
 function _configUsers() {
 	_msgInfo "###   Users & groups   ###"
 
-	pacman --disable-download-timeout --noconfirm --needed -S zsh 1> /dev/null
-
-	_msg "Root"
+	_msg "root"
 	echo -e "${gRootPasswd}\n${gRootPasswd}" | passwd root
 
 	_msg "admin"
-	useradd -mG wheel admin -s /usr/bin/zsh
+	useradd -mG wheel admin
 	echo -e "${gAdminPasswd}\n${gAdminPasswd}" | passwd admin
 
 	_msg "guest"
 	groupadd -r nopasswdlogin
-	useradd -mG nopasswdlogin guest -s /usr/bin/zsh
+	useradd -mG nopasswdlogin guest
 	chfn -f "Público" guest
-	chmod a+rw -R /home/guest
 
 	case $profile in
 		"radio")
 			_msg "radiovozes"
-			useradd -m radiovozzes -s /usr/bin/zsh
+			useradd -m radiovozzes
 			echo -e "$gRadioPasswd\n$gRadioPasswd" | passwd radiovozzes
 			chfn -f "Radio Vozzes" radiovozzes
 		;;
 		"gremio")
 			_msg "gremio"
-			useradd -m gremio -s /usr/bin/zsh
+			useradd -m gremio
 			echo -e "${gGremioPasswd}\n${gGremioPasswd}" | passwd gremio
 			chfn -f "Grêmio" gremio
 		;;
@@ -63,8 +60,8 @@ function _configUsers() {
 	esac
 
 	_msg "Shared Home"
-	mkdir -vp /home/shared/
-	chmod a+rw /home/shared/
+	mkdir -p /home/shared/
+	chmod a+r /home/shared/
 }
 
 function _configCPIO() {
@@ -112,12 +109,11 @@ function _pkgCore() {
 	_msg "Backgrounds"; _install_PKG g-backgrounds
 	_msg "Fonts"; _install_PKG g-fonts
 
+	_msg "App: Base"; _install_PKG gapp-base
+	_msg "Profile: Base"; _install_PKG gp-base
+
 	# Use to apply quick dirty fixes if needed =)
 	_msg "Patches"; _install_PKG g-patch
-
-	_msg "App: Base"; _install_PKG gapp-base
-	_msg "App: Wine"; _install_PKG gapp-wine
-	_msg "Profile: Base"; _install_PKG gp-base
 }
 
 ####################################################################################################
@@ -126,6 +122,10 @@ function _pkgCore() {
 
 function _pAdm() {
 	_msgInfo "###   Profile: Administrative   ###"
+
+	_msg "Printer"; _install_PKG g-printer
+	_msg "App: Wine"; _install_PKG gapp-wine
+	_msg "App: Administrative"; _install_PKG gapp-adm
 
 	_msg "Profile"; _install_PKG gp-adm
 }
@@ -142,6 +142,9 @@ function _pCinema() {
 	_msg "App: Write"; _install_PKG gapp-write
 	_msg "App: Game Dev"; _install_PKG gapp-gamedev
 	_msg "App: CLI"; _install_PKG gapp-cli
+	_msg "App: Game"; _install_PKG gapp-game
+	_msg "App: Game"; _install_PKG gapp-game-extra
+	_msg "App: Wine"; _install_PKG gapp-wine
 
 	_msg "Profile"; _install_PKG gp-cinema
 }
@@ -161,9 +164,8 @@ function _pRadio() {
 	_msg "App: Audio"; _install_PKG gapp-audio
 	_msg "App: Image"; _install_PKG gapp-image
 	_msg "App: Video"; _install_PKG gapp-video
-	_msg "App: Animation"; _install_PKG gapp-anim
-	_msg "App: VFX"; _install_PKG gapp-vfx
 	_msg "App: CLI"; _install_PKG gapp-cli
+	_msg "App: Wine"; _install_PKG gapp-wine
 
 	_msg "Profile"; _install_PKG gp-radio
 }
@@ -184,6 +186,8 @@ function _pGremio() {
 	_msg "App: Educational"; _install_PKG gapp-edu
 	_msg "App: CLI"; _install_PKG gapp-cli
 	_msg "App: Game"; _install_PKG gapp-game
+	_msg "App: Game"; _install_PKG gapp-game-extra
+	_msg "App: Wine"; _install_PKG gapp-wine
 
 	_msg "Profile"; _install_PKG gp-gremio
 }
@@ -191,19 +195,11 @@ function _pGremio() {
 function _pLibrary() {
 	_msgInfo "###   Profile: Library   ###"
 
-	_msg "App: Audio"; _install_PKG gapp-audio
-	_msg "App: Cad"; _install_PKG gapp-cad
-	_msg "App: Code"; _install_PKG gapp-code
-	_msg "App: Geo"; _install_PKG gapp-geo
-	_msg "App: Image"; _install_PKG gapp-image
-	_msg "App: VFX"; _install_PKG gapp-vfx
-	_msg "App: Video"; _install_PKG gapp-video
-	_msg "App: Write"; _install_PKG gapp-write
-	_msg "App: Game Dev"; _install_PKG gapp-gamedev
 	_msg "App: Educational"; _install_PKG gapp-edu
 	_msg "App: CLI"; _install_PKG gapp-cli
 	_msg "App: Game"; _install_PKG gapp-game
-	_msg "App: Animation"; _install_PKG gapp-anim
+	_msg "App: Game"; _install_PKG gapp-game-extra
+	_msg "App: Wine"; _install_PKG gapp-wine
 
 	_msg "Profile"; _install_PKG gp-lib
 }

@@ -1,6 +1,6 @@
 [Keyboard]
-NumLock=0
+NumLock=1
 
 [Mouse]
 X11LibInputXAccelProfileFlat=true
-cursorTheme=breeze_cursors
+cursorTheme=Breeze_Light

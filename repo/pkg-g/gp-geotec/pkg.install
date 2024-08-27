@@ -1,13 +1,25 @@
 #!/bin/bash
 
-post_install() {
-	chattr -i /usr/lib/os-release
-	sed -i "s/core/geotec/g" /usr/lib/os-release
+_lockGFiles() {
 	chattr +i /usr/lib/os-release
 }
 
-post_upgrade() {
+_unlockGFiles() {
 	chattr -i /usr/lib/os-release
+}
+
+_setProfile() {
 	sed -i "s/core/geotec/g" /usr/lib/os-release
-	chattr +i /usr/lib/os-release
+}
+
+post_install() {
+	_unlockGFiles
+	_setProfile
+	_lockGFiles
+}
+
+post_upgrade() {
+	_unlockGFiles
+	_setProfile
+	_lockGFiles
 }

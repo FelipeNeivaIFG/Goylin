@@ -1,8 +1,8 @@
 #!/bin/bash
 
-set -u # Unbound Variables == exit
-set -e # Error == exit
-set -o pipefail # Error on pipe end == exit
+set -u # Unbound Variables
+set -e # Error
+set -o pipefail # Error on pipe end
 
 ####################################################################################################
 ###                                        Source                                                ###
@@ -21,6 +21,7 @@ function _help() {
 
 	_msgOpt "-s : Skip bootstrap."
 	_msgOpt "-d : Use default install configuration."
+	_msgOpt "-l : Local install."
 
 	echo; exit 0
 }
@@ -29,10 +30,11 @@ function _help() {
 ###                                        Flags                                                 ###
 ####################################################################################################
 
-while getopts "sdh" opt; do
+while getopts "sdl" opt; do
     case $opt in
         s) skipBootstrap=1 ;;
         d) useDefaultConf=1 ;;
+		l) isLiveUSB=0 ;;
 		*) _help ;;
     esac
 done
@@ -49,10 +51,11 @@ function _bootstrap() {
 	hwclock --systohc
 
 	_msg "Pacman Sync"
-	pacman -Syy --noconfirm --config utils/pacman_local.conf #1> /dev/null
+	pacman -Sy
+	pacman -Syy --noconfirm --config utils/pacman_local.conf
 
 	_msg "Checking installer Deppendencies"
-	pacman -S --noconfirm --needed arch-install-scripts dosfstools e2fsprogs base-devel mtools #1> /dev/null
+	pacman -S --noconfirm --needed arch-install-scripts dosfstools e2fsprogs base-devel mtools
 
 	return 0
 }
