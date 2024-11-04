@@ -1,0 +1,47 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='g-slickGreeter'
+pkgver=24.5
+pkgrel=1
+pkgdesc='Goylin LightDM greeter'
+
+srcname=lightdm-slick-greeter
+srcver=2.0.6
+srcurl="https://github.com/linuxmint/slick-greeter"
+
+arch=('x86_64')
+
+license=('GPL3')
+
+depends=('cairo' 'freetype2' 'gtk3' 'libcanberra' 'libxext' 'lightdm' 'pixman'
+		'python' 'xorg-server' 'xapp' 'numlockx')
+
+makedepends=('intltool' 'vala' 'gnome-common')
+
+source=(
+	"${srcname}-${srcver}.tar.gz::$srcurl/archive/${srcver}.tar.gz"
+	'pt_BR.po'
+)
+sha512sums=('5b2d2017a73f8d3f08ae8ca3d9957d0d93136f82293c5a891ddd8cb58e80081d7f08966eb4131d9b021f867e5c6e244823245da7cf77704eb723560be2ac3b5e' 'SKIP')
+b2sums=('b5ea36607d1d722031082dd03d486dc11e262861b0d36dc99959d2438b1804a57769045fcb2c0b106d397c738a5420c61b83eec7c98f4a331baa8bcdc57714ee' 'SKIP')
+
+prepare() {
+	cp -f pt_BR.po slick-greeter-${srcver}/po
+
+	cd slick-greeter-${srcver}
+	NOCONFIGURE=1 ./autogen.sh
+}
+
+build() {
+  	cd slick-greeter-${srcver}
+	./configure --prefix=/usr --sysconfdir=/etc --sbindir=/usr/bin \
+             --libexecdir=/usr/lib/lightdm
+	make
+}
+
+package() {
+	cd slick-greeter-${srcver}
+	make DESTDIR="${pkgdir}" install
+	# adjust launcher name
+	mv $pkgdir/usr/share/xgreeters/slick-greeter.desktop \
+    $pkgdir/usr/share/xgreeters/goylin-lightdm-greeter.desktop
+}

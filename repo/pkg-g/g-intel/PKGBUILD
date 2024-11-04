@@ -4,7 +4,7 @@ pkgdesc='Goylin: Intel'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group='goylin'
 
-pkgver=24.4
+pkgver=24.5
 pkgrel=1
 arch=('x86_64')
 
@@ -26,10 +26,12 @@ depends=(
 	'intel-media-sdk'
 	'intel-compute-runtime'
 	'lib32-vulkan-icd-loader'
+	'opencl-rusticl-mesa'
+	'lib32-opencl-rusticl-mesa'
 )
 
 install='pkg.install'
 
 package() {
-	install -Dm 644 -t ${pkgdir}/etc/ mkinitcpio.conf
+	install -vDm 644 -t ${pkgdir}/etc/ mkinitcpio.conf
 }

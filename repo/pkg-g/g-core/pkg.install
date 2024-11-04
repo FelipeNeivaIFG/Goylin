@@ -11,6 +11,7 @@ _lockGFiles() {
 	chattr +i /etc/systemd/timesyncd.conf
 	chattr +i /usr/lib/os-release
 	chattr +i /etc/systemd/sleep.conf
+	chattr +i /etc/ssh/sshd_config.conf
 }
 
 _unlockGFiles() {
@@ -25,6 +26,7 @@ _unlockGFiles() {
 	chattr -i /etc/systemd/timesyncd.conf
 	chattr -i /usr/lib/os-release
 	chattr -i /etc/systemd/sleep.conf
+	chattr +i /etc/ssh/sshd_config.conf
 }
 
 post_install() {

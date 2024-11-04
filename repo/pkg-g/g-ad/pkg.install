@@ -1,7 +1,6 @@
 #!/bin/bash
 
 _lockGFiles() {
-	chattr +i /etc/mkinitcpio.conf
 	chattr +i /etc/krb5.conf
 	chattr +i /etc/nsswitch.conf
 	chattr +i /etc/samba/smb.conf
@@ -12,7 +11,6 @@ _lockGFiles() {
 }
 
 _unlockGFiles() {
-	chattr -i /etc/mkinitcpio.conf
 	chattr -i /etc/krb5.conf
 	chattr -i /etc/nsswitch.conf
 	chattr -i /etc/samba/smb.conf
@@ -23,6 +21,7 @@ _unlockGFiles() {
 }
 
 post_install() {
+	systemctl enable avahi-daemon
 	_lockGFiles
 }
 

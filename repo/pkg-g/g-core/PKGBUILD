@@ -4,7 +4,7 @@ pkgdesc='Goylin: Core'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.4
+pkgver=24.5
 pkgrel=1
 arch=('x86_64')
 
@@ -22,9 +22,8 @@ source=(
 	'plyGoylin.plymouth'
 	'plymouthd.defaults'
 	'goylin.tar'
-	'.bashrc'
 	'sleep.conf'
-
+	'sshd_config'
 )
 
 noextract=('goylin.tar')
@@ -78,33 +77,34 @@ depends=(
 	'xfsprogs'
 	'e2fsprogs'
 	'nfs-utils'
+	'reflector'
+	'usbutils'
 )
 
 package() {
-	install -Dm 440 -t ${pkgdir}/etc/ sudoers
-	install -Dm 644 -t ${pkgdir}/etc/ issue
-	install -Dm 644 -t ${pkgdir}/etc/ motd
-	install -Dm 644 -t ${pkgdir}/etc/ vconsole.conf
-	install -Dm 644 -t ${pkgdir}/etc pacman.conf
+	install -vDm 440 -t ${pkgdir}/etc/ sudoers
+	install -vDm 644 -t ${pkgdir}/etc/ issue
+	install -vDm 644 -t ${pkgdir}/etc/ motd
+	install -vDm 644 -t ${pkgdir}/etc/ vconsole.conf
+	install -vDm 644 -t ${pkgdir}/etc pacman.conf
 
-	install -Dm 644 -t ${pkgdir}/root/ .bashrc
-	chmod 750 ${pkgdir}/root/
+	install -vDm 644 -t ${pkgdir}/etc/default/ grub
 
-	install -Dm 644 -t ${pkgdir}/etc/default/ grub
+	install -vDm 644 -t ${pkgdir}/etc/systemd/ sleep.conf
+	install -vDm 644 -t ${pkgdir}/etc/systemd/system/ goylin.service
 
-	install -Dm 644 -t ${pkgdir}/etc/systemd/ sleep.conf
-	install -Dm 644 -t ${pkgdir}/etc/systemd/system/ goylin.service
+	install -vDm 644 -t ${pkgdir}/etc/ssh/ sshd_config
 
-	install -Dm 755 -t ${pkgdir}/usr/bin/ gSysStartUp
+	install -vDm 755 -t ${pkgdir}/usr/bin/ gSysStartUp
 
-	install -Dm 644 -t ${pkgdir}/usr/lib/ os-release
+	install -vDm 644 -t ${pkgdir}/usr/lib/ os-release
 
-	install -Dm 644 -t ${pkgdir}/etc/systemd/ timesyncd.conf
+	install -vDm 644 -t ${pkgdir}/etc/systemd/ timesyncd.conf
 
-	install -Dm 644 -t ${pkgdir}/usr/share/plymouth/themes/plyGoylin/ plyGoylin.plymouth
-	install -Dm 644 -t ${pkgdir}/usr/share/plymouth/ plymouthd.defaults
+	install -vDm 644 -t ${pkgdir}/usr/share/plymouth/themes/plyGoylin/ plyGoylin.plymouth
+	install -vDm 644 -t ${pkgdir}/usr/share/plymouth/ plymouthd.defaults
 
-	install -Dm 644 -t ${pkgdir}/usr/share/goylin/ goylin.tar
-	tar xf ${pkgdir}/usr/share/goylin/goylin.tar --overwrite --directory=${pkgdir}/usr/share/goylin/
-	rm ${pkgdir}/usr/share/goylin/goylin.tar
+	install -vDm 644 -t ${pkgdir}/usr/share/goylin/ goylin.tar
+	tar vxf ${pkgdir}/usr/share/goylin/goylin.tar --overwrite --directory=${pkgdir}/usr/share/goylin/
+	rm -v ${pkgdir}/usr/share/goylin/goylin.tar
 }

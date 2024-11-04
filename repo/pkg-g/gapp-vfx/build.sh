@@ -1,6 +1,7 @@
 #!/bin/bash
 
 function tarFiles() {
+    echo " -- Compressing $1 -- "
     [ -f "${1}.tar" ] && sudo rm -rf "${1}.tar"
     [ -d "tmp-${1}" ] && sudo rm -rf "tmp-${1}"
 
@@ -11,3 +12,5 @@ function tarFiles() {
 }
 
 tarFiles skel
+tarFiles icons
+tarFiles fspy

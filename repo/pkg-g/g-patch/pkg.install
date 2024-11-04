@@ -1,0 +1,13 @@
+#!/bin/bash
+
+_removeHomeFile () {
+	for userInHome in /home/*; do
+		userHome=$(basename $userInHome)
+		[ -f /home/"$userHome"/"$1" ] && rm -vf /home/"$userHome"/"$1"
+	done
+	rm -vf /etc/skel/"$1"
+}
+
+post_upgrade() {
+	_removeHomeFile '.config/ardour8/config'
+}

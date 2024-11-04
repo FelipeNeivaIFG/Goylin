@@ -4,7 +4,7 @@ pkgdesc='Goylin: Geotecnologia Apps'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.4
+pkgver=24.5
 pkgrel=1
 arch=('x86_64')
 
@@ -38,7 +38,8 @@ depends=(
 	'liblas'
 	'python-jinja'
 	'grass'
-	# 'qgis-grass-plugin' 'gdal-grass' <-FIX
+	# 'qgis-grass-plugin' - BROKEN
+	# 'gdal-grass' # BROKEN
 )
 
 package() {

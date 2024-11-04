@@ -4,8 +4,8 @@ pkgdesc='Goylin: Games'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group='goylin'
 
-pkgver=24.4
-pkgrel=2
+pkgver=24.5
+pkgrel=1
 arch=('x86_64')
 
 source=('tlauncher.tar' 'tlauncher.desktop')
@@ -15,6 +15,8 @@ noextract=('tlauncher.tar')
 md5sums=('SKIP' 'SKIP')
 
 depends=(
+	# 'itch-bin' # <- This will make a mess for sure... ^_^
+	# 'steam' # <- This will make a mess for sure... ^_^
 	'0ad'
 	'mari0'
 	'kpat'
@@ -24,15 +26,12 @@ depends=(
 	'gnome-mahjongg'
 	'gnome-klotski'
 	'gnome-sudoku'
-	# 'steam' <- This will make a mess for sure... ^_^
-	#
 	'atomix'
 	'minecraft-launcher'
 	'ddnet'
 	'ltris'
 	'lix'
-	'koifarm-git'
-
+	#
 	'jdk-openjdk'
 	'discord-game-sdk'
 	'dosbox'
@@ -46,6 +45,7 @@ depends=(
 	'vulkan-tools'
 	'xorg-xgamma'
 
+	# 'koifarm-git' # Calling 'python3' insted of 'python'
 	# 'maniadrive' <- Exec error with domain users (local/domain username conflict?)
 	# 'clonekeen' <- Build Error
 	# 'vvvvvv' <- Build Error
@@ -59,9 +59,9 @@ depends=(
 )
 
 package() {
-	install -Dm 755 -t ${pkgdir}/usr/share/applications tlauncher.desktop
-	install -Dm 644 -t ${pkgdir}/opt/tlauncher tlauncher.tar
-	tar xf ${pkgdir}/opt/tlauncher/tlauncher.tar --overwrite --directory=${pkgdir}/opt/tlauncher/
-	chmod 755 ${pkgdir}/opt/tlauncher/TLauncher.jar
-	rm ${pkgdir}/opt/tlauncher/tlauncher.tar
+	install -vDm 755 -t ${pkgdir}/usr/share/applications tlauncher.desktop
+	install -vDm 644 -t ${pkgdir}/opt/tlauncher tlauncher.tar
+	tar vxf ${pkgdir}/opt/tlauncher/tlauncher.tar --overwrite --directory=${pkgdir}/opt/tlauncher/
+	chmod -v 755 ${pkgdir}/opt/tlauncher/TLauncher.jar
+	rm -v ${pkgdir}/opt/tlauncher/tlauncher.tar
 }

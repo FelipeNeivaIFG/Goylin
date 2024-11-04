@@ -1,4 +1,6 @@
 .vscode
+.gitignore
+TODO
 
 *.tar
 *.log
@@ -13,12 +15,14 @@ repo/goylin-repo-g/
 repo/goylin-repo-aur/
 repo/pkg-a/
 
-repo/pkg-g/gapp-game-extra/
+repo/pkg-g/gapp-gameEmu/games/
 
 repo/pkgRoot
 repo/blankdb
 repo/PKGBUILD.proto
 repo/proto.install
+
+repo/utils/gConfig.sh
 
 repo/pkg-g/gapp-base/skel/.config/BraveSoftware/
 repo/pkg-g/gapp-geo/skel/Documentos/.sisvar/

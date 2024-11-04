@@ -4,7 +4,7 @@ pkgdesc='Goylin: Printer'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group='goylin'
 
-pkgver=24.4
+pkgver=24.5
 pkgrel=1
 arch=('x86_64')
 
@@ -30,5 +30,5 @@ depends=(
 install='pkg.install'
 
 package() {
-	install -Dm 640 -g cups -t ${pkgdir}/etc/cups/ printers.conf
+	install -vDm 640 -g cups -t ${pkgdir}/etc/cups/ printers.conf
 }

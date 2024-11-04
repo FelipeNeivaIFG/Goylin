@@ -591,7 +591,7 @@
     <group
        id="preferences"
        state="1"
-       page="23" />
+       page="52" />
     <group
        id="gradienteditor" />
     <group
@@ -943,7 +943,7 @@
        unitType="2" />
     <group
        id="boot"
-       theme="symbolic"
+       theme="custom"
        canvas="dark-check"
        enabled="0">
       <group
@@ -1088,33 +1088,42 @@
      flattening="0" />
   <group
      id="theme"
-     defaultPreferDarkTheme="1"
-     defaultIconTheme="breeze-dark"
-     defaultGtkTheme="Breeze-Dark"
+     defaultPreferDarkTheme="0"
+     defaultIconTheme="breeze"
+     defaultGtkTheme="Breeze"
      narrowSpinButton="1"
      preferDarkTheme="1"
      darkTheme="1"
      symbolicIcons="1"
      symbolicDefaultBaseColors="1"
      symbolicDefaultHighColors="1"
-     gtkTheme="Adwaita"
      syntax-color-theme="inkscape-dark"
-     iconTheme="Adwaita"
-     menuIcons="1">
+     menuIcons="1"
+     gtkTheme="Adwaita"
+     iconTheme="multicolor">
     <group
        id="multicolor"
        symbolicBaseColor="3958107135"
-       symbolicSuccessColor="10029823"
+       symbolicSuccessColor="180295167"
        symbolicWarningColor="4279865599"
        symbolicErrorColor="10086143" />
     <group
        id="hicolor"
-       symbolicBaseColor="4008635647" />
-    <group
-       id="Adwaita"
        symbolicBaseColor="4008635647"
        symbolicSuccessColor="648766207"
        symbolicWarningColor="4118348031"
        symbolicErrorColor="3422552319" />
+    <group
+       id="Adwaita"
+       symbolicBaseColor="4025545215"
+       symbolicSuccessColor="665739519"
+       symbolicWarningColor="4118348031"
+       symbolicErrorColor="3422552319" />
+    <group
+       id="breeze"
+       symbolicBaseColor="4008635647"
+       symbolicSuccessColor="180295167"
+       symbolicWarningColor="4279865599"
+       symbolicErrorColor="10086143" />
   </group>
 </inkscape>

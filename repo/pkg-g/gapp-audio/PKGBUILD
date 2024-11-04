@@ -4,8 +4,8 @@ pkgdesc='Goylin: Audio Apps'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.4
-pkgrel=1
+pkgver=24.5
+pkgrel=4
 arch=('x86_64')
 
 source=('skel.tar')
@@ -16,15 +16,43 @@ md5sums=('SKIP')
 
 depends=(
 	'audacity'
+	'audacity-plugins'
 	'ardour'
 	'mixxx'
 	'lmms'
-	# 'audacity-plugins' <- FIX
+	'bespokesynth'
+	'carla'
+	# 'catia-git' - Broken on Wayland? Carla can do the Job just fine.
+	## Behringer
+	x32edit
+	xairedit
+	#
+	'lmms-orgmaker-samples'
+	'leet-plugins'
 	'harvid'
+	'xjadeo'
+	'ffmpeg'
+	'lib32-gcc-libs'
+	'lib32-glibc'
+	'xdg-desktop-portal-impl'
+	'lv2-host'
+	'vst-host'
+	'python-requests'
+	'python-tornado'
+	'cardinal'
+	'cardinal-clap'
+	'cardinal-data'
+	'cardinal-lv2'
+	'cardinal-vst'
+	'cardinal-vst3'
+	#
+	'alsa-plugins'
+	'alsa-firmware'
+	'sof-firmware'
 )
 
 package() {
-	install -Dm 644 -t ${pkgdir}/etc/skel skel.tar
-	tar xf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
-	rm ${pkgdir}/etc/skel/skel.tar
+	install -vDm 644 -t ${pkgdir}/etc/skel skel.tar
+	tar vxf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
+	rm -v ${pkgdir}/etc/skel/skel.tar
 }

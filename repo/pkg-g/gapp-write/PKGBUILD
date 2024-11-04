@@ -4,11 +4,14 @@ pkgdesc='Goylin: Write Apps'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.4
+pkgver=24.5
 pkgrel=1
 arch=('x86_64')
 
 depends=(
 	'scenarist'
 	'scribus'
+	#
+	'gdal'
+	'hyphen-pt-br'
 )

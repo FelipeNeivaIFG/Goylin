@@ -1,0 +1,27 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='g-audio'
+pkgdesc='Goylin: Audio'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group='goylin'
+
+pkgver=24.5
+pkgrel=3
+arch=('x86_64')
+
+depends=(
+	'pipewire'
+	'gst-plugin-pipewire'
+	'pipewire-alsa'
+	'pipewire-audio'
+	'pipewire-ffado'
+	'pipewire-jack'
+	'pipewire-libcamera'
+	'pipewire-pulse'
+	'pipewire-roc'
+	'pipewire-session-manager'
+	'pipewire-v4l2'
+	'pipewire-zeroconf'
+	'lib32-pipewire-jack'
+	'lib32-pipewire-v4l2'
+	'alsa-utils'
+)

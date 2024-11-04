@@ -4,7 +4,7 @@ pkgdesc='Goylin: Video Apps'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.4
+pkgver=24.5
 pkgrel=1
 arch=('x86_64')
 
@@ -19,18 +19,33 @@ depends=(
 	'handbrake'
 	'obs-studio'
 	'shotcut'
-	# 'dcpomatic' <--FIX
+	'flowblade'
+	# 'dcpomatic' # BROKEN
+	#
 	'bigsh0t'
 	'dvgrab'
+	'ffmpeg'
+	'kimageformats'
 	'mediainfo'
 	'opencv'
 	'opentimelineio'
+	'python-openai-whisper'
+	'python-srt_equalizer'
+	'python-vosk'
+	'qt6-imageformats'
 	'swh-plugins'
 	'python-pip'
+	'gst-plugins-good'
+	'gst-libav'
+	'libfdk-aac'
+	'luajit'
+	'python'
+	'sndio'
+	'droidcam-obs-plugin'
 )
 
 package() {
-	install -Dm 644 -t ${pkgdir}/etc/skel skel.tar
-	tar xf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
-	rm ${pkgdir}/etc/skel/skel.tar
+	install -vDm 644 -t ${pkgdir}/etc/skel skel.tar
+	tar vxf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
+	rm -v ${pkgdir}/etc/skel/skel.tar
 }

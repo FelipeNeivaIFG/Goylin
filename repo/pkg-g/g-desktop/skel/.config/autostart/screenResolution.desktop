@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/bin/gSetResolution
+Hidden=true
+NoDisplay=true
+X-GNOME-Autostart-enable=true
+Name=gSetResolution

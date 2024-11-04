@@ -4,51 +4,51 @@ pkgdesc='Goylin: AD'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.4
-pkgrel=2
+pkgver=24.5
+pkgrel=1
 arch=('x86_64')
 
 source=(
-	'gLoginAD' 'krb5.conf' 'nsswitch.conf' 'pam_winbind.conf'
-	'smb.conf' 'su' 'system-auth' 'sshd_config'
+	'gLoginAD'
+	'krb5.conf'
+	'nsswitch.conf'
+	'pam_winbind.conf'
+	'smb.conf'
+	'su'
+	'system-auth'
 )
 
 md5sums=(
 	'SKIP' 'SKIP' 'SKIP' 'SKIP'
-	'SKIP' 'SKIP' 'SKIP' 'SKIP'
+	'SKIP' 'SKIP' 'SKIP'
 )
 
 install='pkg.install'
 
 depends=(
-	# AD
 	'samba'
 	'smbclient'
 	'pam-krb5'
 	'pam'
+	'avahi'
 
 	# For debug
 	# 'bind'
 	# 'python-dnspython'
 	# 'bind'
 	# 'krb5'
-
-	# Network discovery
-	# 'avahi'
 )
 
 package() {
-	install -Dm 644 -t ${pkgdir}/etc/ krb5.conf
-	install -Dm 644 -t ${pkgdir}/etc/ nsswitch.conf
+	install -vDm 644 -t ${pkgdir}/etc/ krb5.conf
+	install -vDm 644 -t ${pkgdir}/etc/ nsswitch.conf
 
-	install -Dm 644 -t ${pkgdir}/etc/samba/ smb.conf
+	install -vDm 644 -t ${pkgdir}/etc/samba/ smb.conf
 
-	install -Dm 644 -t ${pkgdir}/etc/sshd/ sshd_config
+	install -vDm 644 -t ${pkgdir}/etc/security/ pam_winbind.conf
 
-	install -Dm 644 -t ${pkgdir}/etc/security/ pam_winbind.conf
+	install -vDm 754 -t ${pkgdir}/usr/bin/ gLoginAD
 
-	install -Dm 750 -t ${pkgdir}/usr/bin/ gLoginAD
-
-	install -Dm 644 -t ${pkgdir}/etc/pam.d/ system-auth
-	install -Dm 644 -t ${pkgdir}/etc/pam.d/ su
+	install -vDm 644 -t ${pkgdir}/etc/pam.d/ system-auth
+	install -vDm 644 -t ${pkgdir}/etc/pam.d/ su
 }

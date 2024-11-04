@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Ardour
+Comment=Ardour Digital Audio Workstation
+Exec=ardour8
+Icon=ardour8
+Terminal=false
+MimeType=application/x-ardour;
+Type=Application
+Categories=AudioVideo;Audio;AudioEditing;X-Recorders;X-Multitrack;X-Jack;

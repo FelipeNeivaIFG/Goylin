@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Ardour>
+	<UI>
+		<Option name="flat-buttons" value="1"/>
+	</UI>
+</Ardour>

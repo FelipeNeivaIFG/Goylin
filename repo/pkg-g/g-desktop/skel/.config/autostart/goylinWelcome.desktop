@@ -2,6 +2,7 @@
 Type=Application
 Exec=/usr/bin/gWelcome
 Hidden=false
-NoDisplay=false
+NoDisplay=true
 X-GNOME-Autostart-enable=true
-Name=GoylinWelcome
+Icon=/usr/share/goylin/icons/goylin.svg
+Name=Manual Goylin

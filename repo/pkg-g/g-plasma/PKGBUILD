@@ -4,13 +4,22 @@ pkgdesc='Goylin: Plasma'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.4
+pkgver=24.5
 pkgrel=1
 arch=('x86_64')
 
-source=('kdeglobals' 'skel.tar' 'goylin.desktop.tar' 'goylindark.desktop.tar')
+source=(
+	'kdeglobals'
+	'skel.tar'
+	'goylin.desktop.tar'
+	'goylindark.desktop.tar'
+)
 
-noextract=('skel.tar' 'goylin.desktop.tar' 'goylindark.desktop.tar')
+noextract=(
+	'skel.tar'
+	'goylin.desktop.tar'
+	'goylindark.desktop.tar'
+)
 
 md5sums=('SKIP' 'SKIP' 'SKIP' 'SKIP')
 
@@ -51,17 +60,17 @@ depends=(
 )
 
 package() {
-	install -Dm 644 -t ${pkgdir}/etc/xdg/ kdeglobals
+	install -vDm 644 -t ${pkgdir}/etc/xdg/ kdeglobals
 
-	install -Dm 644 -t ${pkgdir}/etc/skel skel.tar
-	tar  xf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
-	rm ${pkgdir}/etc/skel/skel.tar
+	install -vDm 644 -t ${pkgdir}/etc/skel skel.tar
+	tar vxf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
+	rm -v ${pkgdir}/etc/skel/skel.tar
 
-	install -Dm 644 -t ${pkgdir}/usr/share/plasma/look-and-feel/goylin.desktop/ goylin.desktop.tar
-	tar xf ${pkgdir}/usr/share/plasma/look-and-feel/goylin.desktop/goylin.desktop.tar --overwrite --directory=${pkgdir}/usr/share/plasma/look-and-feel/goylin.desktop/
-	rm ${pkgdir}/usr/share/plasma/look-and-feel/goylin.desktop/goylin.desktop.tar
+	install -vDm 644 -t ${pkgdir}/usr/share/plasma/look-and-feel/goylin.desktop/ goylin.desktop.tar
+	tar vxf ${pkgdir}/usr/share/plasma/look-and-feel/goylin.desktop/goylin.desktop.tar --overwrite --directory=${pkgdir}/usr/share/plasma/look-and-feel/goylin.desktop/
+	rm -v ${pkgdir}/usr/share/plasma/look-and-feel/goylin.desktop/goylin.desktop.tar
 
-	install -Dm 644 -t ${pkgdir}/usr/share/plasma/look-and-feel/goylindark.desktop/ goylindark.desktop.tar
-	tar xf ${pkgdir}/usr/share/plasma/look-and-feel/goylindark.desktop/goylindark.desktop.tar --overwrite --directory=${pkgdir}/usr/share/plasma/look-and-feel/goylindark.desktop/
-	rm ${pkgdir}/usr/share/plasma/look-and-feel/goylindark.desktop/goylindark.desktop.tar
+	install -vDm 644 -t ${pkgdir}/usr/share/plasma/look-and-feel/goylindark.desktop/ goylindark.desktop.tar
+	tar vxf ${pkgdir}/usr/share/plasma/look-and-feel/goylindark.desktop/goylindark.desktop.tar --overwrite --directory=${pkgdir}/usr/share/plasma/look-and-feel/goylindark.desktop/
+	rm -v ${pkgdir}/usr/share/plasma/look-and-feel/goylindark.desktop/goylindark.desktop.tar
 }

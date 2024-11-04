@@ -4,11 +4,14 @@ pkgdesc='Goylin: i3'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.4
+pkgver=24.5
 pkgrel=1
 arch=('x86_64')
 
-source=('skel.tar' 'gi3Theme')
+source=(
+	'skel.tar'
+	'gi3Theme'
+)
 
 noextract=('skel.tar')
 
@@ -35,9 +38,9 @@ depends=(
 install='pkg.install'
 
 package() {
-	install -Dm 755 -t ${pkgdir}/usr/bin/ gi3Theme
+	install -vDm 755 -t ${pkgdir}/usr/bin/ gi3Theme
 
-	install -Dm 644 -t ${pkgdir}/etc/skel skel.tar
-	tar xf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
-	rm ${pkgdir}/etc/skel/skel.tar
+	install -vDm 644 -t ${pkgdir}/etc/skel skel.tar
+	tar vxf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
+	rm -v ${pkgdir}/etc/skel/skel.tar
 }

@@ -4,7 +4,7 @@ pkgdesc='Goylin: Image Apps'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.4
+pkgver=24.5
 pkgrel=1
 arch=('x86_64')
 
@@ -19,6 +19,8 @@ depends=(
 	'inkscape'
 	'krita'
 	'darktable'
+	'rawtherapee'
+	'pixelorama-bin'
 	#
 	'krita-plugin-gmic'
 	'libmypaint'
@@ -27,10 +29,26 @@ depends=(
 	'fig2dev'
 	'gnuplot'
 	'gimp-plugin-gmic'
+	'optipng'
+	'ghostscript'
+	'gutenprint'
+	'gvfs'
+	'fig2dev'
+	'pstoedit'
+	'texlive-pstricks'
+	'kimageformats5'
+	'kseexpr'
+	'libheif'
+	'libjxl'
+	'poppler-qt5'
+	'python-pyqt5'
+	'dcraw'
+	'perl-image-exiftool'
+	'imagemagick'
 )
 
 package() {
-	install -Dm 644 -t ${pkgdir}/etc/skel skel.tar
-	tar xf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
-	rm ${pkgdir}/etc/skel/skel.tar
+	install -vDm 644 -t ${pkgdir}/etc/skel skel.tar
+	tar vxf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
+	rm -v ${pkgdir}/etc/skel/skel.tar
 }

@@ -4,8 +4,8 @@ pkgdesc='Goylin: Profile - Adm'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.4
-pkgrel=1
+pkgver=24.5
+pkgrel=2
 arch=('x86_64')
 
 source=('skel.tar')
@@ -17,7 +17,7 @@ md5sums=('SKIP')
 install='pkg.install'
 
 package() {
-    install -Dm 644 -t ${pkgdir}/etc/skel/ skel.tar
-    tar xf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel
-    rm ${pkgdir}/etc/skel/skel.tar
+    install -vDm 644 -t ${pkgdir}/etc/skel/ skel.tar
+    tar vxf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel
+    rm -v ${pkgdir}/etc/skel/skel.tar
 }

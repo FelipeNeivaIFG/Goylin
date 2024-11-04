@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Natron
+Comment=Node-graph video compositor
+Exec=Natron
+Icon=natron
+Terminal=false
+StartupNotify=false
+Categories=Graphics;
+MimeType=application/x-natron;

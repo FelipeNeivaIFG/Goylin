@@ -4,7 +4,7 @@ pkgdesc='Goylin: Fonts'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.4
+pkgver=24.5
 pkgrel=1
 arch=('x86_64')
 
@@ -22,4 +22,5 @@ depends=(
 	'ttf-droid'
 	'ttf-dejavu'
 	'gnu-free-fonts'
+	'ttf-font'
 )

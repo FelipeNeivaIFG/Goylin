@@ -32,9 +32,7 @@ function _buildIso() {
 	cp -vr /usr/share/archiso/configs/releng .
 
 	_msg 'Config files'
-	cp -fv motd releng/airootfs/etc/
-	cp -fv profiledef.sh releng/
-	cp -fv pacman.conf releng/
+	cp -rfv gReleng/. releng/
 
 	_msg 'Copying gInstaller'
 	cp -vr ../installer releng/airootfs/gInstaller

@@ -4,15 +4,21 @@ pkgdesc='Goylin: Base Apps'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.4
+pkgver=24.5
 pkgrel=1
 arch=('x86_64')
 
-source=('skel.tar')
+source=(
+	'skel.tar'
+	'v4l2loopback.conf'
+	'v4l2loopback.load.conf'
+)
 
 noextract=('skel.tar')
 
-md5sums=('SKIP')
+md5sums=('SKIP' 'SKIP' 'SKIP')
+
+# install='pkg.install'
 
 depends=(
 	'evince'
@@ -23,12 +29,14 @@ depends=(
 	'kate'
 	'elisa'
 	'vlc'
-	#
 	'onlyoffice-bin'
 	'brave-bin'
 	'freetube-bin'
 	'muffon-bin'
 	'ferdium-bin'
+	'pdfarranger'
+	# 'simple-droidcam-client' # Maybe for older phone support
+	'droidcam'
 	#
 	'pstoedit'
 	'libwpg'
@@ -100,14 +108,29 @@ depends=(
 	'qt6-imageformats'
 	'kimageformats'
 	'gst-plugins-good'
+	'gst-plugins-ugly'
 	'gst-libav'
 	'libfdk-aac'
 	'mediainfo'
 	'trash-cli'
+	'hyphen-pt-br'
+	'xdg-desktop-portal'
+	'texlive-bin'
+	'speech-dispatcher'
+	'qt6-multimedia'
+	'qt5-x11extras'
+	'coin-or-mp'
+	'android-tools'
+	'usbmuxd'
+	'v4l2loopback-dkms'
 )
 
 package() {
-	install -Dm 644 -t ${pkgdir}/etc/skel skel.tar
-	tar xf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
-	rm ${pkgdir}/etc/skel/skel.tar
+	install -vDm 644 -t ${pkgdir}/etc/modprobe.d/ v4l2loopback.conf
+	install -vDm 644 -t ${pkgdir}/etc/modules-load.d/ v4l2loopback.load.conf
+	mv -v ${pkgdir}/etc/modules-load.d/v4l2loopback.load.conf ${pkgdir}/etc/modules-load.d/v4l2loopback.conf
+
+	install -vDm 644 -t ${pkgdir}/etc/skel skel.tar
+	tar vxf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
+	rm -v ${pkgdir}/etc/skel/skel.tar
 }

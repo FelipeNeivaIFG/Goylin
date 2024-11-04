@@ -13,7 +13,7 @@ timedatectl set-ntp true
 hwclock --systohc
 
 # Goylin System Update
-gSysUpdateMsg="Buscando updates..."
+gSysUpdateMsg="Instalando Atualizações, aguarde..."
 echo "${gSysUpdateMsg}"
 plymouth display-message --text="${gSysUpdateMsg}"
 pacman -Sy

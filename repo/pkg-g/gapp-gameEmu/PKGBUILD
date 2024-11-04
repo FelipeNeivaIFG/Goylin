@@ -1,0 +1,61 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='gapp-gameEmu'
+pkgdesc='Goylin: Game Emulation'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group='goylin'
+
+pkgver=24.5
+pkgrel=2
+arch=('x86_64')
+
+source=('skel.tar' 'games.tar' '90_gamehub')
+
+noextract=('skel.tar' 'games.tar')
+
+md5sums=('SKIP' 'SKIP' 'SKIP')
+
+install='pkg.install'
+
+depends=(
+	'gamehub-bin'
+	'retroarch'
+	#
+	'innoextract'
+	'wine'
+	'dosbox'
+	'retroarch-assets-glui'
+	'retroarch-assets-ozone'
+	'retroarch-assets-xmb'
+	'gamemode'
+	'libdecor'
+	'python'
+	'libretro-core-info'
+	'libretro-overlays'
+	'libretro-shaders'
+	'libretro-shaders-slang'
+	'libretro-genesis-plus-gx' # Genesis / Mega Drive / Master System
+	'libretro-mgba' # Game Boy Advanced
+	'libretro-mupen64plus-next' # Nintendo 64
+	'libretro-sameboy' # Gameboy / Gameboy Color
+	'libretro-bsnes' # Snes
+	# 'libretro-scummvm' # ScumVM
+	# 'libretro-beetle-psx' # Playstation
+	# 'libretro-citra' # Nintendo 3DS
+	# 'libretro-desmume' # Nintendo DS
+	# 'libretro-dolphin' # Nintendo Wii
+	# 'libretro-flycast' # Sega Dreamcast
+	# 'libretro-kronos' # Sega Saturn
+	# 'libretro-mame' # MAME Arcade
+	# 'libretro-pcsx2' # Playstation 2
+	# 'libretro-ppsspp' # Playstation PSP
+)
+
+package() {
+	install -vDm 644 -t ${pkgdir}/etc/skel skel.tar
+	tar vxf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
+	rm -v ${pkgdir}/etc/skel/skel.tar
+
+	install -vDm 644 -t ${pkgdir}/home/shared/games/ games.tar
+
+	install -vDm 644 -t ${pkgdir}/etc/dconf/db/user.d/ 90_gamehub
+}

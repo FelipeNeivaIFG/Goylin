@@ -1,0 +1,19 @@
+#!/bin/bash
+
+_unpackTar() {
+	tar vxf /home/shared/games/games.tar --overwrite --directory=/home/shared/games/
+	rm -v /home/shared/games/games.tar
+	chmod a+rx -vR /home/shared/games/
+}
+
+pre_upgrade() {
+	[ -d /home/shared/games/ ] && rm -vr /home/shared/games/*
+}
+
+post_install() {
+	_unpackTar
+}
+
+post_upgrade() {
+	_unpackTar
+}

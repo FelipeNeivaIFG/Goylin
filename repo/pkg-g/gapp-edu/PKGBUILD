@@ -4,7 +4,7 @@ pkgdesc='Goylin: Educational Apps'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.4
+pkgver=24.5
 pkgrel=1
 arch=('x86_64')
 
@@ -20,7 +20,6 @@ depends=(
 	'minuet'
 	'leocad'
 	'magicavoxel'
-	#
 	'duolingo-desktop-bin'
 	'portugol-studio-bin'
 	#

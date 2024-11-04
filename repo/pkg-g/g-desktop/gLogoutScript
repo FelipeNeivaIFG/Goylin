@@ -1,4 +1,3 @@
 #!/bin/bash
 
-# Clear guest dot files on logout
 rm -rf /home/guest/.*

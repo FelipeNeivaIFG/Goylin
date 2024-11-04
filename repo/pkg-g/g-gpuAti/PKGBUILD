@@ -1,0 +1,19 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='g-gpuAti'
+pkgdesc='Goylin: ATI GPU'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group='goylin'
+
+pkgver=24.5
+pkgrel=1
+arch=('x86_64')
+
+depends=(
+	'mesa'
+	'lib32-mesa'
+	'xf86-video-ati'
+	'libva-mesa-driver'
+	'lib32-libva-mesa-driver'
+	'mesa-vdpau'
+	'lib32-mesa-vdpau'
+)

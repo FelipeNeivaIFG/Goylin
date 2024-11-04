@@ -4,7 +4,7 @@ pkgdesc='Goylin: Lightdm Greeter'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.4
+pkgver=24.5
 pkgrel=1
 arch=('x86_64')
 
@@ -20,10 +20,14 @@ md5sums=(
 
 install='pkg.install'
 
-depends=('lightdm' 'numlockx' 'g-greeter-theme')
+depends=(
+	'lightdm'
+	'numlockx'
+	'g-slickGreeter'
+)
 
 package() {
-	install -Dm 644 -t ${pkgdir}/etc/lightdm/ lightdm.conf
-	install -Dm 644 -t ${pkgdir}/etc/lightdm/ slick-greeter.conf
-	install -Dm 644 -t ${pkgdir}/etc/pam.d/ lightdm
+	install -vDm 644 -t ${pkgdir}/etc/lightdm/ lightdm.conf
+	install -vDm 644 -t ${pkgdir}/etc/lightdm/ slick-greeter.conf
+	install -vDm 644 -t ${pkgdir}/etc/pam.d/ lightdm
 }

@@ -1,29 +1,41 @@
 ## Scripts
-
-# repo/mkPkgs.sh:
-- remove log files on end
+# repo/gBuildPkg.sh:
+- FIX THIS SHIT!!! >> ./gBuildPkg.sh: line 90: [: PKGNAME-x86_64.pkg.tar.zst: binary operator expected
 
 ## PKGs:
 
-# gapp-game-extra:
-- Fix n64 analog stick to keyboard mapping
-- Configure USB Joystick
-- Fix dconf defaults for gamehub
+# gapp-vfx
+- openfx-io - Broken by ffpmeg update
+- natron - Deppendecy Hell
+- fspy - Fix installation
 
-# g-ad
-- Fix $HOME group permission of ad users on creation
+# gapp-video
+- dcpomatic - Broken
 
-#### 24.5 ####
+# gapp-geo
+- qgis-grass-plugin - Broken 
+- gdal-grass - Broken
 
-# DE
-- use wayland
+# gapp-geo
+- add hortafacil.
+- Find a better way the run wine apps like sisvar, other than copying to user home.
 
-# g-desktop
-- Use profile insted of xprofile
+# gapp-game
+- maniadrive <- Exec error with domain users (local/domain username conflict?)
+- clonekeen <- Build Error
+- vvvvvv <- Build Error
+- gog-hollow-knight <- Upstream PKGBUILD missing deps lgogdownloader
+- openblack-git <- Missing deps
+- orbiter2016-git <- Missing build deps
+- principia <- Missing deps
+- thrive-bin <- Failed download Src
+- openloco <- Missing deps
+- vegastrike
 
-# Alternative DE
-- Gnome?
-- Hyprland?
 
-# gapp-game-extra 
-- Change ../games to ../roms
+## DO IT !!!! ##
+- Install Realtime pkg for audio - check archwiki
+- Alsa utils
+- fix i3 icons and setup for radio
+- fix SMB config for master domain as 'NO'
+- fix cinema server not working

@@ -12,7 +12,6 @@ _unlockGFiles() {
 	chattr -i /etc/pam.d/lightdm
 }
 
-
 post_install() {
 	systemctl enable lightdm
 	_lockGFiles

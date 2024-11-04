@@ -4,19 +4,42 @@ pkgdesc='Goylin: VFX Apps'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.4
+pkgver=24.5
 pkgrel=1
 arch=('x86_64')
 
-source=('skel.tar')
+source=(
+	'skel.tar'
+	# 'icons.tar'
+	# 'fspy.tar'
+	# 'fspy.desktop'
+)
 
-noextract=('skel.tar')
+noextract=(
+	'skel.tar'
+	# 'icons.tar'
+	# 'fspy.tar'
+)
 
-md5sums=('SKIP')
+md5sums=(
+	'SKIP'
+	# 'SKIP' 'SKIP' 'SKIP'
+)
 
 depends=(
 	'blender-3.6-bin'
+	'blender-plugin-fspy'
+	'godot-blender-exporter-git'
+	# 'gconf'
+	# 'xdialog'
+	'openfx-arena'
+	'openfx-gmic'
+	# 'openfx-io' # FIX - Broken by ffmpeg update
+	'openfx-misc'
+	'gyroflow-ofx-bin'
 	'natron-bin'
+	# 'natron-plugins-git' # Deppendency Hell
+	'gyroflow-bin'
 )
 
 install='pkg.install'
@@ -25,4 +48,15 @@ package() {
 	install -vDm 644 -t ${pkgdir}/etc/skel skel.tar
 	tar vxf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
 	rm -v ${pkgdir}/etc/skel/skel.tar
+
+	# install -vDm 755 -t ${pkgdir}/usr/share/applications/ fspy.desktop
+	# install -vDm 644 -t ${pkgdir}/usr/share/icons icons.tar
+	# tar vxf ${pkgdir}/usr/share/icons/icons.tar --overwrite --directory=${pkgdir}/usr/share/icons/
+	# rm -v ${pkgdir}/usr/share/icons/icons.tar
+	# chmod -vR a+r ${pkgdir}/usr/share/icons/
+	# install -vDm 644 -t ${pkgdir}/opt/fspy fspy.tar
+	# tar vxf ${pkgdir}/opt/fspy/fspy.tar --overwrite --directory=${pkgdir}/opt/fspy/
+	# rm -v ${pkgdir}/opt/fspy/fspy.tar
+	# chmod -vR a+r ${pkgdir}/opt/fspy/
+	# chmod -v 755 ${pkgdir}/opt/fspy/squashfs-root/AppRun
 }
