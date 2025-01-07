@@ -106,9 +106,6 @@ function _addToRepo() {
 	_msg "Removing Old Version"
 	find "/srv/http/${pkgRepo}" -maxdepth 1 -name "${pkgName}*" -exec rm {} +
 
-	_msg "Sync down prodDB"
-	wget -r -np -nH --cut-dirs=1 -P /srv/http/${pkgRepo} http://${repoSrv}/${pkgRepo}/${pkgRepo}.db.tar.gz
-
 	_msg "Adding $pkgName to Repo"
 	mv -f "${pkgType}/${pkgName}/${pkgName}"*.pkg.tar.zst "/srv/http/${pkgRepo}"
 	repo-add "/srv/http/${pkgRepo}/${pkgRepo}.db.tar.gz" "/srv/http/${pkgRepo}/${pkgName}"*.pkg.tar.zst

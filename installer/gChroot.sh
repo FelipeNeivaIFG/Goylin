@@ -20,10 +20,10 @@ function _configSys() {
 	ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 	locale-gen
 
-	[ "$targetType" == "ssd" ] && _msg "SSD fstrim" && systemctl enable fstrim.timer
+	[[ "$targetType" == "ssd" || "$targetType" == "nvme" ]] && _msg "SSD fstrim" && systemctl enable fstrim.timer
 
 	_msg "Bootstrap Pacman"
-	pacman --disable-download-timeout --noconfirm -Syy 1> /dev/null
+	pacman --disable-download-timeout --noconfirm -Syu 1> /dev/null
 
 	return 0
 }
@@ -217,18 +217,18 @@ function _pGremio() {
 function _pLibrary() {
 	_msgInfo "###   Profile: Library   ###"
 
-	# _msg "App: Audio"; _install_PKG gapp-audio
-	# _msg "App: Image"; _install_PKG gapp-image
-	# _msg "App: Write"; _install_PKG gapp-write
-	# _msg "App: Animation"; _install_PKG gapp-anim
-	# _msg "App: VFX"; _install_PKG gapp-vfx
-	# _msg "App: Video"; _install_PKG gapp-video
-	# _msg "App: Cad"; _install_PKG gapp-cad
-	# _msg "App: Geo"; _install_PKG gapp-geo
-	# _msg "App: Code"; _install_PKG gapp-code
-	# _msg "App: Game Dev"; _install_PKG gapp-gameDev
+	_msg "App: Audio"; _install_PKG gapp-audio
+	_msg "App: Image"; _install_PKG gapp-image
+	_msg "App: Write"; _install_PKG gapp-write
+	_msg "App: Animation"; _install_PKG gapp-anim
+	_msg "App: VFX"; _install_PKG gapp-vfx
+	_msg "App: Video"; _install_PKG gapp-video
+	_msg "App: Cad"; _install_PKG gapp-cad
+	_msg "App: Geo"; _install_PKG gapp-geo
+	_msg "App: Code"; _install_PKG gapp-code
+	_msg "App: Game Dev"; _install_PKG gapp-gameDev
 	_msg "App: Educational"; _install_PKG gapp-edu
-	# _msg "App: CLI"; _install_PKG gapp-cli
+	_msg "App: CLI"; _install_PKG gapp-cli
 	_msg "App: Game"; _install_PKG gapp-game
 	_msg "App: Game Emulation"; _install_PKG gapp-gameEmu
 

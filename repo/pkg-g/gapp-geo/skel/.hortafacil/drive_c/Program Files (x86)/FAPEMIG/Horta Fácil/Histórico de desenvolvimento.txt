@@ -1,0 +1,32 @@
+Versão 1.0
+  * Modificado o engine de cálculo para o dimensionamento dos módulos;
+  * Modificada a entrada de dados para modelos de cultivo;
+===========================================================================================================
+Versão 1.1
+  * Alteração na posição de colunas no relatórios;
+  * Modificação na janela de abertura;
+  * Inserido o período e a diferenciação nas tabelas de calendário para o desenvolvimento de mudas;
+  * Criado a "Lista de modelos detalhada no espaçamento e produção";
+  * Inserido o cálculo de área total e área útil para hortas;
+===========================================================================================================
+Versão 1.2
+  * Readequação das tabelas de calendário à culturas com transplantio;
+  * Criada nova janela de seleção de hortas;
+  * Inserido o aviso e análise das modificações em modelos de cultivo;
+===========================================================================================================
+Versão 1.3
+  * Melhorado controle de usuário sobre a inserção de novas culturas em uma horta;
+  * Criadas as opções de impressão para o Relatório do Calendário de Cutlivo;
+  * Inseridas as variáveis de totalização no Relatório de Produção da Horta Dimensionada e consumo de água;
+  * Criados os menus de Ajuda e Sobre
+===========================================================================================================
+Versão 1.4
+  * Adequadas as datas para o Calendário de hortas
+  * Revisado o planejamento semanal para os Calendários de hortas
+===========================================================================================================
+Versão 1.5
+  * Salvamento de relatórios via pdf
+  * Readequação das restrições de inclusão/alteração de nomes de hortas/modelos
+  * Modificação na seleção de hortaliças
+  * Modificações estéticas nos relatórios (Adequações de Fontes ao Windows Vista)
+  * Incluída restrição de exclusão, quando alguma horta possuir o modelo a ser excluído

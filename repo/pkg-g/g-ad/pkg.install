@@ -3,25 +3,24 @@
 _lockGFiles() {
 	chattr +i /etc/krb5.conf
 	chattr +i /etc/nsswitch.conf
-	chattr +i /etc/samba/smb.conf
-	chattr +i /etc/sshd/sshd_config
 	chattr +i /etc/security/pam_winbind.conf
-	chattr +i /etc/pam.d/system-auth
+	chattr +i /etc/samba/smb.conf
 	chattr +i /etc/pam.d/su
+	chattr +i /etc/pam.d/system-auth
 }
 
 _unlockGFiles() {
 	chattr -i /etc/krb5.conf
 	chattr -i /etc/nsswitch.conf
-	chattr -i /etc/samba/smb.conf
-	chattr -i /etc/sshd/sshd_config
 	chattr -i /etc/security/pam_winbind.conf
-	chattr -i /etc/pam.d/system-auth
+	chattr -i /etc/samba/smb.conf
 	chattr -i /etc/pam.d/su
+	chattr -i /etc/pam.d/system-auth
 }
 
 post_install() {
-	systemctl enable avahi-daemon
+	systemctl enable smb
+	systemctl enable nmb
 	_lockGFiles
 }
 

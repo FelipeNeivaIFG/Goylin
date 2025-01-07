@@ -5,7 +5,7 @@ url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
 pkgver=24.5
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 
 depends=(
@@ -19,9 +19,11 @@ depends=(
 	'ktouch'
 	'minuet'
 	'leocad'
-	'magicavoxel'
 	'duolingo-desktop-bin'
 	'portugol-studio-bin'
+	'fractalnow'
+	'principia'
+	'thrive-bin'
 	#
 	'xplanet'
 	'povray'

@@ -82,11 +82,13 @@ function _setTarget() {
 function _setTargetType() {
 	_msg "Target type:"
 	_msgOpt "1) HDD"
+	_msgOpt "2) NVMe"
 	_msgOpt "*) SSD"
 	read -p "?: " -e optTargetType
 
 	case $optTargetType in
 		1) targetType="hdd";;
+		2) targetType="nvme";;
 		*) targetType="ssd";;
 	esac
 
@@ -140,7 +142,7 @@ function _setProfile() {
 }
 
 function _setConfirm() {
-	_msgAlert "Confirm settings: (y/N)"
+	_msgAlert "Settings:"
 	_msgOpt "Target: $target"
 	_msgOpt "Type: $targetType"
 	_msgOpt "KeepHome: $keepHome"
@@ -191,16 +193,18 @@ function _prepHardUmount() {
 function _prepUmount() {
 	_msg "Unmounting Target"
 
+	[ "$targetType" == "nvme" ] && p="p" || p=""
+
 	sync
 	[[ $(mount | grep /mnt) ]] && umount -qlfR /mnt
-	[[ $(mount | grep "$target"1) ]] && umount -qlf /dev/"$target"1
-	[[ $(mount | grep "$target"2) ]] && umount -qlf /dev/"$target"2
-	[[ $(mount | grep "$target"3) ]] && umount -qlf /dev/"$target"3
-	[[ $(mount | grep "$target"4) ]] && umount -qlf /dev/"$target"4
-	[[ $(swapon | grep "$target"1) ]] && swapoff /dev/"$target"1
-	[[ $(swapon | grep "$target"2) ]] && swapoff /dev/"$target"2
-	[[ $(swapon | grep "$target"3) ]] && swapoff /dev/"$target"3
-	[[ $(swapon | grep "$target"4) ]] && swapoff /dev/"$target"4
+	[[ $(mount | grep "${target}${p}"1) ]] && umount -qlf /dev/"${target}${p}"1
+	[[ $(mount | grep "${target}${p}"2) ]] && umount -qlf /dev/"${target}${p}"2
+	[[ $(mount | grep "${target}${p}"3) ]] && umount -qlf /dev/"${target}${p}"3
+	[[ $(mount | grep "${target}${p}"4) ]] && umount -qlf /dev/"${target}${p}"4
+	[[ $(swapon | grep "${target}${p}"1) ]] && swapoff /dev/"${target}${p}"1
+	[[ $(swapon | grep "${target}${p}"2) ]] && swapoff /dev/"${target}${p}"2
+	[[ $(swapon | grep "${target}${p}"3) ]] && swapoff /dev/"${target}${p}"3
+	[[ $(swapon | grep "${target}${p}"4) ]] && swapoff /dev/"${target}${p}"4
 
 	return 0
 }
@@ -233,10 +237,12 @@ function _prepPartBIOS() {
 function _prepFormat() {
 	_msg "Formating"
 
-	mkfs.ext4 -q /dev/"$target"4
-	mkfs.ext4 -q /dev/"$target"3
-	mkfs.ext4 -q /dev/"$target"1
-	mkswap -q /dev/"$target"2
+	[ "$targetType" == "nvme" ] && p="p" || p=""
+
+	mkfs.ext4 -q /dev/"${target}${p}"4
+	mkfs.ext4 -q /dev/"${target}${p}"3
+	mkfs.ext4 -q /dev/"${target}${p}"1
+	mkswap -q /dev/"${target}${p}"2
 
 	return 0
 }
@@ -244,9 +250,11 @@ function _prepFormat() {
 function _prepFormatKeepHome() {
 	_msg "Formating - Keeping /home"
 
-	mkfs.ext4 -q /dev/"$target"3
-	mkfs.ext4 -q /dev/"$target"1
-	mkswap -q /dev/"$target"2
+	[ "$targetType" == "nvme" ] && p="p" || p=""
+
+	mkfs.ext4 -q /dev/"${target}${p}"3
+	mkfs.ext4 -q /dev/"${target}${p}"1
+	mkswap -q /dev/"${target}${p}"2
 
 	return 0
 }
@@ -254,11 +262,13 @@ function _prepFormatKeepHome() {
 function _prepMount() {
 	_msg 'Mounting'
 
-	mount /dev/"$target"3 /mnt
+	[ "$targetType" == "nvme" ] && p="p" || p=""
+
+	mount /dev/"${target}${p}"3 /mnt
 	mkdir -p /mnt/{boot,home}
-	mount /dev/"$target"4 /mnt/home
-	mount /dev/"$target"1 /mnt/boot
-	swapon /dev/"$target"2
+	mount /dev/"${target}${p}"4 /mnt/home
+	mount /dev/"${target}${p}"1 /mnt/boot
+	swapon /dev/"${target}${p}"2
 
 	return 0
 }
@@ -267,15 +277,13 @@ function _prepCleanHomeDots () {
 	_msgInfo "###   Cleaning User Dots   ###"
 
 	[ -d /mnt/home/lost+found ] && _msg "Removing: lost+found" && rm -rf /mnt/home/lost+found
-	[ -d /mnt/home/admin ] && _msg "Removing: admin" && rm -rf /mnt/home/admin
 
 	for userInHome in /mnt/home/*; do
 		userHome=$(basename $userInHome)
 		_msg "$userHome"
-		if [[ "$userHome" != "shared" && "$userHome" != "guest" ]]; then
+		if [[ "$userHome" != "shared" ]]; then
 			rm -rf /mnt/home/"$userHome"/.*
-			rm -f /mnt/home/"$userHome"/Desktop/*.desktop
-			chmod -R og-rwx /mnt/home/"$userHome"
+			[ -d "/mnt/home/${userInHome}/Desktop" ] && rm -f /mnt/home/"$userHome"/Desktop/*.desktop
 		fi
 	done
 
@@ -364,7 +372,7 @@ function _instFstab() {
 
 	genfstab -U /mnt >> /mnt/etc/fstab
 	sed -i '/^\/swapfile/d' /mnt/etc/fstab
-	[ "$targetType" == "ssd" ] && sed -i "s/relatime/noatime/g" /mnt/etc/fstab
+	[[ "$targetType" == "ssd" || "$targetType" == "nvme" ]] && sed -i "s/relatime/noatime/g" /mnt/etc/fstab
 	chattr +i /mnt/etc/fstab
 
 	return 0

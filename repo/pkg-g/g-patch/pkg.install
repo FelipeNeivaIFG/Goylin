@@ -9,5 +9,9 @@ _removeHomeFile () {
 }
 
 post_upgrade() {
-	_removeHomeFile '.config/ardour8/config'
+	# _removeHomeFile '.config/ardour8/config'
+	chattr -i /etc/resolv.conf
+	systemctl enable systemd-resolved --now
+	systemctl enable avahi-daemon --now
+	chattr -i /etc/cups/printers.conf
 }

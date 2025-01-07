@@ -5,7 +5,7 @@ url='https://github.com/FelipeNeivaIFG/Goylin'
 group='goylin'
 
 pkgver=24.5
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 
 source=('printers.conf')
@@ -25,6 +25,7 @@ depends=(
 	'print-manager'
 	'hplip'
 	'rpcbind'
+	'system-config-printer'
 )
 
 install='pkg.install'

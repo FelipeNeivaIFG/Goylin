@@ -5,7 +5,7 @@ url='https://github.com/FelipeNeivaIFG/Goylin'
 group='goylin'
 
 pkgver=24.5
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 
 source=('tlauncher.tar' 'tlauncher.desktop')
@@ -26,11 +26,11 @@ depends=(
 	'gnome-mahjongg'
 	'gnome-klotski'
 	'gnome-sudoku'
-	'atomix'
 	'minecraft-launcher'
 	'ddnet'
 	'ltris'
 	'lix'
+	'maniadrive'
 	#
 	'jdk-openjdk'
 	'discord-game-sdk'
@@ -44,18 +44,6 @@ depends=(
 	'vulkan-icd-loader'
 	'vulkan-tools'
 	'xorg-xgamma'
-
-	# 'koifarm-git' # Calling 'python3' insted of 'python'
-	# 'maniadrive' <- Exec error with domain users (local/domain username conflict?)
-	# 'clonekeen' <- Build Error
-	# 'vvvvvv' <- Build Error
-	# 'gog-hollow-knight' <- Upstream PKGBUILD missing deps lgogdownloader
-	# 'openblack-git' <- Missing deps
-	# 'orbiter2016-git' <- Missing build deps
-	# 'principia' <- Missing deps
-	# 'thrive-bin' <- Failed download Src
-	# 'openloco' <- Missing deps
-	# 'vegastrike'
 )
 
 package() {

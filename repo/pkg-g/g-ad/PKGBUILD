@@ -5,7 +5,7 @@ url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
 pkgver=24.5
-pkgrel=1
+pkgrel=10
 arch=('x86_64')
 
 source=(
@@ -30,13 +30,11 @@ depends=(
 	'smbclient'
 	'pam-krb5'
 	'pam'
-	'avahi'
-
-	# For debug
-	# 'bind'
-	# 'python-dnspython'
-	# 'bind'
-	# 'krb5'
+	'openldap'
+	'python-dnspython'
+	'python-cryptography'
+	'bind'
+	'krb5'
 )
 
 package() {

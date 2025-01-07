@@ -5,7 +5,7 @@ url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
 pkgver=24.5
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 
 depends=(
@@ -42,4 +42,5 @@ depends=(
 	'lib32-v4l-utils'
 	'lib32-nettle'
 	'nettle'
+	'winetricks'
 )

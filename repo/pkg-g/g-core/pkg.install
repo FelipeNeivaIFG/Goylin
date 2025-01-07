@@ -2,31 +2,31 @@
 _lockGFiles() {
 	chattr +i /usr/share/pixmaps/archlinux-logo.svg
 	chattr +i /usr/share/pixmaps/archlinux-logo.png
-	chattr +i /usr/share/plymouth/plymouthd.defaults
-	chattr +i /etc/sudoers
 	chattr +i /etc/issue
 	chattr +i /etc/motd
-	chattr +i /etc/vconsole.conf
-	chattr +i /etc/pacman.conf
-	chattr +i /etc/systemd/timesyncd.conf
 	chattr +i /usr/lib/os-release
+	chattr +i /etc/pacman.conf
+	chattr +i /usr/share/plymouth/plymouthd.defaults
 	chattr +i /etc/systemd/sleep.conf
-	chattr +i /etc/ssh/sshd_config.conf
+	chattr +i /etc/ssh/sshd_config
+	chattr +i /etc/sudoers
+	chattr +i /etc/systemd/timesyncd.conf
+	chattr +i /etc/vconsole.conf
 }
 
 _unlockGFiles() {
 	chattr -i /usr/share/pixmaps/archlinux-logo.svg
 	chattr -i /usr/share/pixmaps/archlinux-logo.png
-	chattr -i /usr/share/plymouth/plymouthd.defaults
-	chattr -i /etc/sudoers
 	chattr -i /etc/issue
 	chattr -i /etc/motd
-	chattr -i /etc/vconsole.conf
-	chattr -i /etc/pacman.conf
-	chattr -i /etc/systemd/timesyncd.conf
 	chattr -i /usr/lib/os-release
+	chattr -i /etc/pacman.conf
+	chattr -i /usr/share/plymouth/plymouthd.defaults
 	chattr -i /etc/systemd/sleep.conf
-	chattr +i /etc/ssh/sshd_config.conf
+	chattr -i /etc/ssh/sshd_config
+	chattr -i /etc/sudoers
+	chattr -i /etc/systemd/timesyncd.conf
+	chattr -i /etc/vconsole.conf
 }
 
 post_install() {
@@ -34,6 +34,8 @@ post_install() {
 	systemctl enable sshd
 	systemctl enable goylin.service
 	systemctl enable systemd-timesyncd.service
+	systemctl enable avahi-daemon
+	systemctl enable systemd-resolved
 
 	cp -f /usr/share/goylin/icons/goylin.svg /usr/share/pixmaps/archlinux-logo.svg
 	cp -f /usr/share/goylin/icons/goylin.png /usr/share/pixmaps/archlinux-logo.png

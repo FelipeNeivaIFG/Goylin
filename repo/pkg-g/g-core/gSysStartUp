@@ -12,29 +12,31 @@ plymouth display-message --text="${gSysUpdateMsg}"
 timedatectl set-ntp true
 hwclock --systohc
 
-# Goylin System Update
-gSysUpdateMsg="Instalando Atualizações, aguarde..."
+# Start up and update DB
+gSysUpdateMsg="Procurando atualizações..."
 echo "${gSysUpdateMsg}"
 plymouth display-message --text="${gSysUpdateMsg}"
+[ -f /var/lib/pacman/db.lck ] && rm -vf /var/lib/pacman/db.lck
+pacman -Scc --noconfirm
 pacman -Sy
 
-gSysUpdateMsg="Atualizando Configuração do Sistema..."
+gSysUpdateMsg="Atualizando Configurações do Sistema..."
 echo "${gSysUpdateMsg}"
 plymouth display-message --text="${gSysUpdateMsg}"
 pacman -S --overwrite "*" --noconfirm --needed $(pacman -Qe | grep "^g-" | cut -d" " -f1)
 
-gSysUpdateMsg="Atualizando Programas..."
+gSysUpdateMsg="Atualizando lista de programas..."
 echo "${gSysUpdateMsg}"
 plymouth display-message --text="${gSysUpdateMsg}"
 pacman -S --overwrite "*" --noconfirm --needed $(pacman -Qe | grep "^gapp-" | cut -d" " -f1)
 
-gSysUpdateMsg="Atualizando o Perfil..."
+gSysUpdateMsg="Atualizando perfil..."
 echo "${gSysUpdateMsg}"
 plymouth display-message --text="${gSysUpdateMsg}"
 pacman -S --overwrite "*" --noconfirm --needed $(pacman -Qe | grep "^gp-" | cut -d" " -f1)
 
 # PKGs Update
-gSysUpdateMsg="Instalando Atualizações, aguarde..."
+gSysUpdateMsg="Instalando, aguarde..."
 echo "${gSysUpdateMsg}"
 plymouth display-message --text="${gSysUpdateMsg}"
 pacman -Su --noconfirm --needed

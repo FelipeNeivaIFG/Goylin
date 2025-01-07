@@ -8,7 +8,6 @@ freetube-bin
 muffon-bin
 ferdium-bin
 hyphen-pt-br
-simple-droidcam-client
 droidcam
 jre8
 jdk8
@@ -18,9 +17,10 @@ leet-plugins
 audacity-plugins
 xairedit
 x32edit
+catia-git
+realtime-generic-setup
 
 glaxnimate
-
 pixelorama-bin
 
 blender-3.6-bin
@@ -30,12 +30,13 @@ gconf
 openfx-arena
 openfx-gmic
 libseexpr2
-# openfx-io # BROKEN by ffmpeg update
 openfx-misc
 natron-bin
-# natron-plugins-git # Deppendency Hell
+# openfx-io # BROKEN by ffmpeg update
+# natron-plugins-git # Deppendency Hell (openfxio)
 gyroflow-ofx-bin
 gyroflow-bin
+# fspy # BROKEN
 
 libsub
 libcxml
@@ -43,14 +44,12 @@ python2
 libasdcp-cth
 libdcp
 leqm-nrt
-# dcpomatic # BROKEN
+dcpomatic
 droidcam-obs-plugin
 
 google-earth-pro
 grass
 saga-gis
-# qgis-grass-plugin # BROKEN
-# gdal-grass # BROKEN
 
 vscodium-bin
 
@@ -79,10 +78,18 @@ minecraft-launcher
 lix
 ltris
 ddnet
-koifarm-git # BROKEN
-
+maniadrive
 gamehub-bin
+thrive-bin
+
+principia
 
 serpro-signer
 java-openjfx-bin
 serproid
+
+pyside2
+
+veyon-bin
+
+fractalnow

@@ -1,0 +1,14 @@
+Horta Fácil
+
+Facilitando a vida do produtor
+
+O Horta Fácil foi concebido sob a parceria entre pesquisadores de três instiuições de ensino e 
+pesquisa: Universidade Estadual de Maringá, Universidade Federal de Lavras, Universidade José
+do Rosário Vellano. Além das instituições de ensino e pesquisa o desenvolmento do software contou com o 
+apoio da Fundação de Amparo à Pesquisa de Minas Geras que forneceu e do Conselho Nacional de Desenvolvimento
+Científico e Tecnológico que forneceram grande parte do fomento necessário ao desenvolvimento deste projeto.
+
+O Software é de uso livre e gratuito, assim como a distribuição. Entretanto quando citado, deve-se
+fazer menção aos seus autores bem como das instituições envolvidas na produção do mesmo. Os resultados
+obtidos pelo uso do mesmo são resposabilidade única e exclusiva do usuário, uma vez que tem o acesso
+aos seus bancos de dados irrestrito.

@@ -9,6 +9,6 @@ cpuType="intel"
 keepHome=0
 grubSize="+1G"
 swapSize="+16G"
-systemSize="+50G"
+systemSize="+64G"
 localDevInstall=0
 pacmanConf="utils/pacman_local.conf"

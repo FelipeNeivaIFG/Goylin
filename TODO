@@ -1,41 +1,25 @@
 ## Scripts
-# repo/gBuildPkg.sh:
-- FIX THIS SHIT!!! >> ./gBuildPkg.sh: line 90: [: PKGNAME-x86_64.pkg.tar.zst: binary operator expected
 
-## PKGs:
+# repo/gBuildPkg.sh:
+- FIX THIS SHIT!!! >> ./gBuildPkg.sh: line 90: [: PKGNAME-x86_64.pkg.tar.zst: binary operator expected - Use [[]] insted of [] and test!
+
+# gapp-ad
+- FIX syntax error removing from computer from AD
+
+# gapp-wine
+- add WINETRICKS
+
+# gapp-file
+- fix UI archive for zip files
 
 # gapp-vfx
 - openfx-io - Broken by ffpmeg update
-- natron - Deppendecy Hell
+- natron-plugins-git - Deppendecy Hell wuth openfx-io and natron-compositor
 - fspy - Fix installation
 
-# gapp-video
-- dcpomatic - Broken
+# gp-adm
+- auto open ferdium
 
-# gapp-geo
-- qgis-grass-plugin - Broken 
-- gdal-grass - Broken
-
-# gapp-geo
-- add hortafacil.
-- Find a better way the run wine apps like sisvar, other than copying to user home.
-
-# gapp-game
-- maniadrive <- Exec error with domain users (local/domain username conflict?)
-- clonekeen <- Build Error
-- vvvvvv <- Build Error
-- gog-hollow-knight <- Upstream PKGBUILD missing deps lgogdownloader
-- openblack-git <- Missing deps
-- orbiter2016-git <- Missing build deps
-- principia <- Missing deps
-- thrive-bin <- Failed download Src
-- openloco <- Missing deps
-- vegastrike
-
-
-## DO IT !!!! ##
-- Install Realtime pkg for audio - check archwiki
-- Alsa utils
-- fix i3 icons and setup for radio
-- fix SMB config for master domain as 'NO'
-- fix cinema server not working
+# gapp-edu
+- update repo and add 'mandelbulber2'
+- try and fix 'open-duelyst-bin'

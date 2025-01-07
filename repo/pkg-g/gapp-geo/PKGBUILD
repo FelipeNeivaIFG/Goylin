@@ -5,18 +5,23 @@ url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
 pkgver=24.5
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 
 source=(
 	'skel.tar'
 	'sisvar.desktop'
 	'sisvaricon.png'
+	'hortafacil.desktop'
+	'hortafacilicon.png'
 )
 
 noextract=('skel.tar')
 
-md5sums=('SKIP' 'SKIP' 'SKIP')
+md5sums=(
+	'SKIP' 'SKIP' 'SKIP' 'SKIP'
+	'SKIP'
+)
 
 depends=(
 	'google-earth-pro'
@@ -38,8 +43,6 @@ depends=(
 	'liblas'
 	'python-jinja'
 	'grass'
-	# 'qgis-grass-plugin' - BROKEN
-	# 'gdal-grass' # BROKEN
 )
 
 package() {
@@ -49,4 +52,7 @@ package() {
 
 	install -Dm 644 -t ${pkgdir}/usr/share/applications sisvar.desktop
 	install -Dm 644 -t ${pkgdir}/usr/share/icons sisvaricon.png
+
+	install -Dm 644 -t ${pkgdir}/usr/share/applications hortafacil.desktop
+	install -Dm 644 -t ${pkgdir}/usr/share/icons hortafacilicon.png
 }

@@ -5,4 +5,5 @@ fi
 
 ~/.automated_script.sh
 
+# Run Goylin installer
 /gInstaller/gInstaller.sh

@@ -76,6 +76,11 @@ xf86-video-ati
 samba
 smbclient
 pam-krb5
+python-dnspython
+python-cryptography
+bind
+krb5
+openldap
 
 gtk3
 libcanberra
@@ -140,6 +145,8 @@ lib32-pcsclite
 lib32-sdl2
 lib32-v4l-utils
 lib32-nettle
+winetricks
+cabextract
 
 dolphin
 dolphin-plugins
@@ -206,6 +213,9 @@ xwallpaper
 python-pywal
 xorg-xrandr
 arandr
+pavucontrol
+ranger
+volumeicon
 
 adobe-source-sans-fonts
 adobe-source-serif-fonts
@@ -228,6 +238,7 @@ sane-airscan
 cups-pdf
 print-manager
 hplip
+system-config-printer
 
 evince
 shotwell
@@ -276,6 +287,7 @@ libappindicator-gtk3
 android-tools
 usbmuxd
 v4l2loopback-dkms
+electron31
 
 electron29
 c-ares
@@ -468,6 +480,10 @@ minuet
 leocad
 xplanet
 povray
+sdl2_image
+sdl2_mixer
+sdl2_ttf
+libpng12
 
 steam
 0ad
@@ -496,6 +512,11 @@ npm
 mariadb-libs
 webkit2gtk
 libmanette
+help2man
+tidy
+glm
+texlive-latex
+lib32-glu
 
 retroarch
 innoextract
@@ -523,3 +544,7 @@ libretro-pcsx2
 libretro-ppsspp
 
 realtime-privileges
+
+libfakekey
+libvncserver
+qt6-httpserver

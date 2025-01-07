@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=fSpy
-Comment=An open source, cross platform app for still image camera matching
-Exec="/opt/fspy/squashfs-root/AppRun" %U
-Terminal=false
-Type=Application
-Icon=appimagekit-fspy
-Categories=Utility;
-TryExec=/opt/fspy/squashfs-root/AppRun

@@ -12,13 +12,6 @@ _unlockGFiles() {
 	chattr -i /etc/lightdm/lightdm.conf
 }
 
-_removeHomeFile () {
-	for userInHome in /home/*; do
-		userHome=$(basename $userInHome)
-		[ -f /home/"$userHome"/"$1" ] && rm -vf /home/"$userHome"/"$1"
-	done
-}
-
 _setProfile() {
 	sed -i "s/core/radio/g" /usr/lib/os-release
 	sed -i "s/goylin.desktop/goylindark.desktop/g" /etc/xdg/kdeglobals
@@ -34,6 +27,5 @@ post_install() {
 post_upgrade() {
 	_unlockGFiles
 	_setProfile
-	_removeHomeFile .dmrc
 	_lockGFiles
 }

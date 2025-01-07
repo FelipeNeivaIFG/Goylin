@@ -7,10 +7,15 @@ set $fileManager dolphin
 
 # Provide Gaps to Windows. Increase/Decrease as you like.
 gaps inner 4
-gaps outer 2 
+gaps outer 0
+smart_gaps on
+smart_borders on
 
 # Disable TileBars
 for_window [class=".*"] border pixel 2
+
+# Special App modes
+for_window [window_type="splash"] floating enable
 
 # Border
 new_window pixel 2 
@@ -46,7 +51,7 @@ bindsym $mod+q kill
 
 # start dmenu
 bindsym $mod+Shift+d exec --no-startup-id dmenu_run -i -nb "$bgd" -nf "$fgi" -sb "$bgl" -sf "$bgd" -fn "$font"
-bindsym $mod+d exec --no-startup-id rofi -show drun -theme Monokai -show-icons
+bindsym $mod+d exec --no-startup-id rofi -show drun
 
 # Print Screen
 bindsym Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
@@ -209,6 +214,9 @@ bar{
 
 # Multi Monitor (Dual Monitor, extended monitor)
 # exec --no-startup-id xrandr --output eDP-1 --right-of HDMI-1 --right-of VGA-1 --auto
+
+# Volume Icon
+exec volumeicon &
 
 # Theme Changer
 exec_always gi3Theme

@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Sisvar
-Exec=env WINEPREFIX="$HOME/Documentos/.sisvar" wine C:\\\\users\\\\labadmin\\\\AppData\\\\Roaming\\\\Microsoft\\\\Windows\\\\Start\\ Menu\\\\Programs\\\\Sisvar\\\\Sisvar.lnk
+Exec=env WINEPREFIX="$HOME/.sisvar" wine "C:\\Program Files (x86)\\Sisvar\\Sisvar.exe"
 Type=Application
 StartupNotify=true
 Icon=/usr/share/icons/sisvaricon.png
