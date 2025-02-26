@@ -1,8 +1,11 @@
 [EmbedSettings]
+# Document Types
 embed-application/json=false
 embed-application/pdf=false
 embed-application/x-docbook+xml=false
 embed-application/x-yaml=false
+
+# Audio Formats
 embed-audio/aac=false
 embed-audio/mp4=false
 embed-audio/mpeg=false
@@ -22,6 +25,8 @@ embed-audio/x-speex=false
 embed-audio/x-vorbis=false
 embed-audio/x-vorbis+ogg=false
 embed-audio/x-wav=false
+
+# Image Formats
 embed-image/avif=false
 embed-image/bmp=false
 embed-image/heif=false
@@ -29,9 +34,13 @@ embed-image/jpeg=false
 embed-image/png=false
 embed-image/webp=false
 embed-image/x-icns=false
+
+# Text Formats
 embed-text/markdown=false
 embed-text/plain=false
 embed-text/x-cmake=false
+
+# Video Formats
 embed-video/ogg=false
 embed-video/x-ogm=false
 embed-video/x-ogm+ogg=false

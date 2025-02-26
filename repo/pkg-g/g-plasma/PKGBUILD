@@ -1,11 +1,11 @@
 # Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
 pkgname='g-plasma'
-pkgdesc='Goylin: Plasma'
+pkgdesc='Goylin: Plasma Desktop'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.5
-pkgrel=1
+pkgver=25.0
+pkgrel=0
 arch=('x86_64')
 
 source=(
@@ -26,35 +26,45 @@ md5sums=('SKIP' 'SKIP' 'SKIP' 'SKIP')
 install='pkg.install'
 
 depends=(
-	'polkit-kde-agent'
-	'plasma5support'
-	'plasma-integration'
-	'kwin'
-	'maliit-keyboard'
-	'libplasma'
-	'libksysguard'
-	'libkscreen'
-	'kdeplasma-addons'
-	'plasma-desktop'
-	'bluedevil'
-	'breeze-gtk'
-	'kde-gtk-config'
-	'kgamma'
-	'kscreen'
-	'kwrited'
-	'plasma-browser-integration'
-	'plasma-nm'
-	'plasma-pa'
-	'powerdevil'
-	'xdg-desktop-portal-kde'
-	'spectacle'
-	'konsole'
-	'kinfocenter'
-	'drkonqi'
-	'plasma-systemmonitor'
-	'plasma-disks'
-	'startup-notification'
-	'power-profiles-daemon'
+	'plasma-desktop'	# KDE Plasma Desktop
+	'polkit-kde-agent'	# Daemon providing a polkit authentication UI for KDE
+	'plasma5support'	# Support components for porting from KF5/Qt5 to KF6/Qt6
+	'plasma-integration'	# Qt Platform Theme integration plugins for the Plasma workspaces
+	'kwin'	# An easy to use, but flexible, composited Window Manager
+	'libplasma'	# Plasma library and runtime components
+	'libksysguard'	# Library to retrieve information on the current status of computer hardware
+	'libkscreen'	# KDE screen management software
+	'kdeplasma-addons'	# All kind of addons to improve your Plasma experience
+	'breeze-gtk'	# Breeze widget theme for GTK 2 and 3
+	'kde-gtk-config'	# Syncs KDE settings to GTK applications
+	'kgamma'	# Adjust your monitor gamma settings
+	'kwrited'	# KDE daemon listening for wall and write messages
+	'plasma-browser-integration'	# Components necessary to integrate browsers into the Plasma Desktop
+	'powerdevil'	# Manages the power consumption settings of a Plasma Shell
+	'xdg-desktop-portal-kde'	# A backend implementation for xdg-desktop-portal using Qt/KF5
+	'spectacle'	# KDE screenshot capture utility
+	'konsole'	# KDE terminal emulator
+	'kinfocenter'	# A utility that provides information about a computer system
+	'plasma-systemmonitor'	# An interface for monitoring system sensors, process information and other system resources
+	'plasma-disks'	# Monitors S.M.A.R.T. capable devices for imminent failure
+	'startup-notification'	# Libary to monitor and display application startup
+	'power-profiles-daemon'	# Makes power profiles handling available over D-Bus
+	'baloo'	# A framework for searching and managing metadata
+	'baloo-widgets'	# Widgets for Baloo
+	'plasma6-applets-qalculate' #!! AUR !!# Qalculate! applet for the KDE plasma desktop
+	'kde-cli-tools'	# Tools based on KDE Frameworks 5 to better interact with the system
+	'purpose'	# Framework for providing abstractions to get the developers purposes fulfilled
+	'kaccounts-integration' # plasma-desktop - OpenDesktop integration plugin
+	'kdialog'	# A utility for displaying dialog boxes from shell scripts
+	# 'libaccounts-qt'	# plasma-desktop - OpenDesktop integration plugin ???? USE THIS?
+	# 'drkonqi'	# The KDE crash handler
+	#
+	'bluedevil'	# plasma-desktop - Bluetooth applet | purpose - sharing via Bluetooth
+	'maliit-keyboard'	# kwin - virtual keyboard for kwin-wayland
+	'gtk3'	# kde-gtk-config - GTK3 apps support
+	'kscreen'	# plasma-desktop - screen management
+	'plasma-nm'	# plasma-desktop - Network manager applet
+	'plasma-pa'	# plasma-desktop - Audio volume applet
 	#DEV
 	# 'plasma-sdk'
 )
