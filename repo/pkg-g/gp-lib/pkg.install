@@ -2,14 +2,17 @@
 
 _lockGFiles() {
 	chattr +i /usr/lib/os-release
+	chattr +i /etc/lightdm/lightdm.conf
 }
 
 _unlockGFiles() {
 	chattr -i /usr/lib/os-release
+	chattr -i /etc/lightdm/lightdm.conf
 }
 
 _setProfile() {
 	sed -i "s/core/library/g" /usr/lib/os-release
+	sed -i "s/user-session=plasma$/user-session=plasmax11/g" /etc/lightdm/lightdm.conf
 }
 
 post_install() {

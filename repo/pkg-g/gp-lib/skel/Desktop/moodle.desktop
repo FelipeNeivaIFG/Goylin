@@ -1,5 +1,6 @@
 [Desktop Entry]
 Icon=/usr/share/goylin/icons/moodle_icon.svg
 Name=Moodle
-Type=Link
-URL[$e]=https://moodle.ifg.edu.br
+Type=Application
+Exec=brave https://moodle.ifg.edu.br
+

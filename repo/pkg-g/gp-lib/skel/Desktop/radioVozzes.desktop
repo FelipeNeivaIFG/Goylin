@@ -1,5 +1,5 @@
 [Desktop Entry]
 Icon=/usr/share/goylin/icons/radioVozzes.svg
 Name=Radio Vozzes
-Type=Link
-URL[$e]=https://radio.goias.ifg.edu.br/public/radiovozzes
+Type=Application
+Exec=brave https://radio.goias.ifg.edu.br/public/radiovozzes

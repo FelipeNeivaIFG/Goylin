@@ -1,5 +1,5 @@
 [Desktop Entry]
 Icon=/usr/share/goylin/icons/npdflix.svg
 Name=NPDFlix
-Type=Link
-URL[$e]=https://npd.goias.ifg.edu.br/
+Type=Application
+Exec=brave https://npd.goias.ifg.edu.br/

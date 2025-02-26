@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=GameHub
+GenericName=GameHub
+Comment[pt_BR]=Todos os seus jogos em um só lugar
+Comment=All your games in one place
+Categories=Game;Amusement;
+Keywords=Game;Hub;Steam;GOG;Humble;HumbleBundle;
+Exec=com.github.tkashkin.gamehub
+X-GNOME-Gettext-Domain=com.github.tkashkin.gamehub
+Icon=com.github.tkashkin.gamehub
+Terminal=false
+Type=Application
