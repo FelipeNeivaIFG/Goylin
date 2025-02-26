@@ -4,30 +4,32 @@ pkgdesc='Goylin: Lightdm Greeter'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.5
-pkgrel=1
+pkgver=25.0
+pkgrel=0
 arch=('x86_64')
 
 source=(
 	'lightdm.conf'
 	'slick-greeter.conf'
 	'lightdm'
+	'state'
 )
 
 md5sums=(
-	'SKIP' 'SKIP' 'SKIP'
+	'SKIP' 'SKIP' 'SKIP' 'SKIP'
 )
 
 install='pkg.install'
 
 depends=(
-	'lightdm'
-	'numlockx'
-	'g-slickGreeter'
+	'lightdm'	# A lightweight display manager
+	'numlockx'	# Turns on the numlock key in X11.
+	'g-slickGreeter' # Custom Goylin slick-greeter for lightdm
 )
 
 package() {
 	install -vDm 644 -t ${pkgdir}/etc/lightdm/ lightdm.conf
 	install -vDm 644 -t ${pkgdir}/etc/lightdm/ slick-greeter.conf
 	install -vDm 644 -t ${pkgdir}/etc/pam.d/ lightdm
+	install -vDm 644 -t ${pkgdir}/var/lib/lightdm/.cache/slick-greeter/ state
 }
