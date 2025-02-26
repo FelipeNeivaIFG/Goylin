@@ -4,15 +4,16 @@ pkgdesc='Goylin: Animation Apps'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.5
-pkgrel=1
+pkgver=25.0
+pkgrel=0
 arch=('x86_64')
 
 depends=(
-	'synfigstudio'
-	'opentoonz'
-	'glaxnimate'
-	'pencil2d'
+	'synfigstudio'	# Professional vector animation program (GUI)
+	'opentoonz'	# Software for producing a 2D animation
+	# 'glaxnimate'	# Simple vector animation program
+	'tahoma2d'	##!! AUR !!# Software for producing a 2D/Stop Motion animation
+	'pencil2d'	# Easy, intuitive tool to make 2D hand-drawn animations
 	#
-	'python'
+	# 'python'	# synfig - for the plugins
 )
