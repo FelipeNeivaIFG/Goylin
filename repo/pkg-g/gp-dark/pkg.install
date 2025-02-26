@@ -1,0 +1,35 @@
+#!/bin/bash
+
+_lockGFiles() {
+	# Plasma
+	chattr +i /etc/xdg/kdeglobals
+}
+
+_unlockGFiles() {
+	# Plasma
+	chattr -i /etc/xdg/kdeglobals
+}
+
+_setProfile() {
+	# # Plasma
+	sed -i "s/goylin.desktop/goylindark.desktop/g" /etc/xdg/kdeglobals
+	# # Gnome
+	# sed -i "s/prefer-light/prefer-dark/g" /etc/dconf/db/user.d/80_gBase
+	# sed -i "s/breeze/breeze-dark/g" /etc/dconf/db/user.d/80_gBase
+	# sed -i "s/Breeze/BreezeDark/g" /etc/dconf/db/user.d/80_gBase
+	# # Budgie
+	# sed -i "s/dark-theme=false/dark-theme=true/g" /etc/dconf/db/user.d/89_budgie
+	# sed -i "s/builtin-theme=false/builtin-theme=true/g" /etc/dconf/db/user.d/89_budgie
+}
+
+post_install() {
+	_unlockGFiles
+	_setProfile
+	_lockGFiles
+}
+
+post_upgrade() {
+	_unlockGFiles
+	_setProfile
+	_lockGFiles
+}
