@@ -4,32 +4,48 @@ pkgdesc='Goylin: Printer'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group='goylin'
 
-pkgver=24.5
-pkgrel=2
+pkgver=25.0
+pkgrel=0
 arch=('x86_64')
 
-source=('printers.conf')
+source=('cups.tar')
+
+noextract=('cups.tar')
 
 md5sums=('SKIP')
 
 depends=(
-	'cups'
-	'cups-browsed'
-	'ipp-usb'
-	'sane'
-	'sane-airscan'
-	'cups-pdf'
-	'cups-filters'
-	'ghostscript'
-	'gsfonts'
-	'print-manager'
-	'hplip'
-	'rpcbind'
-	'system-config-printer'
+	'cups'	# OpenPrinting CUPS - daemon package
+	'sane'	# Scanner Access Now Easy
+	'cups-pdf'	# PDF printer for cups
+	'cups-filters'	# OpenPrinting CUPS Filters
+	'gsfonts'	# (URW)++ base 35 font set
+	'print-manager'	# A tool for managing print jobs and printers
+	'hplip'	# Drivers for HP DeskJet, OfficeJet, Photosmart, Business Inkjet and some LaserJet
+	'gutenprint'	# Top quality printer drivers for POSIX systems
+	'argyllcms'	# An ICC compatible color management system with support for different colorimeter hardware
+	#
+	'foomatic-db-gutenprint-ppds'	# gutenprint - prebuilt ppd files
+	'libusb'	# gutenprint - required for drivers that depend on gutenprint52usb backend | cups - for usb printer backend
+	'cups-browsed'	# cups -  to browse the network for remote CUPS queues and IPP network printers
+	'ipp-usb'	# cups | sane-airscane - allows to send HTTP requests via a USB connection on devices without Ethernet or WiFi connections
+	'colord'	# cups - for ICC color profile support
+	'colord-sane'	# sane - support
+	'sane-airscan'	# sane - for scanners working in driverless mode
+	'ghostscript'	# cups-filter - for non-PDF printers (preferred)
+	'poppler'	# cups-filter - for non-PDF printers
+	'poppler-data' # poppler - highly recommended encoding data to display PDF documents with certain encodings and characters
+	'system-config-printer'	# print-manager - auto-detect the printer driver
+	'python-pysmbc'	# system-config-printer - SMB browser support
+	'python-reportlab'	# hplip - for pdf output in hp-scan
+	'rpcbind'	# hplip - for network support
+	'python-pyqt5'	# hplip - for running GUI and hp-toolbox
 )
 
 install='pkg.install'
 
 package() {
-	install -vDm 640 -g cups -t ${pkgdir}/etc/cups/ printers.conf
+	install -vDm 644 -t ${pkgdir}/etc/cups cups.tar
+	tar vxf ${pkgdir}/etc/cups/cups.tar --overwrite --directory=${pkgdir}/etc/cups/
+	rm -v ${pkgdir}/etc/cups/cups.tar
 }
