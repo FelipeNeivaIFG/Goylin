@@ -4,8 +4,8 @@ pkgdesc='Goylin: Backgrounds'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.5
-pkgrel=3
+pkgver=25.0
+pkgrel=0
 arch=('x86_64')
 
 source=('goylin.tar')
