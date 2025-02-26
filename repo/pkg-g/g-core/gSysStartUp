@@ -4,6 +4,7 @@ plymouth change-mode --updates
 gSysUpdateMsg="Inicializando Sistema..."
 echo "${gSysUpdateMsg}"
 plymouth display-message --text="${gSysUpdateMsg}"
+[ ! $(lsmod | grep b43) ] && modprobe b43 # Dirty bugfix for not adding b43 to kernel on install
 
 # Clock sync
 gSysUpdateMsg="Sincronizando relógio..."

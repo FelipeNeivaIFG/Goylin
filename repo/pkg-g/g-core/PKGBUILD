@@ -4,8 +4,8 @@ pkgdesc='Goylin: Core'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.5
-pkgrel=5
+pkgver=25.0
+pkgrel=0
 arch=('x86_64')
 
 source=(
@@ -38,48 +38,55 @@ md5sums=(
 install='pkg.install'
 
 depends=(
-	'base'
-	'linux'
-	'linux-firmware'
-	'linux-headers'
-	'terminus-font'
-	'base-devel'
-	'vim'
-	'grub'
-	'dosfstools'
-	'mtools'
-	'sudo'
-	'bash-completion'
-	'networkmanager'
-	'openssh'
-	'rsync'
-	'git'
-	'tldr'
-	'nano'
-	'wget'
-	'ca-certificates'
-	'man-db'
-	'man-pages'
-	'man-pages-pt_br'
-	'broadcom-wl'
-	'smartmontools'
-	'mkinitcpio'
-	'dialog'
-	'plymouth'
-	'b43-firmware'
-	'zsh'
-	'zsh-completions'
-	'btrfs-progs'
-	'exfatprogs'
-	'f2fs-tools'
-	'ntfs-3g'
-	'udftools'
-	'xfsprogs'
-	'e2fsprogs'
-	'nfs-utils'
-	'reflector'
-	'usbutils'
-	'avahi'
+	'base'	# Minimal package set to define a basic Arch Linux installation
+	'base-devel'	# Basic tools to build Arch Linux packages
+	'linux'	# The Linux kernel and modules
+	'linux-headers'	# Headers and scripts for building modules for the Linux kernel
+	'coreutils'	# The basic file, shell and text manipulation utilities of the GNU operating system
+	'grub'	# GNU GRand Unified Bootloader
+	'sudo'	# Give certain users the ability to run some commands as root
+	'terminus-font'	# Monospace bitmap font (for X11 and console)
+	'bash-completion'	# Programmable completion for the bash shell
+	'vim'	# Vi Improved, a highly configurable, improved version of the vi text editor
+	'nano'	# Pico editor clone with enhancements
+	'dosfstools'	# DOS filesystem utilities
+	'mtools'	# A collection of utilities to access MS-DOS disks
+	'networkmanager'	# Network connection manager and user applications
+	'openssh'	# SSH protocol implementation for remote login, command execution and file transfer
+	'rsync'	# A fast and versatile file copying tool for remote and local files
+	'git'	# the fast distributed version control system
+	'bluez'	# Daemons for the bluetooth protocol stack
+	'tldr'	# Command line client for tldr, a collection of simplified man pages.
+	'wget'	# Network utility to retrieve files from the Web
+	'ca-certificates'	# Common CA certificates - default providers
+	'man-db'	# A utility for reading man pages
+	'man-pages'	# Linux man pages
+	'man-pages-pt_br'	# Brazilian Portuguese man pages
+	'broadcom-wl'	# Broadcom 802.11 Linux STA wireless driver
+	'smartmontools'	# Control and monitor S.M.A.R.T. enabled ATA and SCSI Hard Drives
+	'dialog'	# A tool to display dialog boxes from shell scripts
+	'plymouth'	# Graphical boot splash screen
+	'btrfs-progs'	# Btrfs filesystem utilities
+	'exfatprogs'	# Ext2/3/4 filesystem utilities
+	'f2fs-tools'	# Tools for Flash-Friendly File System (F2FS)
+	'ntfs-3g'	# NTFS filesystem driver and utilities
+	'udftools'	# Linux tools for UDF filesystems and DVD/CD-R(W) drives
+	'xfsprogs'	# XFS filesystem utilities
+	'e2fsprogs'	# Ext2/3/4 filesystem utilities
+	'nfs-utils'	# Support programs for Network File Systems
+	'usbutils'	# A collection of USB tools to query connected USB devices
+	'avahi'	# Service Discovery for Linux using mDNS/DNS-SD
+	'libusb'	# Library that provides generic access to USB devices
+	'pcsclite'	# PC/SC Architecture smartcard middleware library
+	'ccid'	# A generic USB Chip/Smart Card Interface Devices driver
+	'gnutls'	# A library which provides a secure layer over a reliable transport layer
+	'nettle' # A low-level cryptographic library
+	'sdl2-compat'	# An SDL2 compatibility layer that uses SDL3 behind the scenes
+	'b43-firmware'	#!! AUR !!#	Firmware for Broadcom B43 wireless networking chips
+	#
+	'linux-firmware'	# linux - firmware images needed for some devices
+	'wireless-regdb'	# linux - to set the correct wireless channels of your country
+	'python-gobject'	# avahi - avahi-bookmarks, avahi-discover
 )
 
 package() {
