@@ -1,0 +1,30 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='g-gnome'
+pkgdesc='Goylin: Gnome Desktop'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group=('goylin')
+
+pkgver=25.0
+pkgrel=0
+arch=('x86_64')
+
+source=('88_gnome' '80_gBase')
+
+md5sums=('SKIP' 'SKIP')
+
+install='pkg.install'
+
+depends=(
+	'gnome-shell'	# Next generation desktop shell
+	'gnome-menus'	# GNOME menu specifications
+	'gnome-shell-extensions'	# Extensions for GNOME shell, including classic mode
+	'gnome-shell-extension-randomwallpaper'	# Random Wallpapers for Gnome 3
+	'gnome-shell-extension-desktop-icons-ng'	# Desktop icons extension for GNOME Shell
+	# 'gnome-tweaks'	# Graphical interface for advanced GNOME 3 settings (Tweak Tool)
+	# 'gnome-control-center'	# GNOME's main interface to configure various aspects of the desktop
+)
+
+package() {
+	install -vDm 644 -t ${pkgdir}/etc/dconf/db/user.d/ 88_gnome
+	install -vDm 644 -t ${pkgdir}/etc/dconf/db/user.d/ 80_gBase
+}

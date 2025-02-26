@@ -1,0 +1,75 @@
+[org/gnome/control-center]
+last-panel='system'
+window-state=(980, 640, false)
+
+[org/gnome/desktop/app-folders]
+folder-children=['Utilities', 'YaST', 'Pardus']
+
+[org/gnome/desktop/app-folders/folders/Pardus]
+categories=['X-Pardus-Apps']
+name='X-Pardus-Apps.directory'
+translate=true
+
+[org/gnome/desktop/app-folders/folders/Utilities]
+apps=['org.freedesktop.GnomeAbrt.desktop', 'nm-connection-editor.desktop', 'org.gnome.baobab.desktop', 'org.gnome.Connections.desktop', 'org.gnome.DejaDup.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.Evince.desktop', 'org.gnome.FileRoller.desktop', 'org.gnome.font-viewer.desktop', 'org.gnome.Loupe.desktop', 'org.freedesktop.MalcontentControl.desktop', 'org.gnome.seahorse.Application.desktop', 'org.gnome.tweaks.desktop', 'org.gnome.Usage.desktop']
+categories=['X-GNOME-Utilities']
+name='X-GNOME-Utilities.directory'
+translate=true
+
+[org/gnome/desktop/app-folders/folders/YaST]
+categories=['X-SuSE-YaST']
+name='suse-yast.directory'
+translate=true
+
+[org/gnome/desktop/search-providers]
+sort-order=['']
+
+[org/gnome/portal/filechooser/org.gnome.tweaks]
+last-folder-path='/usr/share/goylin/wallpapers'
+
+[org/gnome/shell]
+disabled-extensions=['system-monitor@gnome-shell-extensions.gcampax.github.com', 'status-icons@gnome-shell-extensions.gcampax.github.com']
+enabled-extensions=['apps-menu@gnome-shell-extensions.gcampax.github.com', 'light-style@gnome-shell-extensions.gcampax.github.com', 'native-window-placement@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'randomwallpaper@iflow.space', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'ding@rastersoft.com']
+last-selected-power-profile='performance'
+welcome-dialog-last-shown-version='47.4'
+favorite-apps=[]
+
+[org/gnome/shell/extensions/ding]
+check-x11wayland=true
+dark-text-in-labels=false
+icon-size='tiny'
+show-home=false
+show-link-emblem=false
+show-network-volumes=false
+show-trash=true
+
+[org/gnome/shell/extensions/space-iflow-randomwallpaper]
+auto-fetch=true
+fetch-on-startup=true
+hide-panel-icon=true
+history-length=2
+hours=1
+minutes=59
+sources=['1739990929384']
+timer-last-trigger=int64 1739991018070
+
+[org/gnome/shell/extensions/space-iflow-randomwallpaper/backend-connection]
+backend-connection-available=true
+clear-history=false
+open-folder=false
+pause-timer=false
+request-new-wallpaper=false
+
+[org/gnome/shell/extensions/space-iflow-randomwallpaper/sources/general/1739990929384]
+name='Goylin'
+type=4
+
+[org/gnome/shell/extensions/space-iflow-randomwallpaper/sources/localFolder/1739990929384]
+folder='/usr/share/goylin/backgrounds'
+
+[org/gnome/tweaks]
+show-extensions-notice=false
+
+[org/gtk/gtk4/settings/file-chooser]
+show-hidden=false
+sort-directories-first=false

@@ -1,0 +1,19 @@
+#!/bin/bash
+
+_removeExtraSessions() {
+	[ -f /usr/share/xsessions/gnome.desktop ] && rm -fv /usr/share/xsessions/gnome.desktop
+	[ -f /usr/share/xsessions/gnome-xorg.desktop ] && rm -fv /usr/share/xsessions/gnome-xorg.desktop
+	[ -f /usr/share/xsessions/gnome-classic.desktop ] && rm -fv /usr/share/xsessions/gnome-classic.desktop
+	[ -f /usr/share/xsessions/gnome-classic-xorg.desktop ] && rm -fv /usr/share/xsessions/gnome-classic-xorg.desktop
+	[ -f /usr/share/xsessions/gnome-wayland.desktop ] && rm -fv /usr/share/wayland-sessions/gnome-wayland.desktop
+	[ -f /usr/share/xsessions/gnome-classic.desktop ] && rm -fv /usr/share/wayland-sessions/gnome-classic.desktop
+	[ -f /usr/share/xsessions/gnome-classic-wayland.desktop ] && rm -fv /usr/share/wayland-sessions/gnome-classic-wayland.desktop
+}
+
+post_install() {
+	_removeExtraSessions
+}
+
+post_upgrade() {
+	_removeExtraSessions
+}

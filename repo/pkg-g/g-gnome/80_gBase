@@ -1,0 +1,134 @@
+[org/gnome/system/location]
+enabled=true
+
+[org/gnome/desktop/session]
+lock-enable=false
+suspend-enable=false
+idle-delay=uint32 0
+
+[org/gnome/desktop/background]
+color-shading-type='solid'
+picture-options='zoom'
+picture-uri='file:////usr/share/goylin/wallpapers/wall-current.jpg'
+primary-color='#000000000000'
+secondary-color='#000000000000'
+
+[org/gnome/desktop/lockdown]
+disable-lock-screen=true
+
+[org/gnome/desktop/a11y]
+always-show-universal-access-status=false
+
+[org/gnome/desktop/a11y/applications]
+screen-magnifier-enable=false
+screen-reader-enable=false
+
+[org/gnome/desktop/input-sources]
+current=uint32 0
+per-window=false
+sources=[('xkb', 'br')]
+xkb-options=@as []
+ 
+[org/gnome/desktop/interface]
+accent-color='slate'
+clock-format='24h'
+color-scheme='prefer-light'
+cursor-size=24
+cursor-theme='Breeze_Light'
+enable-animations=true
+font-antialiasing='grayscale'
+font-name='Noto Sans,  10'
+gtk-theme='Breeze'
+icon-theme='breeze'
+scaling-factor=uint32 1
+text-scaling-factor=1.0
+toolbar-style='text'
+toolkit-accessibility=false
+
+[org/gnome/desktop/media-handling]
+autorun-never=false
+autorun-x-content-ignore=@as []
+autorun-x-content-open-folder=['x-content/audio-cdda', 'x-content/audio-player', 'x-content/video-dvd', 'x-content/image-dcf', 'x-content/unix-software']
+autorun-x-content-start-app=['x-content/ostree-repository']
+
+[org/gnome/desktop/privacy]
+recent-files-max-age=30
+remove-old-temp-files=true
+remove-old-trash-files=true
+
+[org/gnome/desktop/screensaver]
+color-shading-type='solid'
+lock-delay=uint32 0
+lock-enabled=false
+picture-options='zoom'
+picture-uri='file:////usr/share/goylin/wallpapers/wall-current.jpg'
+primary-color='#000000000000'
+secondary-color='#000000000000'
+
+[org/gnome/desktop/sound]
+allow-volume-above-100-percent=true
+event-sounds=false
+
+[org/gnome/desktop/peripherals/keyboard]
+numlock-state=true
+
+[org/gnome/desktop/peripherals/mouse]
+natural-scroll=false
+
+[org/gnome/desktop/peripherals/touchpad]
+two-finger-scrolling-enabled=true
+
+[org/gnome/desktop/wm/keybindings]
+switch-applications=['']
+switch-applications-backward=['']
+switch-group=['']
+switch-group-backward=['']
+switch-input-source=@as []
+switch-input-source-backward=@as []
+switch-windows=@as []
+switch-windows-backward=@as []
+
+[org/gnome/desktop/wm/preferences]
+button-layout='appmenu:minimize,maximize,close'
+num-workspaces=2
+
+[org/gnome/mutter]
+edge-tiling=true
+workspaces-only-on-primary=false
+
+[org/gnome/mutter/wayland/keybindings]
+restore-shortcuts=@as []
+
+[org/gnome/settings-daemon/plugins/media-keys]
+home=['<Super>e']
+magnifier=@as []
+magnifier-zoom-in=@as []
+magnifier-zoom-out=@as []
+on-screen-keyboard=@as []
+screenreader=@as []
+screensaver=@as []
+toggle-contrast=@as []
+
+[org/gnome/settings-daemon/plugins/power]
+idle-dim=true
+power-button-action='shutdown'
+sleep-inactive-ac-timeout=3600
+sleep-inactive-ac-type='nothing'
+sleep-inactive-batery-timeout=1800
+sleep-inactive-batery-type='shutdown'
+sleep-inactive-battery-timeout=1800
+sleep-inactive-battery-type='nothing'
+
+[org/gnome/settings-daemon/plugins/xsettings]
+overrides={'Gtk/ShellShowsAppMenu': <0>, 'Gtk/DecorationLayout': <'menu:minimize,maximize,close'>}
+
+[org/gtk/settings/file-chooser]
+date-format='regular'
+location-mode='path-bar'
+show-hidden=false
+show-size-column=true
+show-type-column=true
+sort-column='name'
+sort-directories-first=false
+sort-order='ascending'
+type-format='category'
