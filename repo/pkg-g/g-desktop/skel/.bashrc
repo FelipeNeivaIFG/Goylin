@@ -2,17 +2,35 @@
 # ~/.bashrc
 #
 
-### EXPORT ###
+#
+#
+# Esse arquivo pode ser substituido em um Update,
+# configurações pessoais devem ser inseridas em:
+# $HOME/Documentos/.mybashrc
+#
+#
+
 PS1='[\u@\h \W]\$ '
+
+# Avoid duplicate commands in history
+export HISTCONTROL=ignoredups:erasedups
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# PATH
 [ -d "$HOME/.bin" ] && export PATH="$HOME/.bin:$PATH"
 [ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:$PATH"
 
 #ignore upper and lowercase when TAB completion
 bind "set completion-ignore-case on"
+
+### FUNCTIONS ###
+
+# Automatically list directory contents when changing directories
+cd() {
+    builtin cd "$@" && ls
+}
 
 ### ALIASES ###
 alias grep='grep --color=auto'
@@ -68,4 +86,8 @@ ex ()
   fi
 }
 
-[[ -f ~/.bashrc-personal ]] && . ~/Documentos/.mybashrc
+# gapp-cli
+[[ -f ${HOME}/.clirc ]] && . ${HOME}/.clirc
+
+# Import user bashrc
+[[ -f ${HOME}/Documentos/.mybashrc ]] && . ${HOME}/Documentos/.mybashrc

@@ -46,13 +46,11 @@ unset TERMCAP
 # Man is much better than us at figuring this out
 unset MANPATH
 
-# Goylin #
+#
+### Goylin ###
+#
 
-if [ -f ~/.bashrc ]; then
-	. ~/.bashrc
-fi
-
-# User Home Update
+# Update $HOME
 rsync -rlu /etc/skel/. $HOME
 
 [ -d "${HOME}/Área de trabalho" ] && rm -r "${HOME}/Área de trabalho"
@@ -62,23 +60,32 @@ xdg-user-dirs-update
 lUser="$(whoami)"
 uName="${lUser#IFG0+}"
 
-# g-fileman : Thunar
+## g-fileman
+# Thunar
 [ -f ${HOME}/.local/share/user-places.xbel ] && sed -i "s/_USERNAME_/${uName}/g" ${HOME}/.local/share/user-places.xbel
-# g-plasma : Plasma
+## g-plasma
+# Plasma
 [ -f ${HOME}/.config/ktrashrc ] && sed -i "s/_USERNAME_/${uName}/g" ${HOME}/.config/ktrashrc
-
-# dconf
-if [ ! -f ${HOME}/.config/dconf/user ]; then
-	#gapp-game-extra: Gamehub
-	[ -f /etc/dconf/db/user.d/90_gamehub ] && dconf load / < /etc/dconf/db/user.d/90_gamehub
-fi
-
-# gapp-audio : Ardour
-[ -f "${HOME}"/.config/ardour8/config ] && sed -i "s/_USERNAME_/${uName}/g" ${HOME}/.config/ardour8/config
+## gapp-audio
+# Ardour
+[ -f ${HOME}/.config/ardour8/config ] && sed -i "s/_USERNAME_/${uName}/g" ${HOME}/.config/ardour8/config
+[ -f ${HOME}/.config/ardour8/ui_config ] && sed -i "s/_USERNAME_/${uName}/g" ${HOME}/.config/ardour8/ui_config
+# Audacity
+[ -f ${HOME}/.config/audacity/audacity.cfg ] && sed -i "s/_USERNAME_/${uName}/g" ${HOME}/.config/audacity/audacity.cfg
+# lmms
+[ -f ${HOME}/.lmmsrc.xml ] && sed -i "s/_USERNAME_/${uName}/g" ${HOME}/.lmmsrc.xml
+# gapp-image
+# DigiKam
+[ -f ${HOME}/.config/digikamrc ] && sed -i "s/_USERNAME_/${uName}/g" ${HOME}/.config/digikamrc
+## dconf
+[ -d /etc/dconf/db/user.d/ ] && [ ! -d ${HOME}/.config/dconf ] && mkdir ${HOME}/.config/dconf/ && dconf compile ${HOME}/.config/dconf/user /etc/dconf/db/user.d/
 
 # Ensure .desktop files execution
 chmod +x ${HOME}/Desktop/*.desktop
 chmod +x ${HOME}/.config/autostart/*.desktop
+for file in ${HOME}/Desktop/*.desktop; do
+	gio set "$file" metadata::trusted true
+done
 
-# Guest umask
+# Guest umask for public access
 [ "$uName" == "guest" ] && umask 000

@@ -1,3 +1,5 @@
 #!/bin/bash
 
-rm -rf /home/guest/.*
+# Reset Guest
+rm -rfv /home/guest/.*
+rm -fv /var/lib/AccountsService/users/guest

@@ -1,7 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=/usr/bin/gSetResolution
-Hidden=true
-NoDisplay=true
-X-GNOME-Autostart-enable=true
+Icon=application-x-shellscript
 Name=gSetResolution
+Exec=/usr/bin/gSetResolution
+X-KDE-AutostartScript=true

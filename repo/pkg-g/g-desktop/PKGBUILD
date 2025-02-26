@@ -4,8 +4,8 @@ pkgdesc='Goylin: Desktop'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.5
-pkgrel=2
+pkgver=25.0
+pkgrel=0
 arch=('x86_64')
 
 source=(
@@ -18,14 +18,13 @@ source=(
 	'profile'
 	'00-keyboard.conf'
 	'10-c3tech.conf'
-	'.bashrc'
 	'gManual.desktop'
 )
 
 md5sums=(
 	'SKIP' 'SKIP' 'SKIP' 'SKIP'
 	'SKIP' 'SKIP' 'SKIP' 'SKIP'
-	'SKIP' 'SKIP' 'SKIP'
+	'SKIP' 'SKIP'
 )
 
 install='pkg.install'
@@ -33,30 +32,18 @@ install='pkg.install'
 noextract=('goylin.tar' 'skel.tar')
 
 depends=(
-	'xdg-user-dirs'
-	'xdg-desktop-portal'
-	'libnotify'
-	'libusb'
-	'xdg-utils'
-	'python-pysmbc'
-	'xf86-input-libinput'
-	# Bluetooth
-	'bluez'
-	'bluez-obex'
-	# Graphic Tablet
-	'xf86-input-wacom'
-	'xf86-input-libinput'
-	# Backup theme
-	'adwaita-cursors'
-	'adwaita-icon-theme'
-	'adwaita-icon-theme-legacy'
-	'libadwaita'
-	# App Image
-	'fuse2'
-	'fuse3'
-	'fuse-overlayfs'
-	'fuse-common'
-	'squashfuse'
+	'xdg-user-dirs'	# Manage user directories like ~/Desktop and ~/Music
+	'xdg-desktop-portal'	# Desktop integration portals for sandboxed apps
+	'libnotify'	# Library for sending desktop notifications
+	'xdg-utils'	# Command line tools that assist applications with a variety of desktop integration tasks
+	'xf86-input-libinput'	# Generic input driver for the X.Org server based on libinput
+	'bluez-obex'	# Object Exchange daemon for sharing content
+	'xf86-input-wacom'	# X.Org Wacom tablet driver
+	'fuse2'	# Interface for userspace programs to export a filesystem to the Linux kernel
+	'fuse3'	# Interface for userspace programs to export a filesystem to the Linux kernel
+	'fuse-overlayfs'	# FUSE implementation of overlayfs
+	'fuse-common'	# Common files for fuse2/3 packages
+	'squashfuse'	# FUSE filesystem to mount squashfs archives
 )
 
 package() {
@@ -72,14 +59,11 @@ package() {
 	install -vDm 755 -t ${pkgdir}/usr/bin/ gSetResolution
 
 	install -vDm 644 -t ${pkgdir}/usr/share/applications/ gManual.desktop
+	install -vDm 644 -t ${pkgdir}/etc/skel/Desktop gManual.desktop
 
 	install -vDm 644 -t ${pkgdir}/etc/skel skel.tar
 	tar vxf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
 	rm -v ${pkgdir}/etc/skel/skel.tar
-
-	install -vDm 644 -t ${pkgdir}/root/ .bashrc
-	chmod -v 750 ${pkgdir}/root/
-	install -vDm 644 -t ${pkgdir}/etc/skel/ .bashrc
 
 	install -vDm 644 -t ${pkgdir}/usr/share/goylin/ goylin.tar
 	tar vxf ${pkgdir}/usr/share/goylin/goylin.tar --overwrite --directory=${pkgdir}/usr/share/goylin/
