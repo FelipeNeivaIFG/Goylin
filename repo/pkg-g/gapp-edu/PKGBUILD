@@ -4,27 +4,36 @@ pkgdesc='Goylin: Educational Apps'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.5
-pkgrel=2
+pkgver=25.0
+pkgrel=0
 arch=('x86_64')
 
 depends=(
-	'scratch'
-	'kbruch'
-	'geogebra'
-	'kalzium'
-	'kgeography'
-	'step'
-	'kstars'
-	'ktouch'
-	'minuet'
-	'leocad'
-	'duolingo-desktop-bin'
-	'portugol-studio-bin'
-	'fractalnow'
-	'principia'
-	'thrive-bin'
+	'scratch'	# Create and share your own interactive stories, games, music and art
+	# 'kbruch'	# Exercise Fractions
+	'geogebra'	# Dynamic mathematics software with interactive graphics, algebra and spreadsheet
+	'kalzium'	# Periodic Table of Elements
+	# 'kgeography'	# Geography Trainer
+	'step'	# Interactive Physical Simulator
+	'kstars'	# Desktop Planetarium
+	'ktouch'	# Touch Typing Tutor
+	# 'minuet'	# A KDE Software for Music Education
+	'leocad'	# A CAD program for creating virtual LEGO models
+	'duolingo-desktop-bin'	#!! AUR !!# Desktop client for the Duolingo language learning application.sudo
+	'portugol-studio-bin'	#!! AUR !!# Ambiente de Programação didático para a linguagem Portugol 2.0.
+	'fractalnow'	#!! AUR !!# Provides users with tools to generate pictures of various types of fractals quickly and easily
+	'kturtle'	# Educational Programming Environment
+	'stellarium-bin'	#!! AUR !!# Software which renders realistic skies in real time with OpenGL
+	'chemtool'	#!! AUR !!# A small program for drawing chemical structures
+	'marble'	# Desktop Globe
+	# 'mandelbulber2'	#!! AUR !!# 3D application designed to render 3D fractals. ### BROKEN ###
+	'gbrainy'	# A brain teaser game and trainer to have fun and to keep your brain trained
+	# 'blinken'	# Memory Enhancement Game
+	# 'katomic'	# A fun and educational game built around molecular geometry
 	#
-	'xplanet'
-	'povray'
+	'xplanet'	# kstars -  XPlanet support
+	'povray'	# leocad - required for rendering features
+	'marble-maps'	# marble - OpenStreetMap Navigation
+	'marble-common'	# marble - Common libraries and plugins
+	'libwlocate'	# marble - WLAN based geolocation
 )
