@@ -1,0 +1,28 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='g-budgie'
+pkgdesc='Goylin: Budgie Desktop'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group=('goylin')
+
+pkgver=25.0
+pkgrel=0
+arch=('x86_64')
+
+source=('89_budgie')
+
+md5sums=('SKIP')
+
+# install='pkg.install'
+
+depends=(
+	'budgie-desktop'	# A familiar, modern desktop environment
+	'budgie-extras'	# Additional Budgie Desktop components from the Ubuntu Budgie team
+	'budgie-desktop-view'	# Desktop icons implementation for the Budgie Desktop
+	'budgie-screenshot-applet'	# A Budgie applet for taking and uploading screenshots
+	#
+	'network-manager-applet'	# bundgie-desktop - Network management in the panel
+)
+
+package() {
+	install -vDm 644 -t ${pkgdir}/etc/dconf/db/user.d/ 89_budgie
+}
