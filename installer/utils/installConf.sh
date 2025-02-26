@@ -1,6 +1,6 @@
 #!/bin/bash
 
-goylinVersion="24.5"
+goylinVersion="25.0"
 goylinVName="Nubo"
 skipBootstrap=0
 useDefaultConf=0
