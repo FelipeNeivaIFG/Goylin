@@ -57,13 +57,13 @@ done
 function _deployRepo() {
 	_msgInfo "Deploying ${repoToDeploy}"
 
-	_msg "Clean repo DB"
-	[ -f "${repoToDeploy}/${repoToDeploy}.db.tar.gz" ] && rm -fv "${repoToDeploy}/${repoToDeploy}.db.tar.gz"
-	repo-add "${repoToDeploy}/${repoToDeploy}.db.tar.gz"
+	# _msg "Clean repo DB"
+	# [ -f "${repoToDeploy}/${repoToDeploy}.db.tar.gz" ] && rm -fv "${repoToDeploy}/${repoToDeploy}.db.tar.gz"
+	# repo-add "${repoToDeploy}/${repoToDeploy}.db.tar.gz"
 
-	_msg "Add all packages to DB"
-	[[ "$(ls $repoToDeploy | grep "pkg.tar.zst")" ]] && repo-add -nqR ${repoToDeploy}/${repoToDeploy}.db.tar.gz ${repoToDeploy}/*.pkg.tar.zst
-	[[ "$(ls $repoToDeploy | grep "pkg.tar.xz")" ]] && repo-add -nqR ${repoToDeploy}/${repoToDeploy}.db.tar.gz ${repoToDeploy}/*.pkg.tar.xz
+	# _msg "Add all packages to DB"
+	# [[ "$(ls $repoToDeploy | grep "pkg.tar.zst")" ]] && repo-add -nqR ${repoToDeploy}/${repoToDeploy}.db.tar.gz ${repoToDeploy}/*.pkg.tar.zst
+	# [[ "$(ls $repoToDeploy | grep "pkg.tar.xz")" ]] && repo-add -nqR ${repoToDeploy}/${repoToDeploy}.db.tar.gz ${repoToDeploy}/*.pkg.tar.xz
 
 	_msg "Uploading"
 	sshpass -p "$gRepoPasswd" rsync -aru --delete --human-readable --progress "/srv/http/${repoToDeploy}" "${repoUser}"@"${repoSrv}":"${repoRemotePath}"

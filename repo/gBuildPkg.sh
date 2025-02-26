@@ -88,9 +88,6 @@ function _buildPKG() {
 	_msg "Clean up build files"
 	rm -rf "$chroot"
 
-	# FIX THIS SHIT!!
-	[ ! -f "${pkgName}"*.pkg.tar.zst ] && _msgAlert "Build Error: *.pkg.tar.zst file not found!" && exit 1
-
 	return 0
 }
 
@@ -104,7 +101,7 @@ function _addToRepo() {
 	cd ../../
 
 	_msg "Removing Old Version"
-	find "/srv/http/${pkgRepo}" -maxdepth 1 -name "${pkgName}*" -exec rm {} +
+	find "/srv/http/${pkgRepo}" -maxdepth 1 -name "${pkgName}-*" -exec rm -v {} +
 
 	_msg "Adding $pkgName to Repo"
 	mv -f "${pkgType}/${pkgName}/${pkgName}"*.pkg.tar.zst "/srv/http/${pkgRepo}"
