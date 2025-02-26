@@ -4,8 +4,8 @@ pkgdesc='Goylin: Video Apps'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.5
-pkgrel=2
+pkgver=25.0
+pkgrel=0
 arch=('x86_64')
 
 source=('skel.tar')
@@ -15,33 +15,60 @@ noextract=('skel.tar')
 md5sums=('SKIP')
 
 depends=(
-	'kdenlive'
-	'handbrake'
-	'obs-studio'
-	'shotcut'
-	'flowblade'
-	'dcpomatic'
+	'kdenlive'	#  A non-linear video editor for Linux using the MLT video framework
+	'handbrake'	# Multithreaded video transcoder
+	'obs-studio'	# Free, open source software for live streaming and recording
+	'shotcut'	# Cross-platform Qt based Video Editor
+	'flowblade'	# Multitrack non-linear video editor
+	'dcpomatic'	#!! AUR !!# A free, open-source program to generate Digital Cinema Packages (DCPs) from videos or images
+	'cinelerra-gg'	#!! AUR !!# Professional video editing and compositing environment
+	'yt-dlp'	# A youtube-dl fork with additional features and fixes	#
+	'pitivi'	# Editor for audio/video projects using the GStreamer framework
+	'frei0r-plugins'	# Collection of video effect plugins
+	# 'video2x'	#!! AUR !!# A machine learning-based video super resolution and frame interpolation framework #!! NO GUI !!#
+	# 'video2x-qt6'	#!! AUR !!# The Qt6 GUI for Video2X	#!! BROKEN !!#
 	#
-	'bigsh0t'
-	'dvgrab'
-	'ffmpeg'
-	'kimageformats'
-	'mediainfo'
-	'opencv'
-	'opentimelineio'
-	'python-openai-whisper'
-	'python-srt_equalizer'
-	'python-vosk'
-	'qt6-imageformats'
-	'swh-plugins'
-	'python-pip'
-	'gst-plugins-good'
-	'gst-libav'
-	'libfdk-aac'
-	'luajit'
-	'python'
-	'sndio'
-	'droidcam-obs-plugin'
+	'bigsh0t'	# kdenlive -  VR360 effects
+	'dvgrab'	# kdenlive - for firewire capture
+	'ffmpeg'	# kdenlive - for FFmpeg plugin | yt-dlp - for video post-processing
+	'kimageformats'	# kdenlive - support for dds, xcf, exr, psd, and more image formats
+	'mediainfo'	# kdenlive - for technical clip information
+	'noise-suppression-for-voice'	# kdenlive - noise suppression effect
+	'opencv'	# kdenlive - for motion tracking | frei0r-plugins - facebl0r and facedetect plugins
+	'opentimelineio'	# kdenlive - timeline export/import
+	'python-openai-whisper'	# kdenlive - speech to text (Whisper engine)
+	'python-srt_equalizer'	# kdenilve - speech to text (Whisper engine)
+	'python-vosk'	# kdenlive - speech to text (VOSK engine)
+	'qt6-imageformats'	# kdenlive - support for tiff, webp, and more image formats
+	'gst-plugins-good'	# handbrake - for video previews
+	'gst-libav'	# handbrake - for video previews | pitivi - Additional multimedia codecs
+	'libdvdcss'	# handbrake - for decoding encrypted DVDs
+	'v4l2loopback-dkms'	# obs-studio - virtual camera support
+	'sndio'	# obs-studio - Sndio input client
+	'libfdk-aac'	# obs-studio - FDK AAC codec support
+	'droidcam-obs-plugin'	#!! AUR !!# obs-studio - plugin for droidcam obs
+	'imath'	# kimageformats - EXR format support
+	'jxrlib'	# kimageformats - JXR format support
+	'karchive'	# kimageformats - plugin for Krita and OpenRaster images
+	'libavif'	# kimageformats - AVIF format support
+	'libheif'	# kimageformats - HEIF format support
+	'libjxl'	# kimageformats - JPEG-XL format support
+	'libraw'	# kimageformats - RAW format support
+	'openexr'	# kimageformats - EXR format support
+	'rtmpdump'	# yt-dlp - for rtmp streams support
+	'atomicparsley'	# yt-dlp for embedding thumbnails into m4a files
+	'python-mutagen'	# yt-dlp - for embedding thumbnail in certain formats
+	'python-pycryptodome'	# yt-dlp - for decrypting AES-128 HLS streams and various other data
+	'python-pycryptodomex'	# yt-dlp - for decrypting AES-128 HLS streams and various other data
+	'python-websockets'	# yt-dlp - for downloading over websocket
+	'python-brotli'	# yt-dlp - brotli content encoding support
+	'python-brotlicffi'	# yt-dlp - brotli content encoding support
+	'python-xattr'	# yt-dlp - for writing xattr metadata
+	'gst-plugin-opencv'	# pitivi - Object tracking feature
+	'gst-plugins-ugly'	# pitivi - Additional multimedia codecs
+	'python-librosa'	# pitivi - Beat detection functionality
+	'gavl'	# frei0r-plugins - rgbparade, scale0tilt and vectorscope plugins
+	'cairo'	# frei0r-plugins - cairoaffineblend, cairoblend, cairogradient and cairoimagegrid plugins
 )
 
 package() {
