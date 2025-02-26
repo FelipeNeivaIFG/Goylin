@@ -1,5 +1,0 @@
-#!/bin/bash
-
-post_install() {
-	echo 'v4l2loopback' > /etc/modules-load.d/v4l2loopback.conf
-}

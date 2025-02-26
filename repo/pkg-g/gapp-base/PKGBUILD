@@ -4,8 +4,8 @@ pkgdesc='Goylin: Base Apps'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.5
-pkgrel=1
+pkgver=25.0
+pkgrel=0
 arch=('x86_64')
 
 source=(
@@ -18,111 +18,98 @@ noextract=('skel.tar')
 
 md5sums=('SKIP' 'SKIP' 'SKIP')
 
-# install='pkg.install'
-
 depends=(
-	'evince'
-	'shotwell'
-	'firefox'
-	'libreoffice-fresh'
-	'libreoffice-fresh-pt-br'
-	'kate'
-	'elisa'
-	'vlc'
-	'onlyoffice-bin'
-	'brave-bin'
-	'freetube-bin'
-	'muffon-bin'
-	'ferdium-bin'
-	'pdfarranger'
-	# 'simple-droidcam-client' # Maybe for older phone support
-	'droidcam'
+	'evince'	# Document viewer (PDF, PostScript, XPS, djvu, dvi, tiff, cbr, cbz, cb7, cbt)
+	'shotwell'	# A digital photo organizer
+	'firefox' 	# Fast, Private & Safe Web Browser
+	'libreoffice-fresh'	# LibreOffice branch which contains new features and program enhancements
+	'libreoffice-fresh-pt-br'	# Portuguese (Brasil) language pack for LibreOffice Fresh
+	'kate'	# Advanced text editor
+	'elisa'	#  A simple music player aiming to provide a nice experience for its users
+	'pdfarranger'	# Helps merge or split PDF documents and rotate, crop and rearrange pages
+	'qalculate-qt'	# Qt frontend for libqalculate
+	'vlc'	# Multi-platform MPEG, VCD/DVD, and DivX player
+	'hyphen-pt-br'	# Portuguese (Brazil) hyphenation rules
+	'imagemagick'	# An image viewing/manipulation program
+	'v4l-utils'	# Userspace tools and conversion library for Video 4 Linux
+	'onlyoffice-bin'	#!! AUR !!#	An office suite that combines text, spreadsheet and presentation editors
+	'brave-bin'	#!! AUR !!#	Web browser that blocks ads and trackers by default
+	'freetube-bin'	#!! AUR !!#	An open source desktop YouTube player built with privacy in mind.
+	# 'muffon-bin'	#!! AUR !!#	Music streaming browser,retrieves audio, video and metadata from various Internet sources.
+	'droidcam'	#!! AUR !!#	A tool to turn your phone/tablet into a wireless/usb webcam
+	'rustdesk-bin'	#!! AUR !!# Yet another remote desktop software, written in Rust. Works out of the box, no configuration required.
 	#
-	'pstoedit'
-	'libwpg'
-	'gst-plugins-base-libs'
-	'libpaper'
-	'zvbi'
-	'x265'
-	'x264'
-	'vcdimager'
-	'twolame'
-	'srt'
-	'speex'
-	'sdl_image'
-	'sdl12-compat'
-	'protobuf'
-	'opus'
-	'mpg123'
-	'libvpx'
-	'libvorbis'
-	'libtheora'
-	'libshout'
-	'libsamplerate'
-	'librsvg'
-	'libraw1394'
-	'libpulse'
-	'libpng'
-	'libogg'
-	'libnotify'
-	'libnfs'
-	'libmtp'
-	'libmicrodns'
-	'libjpeg-turbo'
-	'libgoom2'
-	'libgme'
-	'libdvdread'
-	'libdvdnav'
-	'libdvdcss'
-	'libdc1394'
-	'libcdio'
-	'libcaca'
-	'libbluray'
-	'libavc1394'
-	'libass'
-	'gstreamer'
-	'fluidsynth'
-	'flac'
-	'dav1d'
-	'aribb25'
-	'aom'
-	'aalib'
-	'ffmpeg'
-	'avisynthplus'
-	'frei0r-plugins'
-	'ladspa'
-	'ghostscript'
-	'imagemagick'
-	'jbigkit'
-	'libheif'
-	'libjxl'
-	'libtiff'
-	'libwebp'
-	'libwmf'
-	'libzip'
-	'ocl-icd'
-	'openexr'
-	'openjpeg2'
-	'djvulibre'
-	'pango'
-	'qt6-imageformats'
-	'kimageformats'
-	'gst-plugins-good'
-	'gst-plugins-ugly'
-	'gst-libav'
-	'libfdk-aac'
-	'mediainfo'
-	'trash-cli'
-	'hyphen-pt-br'
-	'xdg-desktop-portal'
-	'texlive-bin'
-	'speech-dispatcher'
-	'qt6-multimedia'
-	'qt5-x11extras'
-	'coin-or-mp'
-	'android-tools'
-	'usbmuxd'
-	'v4l2loopback-dkms'
+	'gst-plugins-base-libs'	# libreoffice - for multimedia content, e.g. in Impress | # vlc - for libgst plugins
+	'libpaper'	# libreoffice - takes care of papersize
+	'coin-or-mp'	# libreoffice - required by the Calc solver
+	'img2pdf'	# pdfarranger - support for image files
+	'aalib'	# vlc - ASCII art video output
+	'alsa-lib'	# vlc - ALSA audio output
+	'fluidsynth'	# vlc - FluidSynth based MIDI playback plugin
+	'flac'	# vlc - Free Lossless Audio Codec plugin
+	'dav1d'	# vlc - dav1d AV1 decoder
+	'aribb25'	# vlc - aribcam support
+	'aom'	# vlc - AOM AV1 codec
+	'zvbi'	# vlc - VBI/Teletext/webcam/v4l2 capture/decoding
+	'x265'	# vlc - HEVC/H.265 encoder
+	'x264'	# vlc - H264 encoding
+	'vcdimager'	# vlc - navigate VCD with libvcdinfo
+	'twolame'	# vlc - TwoLAME mpeg2 encoder plugin
+	'srt'	# vlc - SRT input/output plugin
+	'speexdsp'	# vlc - Speex codec
+	'speex'	# vlc - Speex codec
+	'sdl_image'	# vlc - SDL image support
+	'sdl12-compat'	# vlc - SDL image support
+	'protobuf'	# vlc - chromecast streaming
+	'pcsclite'	# vlc - aribcam support
+	'opus'	# vlc - opus codec
+	'mpg123'	# vlc - mpg123 codec
+	'libvpx'	# vlc - VP8 and VP9 codec
+	'libvorbis'	#vlc - Vorbis decoder/encoder
+	'libtheora'	# vlc - theora codec
+	'libssh2'	# vlc - sftp access
+	'libsoxr'	# vlc - SoX audio Resampler
+	'libshout'	# vlc - shoutcast/icecast output plugin
+	'libsamplerate'	# vlc - audio Resampler
+	'librsvg'	# vlc - SVG plugin
+	'libraw1394'	# vlc - IEEE 1394 access plugin
+	'libpulse'	# vlc - PulseAudio audio output
+	'libpng'	# vlc - PNG support
+	'libogg'	# vlc - Ogg and OggSpots codec
+	'libnfs'	# vlc -NFS access
+	'libmtp'	# vlc - MTP devices discovery
+	'libmicrodns'	# vlc - mDNS services discovery (chromecast etc)
+	'libjpeg-turbo'	# vlc - JPEG support
+	'libgoom2'	# vlc - Goom visualization
+	'libgme'	# vlc - Game Music Emu plugin
+	'libdvdread'	# vlc - DVD input module
+	'libdvdnav'	# vlc - DVD with navigation input module
+	'libdvdcss'	# vlc - decoding encrypted DVDs
+	'libdc1394'	# vlc - IEEE 1394 access plugin
+	'libcdio'	# vlc - audio CD playback
+	'libcaca'	# vlc - colored ASCII art video output
+	'libbluray'	#vlc - Blu-Ray video input
+	'libass'	# vlc - Subtitle support
+	'gstreamer'	# vlc - for libgst plugins
+	'android-tools'	# droidcam
+	'usbmuxd'	# droidcam
+	'v4l2loopback-dkms'	# droidcam
+	'ghostscript'	# imagemakick - PS/PDF support
+	'jbigkit'	# imagemakick - JBIG support
+	'libheif'	# imagemakick - HEIF support
+	'libjpeg'	# imagemakick -turbo: JPEG support
+	'libjxl'	# imagemakick - JPEG XL support
+	'libraw'	# imagemakick - DNG support
+	'librsvg'	# imagemakick - SVG support
+	'libtiff'	# imagemakick - TIFF support
+	'libultrahdr'	# imagemakick - UHDR support
+	'libwebp'	# imagemakick - WEBP support
+	'libwmf'	# imagemakick - WMF support
+	'libzip'	# imagemakick - OpenRaster support
+	'openexr'	# imagemakick - OpenEXR support
+	'openjpeg2'	# imagemakick - JPEG2000 support
+	'djvulibre'	# imagemakick - DJVU support
+	'pango'	# imagemakick - Text rendering
 )
 
 package() {
