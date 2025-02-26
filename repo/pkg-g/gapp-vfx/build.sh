@@ -12,5 +12,4 @@ function tarFiles() {
 }
 
 tarFiles skel
-tarFiles icons
-tarFiles fspy
+tarFiles addons

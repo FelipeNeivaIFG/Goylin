@@ -4,32 +4,33 @@ pkgdesc='Goylin: VFX Apps'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.5
-pkgrel=1
+pkgver=25.0
+pkgrel=0
 arch=('x86_64')
 
-source=('skel.tar')
+source=('skel.tar' 'addons.tar')
 
-noextract=('skel.tar')
+noextract=('skel.tar' 'addons.tar')
 
-md5sums=('SKIP')
+md5sums=('SKIP' 'SKIP')
 
 depends=(
-	'blender-3.6-bin'
-	'blender-plugin-fspy'
-	'godot-blender-exporter-git'
-	# 'gconf'
-	# 'xdialog'
-	'openfx-arena'
-	'openfx-gmic'
-	# 'openfx-io' # FIX - Broken by ffmpeg update
-	'openfx-misc'
-	'gyroflow-ofx-bin' 
-	'natron-bin'
-	# 'natron-plugins-git' # Deppendency Hell
-	'gyroflow-bin' # Untested remove of pulseaudio deppendency in favor of pipewire-pulse
-	# 'fspy'
-	'magicavoxel'
+	'blender-3.6-bin'	#!! AUR !!# A fully integrated 3D graphics creation suite ### UPDATE BROKEN
+	'gyroflow-bin'	# !! AUR !!#Video stabilization using gyroscope data
+	'natron-bin'	#!! AUR !!# Node-graph video compositor
+	'openfx-gmic'	#!! AUR !!# OpenFX wrapper for the G'MIC framework
+	'openfx-misc'	#!! AUR !!# Miscellaneous OpenFX plugins
+	# 'openfx-io-git'	#!! AUR !!# A set of Readers/Writers plugins written using the OpenFX standard ### BROKEN ###
+	'gyroflow-ofx-bin' #!! AUR !!# Gyroflow OpenFX plugin
+	# 'fspy'	#!! AUR !!# cross platform app for still image camera matching ### BROKEN ###
+	'meshroom-bin'	# Meshroom is a free, open-source 3D Reconstruction Software
+	'magicavoxel'	#!! AUR !!# A free lightweight 8-bit voxel art editor and GPU based interactive path
+	#
+	'libdecor'	# blender - better wayland support
+	'openfx-arena'	#!! AUR !!# natron - Extra OpenFX plugins for Natron
+	# 'natron-plugins-git' #!! AUR !!# natron - A collection of Natron plugins made by the community ### BROKEN ###
+	# 'flamenco-manager'	#!! AUR !!# Flamenco render farm manager # ONLY NEEDED ON SERVER
+	'flamenco-worker'	#!! AUR !!# Worker for the Flamenco render farm system
 )
 
 install='pkg.install'
@@ -38,4 +39,8 @@ package() {
 	install -vDm 644 -t ${pkgdir}/etc/skel skel.tar
 	tar vxf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
 	rm -v ${pkgdir}/etc/skel/skel.tar
+
+	install -vDm 644 -t ${pkgdir}/usr/share/blender/3.6/scripts/addons addons.tar
+	tar vxf ${pkgdir}/usr/share/blender/3.6/scripts/addons/addons.tar --overwrite --directory=${pkgdir}/usr/share/blender/3.6/scripts/addons/
+	rm -v ${pkgdir}/usr/share/blender/3.6/scripts/addons/addons.tar
 }

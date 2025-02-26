@@ -3,6 +3,4 @@
 post_install() {
 	mkdir -p /home/shared/blender/{blenderKitAssets,AssetLib}
 	chmod a+rwx -R /home/shared/blender/
-
-	# update-desktop-database
 }
