@@ -81,8 +81,11 @@ chattr +i /etc/hosts
 
 # Ensure not in domain
 net ads leave -U "${adminID}%${adminPW}"
+
 # Search AD for hostname entry
-ldapDN="$(ldapsearch -x -H ldap://AD-GOIAS -D "${adminID}@ifg.br" -w "$adminPW" -b "DC=ifg,DC=br" "sAMAccountName=${newHostName}$" | grep "distinguishedName" | sed "s/^distinguishedName: //")"
+ldapDN="$(ldapsearch -x -H 'ldap://AD-GOIAS' -D "${adminID}@ifg.br" -w "$adminPW" -b 'DC=ifg,DC=br' 'sAMAccountName=${newHostName}$' \
+| grep 'distinguishedName' | sed 's/.*distinguishedName: \(.*\)DC=.*/\1/')DC=ifg,DC=br"
+
 # Remove AD entry if found
 [[ $ldapDN ]] && _msg "Removing hostname entry: $ldapDN" && ldapdelete -w "$adminPW" -H ldap://AD-GOIAS -D "${adminID}@ifg.br" "$ldapDN"
 
@@ -94,5 +97,11 @@ ldapDN="$(ldapsearch -x -H ldap://AD-GOIAS -D "${adminID}@ifg.br" -w "$adminPW" 
 # Join AD and enable winbind
 net ads join -U "${adminID}%${adminPW}" -S AD-GOIAS createcomputer="COMPUTADORES/COMP. GOIAS${adLocation}" # -d 4
 systemctl enable --now winbind
+
+# Config Rustdesk
+_msgInfo 'Rustdesk config:'
+systemctl enable --now rustdesk
+rustdesk --password "PASSWORD"
+rustdesk --config "CONFIG"
 
 exit 0
