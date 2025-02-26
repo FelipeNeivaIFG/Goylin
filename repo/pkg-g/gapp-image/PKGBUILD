@@ -4,8 +4,8 @@ pkgdesc='Goylin: Image Apps'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.5
-pkgrel=1
+pkgver=25.0
+pkgrel=0
 arch=('x86_64')
 
 source=('skel.tar')
@@ -15,36 +15,37 @@ noextract=('skel.tar')
 md5sums=('SKIP')
 
 depends=(
-	'gimp'
-	'inkscape'
-	'krita'
-	'darktable'
-	'rawtherapee'
-	'pixelorama-bin'
+	'gimp'	# GNU Image Manipulation Program
+	'inkscape'	# Professional vector graphics editor
+	'krita'	# Edit and paint images
+	'darktable'	# Utility to organize and develop raw images
+	'rawtherapee'	# A powerful cross-platform raw image processing program
+	'pixelorama-bin'	#!! AUR !!# A free & open-source 2D sprite editor, made with the Godot Engine
+	'mypaint-brushes'	# Brushes used by MyPaint and other software using libmypaint
+	'digikam'	# An advanced digital photo management application
+	'hugin'	# Panorama photo stitcher
 	#
-	'krita-plugin-gmic'
-	'libmypaint'
-	'mypaint-brushes'
-	'potrace'
-	'fig2dev'
-	'gnuplot'
-	'gimp-plugin-gmic'
-	'optipng'
-	'ghostscript'
-	'gutenprint'
-	'gvfs'
-	'fig2dev'
-	'pstoedit'
-	'texlive-pstricks'
-	'kimageformats5'
-	'kseexpr'
-	'libheif'
-	'libjxl'
-	'poppler-qt5'
-	'python-pyqt5'
-	'dcraw'
-	'perl-image-exiftool'
-	'imagemagick'
+	'gimp-plugin-gmic'	# gimp -  Gimp plugin for the G'MIC image processing framework
+	'pstoedit'	# inkscape -  latex formulas
+	'fig2dev'	# inkscape - xfig input
+	'krita-plugin-gmic'	# krita - GMic plugin
+	'libmypaint'	# krita - support for MyPaint brushes
+	'python-pyqt5'	# krita - for the Python plugins
+	'poppler-qt5'	# krita - PDF filter
+	'kseexpr'	# krita - SeExpr generator layer
+	'kimageformats5'	# krita - PSD support
+	'libavif'	# kimageformats5 - AVIF format support
+	'openexr'	# kimageformats5 - EXR format support
+	'libheif'	# kimageformats5 | Krita - HEIF format support
+	'libjxl'	# kimageformats5 | krita- JPEG-XL format support
+	'libraw'	# kimageformats5 - RAW format support
+	'dcraw'	# darktable - base curve script
+	'perl-image-exiftool'	# darktable - base curve script | hugin - GPano tags support
+	'ghostscript'	# darktable - noise profile script
+	'imagemagick'	# darktable - base curve and noise profile scripts
+	'gnuplot'	# darktable - noise profile script
+	'potrace'	# Utility for tracing a bitmap (input: PBM,PGM,PPM,BMP; output: EPS,PS,PDF,SVG,DXF,PGM,Gimppath,XFig)
+	'optipng'	# Compresses PNG files to a smaller size, without losing any information.
 )
 
 package() {
