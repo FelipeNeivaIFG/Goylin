@@ -4,26 +4,48 @@ pkgdesc='Goylin: Audio Apps'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.5
-pkgrel=1
+pkgver=25.0
+pkgrel=0
 arch=('x86_64')
 
+source=('.clirc')
+md5sums=('SKIP')
+
 depends=(
-	'fastfetch'
-	'spotdl'
-	'yt-dlp'
-	'ytfzf'
+	'fastfetch'	# A feature-rich and performance oriented neofetch like system information tool
+	'chafa'	# Image-to-text converter supporting a wide range of symbols and palettes, transparency, animations, etc.
+	'spotdl'	#!! AUR !! Download your Spotify playlists and songs along with album art and metadata (from YouTube if a match is found).
+	'yt-dlp'	# A youtube-dl fork with additional features and fixes
+	'ytfzf'	# A POSIX script to find and watch youtube videos from the terminal
 	# 4FUN
-	'sl'
-	'cmatrix'
-	'cowsay'
-	'lolcat'
-	'toilet'
-	'oneko'
-	'asciiquarium'
-	'pv'
-	'xorg-xeyes'
-	'figlet'
-	'funny-manpages'
-	'bb'
+	'sl'	# Steam Locomotive runs across your terminal when you type "sl" as you meant to type "ls"
+	'cmatrix'	# A curses-based scrolling 'Matrix'-like screen
+	'cowsay'	# Configurable talking cow (and a bit more)
+	'lolcat'	# Okay, no unicorns. But rainbows!!
+	'figlet'	# A program for making large letters out of ordinary text
+	'toilet'	# Free replacement for the FIGlet utility
+	'oneko'	#!! AUR !!# A cat that chases around your cursor
+	'asciiquarium'	# An aquarium/sea animation in ASCII art
+	'xorg-xeyes'	# Follow the mouse/SHAPE extension X demo
+	'funny-manpages'	# A set of miscellaneous humorous manpages (don't take them too seriously!).
+	'bb'	# ASCII-art demo that uses AAlib
+	'pokemon-colorscripts-git'	##!! AUR !!# Print Pokemon ASCII art in the terminal
+	#
+	'ffmpeg'	# yt-dlp - for video post-processing
+	'rtmpdump'	# yt-dlp - for rtmp streams support
+	'atomicparsley'	# yt-dlp for embedding thumbnails into m4a files
+	'python-mutagen'	# yt-dlp - for embedding thumbnail in certain formats
+	'python-pycryptodome'	# yt-dlp - for decrypting AES-128 HLS streams and various other data
+	'python-pycryptodomex'	# yt-dlp - for decrypting AES-128 HLS streams and various other data
+	'python-websockets'	# yt-dlp - for downloading over websocket
+	'python-brotli'	# yt-dlp - brotli content encoding support
+	'python-brotlicffi'	# yt-dlp - brotli content encoding support
+	'python-xattr'	# yt-dlp - for writing xattr metadata
+	'ueberzug'	# ytfzf - The default thumbnails image previewer
+	'fzf'	# ytfzf - The default menu selection screen
+	'mpv'	# ytfzf - Default media player
 )
+
+package() {
+	install -vDm 644 -t ${pkgdir}/etc/skel/ .clirc
+}
