@@ -4,15 +4,15 @@ pkgdesc='Goylin: CAD Apps'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.5
-pkgrel=1
+pkgver=25.0
+pkgrel=0
 arch=('x86_64')
 
 depends=(
-	'librecad'
-	'freecad'
-	'qcad'
+	'librecad'	# A 2D CAD drawing tool based on the community edition of QCad
+	'freecad'	# Feature based parametric 3D CAD modeler
+	'qcad'	# A 2D CAD package based upon Qt
+	'openscad'	# The programmers solid 3D CAD modeller | freecad - OpenSCAD support
 	#
-	'openscad'
-	'graphviz'
+	'graphviz'	# freecad - dependency graph support
 )
