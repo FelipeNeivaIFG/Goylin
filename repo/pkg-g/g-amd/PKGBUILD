@@ -4,8 +4,8 @@ pkgdesc='Goylin: AMD'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group='goylin'
 
-pkgver=24.5
-pkgrel=1
+pkgver=25.0
+pkgrel=0
 arch=('x86_64')
 
 source=('mkinitcpio.conf')
@@ -13,19 +13,17 @@ source=('mkinitcpio.conf')
 md5sums=('SKIP')
 
 depends=(
-	'amd-ucode'
-	'xf86-video-amdgpu'
-	'mesa'
-	'lib32-mesa'
-	'vulkan-radeon'
-	'lib32-vulkan-radeon'
-	'vulkan-mesa-layers'
-	'lib32-vulkan-mesa-layers'
-	'libva-mesa-driver'
-	'lib32-libva-mesa-driver'
-	'mesa-vdpau'
-	'lib32-mesa-vdpau' 
-	'lib32-vulkan-icd-loader'
+	'mkinitcpio'	# Modular initramfs image creation utility
+	'amd-ucode'	# Microcode update files for Amd CPUs
+	'mesa'	# Open-source OpenGL drivers
+	'lib32-mesa'	#  Open-source OpenGL drivers - 32-bit
+	'vulkan-radeon'	# Open-source Vulkan driver for AMD GPUs - 32-bit
+	'lib32-vulkan-radeon'	# Open-source Vulkan driver for AMD GPUs
+	'vulkan-mesa-layers'	# Mesa's Vulkan layers
+	'lib32-vulkan-mesa-layers'	# Mesa's Vulkan layers - 32-bit
+	'libvdpau-va-gl'	# VDPAU driver with OpenGL/VAAPI backend
+	'vulkan-icd-loader'	# Vulkan Installable Client Driver (ICD) Loader
+	'lib32-vulkan-icd-loader'	# Vulkan Installable Client Driver (ICD) Loader - 32-bit
 )
 
 install='pkg.install'
