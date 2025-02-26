@@ -4,43 +4,33 @@ pkgdesc='Goylin: Wine'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.5
-pkgrel=2
+pkgver=25.0
+pkgrel=0
 arch=('x86_64')
 
 depends=(
-	'wine'
-	'wine-gecko'
-	'wine-mono'
-	'icoutils'
-	'alsa-lib'
-	'lib32-alsa-lib'
-	'alsa-plugins'
-	'lib32-alsa-plugins'
-	'lib32-libcups'
-	'gnutls'
-	'lib32-gnutls'
-	'gst-plugins-bad'
-	'gst-plugins-base'
-	'lib32-gst-plugins-base'
-	'lib32-gst-plugins-base-libs'
-	'lib32-gst-plugins-good'
-	'libgphoto2'
-	'lib32-libpulse'
-	'libxcomposite'
-	'lib32-libxcomposite'
-	'libxinerama'
-	'lib32-libxinerama'
-	'opencl-icd-loader'
-	'lib32-opencl-icd-loader'
-	'pcsclite'
-	'lib32-pcsclite'
-	'sdl2'
-	'lib32-sdl2'
-	'unixodbc'
-	'v4l-utils'
-	'lib32-v4l-utils'
-	'lib32-nettle'
-	'nettle'
-	'winetricks'
+	'wine'	# A compatibility layer for running Windows programs
+	'wine-gecko'	# Wine's built-in replacement for Microsoft's Internet Explorer
+	'wine-mono'	# Wine's built-in replacement for Microsoft's .NET Framework
+	'winetricks'	# Script to install various redistributable runtime libraries in Wine
+	'icoutils'	# Extracts and converts images in MS Windows(R) icon and cursor files
+	'lib32-alsa-lib'	# An alternative implementation of Linux sound support (32 bit)
+	'lib32-alsa-plugins'	# lib32-alsa-plugins
+	'lib32-libcups'	# The CUPS Printing System - client libraries (32-bit)
+	'lib32-gnutls'	# # A library which provides a secure layer over a reliable transport layer (32 bit)
+	'gst-plugins-bad'	# Multimedia graph framework - bad plugins
+	'gst-plugins-base'	# Multimedia graph framework - base plugins
+	'lib32-gst-plugins-base'	# Multimedia graph framework - base plugins (32 bit)
+	'lib32-gst-plugins-base-libs'	# Multimedia graph framework (32-bit) - base
+	'lib32-gst-plugins-good'	# # Multimedia graph framework - good plugins (32 bit)
+	'lib32-libpulse'	# A featureful, general-purpose sound server (32-bit client libraries)
+	'libxcomposite'	# X11 Composite extension library
+	'lib32-libxcomposite'	# X11 Composite extension library (32 bit)
+	'libxinerama'	# X11 Xinerama extension library
+	'lib32-libxinerama'	# X11 Xinerama extension library (32 bit)
+	'lib32-pcsclite'	# PC/SC Architecture smartcard middleware library (32 bit)
+	'lib32-sdl2-compat'	# AAn SDL2 compatibility layer that uses SDL3 behind the scenes (32 bit)
+	'unixodbc'	# ODBC is an open specification for providing application developers with a predictable API with which to access Data Sources
+	'lib32-v4l-utils'	# Userspace tools and conversion library for Video 4 Linux (32 bit)
+	'lib32-nettle'	# A low-level cryptographic library (32 bit)
 )
