@@ -4,14 +4,26 @@ pkgdesc='Goylin: Write Apps'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.5
-pkgrel=1
+pkgver=25.0
+pkgrel=0
 arch=('x86_64')
 
+source=('skel.tar')
+
+noextract=('skel.tar')
+
+md5sums=('SKIP')
+
 depends=(
-	'scenarist'
-	'scribus'
+	'scenarist'	# Screenwriting software to create screenplays which oriented at international standards in the field of film production
+	'scribus'	# Desktop publishing software
+	'fontforge'	# Outline and bitmap font editor
 	#
-	'gdal'
-	'hyphen-pt-br'
+	'hyphen-pt-br'	#!! AUR !!#	scribus -  hyphenation patterns
 )
+
+package() {
+	install -vDm 644 -t ${pkgdir}/etc/skel skel.tar
+	tar vxf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
+	rm -v ${pkgdir}/etc/skel/skel.tar
+}
