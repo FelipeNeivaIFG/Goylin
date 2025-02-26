@@ -11,4 +11,5 @@ function tarFiles() {
     sudo rm -rf "tmp-${1}"    
 }
 
-tarFiles tlauncher
+# tarFiles tlauncher
+tarFiles Neverhood

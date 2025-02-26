@@ -4,52 +4,47 @@ pkgdesc='Goylin: Games'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group='goylin'
 
-pkgver=24.5
-pkgrel=2
+pkgver=25.0
+pkgrel=0
 arch=('x86_64')
 
-source=('tlauncher.tar' 'tlauncher.desktop')
+source=('Neverhood.tar' 'neverhood.desktop')
 
-noextract=('tlauncher.tar')
+noextract=('Neverhood.tar')
 
 md5sums=('SKIP' 'SKIP')
 
 depends=(
 	# 'itch-bin' # <- This will make a mess for sure... ^_^
 	# 'steam' # <- This will make a mess for sure... ^_^
-	'0ad'
-	'mari0'
-	'kpat'
-	'ksquares'
-	'knights'
-	'gnome-mines'
-	'gnome-mahjongg'
-	'gnome-klotski'
-	'gnome-sudoku'
-	'minecraft-launcher'
-	'ddnet'
-	'ltris'
-	'lix'
-	'maniadrive'
+	'gamescope'	# SteamOS session compositing window manager
+	'0ad'	# Cross-platform, 3D and historically-based real-time strategy game
+	'mari0'	# The Mario game with Portal gun mechanics
+	'kpat'	# Offers a selection of solitaire card games
+	'ksquares'	# A game modeled after the well known pen and paper based game of Dots and Boxes
+	'knights'	# Chess board by KDE with XBoard protocol support
+	'gnome-mines'	# Clear hidden mines from a minefield
+	'gnome-mahjongg'	# Disassemble a pile of tiles by removing matching pairs
+	'gnome-klotski'	# Slide blocks to solve the puzzle
+	'gnome-sudoku'	# Test your logic skills in this number grid puzzle
+	# 'minecraft-launcher'	#!! AUR !!# Official Minecraft Launcher
+	# 'ddnet'	#!! AUR !!# A Teeworlds modification with a unique cooperative gameplay.
+	# 'ltris'	#!! AUR !!# A tetris clone where you have a bowl with blocks falling down
+	'lix'	#!! AUR !!# An action-puzzle game inspired by Lemmings
+	'maniadrive'	#!! AUR !!# Acrobatic racing game
+	'principia'	#!! AUR !!# Physics-based sandbox building game.
+	'thrive-bin'	#!! AUR !!# Game about evolution, in which the player guides a species from their origin as a microbe to the space age and beyond.
+	# 'funkin-git'	#!! AUR !!# Friday Night Funkin': A rhythm game # BROKEN
+	# 'veloren' #!! AUR !!# The last stable release of an open-world, open-source multiplayer voxel RPG. # LOW FPS =/
+	'pokemon-revolution-online-bin'	#!! AUR !!# A free-to-play, fan-made, MMO game that is predicated around the official Pokémon games.
 	#
-	'jdk-openjdk'
-	'discord-game-sdk'
-	'dosbox'
-	'fluidsynth'
-	'gamemode'
-	'lib32-gamemode'
-	'lib32-vkd3d'
-	'lib32-vulkan-icd-loader'
-	'vkd3d'
-	'vulkan-icd-loader'
-	'vulkan-tools'
-	'xorg-xgamma'
+	# 'discord-game-sdk'	# ddnet
 )
 
 package() {
-	install -vDm 755 -t ${pkgdir}/usr/share/applications tlauncher.desktop
-	install -vDm 644 -t ${pkgdir}/opt/tlauncher tlauncher.tar
-	tar vxf ${pkgdir}/opt/tlauncher/tlauncher.tar --overwrite --directory=${pkgdir}/opt/tlauncher/
-	chmod -v 755 ${pkgdir}/opt/tlauncher/TLauncher.jar
-	rm -v ${pkgdir}/opt/tlauncher/tlauncher.tar
+	install -vDm 755 -t ${pkgdir}/usr/share/applications neverhood.desktop
+	install -vDm 644 -t ${pkgdir}/opt/Neverhood Neverhood.tar
+	tar vxf ${pkgdir}/opt/Neverhood/Neverhood.tar --overwrite --directory=${pkgdir}/opt/Neverhood
+	chmod -v 755 ${pkgdir}/opt/Neverhood/start.sh
+	rm -v ${pkgdir}/opt/Neverhood/Neverhood.tar
 }
