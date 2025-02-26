@@ -1,7 +1,7 @@
 [Desktop Entry]
 Exec=dolphin smb://10.11.0.12/Arquivos/Pública
 Icon=network-server
-Name=Servidor
+Name=Servidor de Arquivos
 StartupWMClass=dolphin
 Type=Application
 X-DocPath=dolphin/index.html
