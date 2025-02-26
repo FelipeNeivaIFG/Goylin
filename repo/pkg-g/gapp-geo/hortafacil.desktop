@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Horta Fácil
-Exec=env WINEPREFIX="$HOME/.hortafacil" wine "C:\\Program Files (x86)\\FAPEMIG\\Horta Fácil\\hortafacil.exe"
+Exec=env WINEPREFIX="$HOME/Documentos/.hortafacil" wine "C:\\Program Files (x86)\\FAPEMIG\\Horta Fácil\\hortafacil.exe"
 Type=Application
 StartupNotify=true
 Comment=Auxilia no dimensionamento e no calendário de cultivo de pequenas hortas

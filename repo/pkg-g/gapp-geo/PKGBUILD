@@ -4,8 +4,8 @@ pkgdesc='Goylin: Geotecnologia Apps'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.5
-pkgrel=2
+pkgver=25.0
+pkgrel=0
 arch=('x86_64')
 
 source=(
@@ -24,25 +24,38 @@ md5sums=(
 )
 
 depends=(
-	'google-earth-pro'
-	'qgis'
-	'marble'
-	'saga-gis'
+	'google-earth-pro'	#!! AUR !!# 3D interface to explore the globe, terrain, streets, buildings and other planets.
+	'qgis'	# Geographic Information System (GIS) that supports vector, raster & database formats
+	'marble'	# Desktop Globe
+	'saga-gis'	#!! AUR !!# A Geographic Information System (GIS) software with immense capabilities for geodata processing and analysis.
+	'grass'	#!! AUR !!# Geospatial data management and analysis, image processing, graphics/maps production, spatial modeling and visualizatio
+	# 'gvsig-desktop-bin'	# A powerful, user-friendly and interoperable GIS.	#!! CRASHING !!#
+	'rstudio-desktop-bin'	#!! AUR !!# n integrated development environment (IDE) for R
 	#
-	'fcgi'
-	'gpsbabel'
-	'marble-maps'
-	'marble-common'
-	'wine'
-	'python-gdal'
-	'python-psycopg2'
-	'python-owslib'
-	'python-pygments'
-	'python-lxml'
-	'gdal'
-	'liblas'
-	'python-jinja'
-	'grass'
+	'fcgi'	# qgis - Map server
+	'gpsbabel'	# qgis - GPS Tools plugin
+	# 'marble-maps'	# marble - OpenStreetMap Navigation #!! CRASHING !!#
+	'marble-common'	# Common libraries and plugins for Marble
+	'libwlocate'	# marble - WLAN based geolocation
+	'gpsd'	# marble - GPS based geolocation
+	'wine'	# A compatibility layer for running Windows programs
+	'postgresql'	# saga-gis - Sophisticated object-relational DBMS
+	'vigra'	# saga-gis - Computer vision library
+	# 'python-vigra'	#!! Dependency conflict with gapp-cad freecad !!# vigra - Computer vision library - Python bindings
+	'liblas'	# saga-gis - C/C++ library for reading and writing the very common LAS LiDAR format
+	'libharu'	# saga-gis - C library for generating PDF documents
+	'libsvm'	# saga-gis - A library for Support Vector Machines classification 'swig'
+	'python-psycopg2'	# qgis - A PostgreSQL database adapter for the Python programming language.
+	'python-owslib'	# qgis - Python package for client programming with Open Geospatial Consortium
+	'python-pygments'	# qgis - Python syntax highlighter
+	'python-lxml'	# qgis - Python3 binding for the libxml2 and libxslt libraries
+	'gdal'	# A translator library for raster and vector geospatial data formats
+	'python-jinja'	# A simple pythonic template language written in Python
+	'python-numpy'	# Scientific tools for Python
+	'python-scipy'	# Open-source software for mathematics, science, and engineering
+	'python-gdal'	# Python bindings for GDAL
+	'postgis'	# A spatial database extender for PostgreSQL
+	'hdf5-openmpi'	#!! Force openmpi version for compatibility with FreeCAD !!# General purpose library and file format for storing scientific data
 )
 
 package() {
