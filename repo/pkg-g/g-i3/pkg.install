@@ -1,8 +1,8 @@
 #!/bin/bash
 
 _remove_Unwanted_Files() {
-    rm /usr/share/xsessions/i3-with-shmlog.desktop
-    rm /etc/xdg/autostart/picom.desktop
+    rm -v /usr/share/xsessions/i3-with-shmlog.desktop
+    rm -v /etc/xdg/autostart/picom.desktop
 }
 
 post_install() {

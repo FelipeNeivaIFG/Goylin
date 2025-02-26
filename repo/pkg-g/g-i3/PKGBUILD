@@ -1,11 +1,11 @@
 # Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
 pkgname='g-i3'
-pkgdesc='Goylin: i3'
+pkgdesc='Goylin: i3 Window Manager'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.5
-pkgrel=2
+pkgver=25.0
+pkgrel=0
 arch=('x86_64')
 
 source=(
@@ -18,24 +18,24 @@ noextract=('skel.tar')
 md5sums=('SKIP' 'SKIP')
 
 depends=(
-	'i3-wm'
-	'i3status'
-	'dmenu'
-	'kitty'
-	'imagemagick'
-	'python-pygments'
-	'rofi'
-	'maim'
-	'picom'
-	'xorg-xprop'
-	'xorg-xwininfo'
-	'xwallpaper'
-	'python-pywal'
-	'xorg-xrandr'
-	'arandr'
-	'pavucontrol'
-	'volumeicon'
-	'ranger'
+	'i3-wm'	# Improved dynamic tiling window manager
+	'i3status'	# Generates status bar to use with i3bar, dzen2 or xmobar
+	'dmenu'	# Generic menu for X
+	'kitty'	# A modern, hackable, featureful, OpenGL-based terminal emulator
+	'rofi'	# A window switcher, application launcher and dmenu replacement
+	'maim'	# Utility to take a screenshot using imlib2
+	'picom'	# Lightweight compositor for X11
+	'xwallpaper'	# Wallpaper setting utility for X
+	'python-pywal'	# Generate and change colorschemes on the fly
+	'xorg-xrandr'	# Primitive command line interface to RandR extension
+	'arandr'	# Provide a simple visual front end for XRandR 1.2.
+	'pavucontrol'	# PulseAudio Volume Control
+	'volumeicon'	# Volume control for the system tray
+	'network-manager-applet'	# Applet for managing network connections
+	#
+	'python-pygments'	# kitty - syntax highlighting in kitty +kitten diff
+	'xorg-xprop'	# picom - for picom-trans
+	'xorg-xwininfo' # picom - for picom-trans
 )
 
 install='pkg.install'
