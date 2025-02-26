@@ -4,16 +4,18 @@ pkgdesc='Goylin: Administrative Apps'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.5
-pkgrel=1
+pkgver=25.0
+pkgrel=0
 arch=('x86_64')
 
 depends=(
-	'thunderbird'
-	'thunderbird-ublock-origin'
-	'thunderbird-i18n-pt-br'
-	'serpro-signer'
-	'serproid'
-	'jdk8'
-	'jre8'
+	'thunderbird'	# Standalone mail and news reader from mozilla.org
+	'thunderbird-ublock-origin'	# Efficient blocker add-on for various browsers. Fast, potent, and lean
+	'thunderbird-i18n-pt-br'	# Portuguese (Brazilian) language pack for Thunderbird
+	'serpro-signer'	#!! AUR !!# Assinador Digital SERPRO : Aplicativo para geração e validação de assinaturas no padrão ICP-BRASIL
+	'serproid'	#!! AUR !!# PKCS#11 driver for cloud-based digital certificates issued by Serpro
+	'ferdium-bin'	#!! AUR !!#	A messaging browser that allows you to combine your favorite messaging services into one application
+	#
+	'jdk8'	#!! AUR !!# required by serpro to work in gov websites
+	'jre8'	#!! AUR !!# required by serpro to work in gov websites
 )
