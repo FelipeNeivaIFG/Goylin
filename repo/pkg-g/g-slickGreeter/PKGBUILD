@@ -1,11 +1,11 @@
-# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+#Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
 pkgname='g-slickGreeter'
-pkgver=24.5
-pkgrel=1
+pkgver=25.0
+pkgrel=0
 pkgdesc='Goylin LightDM greeter'
 
 srcname=lightdm-slick-greeter
-srcver=2.0.6
+srcver=2.0.9
 srcurl="https://github.com/linuxmint/slick-greeter"
 
 arch=('x86_64')
@@ -21,11 +21,11 @@ source=(
 	"${srcname}-${srcver}.tar.gz::$srcurl/archive/${srcver}.tar.gz"
 	'pt_BR.po'
 )
-sha512sums=('5b2d2017a73f8d3f08ae8ca3d9957d0d93136f82293c5a891ddd8cb58e80081d7f08966eb4131d9b021f867e5c6e244823245da7cf77704eb723560be2ac3b5e' 'SKIP')
-b2sums=('b5ea36607d1d722031082dd03d486dc11e262861b0d36dc99959d2438b1804a57769045fcb2c0b106d397c738a5420c61b83eec7c98f4a331baa8bcdc57714ee' 'SKIP')
+sha512sums=('ca7aeaf008f76e25f9b29b0437683ddb122975a43d9f46c693ed6ac0a0663d80b010e6cf98e710fcd86ecdc8509e4a194c5ea744f3a540bcdb29f439c4796c7e' 'SKIP')
+b2sums=('bc9dfc465a4f12a948147d6ddce4497a2ee40642c7e44ef598795d10f2cfff99092c0e2aca83e5abdcd05b161907a1c1a009901137798473be6d38d77efbe52b' 'SKIP')
 
 prepare() {
-	cp -f pt_BR.po slick-greeter-${srcver}/po
+	cp -vf pt_BR.po slick-greeter-${srcver}/po
 
 	cd slick-greeter-${srcver}
 	NOCONFIGURE=1 ./autogen.sh
@@ -34,7 +34,7 @@ prepare() {
 build() {
   	cd slick-greeter-${srcver}
 	./configure --prefix=/usr --sysconfdir=/etc --sbindir=/usr/bin \
-             --libexecdir=/usr/lib/lightdm
+			 --libexecdir=/usr/lib/lightdm
 	make
 }
 
@@ -43,5 +43,5 @@ package() {
 	make DESTDIR="${pkgdir}" install
 	# adjust launcher name
 	mv $pkgdir/usr/share/xgreeters/slick-greeter.desktop \
-    $pkgdir/usr/share/xgreeters/goylin-lightdm-greeter.desktop
+	$pkgdir/usr/share/xgreeters/goylin-lightdm-greeter.desktop
 }
