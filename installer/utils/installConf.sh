@@ -1,7 +1,7 @@
 #!/bin/bash
 
 goylinVersion="25.0"
-goylinVName="Nubo"
+goylinVName="Pluvo"
 skipBootstrap=0
 useDefaultConf=0
 targetType="ssd"
