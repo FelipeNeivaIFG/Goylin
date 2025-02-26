@@ -14,6 +14,7 @@ cmake
 boost
 extra-cmake-modules
 glfw
+reflector
 
 linux-headers
 terminus-font
@@ -29,7 +30,6 @@ wget
 man-db
 man-pages
 man-pages-pt_br
-broadcom-wl
 smartmontools
 dialog
 plymouth
@@ -45,12 +45,16 @@ nfs-utils
 b43-fwcutter
 reflector
 usbutils
+wireless-regdb
+avahi
+ccid
+sdl2-compat
 
 intel-ucode
 mesa
 lib32-mesa
 vulkan-intel
-onevpl-intel-gpu
+vpl-gpu-rt
 lib32-vulkan-intel
 intel-media-driver
 libva-intel-driver
@@ -58,9 +62,9 @@ vulkan-mesa-layers
 lib32-vulkan-mesa-layers
 intel-media-sdk
 intel-compute-runtime
+vulkan-icd-loader
 lib32-vulkan-icd-loader
-opencl-rusticl-mesa
-lib32-opencl-rusticl-mesa
+libvdpau-va-gl
 
 amd-ucode
 xf86-video-amdgpu
@@ -68,8 +72,6 @@ vulkan-radeon
 lib32-vulkan-radeon
 libva-mesa-driver
 lib32-libva-mesa-driver
-mesa-vdpau
-lib32-mesa-vdpau
 
 xf86-video-ati
 
@@ -107,6 +109,8 @@ fuse-overlayfs
 fuse-common
 squashfuse
 ffmpeg
+libultrahdr
+variety
 
 pipewire
 gst-plugin-pipewire
@@ -124,6 +128,8 @@ lib32-pipewire-jack
 lib32-pipewire-v4l2
 jacktrip
 alsa-utils
+audiofile
+flac
 
 wine
 wine-gecko
@@ -134,6 +140,7 @@ lib32-alsa-plugins
 lib32-libcups
 lib32-gnutls
 gst-plugins-bad
+gst-plugins-ugly
 lib32-gst-plugins-base
 lib32-gst-plugins-base-libs
 lib32-gst-plugins-good
@@ -143,6 +150,7 @@ lib32-libxinerama
 lib32-opencl-icd-loader
 lib32-pcsclite
 lib32-sdl2
+lib32-sdl2-compat
 lib32-v4l-utils
 lib32-nettle
 winetricks
@@ -168,6 +176,12 @@ p7zip
 unzip
 unrar
 zip
+ark
+libappimage
+arj
+lrzip
+lzop
+qt5-imageformats
 
 polkit-kde-agent
 plasma5support
@@ -199,6 +213,18 @@ plasma-disks
 startup-notification
 power-profiles-daemon
 plasma-sdk
+kdialog
+
+budgie-desktop
+budgie-extras
+budgie-desktop-view
+
+gnome-shell
+gnome-menus
+gnome-shell-extensions
+gnome-tweaks
+gnome-shell-extension-desktop-icons-ng
+blueprint-compiler
 
 i3-wm
 i3status
@@ -216,20 +242,31 @@ arandr
 pavucontrol
 ranger
 volumeicon
+network-manager-applet
 
 adobe-source-sans-fonts
 adobe-source-serif-fonts
 ttf-dejavu-nerd
-ttf-liberation
+ttf-liberation-mono-nerd
 ttf-carlito
 ttf-hack-nerd
 otf-hermit-nerd
 ttf-roboto-mono-nerd
 ttf-droid
-ttf-dejavu
+ttf-dejavu-nerd
 adobe-source-code-pro-fonts
 gnu-free-fonts
-ttf-font
+noto-fonts
+ttf-opensans
+otf-overpass-nerd
+tex-gyre-fonts
+ttf-ubuntu-font-family
+ttf-bitstream-vera
+ttf-inconsolata
+ttf-freefont
+ttf-libertinus
+ttf-caladea
+font-manager
 
 cups-browsed
 ipp-usb
@@ -239,6 +276,11 @@ cups-pdf
 print-manager
 hplip
 system-config-printer
+argyllcms
+foomatic-db-gutenprint-ppds
+colord
+colord-sane
+python-reportlab
 
 evince
 shotwell
@@ -247,75 +289,102 @@ libreoffice-fresh
 libreoffice-fresh-pt-br
 kate
 elisa
-pstoedit
-libwpg
+pdfarranger
+qalculate-qt
+vlc
+libpaper
+coin-or-mp
+img2pdf
+aalib
+alsa-lib
+fluidsynth
+dav1d
+aribb25
+aom
 zvbi
+x265
+x264
 vcdimager
 twolame
+srt
+speexdsp
+speex
 sdl_image
 sdl12-compat
+protobuf
+pcsclite
+opus
+mpg123
+libvpx
+libvorbis
+libtheora
+libssh2
+libsoxr
 libshout
+libsamplerate
+librsvg
+libraw1394
+libpulse
+libpng
+libogg
 libnfs
+libmtp
 libmicrodns
+libjpeg-turbo
 libgoom2
 libgme
+libdvdread
+libdvdnav
 libdvdcss
+libdc1394
 libcdio
 libcaca
-fluidsynth
-aribb25
-aalib
-avisynthplus
-frei0r-plugins
-ladspa
-libwmf
-djvulibre
-qt6-imageformats
-kimageformats
-gst-plugins-good
-gst-plugins-ugly
-gst-libav
-mediainfo
-trash-cli
-speech-dispatcher
-coin-or-mp
-v4l-utils
-lib32-v4l-utils
-meson
-android-udev
-libappindicator-gtk3
+libbluray
+libass
+gstreamer
+gst-plugins-base-libs
 android-tools
 usbmuxd
 v4l2loopback-dkms
-electron31
+remmina
+freerdp
+libvncserver
+wayvnc
+x11vnc
+xdotool
+electron33
 
-electron29
 c-ares
 electron32
 asar
 
-ardour
-xjadeo
-harvid
 audacity
-tenacity
+ardour
 mixxx
 lmms
 bespokesynth
+carla
+musescore
+zynaddsubfx
+hydrogen
 cardinal
-python-tornado
+qjackctl
+reapack
+sws
+lame
+harvid
 xjadeo
-bespokesynth
-cardinal
+lib32-gcc-libs
+lib32-glibc
+python-requests
+python-tornado
+python-jedi
 cardinal-clap
 cardinal-data
 cardinal-lv2
 cardinal-vst
 cardinal-vst3
-carla
-libcurl-gnutls
-alsa-firmware
-sof-firmware
+audiofile
 
 gimp
 inkscape
@@ -337,14 +406,17 @@ kseexpr
 poppler-qt5
 dcraw
 perl-image-exiftool
+digikam
+hugin
 
 scenarist
 scribus
-gdal
+fontforge
 
 synfigstudio
 opentoonz
 pencil2d
+git-lfs
 
 xdialog
 gobject-introspection
@@ -369,6 +441,10 @@ python-qtpy
 libc++
 qt6-3d
 
+blender
+libdecor
+yarn
+
 kdenlive
 handbrake
 obs-studio
@@ -392,6 +468,15 @@ glu
 python-openai-whisper
 python-srt_equalizer
 python-vosk
+noise-suppression-for-voice
+pitivi
+gst-plugin-opencv
+python-librosa
+gavl
+ncnn
+gst-libav
+fast_float
+fmt
 
 librecad
 freecad
@@ -414,24 +499,33 @@ arrow
 postgresql-libs
 python-wxpython
 txt2tags
+libwlocate
+gpsd
+python-vigra
+libsvm
+postgis
+r
 
 neovim
 python-pynvim
 xclip
 wl-clipboard
+pycharm-community-edition
+intellij-idea-community-edition
+go
+dotnet-sdk
+postgresql
+python-pipx
+java-rhino
+aspnet-targeting-pack
+ruby-stdlib
+libgit2
 
 godot
 
 thunderbird
 thunderbird-ublock-origin
 thunderbird-i18n-pt-br
-pdfarranger
-xorg-xhost
-jdk21-openjdk
-gradle
-gperf
-ant
-icedtea-web
 
 fastfetch
 yt-dlp
@@ -467,7 +561,19 @@ python-setuptools-scm
 python-sphinx
 python-deprecated
 uvicorn
+chafa
+atomicparsley
+python-pycryptodome
+python-pycryptodomex
+python-brotli
+python-brotlicffi
+python-xattr
+ueberzug
+fzf
+mpv
 
+katomic
+gbrainy
 scratch
 kbruch
 geogebra
@@ -478,6 +584,8 @@ kstars
 ktouch
 minuet
 leocad
+blinken
+kturtle
 xplanet
 povray
 sdl2_image
@@ -517,6 +625,7 @@ tidy
 glm
 texlive-latex
 lib32-glu
+gamescope
 
 retroarch
 innoextract
@@ -534,7 +643,6 @@ libretro-sameboy
 libretro-bsnes
 libretro-scummvm
 libretro-beetle-psx
-libretro-citra
 libretro-desmume
 libretro-dolphin
 libretro-flycast
@@ -548,3 +656,15 @@ realtime-privileges
 libfakekey
 libvncserver
 qt6-httpserver
+
+ctags
+nasm
+xorg-mkfontdir
+xorg-mkfontscale
+yasm
+quazip-qt6
+ngspice
+scons
+sharutils
+freealut
+haxe

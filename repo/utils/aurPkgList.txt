@@ -1,6 +1,13 @@
 b43-firmware
 
+plasma6-applets-qalculate
+
 ttf-ms-fonts
+ttf-impallari-cantora
+ttf-courier-prime
+ttf-gelasio-ib
+ttf-merriweather
+ttf-signika
 
 onlyoffice-bin
 brave-bin
@@ -12,12 +19,14 @@ droidcam
 jre8
 jdk8
 
+video2x
+video2x-qt6
+
 lmms-orgmaker-samples
 leet-plugins
 audacity-plugins
 xairedit
 x32edit
-catia-git
 realtime-generic-setup
 
 glaxnimate
@@ -45,6 +54,7 @@ libasdcp-cth
 libdcp
 leqm-nrt
 dcpomatic
+
 droidcam-obs-plugin
 
 google-earth-pro
@@ -53,6 +63,7 @@ saga-gis
 
 vscodium-bin
 
+electron18-bin
 gb-studio-bin
 
 oneko
@@ -71,6 +82,9 @@ spotdl
 magicavoxel
 duolingo-desktop-bin
 portugol-studio-bin
+electron29-bin
+polyclipping
+mandelbulber2
 
 itch-bin
 discord-game-sdk
@@ -80,9 +94,14 @@ ltris
 ddnet
 maniadrive
 gamehub-bin
-thrive-bin
 
 principia
+thrive-bin
+blinken
+kturtle
+gbrainy
+katomic
+stellarium-bin
 
 serpro-signer
 java-openjfx-bin
@@ -91,5 +110,5 @@ serproid
 pyside2
 
 veyon-bin
-
 fractalnow
+simgear
