@@ -23,7 +23,7 @@ function _configSys() {
 	[[ "$targetType" == "ssd" || "$targetType" == "nvme" ]] && _msg "SSD fstrim" && systemctl enable fstrim.timer
 
 	_msg "Bootstrap Pacman"
-	pacman --disable-download-timeout --noconfirm -Syu 1> /dev/null
+	pacman --disable-download-timeout --noconfirm -Syu # 1> /dev/null
 
 	return 0
 }
@@ -68,7 +68,7 @@ function _configUsers() {
 function _configCPIO() {
 	_msgInfo "###   mkinitcpio   ###"
 
-	mkinitcpio -P 1> /dev/null
+	mkinitcpio -P # 1> /dev/null
 
 	return 0
 }
@@ -76,15 +76,15 @@ function _configCPIO() {
 function _configGRUB() {
 	_msgInfo "###   GRUB   ###"
 
-	grub-install --target=i386-pc /dev/${target} 1> /dev/null
-	grub-mkconfig -o /boot/grub/grub.cfg 1> /dev/null
+	grub-install --target=i386-pc /dev/${target} # 1> /dev/null
+	grub-mkconfig -o /boot/grub/grub.cfg # 1> /dev/null
 
 	return 0
 }
 
 function _finishUp() {
 	_msgInfo "###   Finishing Chroot   ###"
-	pacman -Scc --noconfirm 1> /dev/null
+	pacman -Scc --noconfirm
 
 	if [ $localDevInstall -eq 1 ]; then
 		_msgAlert "Dev Build Settings"
@@ -106,10 +106,11 @@ function _finishUp() {
 ####################################################################################################
 
 function _install_PKG() {
-	pacman --disable-download-timeout --noconfirm --needed --overwrite "*" -S $1 1> /dev/null
+	pacman --disable-download-timeout --noconfirm --needed --overwrite "*" -S $1 # 1> /dev/null
 }
 
 function _pkgCore() {
+	# ~16GB
 	_msgInfo "###   Core PKGs   ###"
 
 	_msg "Core"; _install_PKG g-core
@@ -126,21 +127,26 @@ function _pkgCore() {
 	_msg "Desktop"; _install_PKG g-desktop
 	_msg "File Manager"; _install_PKG g-fileman
 
-	_msg "Plasma"; _install_PKG g-plasma
 	_msg "i3"; _install_PKG g-i3
+	# _msg "Budgie"; _install_PKG g-budgie
+	# _msg "Gnome"; _install_PKG g-gnome
+	_msg "Plasma"; _install_PKG g-plasma
 
 	_msg "Backgrounds"; _install_PKG g-backgrounds
 	_msg "Fonts"; _install_PKG g-fonts
 
+	# Use to apply quick dirty fixes if needed =)
+	_msg "Patches"; _install_PKG g-patch
+
+	_msgInfo "###   Profile: Base   ###"
+
 	_msg "App: Base"; _install_PKG gapp-base
 	_msg "App: Wine"; _install_PKG gapp-wine
 	_msg "Profile: Base"; _install_PKG gp-base
-
-	# Use to apply quick dirty fixes if needed =)
-	_msg "Patches"; _install_PKG g-patch
 }
 
 function _pAdm() {
+	# ~19GB
 	_msgInfo "###   Profile: Administrative   ###"
 
 	_msg "Printer"; _install_PKG g-printer
@@ -150,6 +156,7 @@ function _pAdm() {
 }
 
 function _pCinema() {
+	# ~25GB
 	_msgInfo "###   Profile: Cinema   ###"
 
 	_msg "App: Audio"; _install_PKG gapp-audio
@@ -159,21 +166,19 @@ function _pCinema() {
 	_msg "App: VFX"; _install_PKG gapp-vfx
 	_msg "App: Video"; _install_PKG gapp-video
 
-	# Not related to cinema, but...
-	_msg "App: Code"; _install_PKG gapp-code
-	_msg "App: CLI"; _install_PKG gapp-cli
-	_msg "App: Game Dev"; _install_PKG gapp-gameDev
-
-	# Should be for Library only, but...
-	_msg "App: Educational"; _install_PKG gapp-edu
-
 	# For Game classes
 	_msg "App: Game Emulation"; _install_PKG gapp-gameEmu
+	_msg "App: Game Dev"; _install_PKG gapp-gameDev
+
+	# 4Fun
+	_msg "App: CLI"; _install_PKG gapp-cli
 
 	_msg "Profile"; _install_PKG gp-cinema
+	_msg "DarkMode"; _install_PKG gp-dark
 }
 
 function _pAgro() {
+	# ~20GB
 	_msgInfo "###   Profile: Agro   ###"
 
 	_msg "App: Cad"; _install_PKG gapp-cad
@@ -183,56 +188,51 @@ function _pAgro() {
 }
 
 function _pRadio() {
+	# ~24GB
 	_msgInfo "###   Profile: Radio   ###"
 
 	_msg "App: Audio"; _install_PKG gapp-audio
 	_msg "App: Image"; _install_PKG gapp-image
 	_msg "App: Video"; _install_PKG gapp-video
-	_msg "App: CLI"; _install_PKG gapp-cli
 	_msg "Printer"; _install_PKG g-printer
-	_msg "App: Administrative"; _install_PKG gapp-adm
 
 	_msg "Profile"; _install_PKG gp-radio
+	_msg "DarkMode"; _install_PKG gp-dark
 }
 
 function _pGremio() {
+	# ~31GB
 	_msgInfo "###   Profile: Gremio   ###"
 
-	_msg "App: Audio"; _install_PKG gapp-audio
-	_msg "App: Image"; _install_PKG gapp-image
-	_msg "App: Write"; _install_PKG gapp-write
-	_msg "App: Animation"; _install_PKG gapp-anim
-	_msg "App: VFX"; _install_PKG gapp-vfx
-	_msg "App: Video"; _install_PKG gapp-video
-	_msg "App: Code"; _install_PKG gapp-code
-	_msg "App: Game Dev"; _install_PKG gapp-gameDev
 	_msg "App: Educational"; _install_PKG gapp-edu
-	_msg "App: CLI"; _install_PKG gapp-cli
 	_msg "App: Game"; _install_PKG gapp-game
+	_msg "App: CLI"; _install_PKG gapp-cli
 	_msg "App: Game Emulation"; _install_PKG gapp-gameEmu
 
 	_msg "Profile"; _install_PKG gp-gremio
 }
 
 function _pLibrary() {
+	# ~31GB
 	_msgInfo "###   Profile: Library   ###"
 
-	_msg "App: Audio"; _install_PKG gapp-audio
-	_msg "App: Image"; _install_PKG gapp-image
-	_msg "App: Write"; _install_PKG gapp-write
-	_msg "App: Animation"; _install_PKG gapp-anim
-	_msg "App: VFX"; _install_PKG gapp-vfx
-	_msg "App: Video"; _install_PKG gapp-video
-	_msg "App: Cad"; _install_PKG gapp-cad
-	_msg "App: Geo"; _install_PKG gapp-geo
-	_msg "App: Code"; _install_PKG gapp-code
-	_msg "App: Game Dev"; _install_PKG gapp-gameDev
 	_msg "App: Educational"; _install_PKG gapp-edu
 	_msg "App: CLI"; _install_PKG gapp-cli
 	_msg "App: Game"; _install_PKG gapp-game
 	_msg "App: Game Emulation"; _install_PKG gapp-gameEmu
 
 	_msg "Profile"; _install_PKG gp-lib
+}
+
+function _pInf() {
+	# ~
+	_msgInfo "###   Profile: Info   ###"
+
+	_msg "App: Code"; _install_PKG gapp-code
+	_msg "App: CLI"; _install_PKG gapp-cli
+	_msg "App: Game Dev"; _install_PKG gapp-gameDev
+
+	_msg "Profile"; _install_PKG gp-info
 }
 
 function _pkgProfile() {
@@ -243,6 +243,7 @@ function _pkgProfile() {
 		"radio") _pRadio;;
 		"gremio") _pGremio;;
 		"library") _pLibrary;;
+		"inf") _pInf;;
 		*);;
 	esac
 }

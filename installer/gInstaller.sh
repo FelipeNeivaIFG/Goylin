@@ -18,7 +18,7 @@ cd "$(dirname $(readlink -f "$0"))" || exit 1
 function _help() {
 	_msgInfo "Goylin installer flags:"
 	_msgOpt "-d : Use default install configuration."
-	_msgOpt "-l : Local install."
+	_msgOpt "-l : Local Dev install."
 
 	echo; exit 0
 }
@@ -125,6 +125,7 @@ function _setProfile() {
 	_msgOpt "4) Radio"
 	_msgOpt "5) Gremio"
 	_msgOpt "6) Library"
+	_msgOpt "7) Informatica"
 	_msgOpt "*) Base"
 	read -p '?: ' -e optProfile
 
@@ -135,6 +136,7 @@ function _setProfile() {
 		4) profile="radio";;
 		5) profile="gremio";;
 		6) profile="library";;
+		7) profile="inf";;
 		*) profile="base";;
 	esac
 
@@ -212,7 +214,7 @@ function _prepUmount() {
 function _prepWipe(){
 	_msg "Wiping target"
 
-	wipefs --all "/dev/$target"* 1> /dev/null
+	wipefs --all "/dev/$target"* # 1> /dev/null
 	dd if=/dev/zero of="/dev/$target" bs=1M count=1024
 
 	return 0
@@ -317,9 +319,9 @@ function _prepTarget() {
 function _instPacstrap() {
 	_msg "Pacstraping with $pacmanConf"
 
-	pacman -Scc --noconfirm 1> /dev/null
-	pacman -Syy --config "$pacmanConf" 1> /dev/null
-	pacstrap -KMC "$pacmanConf" /mnt base linux linux-firmware mkinitcpio grub 1> /dev/null
+	pacman -Scc --noconfirm # 1> /dev/null
+	pacman -Syy --config "$pacmanConf" # 1> /dev/null
+	pacstrap -KMC "$pacmanConf" /mnt base linux linux-firmware mkinitcpio grub # 1> /dev/null
 
 	return 0
 }
