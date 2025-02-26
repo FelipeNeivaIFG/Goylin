@@ -4,8 +4,8 @@ pkgdesc='Goylin: Intel'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group='goylin'
 
-pkgver=24.5
-pkgrel=1
+pkgver=25.0
+pkgrel=0
 arch=('x86_64')
 
 source=('mkinitcpio.conf')
@@ -13,21 +13,22 @@ source=('mkinitcpio.conf')
 md5sums=('SKIP')
 
 depends=(
-	'intel-ucode'
-	'mesa'
-	'lib32-mesa'
-	'vulkan-intel'
-	'onevpl-intel-gpu'
-	'lib32-vulkan-intel'
-	'intel-media-driver'
-	'libva-intel-driver'
-	'vulkan-mesa-layers'
-	'lib32-vulkan-mesa-layers'
-	'intel-media-sdk'
-	'intel-compute-runtime'
-	'lib32-vulkan-icd-loader'
-	'opencl-rusticl-mesa'
-	'lib32-opencl-rusticl-mesa'
+	'mkinitcpio'	# Modular initramfs image creation utility
+	'intel-ucode'	# Microcode update files for Intel CPUs
+	'mesa'	# Open-source OpenGL drivers
+	'lib32-mesa'	# Open-source OpenGL drivers - 32-bit
+	'vulkan-intel'	# Open-source Vulkan driver for Intel GPUs
+	'lib32-vulkan-intel'	#  Open-source Vulkan driver for Intel GPUs - 32-bit
+	'vpl-gpu-rt'	# Intel VPL runtime implementation for Intel GPUs (Tiger Lake and newer)
+	'intel-media-driver'	# Intel Media Driver for VAAPI — Broadwell+ iGPUs
+	'libva-intel-driver'	# VA-API implementation for Intel G45 and HD Graphics family
+	'vulkan-mesa-layers'	# Mesa's Vulkan layers
+	'lib32-vulkan-mesa-layers'	# Mesa's Vulkan layers - 32-bit
+	'intel-media-sdk'	# Legacy API for hardware video acceleration on Intel GPUs (Broadwell to Rocket Lake)
+	'intel-compute-runtime'	# Intel(R) Graphics Compute Runtime for oneAPI Level Zero and OpenCL(TM) Driver
+	'vulkan-icd-loader'	# Vulkan Installable Client Driver (ICD) Loader
+	'lib32-vulkan-icd-loader'	# Vulkan Installable Client Driver (ICD) Loader - 32-bit
+	'libvdpau-va-gl'	# VDPAU driver with OpenGL/VAAPI backend
 )
 
 install='pkg.install'
