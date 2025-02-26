@@ -39,8 +39,8 @@ style='Grid'
 
 [com/github/tkashkin/gamehub/ui/appearance]
 dark-theme=true
-grid-card-height=392
-grid-card-width=220
+grid-card-height=320
+grid-card-width=320
 icon-style='Theme-based'
 
 [com/github/tkashkin/gamehub/ui/behavior]

@@ -4,8 +4,8 @@ pkgdesc='Goylin: Game Emulation'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group='goylin'
 
-pkgver=24.5
-pkgrel=2
+pkgver=25.0
+pkgrel=0
 arch=('x86_64')
 
 source=('skel.tar' 'games.tar' '90_gamehub')
@@ -17,31 +17,32 @@ md5sums=('SKIP' 'SKIP' 'SKIP')
 install='pkg.install'
 
 depends=(
-	'gamehub-bin'
-	'retroarch'
+	'gamehub-bin'	#!! AUR !!# Games manager, downloader, library that supports GOG, Steam and Humble Bundle
+	'retroarch'	# Reference frontend for the libretro API
+	'innoextract'	# A tool to extract installers created by Inno Setup
 	#
-	'innoextract'
-	'wine'
-	'dosbox'
-	'retroarch-assets-glui'
-	'retroarch-assets-ozone'
-	'retroarch-assets-xmb'
-	'gamemode'
-	'libdecor'
-	'python'
-	'libretro-core-info'
-	'libretro-overlays'
-	'libretro-shaders'
-	'libretro-shaders-slang'
+	'retroarch-assets-glui'	# retroarch - XMB menu assets
+	'retroarch-assets-ozone'	# retroarch - Ozone menu assets
+	'retroarch-assets-xmb'	# retroarch - XMB menu assets
+	'libretro-core-info'	# retroarch - Libretro core info files
+	'libretro-shaders-slang'	# retroarch - Collection of shaders for libretro
+	'gamemode'	# retroarch - GameMode support
+	'libdecor'	# retroarch - Wayland decorations
+	'libretro-overlays'	# retroarch - Collection of overlays
+	'libretro-shaders'	# retroarch - Collection of shaders
+	'python'	# retroarch - retroarch-cg2glsl
+	'wine'	# A compatibility layer for running Windows programs
+	'dosbox'	# Emulator with builtin DOS for running DOS Games
+	#
 	'libretro-genesis-plus-gx' # Genesis / Mega Drive / Master System
 	'libretro-mgba' # Game Boy Advanced
 	'libretro-mupen64plus-next' # Nintendo 64
 	'libretro-sameboy' # Gameboy / Gameboy Color
 	'libretro-bsnes' # Snes
+	'libretro-desmume' # Nintendo DS
 	# 'libretro-scummvm' # ScumVM
 	# 'libretro-beetle-psx' # Playstation
 	# 'libretro-citra' # Nintendo 3DS
-	# 'libretro-desmume' # Nintendo DS
 	# 'libretro-dolphin' # Nintendo Wii
 	# 'libretro-flycast' # Sega Dreamcast
 	# 'libretro-kronos' # Sega Saturn
