@@ -4,23 +4,37 @@ pkgdesc='Goylin: Fonts'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.5
-pkgrel=1
+pkgver=25.0
+pkgrel=0
 arch=('x86_64')
 
 depends=(
+	'font-manager'	# A simple font management application for GTK+ Desktop Environments
 	'adobe-source-sans-fonts'
-	'ttf-ms-fonts'
 	'adobe-source-serif-fonts'
 	'ttf-dejavu-nerd'
-	'ttf-liberation'
+	'ttf-liberation-mono-nerd'
 	'ttf-carlito'
 	'ttf-hack-nerd'
 	'otf-hermit-nerd'
 	'adobe-source-code-pro-fonts'
 	'ttf-roboto-mono-nerd'
 	'ttf-droid'
-	'ttf-dejavu'
 	'gnu-free-fonts'
-	'ttf-font'
+	'ttf-caladea'
+	'noto-fonts'
+	'ttf-opensans'
+	'otf-overpass-nerd'
+	'tex-gyre-fonts'
+	'ttf-ubuntu-font-family'
+	'ttf-bitstream-vera'
+	'ttf-inconsolata'
+	'ttf-freefont'
+	'ttf-libertinus'
+	'ttf-ms-fonts' #!! AUR !!#
+	'ttf-impallari-cantora' #!! AUR !!#
+	'ttf-courier-prime' #!! AUR !!#
+	'ttf-gelasio-ib' #!! AUR !!#
+	'ttf-merriweather' #!! AUR !!#
+	'ttf-signika' #!! AUR !!#
 )
