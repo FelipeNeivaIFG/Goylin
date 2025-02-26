@@ -4,11 +4,12 @@ pkgdesc='Goylin: Game Dev Apps'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.5
-pkgrel=1
+pkgver=25.0
+pkgrel=0
 arch=('x86_64')
 
 depends=(
-	'godot'
-	'gb-studio-bin'
+	'godot'	# Advanced cross-platform 2D and 3D game engine
+	'gb-studio-bin'	#!! AUR !!# Visual retro game maker
+	'gdevelop-bin'	#!! AUR !!# A full-featured, no-code, open-source game development software.
 )
