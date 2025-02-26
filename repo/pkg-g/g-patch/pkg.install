@@ -5,13 +5,20 @@ _removeHomeFile () {
 		userHome=$(basename $userInHome)
 		[ -f /home/"$userHome"/"$1" ] && rm -vf /home/"$userHome"/"$1"
 	done
-	rm -vf /etc/skel/"$1"
+	[ -f /etc/skel/"$1" ] rm -vf /etc/skel/"$1"
+}
+
+_cleanHome () {
+	for userInHome in /home/*; do
+		userHome=$(basename $userInHome)
+		rm -rvf /home/"$userHome"/.*
+		rm -vf /home/"$userHome"/Desktop/*.desktop
+	done
 }
 
 post_upgrade() {
-	# _removeHomeFile '.config/ardour8/config'
-	chattr -i /etc/resolv.conf
-	systemctl enable systemd-resolved --now
-	systemctl enable avahi-daemon --now
-	chattr -i /etc/cups/printers.conf
+	_cleanHome
 }
+
+# post_install() {
+# }
