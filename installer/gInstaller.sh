@@ -125,7 +125,7 @@ function _setProfile() {
 	_msgOpt "4) Radio"
 	_msgOpt "5) Gremio"
 	_msgOpt "6) Library"
-	_msgOpt "7) Informatica"
+	_msgOpt "7) IT"
 	_msgOpt "*) Base"
 	read -p '?: ' -e optProfile
 

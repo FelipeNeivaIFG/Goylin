@@ -225,14 +225,14 @@ function _pLibrary() {
 }
 
 function _pInf() {
-	# ~
-	_msgInfo "###   Profile: Info   ###"
+	# ~30GB
+	_msgInfo "###   Profile: Inf   ###"
 
 	_msg "App: Code"; _install_PKG gapp-code
 	_msg "App: CLI"; _install_PKG gapp-cli
 	_msg "App: Game Dev"; _install_PKG gapp-gameDev
 
-	_msg "Profile"; _install_PKG gp-info
+	_msg "Profile"; _install_PKG gp-inf
 }
 
 function _pkgProfile() {
