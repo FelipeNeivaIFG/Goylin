@@ -10,6 +10,7 @@ _unlockGFiles() {
 
 _setProfile() {
 	sed -i "s/core/gremio/g" /usr/lib/os-release
+	sed -i "s/user-session=plasma$/user-session=plasmax11/g" /etc/lightdm/lightdm.conf
 }
 
 post_install() {
