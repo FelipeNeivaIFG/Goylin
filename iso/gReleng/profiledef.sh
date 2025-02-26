@@ -2,7 +2,7 @@
 # shellcheck disable=SC2034
 
 iso_name="Goylin"
-iso_label="Goylin_Nubo"
+iso_label="Goylin_Pluvo"
 iso_publisher="Goylin"
 iso_application="Goylin Installer"
 iso_version="$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%d.%m.%y)_24_4"
