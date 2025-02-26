@@ -2,19 +2,16 @@
 
 _lockGFiles() {
 	chattr +i /usr/lib/os-release
-	chattr +i /etc/xdg/kdeglobals
 	chattr +i /etc/lightdm/lightdm.conf
 }
 
 _unlockGFiles() {
 	chattr -i /usr/lib/os-release
-	chattr -i /etc/xdg/kdeglobals
 	chattr -i /etc/lightdm/lightdm.conf
 }
 
 _setProfile() {
 	sed -i "s/core/radio/g" /usr/lib/os-release
-	sed -i "s/goylin.desktop/goylindark.desktop/g" /etc/xdg/kdeglobals
 	sed -i "s/user-session=plasma$/user-session=plasmax11/g" /etc/lightdm/lightdm.conf
 }
 

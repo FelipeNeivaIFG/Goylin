@@ -4,8 +4,8 @@ pkgdesc='Goylin: Profile - Radio'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.5
-pkgrel=3
+pkgver=25.0
+pkgrel=0
 arch=('x86_64')
 
 source=('skel.tar')
@@ -17,7 +17,6 @@ md5sums=('SKIP')
 install='pkg.install'
 
 depends=(
-	'realtime-generic-setup'
 	'jacktrip'
 )
 
