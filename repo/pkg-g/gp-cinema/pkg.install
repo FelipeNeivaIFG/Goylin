@@ -2,26 +2,16 @@
 
 _lockGFiles() {
 	chattr +i /usr/lib/os-release
-	chattr +i /etc/xdg/kdeglobals
 	chattr +i /etc/lightdm/lightdm.conf
 }
 
 _unlockGFiles() {
 	chattr -i /usr/lib/os-release
-	chattr -i /etc/xdg/kdeglobals
 	chattr -i /etc/lightdm/lightdm.conf
-}
-
-_removeHomeFile () {
-	for userInHome in /home/*; do
-		userHome=$(basename $userInHome)
-		[ -f /home/"$userHome"/"$1" ] && rm -vf /home/"$userHome"/"$1"
-	done
 }
 
 _setProfile() {
 	sed -i "s/core/cinema/g" /usr/lib/os-release
-	sed -i "s/goylin.desktop/goylindark.desktop/g" /etc/xdg/kdeglobals
 	sed -i "s/user-session=plasma$/user-session=plasmax11/g" /etc/lightdm/lightdm.conf
 }
 
@@ -34,6 +24,5 @@ post_install() {
 post_upgrade() {
 	_unlockGFiles
 	_setProfile
-	_removeHomeFile .dmrc
 	_lockGFiles
 }

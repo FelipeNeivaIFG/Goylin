@@ -2,5 +2,5 @@
 Icon=network-server
 Name[pt_BR]=CinemaServer
 Name=CinemaServer
-Type=Link
-URL[$e]=smb://goi118634/CinemaServer
+Type=Application
+Exec=dolphin smb://goi118634/CinemaServer
