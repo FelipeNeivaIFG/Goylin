@@ -4,10 +4,9 @@ pkgdesc='Goylin: Audio Apps'
 url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
-pkgver=24.5
-pkgrel=4
+pkgver=25.0
+pkgrel=0
 arch=('x86_64')
-
 source=('skel.tar')
 
 noextract=('skel.tar')
@@ -15,40 +14,42 @@ noextract=('skel.tar')
 md5sums=('SKIP')
 
 depends=(
-	'audacity'
-	'audacity-plugins'
-	'ardour'
-	'mixxx'
-	'lmms'
-	'bespokesynth'
-	'carla'
-	# 'catia-git' - Broken on Wayland? Carla can do the Job just fine.
-	## Behringer
-	x32edit
-	xairedit
+	'audacity' # A program that lets you manipulate digital audio waveforms
+	'ardour' # Professional-grade digital audio workstation
+	'mixxx' # Free, open source software for digital DJing
+	'lmms' # The Linux MultiMedia Studio
+	'bespokesynth' # A software modular synth
+	'carla' # Audio Plugin Host
+	'musescore'	# Create, play and print beautiful sheet music
+	# 'zynaddsubfx'	# Opensource software synthesizer capable of making a countless number of instruments.
+	# 'hydrogen'	# An advanced drum machine
+	'cardinal' # Virtual modular synthesizer
+	'qjackctl'	# A Qt front-end for the JACK low-latency audio server
+	'audiofile'	# Silicon Graphics Audio File Library
+	'jack-keyboard'	#!! AUR !!#	Virtual MIDI keyboard that uses JACK MIDI.
+	'x32edit'	#!! AUR !!#	Remote control and programm Behringer X32 consoles
+	'xairedit'	#!! AUR !!#	Remote control program for Behringer X-AIR mixers
+	'realtime-generic-setup'	#!! AUR !!#	Generic realtime setup configuration
+	'spotdl'	#!! AUR !! Download your Spotify playlists and songs along with album art and metadata (from YouTube if a match is found).
 	#
-	'lmms-orgmaker-samples'
-	'leet-plugins'
-	'harvid'
-	'xjadeo'
-	'ffmpeg'
-	'lib32-gcc-libs'
-	'lib32-glibc'
-	'xdg-desktop-portal-impl'
-	'lv2-host'
-	'vst-host'
-	'python-requests'
-	'python-tornado'
-	'cardinal'
-	'cardinal-clap'
-	'cardinal-data'
-	'cardinal-lv2'
-	'cardinal-vst'
-	'cardinal-vst3'
-	#
-	'alsa-plugins'
-	'alsa-firmware'
-	'sof-firmware'
+	'audacity-plugins' #!! AUR !!#	audacity - Additional Nyquist plugins for Audacity
+	'ffmpeg' # audacity - for additional import/export capabilities
+	'lame'	# musescore # MP3 export
+	'lmms-orgmaker-samples'	#!! AUR !!# lmms - The set of samples used in Cave Story and other Pixel games.
+	'leet-plugins'	#!! AUR !!#	ardour - LADSPA plugins especially for use with Ardour
+	'harvid'	# ardour - for video timeline and MP3 export
+	'xjadeo'	# ardour - for video monitoring
+	'lib32-gcc-libs'	# lmms - VST plugin support
+	'lib32-glibc'	# lmms - VST plugin support
+	'wine'	# lmms - VST plugin support
+	'python-requests'	# carla - for qtweb backend
+	'python-tornado'	# carla - for MOD UI
+	'python-jedi'	# bespokesynth - for code completion
+	'cardinal-clap'	# cardinal - CLAP plugin
+	'cardinal-data'	# cardinal - data
+	'cardinal-lv2'	# cardinal - LV2 plugin
+	'cardinal-vst'	# cardinal - VST2 plugin
+	'cardinal-vst3'	# cardinal - VST3 plugin
 )
 
 package() {
