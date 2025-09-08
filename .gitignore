@@ -4,8 +4,5 @@ design/goylin/greeter_background.xcf
 design/goylin/boot_splash.xcf
 
 installer/utils/secrets.sh
-installer/utils/pacman_goylin.conf
-installer/etc/hosts
-installer/etc/systemd/timesyncd.conf
 
 utils/pacman_dev.conf

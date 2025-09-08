@@ -129,7 +129,7 @@ function _pBase() {
 function _pAdm() {
 	_msgInfo "###   Profile: Administrative   ###"
 
-	_msg "Printer"; _install_PKG g-printer
+	_msg "Printer"; _install_PKG g-printerGOI
 	_msg "App: Administrative"; _install_PKG gapp-adm
 
 	_msg "Profile"; _install_PKG gp-adm
@@ -143,10 +143,93 @@ function _pLibrary() {
 	_msg "Profile"; _install_PKG gp-lib
 }
 
+function _pCinema() {
+	_msgInfo "###   Profile: Cinema   ###"
+
+	_msg "App: Audio"; _install_PKG gapp-audio
+	_msg "App: Write"; _install_PKG gapp-write
+	_msg "App: Photo"; _install_PKG gapp-photo
+	_msg "App: Design"; _install_PKG gapp-design
+	_msg "App: Animation"; _install_PKG gapp-anim
+	_msg "App: VFX"; _install_PKG gapp-vfx
+	_msg "App: Video"; _install_PKG gapp-video
+	_msg "App: CLI"; _install_PKG gapp-cli
+
+	_msg "Profile"; _install_PKG gp-cinema
+	_msg "DarkMode"; _install_PKG gp-dark
+}
+
+function _pAgro() {
+	_msgInfo "###   Profile: Agro   ###"
+
+	_msg "App: Cad"; _install_PKG gapp-cad
+	_msg "App: Geo"; _install_PKG gapp-geo
+	_msg "App: Data"; _install_PKG gapp-data
+	_msg "App: Design"; _install_PKG gapp-design
+
+	_msg "Profile"; _install_PKG gp-agro
+}
+
+function _pArt() {
+	_msgInfo "###   Profile: Teach   ###"
+
+	_msg "Printer"; _install_PKG g-printer
+	_msg "App: Design"; _install_PKG gapp-design
+	_msg "App: VFX"; _install_PKG gapp-vfx
+
+	_msg "Profile"; _install_PKG gp-art
+	_msg "DarkMode"; _install_PKG gp-dark
+}
+
+function _pComputing() {
+	_msgInfo "###   Profile: Computing   ###"
+
+	_msg "App: Code"; _install_PKG gapp-code
+	_msg "App: CLI"; _install_PKG gapp-cli
+	_msg "App: Educational"; _install_PKG gapp-edu
+	_msg "App: Geo"; _install_PKG gapp-geo
+	_msg "App: Data"; _install_PKG gapp-data
+	_msg "App: Cad"; _install_PKG gapp-cad
+	_msg "App: Design"; _install_PKG gapp-design
+
+	_msg "Profile"; _install_PKG gp-comp
+}
+
+function _pTeach() {
+	_msgInfo "###   Profile: Teach   ###"
+
+	_msg "Printer"; _install_PKG g-printerGOI
+	_msg "App: Administrative"; _install_PKG gapp-adm
+	_msg "App: Educational"; _install_PKG gapp-edu
+
+	_msg "Profile"; _install_PKG gp-teach
+}
+
+function _pRadio() {
+	_msgInfo "###   Profile: Radio   ###"
+
+	_msg "App: Audio"; _install_PKG gapp-audio
+	_msg "App: Photo"; _install_PKG gapp-photo
+	_msg "App: Design"; _install_PKG gapp-design
+	_msg "App: VFX"; _install_PKG gapp-vfx
+	_msg "App: Video"; _install_PKG gapp-video
+	_msg "Printer"; _install_PKG g-printerGOI
+	_msg "App: CLI"; _install_PKG gapp-cli
+
+	_msg "Profile"; _install_PKG gp-radio
+	_msg "DarkMode"; _install_PKG gp-dark
+}
+
 function _pkgProfile() {
 	case $profile in
 		"adm") _pAdm;;
 		"lib") _pLibrary;;
+		"cine") _pCinema;;
+		"agro") _pAgro;;
+		"art") _pArt;;
+		"comp") _pComputing;;
+		"teach") _pTeach;;
+		"radio") _pRadio;;
 		*);;
 	esac
 }

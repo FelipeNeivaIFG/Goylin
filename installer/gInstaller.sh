@@ -106,12 +106,24 @@ function _setProfile() {
 	_msg "Profile:"
 	_msgOpt "1) Administrative"
 	_msgOpt "2) Library"
+	_msgOpt "3) Cinema"
+	_msgOpt "4) Agro"
+	_msgOpt "5) Art"
+	_msgOpt "6) Computing"
+	_msgOpt "7) Teach"
+	_msgOpt "8) Radio"
 	_msgOpt "*) Base"
 	read -p '?: ' -e optProfile
 
 	case $optProfile in
 		1) profile="adm";;
 		2) profile="lib";;
+		3) profile="cine";;
+		4) profile="agro";;
+		5) profile="art";;
+		6) profile="comp";;
+		7) profile="teach";;
+		8) profile="radio";;
 		*) profile="base";;
 	esac
 

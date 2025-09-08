@@ -15,9 +15,7 @@ sudo pacman -S --needed bash coreutils util-linux pacman arch-install-scripts gr
 Arquivos com sufixo `.proto` devem ser configurados e renomeados.
 
 - installer/utils/secrets.sh.proto
-- installer/utils/pacman_goylin.conf.proto
 - utils/pacman_dev.conf.proto
-- installer/etc/hosts.proto
 
 
 ## Instalador - installer/
