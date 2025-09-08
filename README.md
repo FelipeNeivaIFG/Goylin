@@ -39,10 +39,10 @@ sudo ./goylin-installer.sh [-d] [-l] [-*]
 Sem a flag `-d`, o script solicita:
 
 - **Dispositivo Alvo**: Ex.: `sda`, `nvme0n1`.
-- **Tipo de Alvo**: HDD, NVMe ou SSD (padrão: SSD).
+- **Tipo de Alvo**: HDD, NVMe ou SSD (padrão: `SSD`).
 - **Manter Partição Home**: `y` ou `N`.
 - **Tipo de CPU**: AMD, Intel ou Intel sem Vulkan (padrão: Intel sem Vulkan, para `Intel HD Graphics 4000` ou inferior).
-- **Perfil**: (padrão: Base).
+- **Perfil**: Perfil de instalação (padrão: `Base`).
 
 
 ## Contribuição
