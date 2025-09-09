@@ -1,0 +1,7 @@
+base
+linux
+linux-zen
+linux-lts
+linux-firmware
+mkinitcpio
+grub
