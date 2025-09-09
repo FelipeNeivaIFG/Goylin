@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo "gSysSyncTime: Start"
+
+# Ensure old PCs without BIOS battery have the correct timedate
+timedatectl set-ntp true
+hwclock --systohc
+
+echo "gSysSyncTime: Done"
+exit 0

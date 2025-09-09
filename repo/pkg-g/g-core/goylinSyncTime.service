@@ -1,0 +1,11 @@
+[Unit]
+Description=Goylin: Sync timedate
+After=network-online.target
+Before=plymouth-quit.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/gSysSyncTime
+
+[Install]
+WantedBy=multi-user.target

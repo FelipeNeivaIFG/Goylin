@@ -1,0 +1,47 @@
+#!/bin/bash
+
+plymouth change-mode --system-upgrade
+
+gSysUpdateMsg="Procurando atualizações..."
+echo "gSysShutDown: ${gSysUpdateMsg}"
+plymouth display-message --text="${gSysUpdateMsg}"
+[ -f /var/lib/pacman/db.lck ] && rm -vf /var/lib/pacman/db.lck
+pacman -Sy
+
+gSysUpdateMsg="Atualizando Configurações do Sistema..."
+echo "gSysShutDown: ${gSysUpdateMsg}"
+plymouth display-message --text="${gSysUpdateMsg}"
+pacman -S --overwrite "*" --noconfirm --needed g-patch
+pacman -S --overwrite "*" --noconfirm --needed $(pacman -Qe | grep "^g-" | cut -d" " -f1)
+
+gSysUpdateMsg="Atualizando lista de programas..."
+echo "gSysShutDown: ${gSysUpdateMsg}"
+plymouth display-message --text="${gSysUpdateMsg}"
+pacman -S --overwrite "*" --noconfirm --needed $(pacman -Qe | grep "^gapp-" | cut -d" " -f1)
+
+gSysUpdateMsg="Atualizando perfil..."
+echo "gSysShutDown: ${gSysUpdateMsg}"
+plymouth display-message --text="${gSysUpdateMsg}"
+pacman -S --overwrite "*" --noconfirm --needed $(pacman -Qe | grep "^gp-" | cut -d" " -f1)
+
+gSysUpdateMsg="Atualizando pacotes..."
+echo "gSysShutDown: ${gSysUpdateMsg}"
+plymouth display-message --text="${gSysUpdateMsg}"
+pacman -Su --noconfirm --needed
+
+gSysUpdateMsg="Removendo orfãos..."
+echo "gSysShutDown: ${gSysUpdateMsg}"
+plymouth display-message --text="${gSysUpdateMsg}"
+pacman -Rsn $(pacman -Qtdq) --noconfirm
+
+gSysUpdateMsg="Limpando Cache..."
+echo "gSysShutDown: ${gSysUpdateMsg}"
+plymouth display-message --text="${gSysUpdateMsg}"
+pacman -Scc --noconfirm
+
+gSysUpdateMsg="Desligando..."
+echo "gSysShutDown: ${gSysUpdateMsg}"
+plymouth display-message --text="${gSysUpdateMsg}"
+
+echo "gSysShutDown: Done"
+exit 0

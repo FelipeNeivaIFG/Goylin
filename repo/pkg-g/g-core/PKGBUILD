@@ -1,0 +1,118 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='g-core'
+pkgdesc='Goylin: Core'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group=('goylin')
+
+pkgver=26.0
+pkgrel=0
+arch=('x86_64')
+
+source=(
+	'sudoers'
+	'os-release'
+	'issue'
+	'motd'
+	'grub'
+	'gSysStartUp'
+	'gSysShutDown'
+	'gSysSyncTime'
+	'goylinUp.service'
+	'goylinDown.service'
+	'goylinSyncTime.service'
+	'vconsole.conf'
+	'plyGoylin.plymouth'
+	'plymouthd.defaults'
+	'sleep.conf'
+	'sshd_config'
+	'goylin.tar'
+)
+
+noextract=('goylin.tar')
+
+md5sums=(
+	'SKIP' 'SKIP' 'SKIP' 'SKIP'
+	'SKIP' 'SKIP' 'SKIP' 'SKIP'
+	'SKIP' 'SKIP' 'SKIP' 'SKIP'
+	'SKIP' 'SKIP' 'SKIP' 'SKIP'
+	'SKIP'
+)
+
+install='pkg.install'
+
+depends=(
+	'linux-firmware'	# linux - firmware images needed for some devices
+	'coreutils'	# The basic file, shell and text manipulation utilities of the GNU operating system
+	'wireless-regdb'	# linux - to set the correct wireless channels of your country
+	'grub'	# GNU GRand Unified Bootloader
+	'terminus-font'	# Monospace bitmap font (for X11 and console)
+	'sudo'	# Give certain users the ability to run some commands as root
+	'openssh'	# SSH protocol implementation for remote login, command execution and file transfer
+	'plymouth'	# Graphical boot splash screen
+	'bash-completion'	# Programmable completion for the bash shell
+	'vim'	# Vi Improved, a highly configurable, improved version of the vi text editor
+	'nano'	# Pico editor clone with enhancements
+	'dosfstools'	# DOS filesystem utilities
+	'mtools'	# A collection of utilities to access MS-DOS disks
+	'networkmanager'	# Network connection manager and user applications
+	'rsync'	# A fast and versatile file copying tool for remote and local files
+	'tldr'	# Command line client for tldr, a collection of simplified man pages.
+	'wget'	# Network utility to retrieve files from the Web
+	'ca-certificates'	# Common CA certificates - default providers
+	'man-db'	# A utility for reading man pages
+	'man-pages'	# Linux man pages
+	'man-pages-pt_br'	# Brazilian Portuguese man pages
+	'broadcom-wl'	# Broadcom 802.11 Linux STA wireless driver
+	'smartmontools'	# Control and monitor S.M.A.R.T. enabled ATA and SCSI Hard Drives
+	'btrfs-progs'	# Btrfs filesystem utilities
+	'exfatprogs'	# Ext2/3/4 filesystem utilities
+	'f2fs-tools'	# Tools for Flash-Friendly File System (F2FS)
+	'ntfs-3g'	# NTFS filesystem driver and utilities
+	'udftools'	# Linux tools for UDF filesystems and DVD/CD-R(W) drives
+	'xfsprogs'	# XFS filesystem utilities
+	'e2fsprogs'	# Ext2/3/4 filesystem utilities
+	'nfs-utils'	# Support programs for Network File Systems
+	'usbutils'	# A collection of USB tools to query connected USB devices
+	'avahi'	# Service Discovery for Linux using mDNS/DNS-SD
+	'libusb'	# Library that provides generic access to USB devices
+	'pcsclite'	# PC/SC Architecture smartcard middleware library
+	'ccid'	# A generic USB Chip/Smart Card Interface Devices driver
+	'gnutls'	# A library which provides a secure layer over a reliable transport layer
+	'nettle' # A low-level cryptographic library
+	'sdl2-compat'	# An SDL2 compatibility layer that uses SDL3 behind the scenes
+	'ddcutil' 	# Query and change Linux monitor settings using DDC/CI and USB.
+	# AUR #
+	'b43-firmware'	# Firmware for Broadcom B43 wireless networking chips
+	# OPT DEPS #
+	'python-gobject'	# avahi - avahi-bookmarks, avahi-discover
+)
+
+package() {
+	install -Dm 440 -t ${pkgdir}/etc/ sudoers
+	install -Dm 644 -t ${pkgdir}/etc/ issue
+	install -Dm 644 -t ${pkgdir}/etc/ motd
+	install -Dm 644 -t ${pkgdir}/etc/ vconsole.conf
+
+	install -Dm 644 -t ${pkgdir}/etc/default/ grub
+
+	install -Dm 644 -t ${pkgdir}/etc/systemd/ sleep.conf
+
+	install -Dm 644 -t ${pkgdir}/etc/systemd/system/ goylinUp.service
+	install -Dm 644 -t ${pkgdir}/etc/systemd/system/ goylinDown.service
+	install -Dm 644 -t ${pkgdir}/etc/systemd/system/ goylinSyncTime.service
+
+	install -Dm 644 -t ${pkgdir}/etc/ssh/ sshd_config
+
+	install -Dm 754 -t ${pkgdir}/usr/sbin/ gSysStartUp
+	install -Dm 754 -t ${pkgdir}/usr/sbin/ gSysShutDown
+	install -Dm 754 -t ${pkgdir}/usr/sbin/ gSysSyncTime
+
+	install -Dm 644 -t ${pkgdir}/usr/lib/ os-release
+
+	install -Dm 644 -t ${pkgdir}/usr/share/plymouth/themes/plyGoylin/ plyGoylin.plymouth
+	install -Dm 644 -t ${pkgdir}/usr/share/plymouth/ plymouthd.defaults
+
+	install -Dm 644 -t ${pkgdir}/usr/share/goylin/ goylin.tar
+	tar xf ${pkgdir}/usr/share/goylin/goylin.tar --overwrite --directory=${pkgdir}/usr/share/goylin/
+	rm ${pkgdir}/usr/share/goylin/goylin.tar
+}

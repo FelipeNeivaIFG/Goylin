@@ -1,0 +1,11 @@
+[Unit]
+Description=Goylin: Startup System
+After=plymouth-start.service
+Before=display-manager.service plymouth-quit.service network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/gSysStartUp
+
+[Install]
+WantedBy=multi-user.target

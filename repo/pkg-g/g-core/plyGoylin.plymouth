@@ -1,0 +1,52 @@
+[Plymouth Theme]
+Name=plyGoylin
+Description=Simple theme that shows a rotating infinity sign in the center of the screen
+ModuleName=two-step
+
+[two-step]
+Font=Cantarell Light 24
+TitleFont=Cantarell Light 30
+ScaleBackgroundImage=false
+ImageDir=/usr/share/plymouth/themes//spinfinity
+BackgroundStartColor=0x0d270c
+BackgroundEndColor=0x010000
+WatermarkHorizontalAlignment=0.5
+WatermarkVerticalAlignment=0.5
+HorizontalAlignment=0.5
+VerticalAlignment=0.55
+ProgressBarHorizontalAlignment=0.5
+ProgressBarVerticalAlignment=1.0
+ProgressBarWidth=1920
+ProgressBarHeight=16
+ProgressBarBackgroundColor=0x0d270cff
+ProgressBarForegroundColor=0x37a033ff
+MessageBelowAnimation=true
+DialogClearsFirmwareBackground=true
+
+[boot-up]
+UseProgressBar=true
+UseAnimation=true
+
+[shutdown]
+UseProgressBar=true
+UseAnimation=true
+
+[reboot]
+UseProgressBar=true
+UseAnimation=true
+
+[updates]
+UseProgressBar=true
+UseAnimation=true
+
+[system-upgrade]
+UseProgressBar=true
+UseAnimation=true
+
+[firmware-upgrade]
+UseProgressBar=true
+UseAnimation=true
+
+[system-reset]
+UseProgressBar=true
+UseAnimation=true
