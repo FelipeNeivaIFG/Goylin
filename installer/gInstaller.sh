@@ -305,17 +305,18 @@ function _instFiles() {
 	chattr +i /mnt/etc/systemd/timesyncd.conf
 	install -Dm 644 -t /mnt/etc/sysctl.d/ etc/sysctl.d/99-swapiness.conf
 
+	install -Dm 644 -t /mnt/etc utils/pacman_goylin.conf
+
 	if [ $devInstall -eq 0 ]; then
-		install -Dm 644 -t /mnt/etc utils/pacman_goylin.conf
 		mv -f /mnt/etc/pacman_goylin.conf /mnt/etc/pacman.conf
 	else
 		_msgAlert "Dev Build pacman.conf"
-		install -Dm 644 -t /mnt/etc utils/pacman_goylin.conf
 	
 		install -Dm 644 -t /mnt/etc ../utils/pacman_dev.conf
 		mv -f /mnt/etc/pacman_dev.conf /mnt/etc/pacman.conf
-		chattr +i /mnt/etc/pacman.conf
 	fi
+
+	chattr +i /mnt/etc/pacman.conf
 }
 
 function _instFstab() {
