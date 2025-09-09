@@ -301,7 +301,7 @@ function _instFiles() {
 	chattr +i /mnt/etc/locale.conf
 	install -Dm 644 -t /mnt/etc/ etc/locale.gen
 	chattr +i /mnt/etc/locale.gen
-	install -Dm 644 -t /mnt/etc/systemd/ /etc/systemd/timesyncd.conf
+	install -Dm 644 -t /mnt/etc/systemd/ etc/systemd/timesyncd.conf
 	chattr +i /mnt/etc/systemd/timesyncd.conf
 	install -Dm 644 -t /mnt/etc/sysctl.d/ etc/sysctl.d/99-swapiness.conf
 
