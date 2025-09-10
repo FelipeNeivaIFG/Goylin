@@ -1,6 +1,7 @@
 .secrets/
 
 *.tar
+*.tar.gz
 *.log
 
 design/goylin/greeter_background.xcf
