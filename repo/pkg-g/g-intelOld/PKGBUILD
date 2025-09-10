@@ -23,6 +23,4 @@ depends=(
 
 install='pkg.install'
 
-package() {
-	install -Dm 644 -t ${pkgdir}/etc/ mkinitcpio.conf
-}
+package() { install -Dm 644 -t ${pkgdir}/etc/ mkinitcpio.conf; }

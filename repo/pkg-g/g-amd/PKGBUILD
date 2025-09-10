@@ -8,10 +8,6 @@ pkgver=26.0
 pkgrel=0
 arch=('x86_64')
 
-source=('mkinitcpio.conf')
-
-md5sums=('SKIP')
-
 depends=(
 	'mkinitcpio'	# Modular initramfs image creation utility
 	'amd-ucode'	# Microcode update files for Amd CPUs
@@ -26,9 +22,3 @@ depends=(
 	'lib32-vulkan-icd-loader'	# Vulkan Installable Client Driver (ICD) Loader - 32-bit
 	'vulkan-validation-layers'	# Vulkan Validation Layers
 )
-
-install='pkg.install'
-
-package() {
-	install -Dm 644 -t ${pkgdir}/etc/ mkinitcpio.conf
-}
