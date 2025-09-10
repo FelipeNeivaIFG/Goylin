@@ -86,9 +86,13 @@ function _prepare() {
 		pkg-a)
 			pkgRepo="${aRepoName}";
 			cd "${pkgType}"
-			# [[ ${aurUpdate} -eq 1  && -d "${pkgName}"]] && _aurVerCheck
+
+			if [[ ${aurUpdate} -eq 1  && -d "${pkgName}" ]]; then
+				[ -f "${pkgName}/gLocked" ] && _msgAlert "AUR pkg has gLocked file" && exit 0
+				_aurVerCheck
+			fi
+
 			[ ! -d "${pkgName}" ] && _aurGitClone
-			[ -f "${pkgName}/gLocked" ] && [ ${aurUpdate} -eq 1 ] && _msgAlert "AUR pkg has gLocked file" && exit 0
 			;;
 	esac
 
