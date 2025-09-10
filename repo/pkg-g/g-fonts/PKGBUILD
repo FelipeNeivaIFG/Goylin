@@ -17,6 +17,7 @@ depends=(
 	'ttf-liberation-mono-nerd'	# Patched monospace font with icons; great for terminals
 	'ttf-bitstream-vera'	# Classic bitmap fonts for legacy compatibility
 	'ttf-hack-nerd'	# Patched mono font for coding/terminals
+	'ttf-dejavu-nerd'	# Patched font Dejavu Sans Mono from nerd fonts library
 	# AUR #
 	'ttf-ms-fonts'	# Critical for compatibility with Microsoft documents
 )
