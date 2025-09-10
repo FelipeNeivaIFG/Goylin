@@ -63,3 +63,13 @@ libva-intel-driver
 amd-ucode
 vulkan-radeon
 lib32-vulkan-radeon
+
+samba
+smbclient
+pam-krb5
+openldap
+bind
+python-pysmbc
+python-dnspython
+python-markdown
+python-cryptography
