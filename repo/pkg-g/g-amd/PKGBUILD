@@ -8,6 +8,10 @@ pkgver=26.0
 pkgrel=0
 arch=('x86_64')
 
+source=('mkinitcpio.conf')
+
+md5sums=('SKIP')
+
 depends=(
 	'mkinitcpio'	# Modular initramfs image creation utility
 	'amd-ucode'	# Microcode update files for Amd CPUs
