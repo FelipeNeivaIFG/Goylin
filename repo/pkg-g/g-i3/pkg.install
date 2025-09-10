@@ -1,0 +1,10 @@
+#!/bin/bash
+
+_remove_files() {
+	[ -f /usr/share/xsessions/i3-with-shmlog.desktop ] && rm /usr/share/xsessions/i3-with-shmlog.desktop
+	[ -f /etc/xdg/autostart/picom.desktop ] && rm /etc/xdg/autostart/picom.desktop
+}
+
+post_install() { _remove_files; }
+
+post_upgrade() { _remove_files; }

@@ -1,0 +1,51 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='g-i3'
+pkgdesc='Goylin: i3 Window Manager'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group=('goylin')
+
+pkgver=26.0
+pkgrel=0
+arch=('x86_64')
+
+source=(
+	'skel.tar'
+	'gi3Theme'
+)
+
+noextract=('skel.tar')
+
+md5sums=('SKIP' 'SKIP')
+
+depends=(
+	'i3-wm'	# Improved dynamic tiling window manager
+	'i3status'	# Generates status bar to use with i3bar, dzen2 or xmobar
+	'dmenu'	# Generic menu for X
+	'kitty'	# A modern, hackable, featureful, OpenGL-based terminal emulator
+	'rofi'	# A window switcher, application launcher and dmenu replacement
+	'maim'	# Utility to take a screenshot using imlib2
+	'picom'	# Lightweight compositor for X11
+	'xwallpaper'	# Wallpaper setting utility for X
+	'python-pywal'	# Generate and change colorschemes on the fly
+	'xorg-xrandr'	# Primitive command line interface to RandR extension
+	'arandr'	# Provide a simple visual front end for XRandR 1.2.
+	'pavucontrol'	# PulseAudio Volume Control
+	'network-manager-applet'	# Applet for managing network connections
+	# AUR #
+	'pa-applet-git'	# PulseAudio control applet
+	# OPT DEPS #
+	'python-pygments'	# kitty - syntax highlighting in kitty +kitten diff
+	'xorg-xprop'	# picom - for picom-trans
+	'xorg-xwininfo' # picom - for picom-trans
+	'ttf-dejavu-nerd' # i3 bar
+)
+
+install='pkg.install'
+
+package() {
+	install -Dm 755 -t ${pkgdir}/usr/bin/ gi3Theme
+
+	install -Dm 644 -t ${pkgdir}/etc/skel skel.tar
+	tar xf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
+	rm ${pkgdir}/etc/skel/skel.tar
+}

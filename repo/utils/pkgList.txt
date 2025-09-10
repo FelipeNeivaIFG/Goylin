@@ -119,6 +119,7 @@ noto-fonts
 ttf-liberation-mono-nerd
 ttf-bitstream-vera
 ttf-hack-nerd
+ttf-dejavu-nerd
 
 dolphin
 dolphin-plugins
@@ -156,3 +157,18 @@ zip
 unarchiver
 unrar
 unzip
+
+i3-wm
+i3status
+dmenu
+kitty
+rofi
+maim
+picom
+xwallpaper
+python-pywal
+xorg-xrandr
+arandr
+pavucontrol
+network-manager-applet
+xorg-xwininfo

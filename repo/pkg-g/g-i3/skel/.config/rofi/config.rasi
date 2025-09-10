@@ -1,0 +1,7 @@
+@import "~/.cache/wal/colors-rofi-dark"
+
+configuration {
+    terminal: "kitty";
+    font: "pango:Terminus 12";
+    show-icons: true;
+}
