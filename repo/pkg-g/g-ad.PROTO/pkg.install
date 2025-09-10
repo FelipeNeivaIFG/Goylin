@@ -1,0 +1,34 @@
+#!/bin/bash
+
+_lockGFiles() {
+	chattr +i /etc/krb5.conf
+	chattr +i /etc/nsswitch.conf
+	chattr +i /etc/security/pam_winbind.conf
+	chattr +i /etc/samba/smb.conf
+	chattr +i /etc/pam.d/su
+	chattr +i /etc/pam.d/system-auth
+}
+
+_unlockGFiles() {
+	chattr -i /etc/krb5.conf
+	chattr -i /etc/nsswitch.conf
+	chattr -i /etc/security/pam_winbind.conf
+	chattr -i /etc/samba/smb.conf
+	chattr -i /etc/pam.d/su
+	chattr -i /etc/pam.d/system-auth
+}
+
+post_install() {
+	systemctl enable smb
+	systemctl enable nmb
+
+	_lockGFiles
+}
+
+pre_upgrade() {
+	_unlockGFiles
+}
+
+post_upgrade() {
+	_lockGFiles
+}

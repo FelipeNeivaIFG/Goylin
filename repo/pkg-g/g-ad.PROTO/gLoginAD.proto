@@ -1,0 +1,109 @@
+#!/bin/bash
+
+set -u
+
+####################################################################################################
+###                                        MSGs                                                  ###
+####################################################################################################
+
+function _msgAlert() { 
+	echo; echo -e "\e[1;31m !: ${1} \e[0m"; echo
+}
+
+function _msg() {
+	echo -e "\e[1;34m >: ${1} \e[0m"
+}
+
+function _msgInfo() {
+	echo; echo -e "\e[1;33m #: ${1} \e[0m"; echo
+}
+
+function _msgOk() {
+	echo; echo -e "\e[1;32m $: ${1} \e[0m"; echo
+}
+
+function _msgOpt() {
+	echo -e "\e[1;32m -- ${1} \e[0m"
+}
+
+####################################################################################################
+###                                        Setup                                                 ###
+####################################################################################################
+
+# Ensure root access
+echo
+[ "$(id -u)" -ne 0 ] && _msgAlert "Run with root permissions: 'sudo !!'" && echo && exit
+systemctl enable --now rustdesk 1> /dev/null
+
+_msgInfo 'Settings:'
+
+# Get new hostname
+_msg 'Hostname:'
+read -p '?: ' -e newHostName; echo
+[ ! $newHostName ] && exit 1
+
+# Get AD admin User/Password
+_msg 'Admin ID:'
+read -p '?: ' -e adminID; echo
+[ ! $adminID ] && exit 1
+_msg 'Admin Password:'
+read -sp '?: ' -e adminPW; echo
+[ ! $adminPW ] && exit 1
+
+# Select AD OU location
+_msg "Location:"
+_msgOpt "1) ADM"
+_msgOpt "*) "
+read -p "?: " -e optLocation
+
+case $optLocation in
+	1) adLocation="/ADM";;
+	_msgOpt "*) COMP. [LOCATION]"
+esac
+
+####################################################################################################
+###                                       Rustdesk                                               ###
+####################################################################################################
+
+_msgInfo 'Rustdesk config:'
+rustdesk --password "[PASSWORD]"
+rustdesk --config "[CONFIG]"
+rustdesk --option allow-remote-config-modification Y
+
+####################################################################################################
+###                                        JoinAD                                                ###
+####################################################################################################
+
+_msgInfo 'Joining AD:'
+
+# Set new hostname
+oldHostName=$(cat /etc/hostname)
+chattr -i /etc/hostname
+chattr -i /etc/hosts
+hostnamectl set-hostname $newHostName
+sed -i "s/${oldHostName}/${newHostName}/g" /etc/hosts
+chattr +i /etc/hostname
+chattr +i /etc/hosts
+
+# Ensure not in domain
+net ads leave -U "${adminID}%${adminPW}"
+
+# Search AD for hostname entry
+ldapDN="$(ldapsearch -x -H 'ldap://AD-[LOCATION]' -D "${adminID}@ifg.br" -w "$adminPW" -b 'DC=ifg,DC=br' "(cn=${newHostName})" | grep 'dn: ' | sed 's/^dn: //')"
+
+# Remove AD entry if found
+[[ $ldapDN ]] && _msg "Removing hostname entry: $ldapDN" && ldapdelete -w "$adminPW" -H ldap://AD-[LOCATION] -D "${adminID}@ifg.br" "$ldapDN"
+
+# Create required samba files
+[ ! -f /var/lib/samba/private/secrets.ldb ] && ldbadd -H /var/lib/samba/private/secrets.ldb < /dev/null
+[ ! -f /var/lib/samba/private/sam.ldb ] && ldbadd -H /var/lib/samba/private/sam.ldb < /dev/null
+[ ! -f /etc/samba/lmhosts ] && touch /etc/samba/lmhosts
+
+# Join AD and enable winbind
+net ads join -U "${adminID}%${adminPW}" -S AD-[LOCATION] createcomputer="COMPUTADORES/COMP. [LOCATION]${adLocation}"
+
+systemctl enable --now winbind
+
+_msgOk "Done!"
+
+echo; exit 0

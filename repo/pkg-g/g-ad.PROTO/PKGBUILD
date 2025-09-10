@@ -1,0 +1,55 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='g-ad.PROTO'
+pkgdesc='Goylin: AD PROTOTYPE'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group=('goylin')
+
+pkgver=26.0
+pkgrel=0
+arch=('x86_64')
+
+source=(
+	'gLoginAD'
+	'krb5.conf'
+	'nsswitch.conf'
+	'pam_winbind.conf'
+	'smb.conf'
+	'su'
+	'system-auth'
+)
+
+md5sums=(
+	'SKIP' 'SKIP' 'SKIP' 'SKIP'
+	'SKIP' 'SKIP' 'SKIP'
+)
+
+install='pkg.install'
+
+depends=(
+	'samba'	# SMB Fileserver and AD Domain server
+	'smbclient'	# Tools to access a server's filespace and printers via SMB
+	'krb5'	# The Kerberos network authentication system
+	'pam'	# PAM (Pluggable Authentication Modules) library
+	'pam-krb5'	# PAM module providing Kerberos v5 support
+	'openldap'	# Lightweight Directory Access Protocol (LDAP) client and server
+	'bind'	# A complete, highly portable implementation of the DNS protocol
+	'python-pysmbc'	# Python 3 bindings for libsmbclient
+	#
+	'python-dnspython'	# samba - netads_dns.py, dnsresolver.py and traffic_packets.py | smbclient - samba_dnsupdate and samba_upgradedns in AD setup
+	'python-markdown'	# samba - ms_schema_markdown.py and ms_forest_updates_markdown.py | smbclient - for samba-tool domain schemeupgrade
+	'python-cryptography'	# samba - lockout_tests.py gp_cert_auto_enroll_ext.py gpo.py
+)
+
+package() {
+	install -vDm 644 -t ${pkgdir}/etc/ krb5.conf
+	install -vDm 644 -t ${pkgdir}/etc/ nsswitch.conf
+
+	install -vDm 644 -t ${pkgdir}/etc/samba/ smb.conf
+
+	install -vDm 644 -t ${pkgdir}/etc/security/ pam_winbind.conf
+
+	install -vDm 700 -t ${pkgdir}/usr/bin/ gLoginAD
+
+	install -vDm 644 -t ${pkgdir}/etc/pam.d/ system-auth
+	install -vDm 644 -t ${pkgdir}/etc/pam.d/ su
+}

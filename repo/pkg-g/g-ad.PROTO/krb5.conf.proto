@@ -1,0 +1,32 @@
+[libdefaults]
+	default_realm = IFG.BR
+	dns_lookup_realm = false
+	dns_lookup_kdc = true
+	default_ccache_name = /run/user/%{uid}/krb5cc
+	forwardable = true
+
+[realms]
+	IFG.BR = {
+		# kdc = AD-[LOCATION].IFG.BR
+		default_domain = IFG.BR
+		# admin_server = AD-[LOCATION].IFG.BR
+	}
+	IFG = {
+		# kdc = AD-[LOCATION].IFG.BR
+		default_domain = IFG.BR
+		# admin_server = AD-[LOCATION].IFG.BR
+	}
+
+[domain_realm]
+	.ifg.br = IFG.BR
+	ifg.br = IFG.BR
+
+[appdefaults]
+	pam = {
+		ticket_lifetime = 1d
+		renew_lifetime = 1d
+		forwardable = true
+		proxiable = false
+		minimum_uid = 1
+		debug = false
+	}
