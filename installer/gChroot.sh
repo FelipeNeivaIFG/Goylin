@@ -18,7 +18,7 @@ function _configSys() {
 
 	_msg "Timezone"
 	ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
-	locale-gen
+	locale-gen 1> /dev/null
 
 	if [[ "$targetType" == "ssd" || "$targetType" == "nvme" ]]; then
 		_msg "SSD fstrim"
@@ -40,11 +40,11 @@ function _configUsers() {
 	_msgInfo "###   Users & groups   ###"
 
 	_msg "root"
-	echo -e "${gRootPasswd}\n${gRootPasswd}" | passwd root 1> /dev/null
+	echo -e "${gRootPasswd}\n${gRootPasswd}" | passwd root
 
 	_msg "admin"
 	useradd -mG wheel admin
-	echo -e "${gAdminPasswd}\n${gAdminPasswd}" | passwd admin 1> /dev/null
+	echo -e "${gAdminPasswd}\n${gAdminPasswd}" | passwd admin
 
 	_msg "guest"
 	groupadd -r nopasswdlogin
@@ -98,12 +98,13 @@ function _pkgCore() {
 	_msg "Core"; _install_PKG g-core
 
 	case $cpuType in
-		"intelNoVulkan") _msg "Intel (No Vulkan Support)"; _install_PKG g-intelIvy;;
+		"intelNoVulkan") _msg "Intel (No Vulkan Support)"; _install_PKG g-intelOld;;
 		"intel") _msg "Intel"; _install_PKG g-intel;;
 		"amd") _msg "AMD"; _install_PKG g-amd;;
 	esac
 
-	_msg "AD"; _install_PKG g-ad
+	# _msg "AD"; _install_PKG g-ad.[LOCATION]
+
 	_msg "Audio"; _install_PKG g-audio
 	_msg "Fonts"; _install_PKG g-fonts
 	_msg "Greeter"; _install_PKG g-greeter
