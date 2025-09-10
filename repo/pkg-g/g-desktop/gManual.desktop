@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/bin/gWelcome -m
+Hidden=false
+NoDisplay=false
+Icon=/usr/share/goylin/icons/goylin.svg
+Name=Manual Goylin

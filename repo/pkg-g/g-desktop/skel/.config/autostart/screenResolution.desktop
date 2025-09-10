@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Icon=application-x-shellscript
+Name=gSetResolution
+Exec=/usr/bin/gSetResolution
+X-KDE-AutostartScript=true

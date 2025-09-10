@@ -1,0 +1,90 @@
+# /etc/profile
+
+# Append "$1" to $PATH when not already in.
+# This function API is accessible to scripts in /etc/profile.d
+append_path () {
+	case ":$PATH:" in
+		*:"$1":*)
+			;;
+		*)
+			PATH="${PATH:+$PATH:}$1"
+	esac
+}
+
+# Append our default paths
+append_path '/usr/local/sbin'
+append_path '/usr/local/bin'
+append_path '/usr/bin'
+
+# Force PATH to be environment
+export PATH
+
+# Load profiles from /etc/profile.d
+if test -d /etc/profile.d/; then
+	for profile in /etc/profile.d/*.sh; do
+		test -r "$profile" && . "$profile"
+	done
+	unset profile
+fi
+
+# Unload our profile API functions
+unset -f append_path
+
+# Source global bash config, when interactive but not posix or sh mode
+if test "$BASH" &&\
+   test "$PS1" &&\
+   test -z "$POSIXLY_CORRECT" &&\
+   test "${0#-}" != sh &&\
+   test -r /etc/bash.bashrc
+then
+	. /etc/bash.bashrc
+fi
+
+# Termcap is outdated, old, and crusty, kill it.
+unset TERMCAP
+
+# Man is much better than us at figuring this out
+unset MANPATH
+
+#
+### Goylin ###
+#
+
+# Update $HOME
+rsync -rlu /etc/skel/. $HOME
+
+[ -d "${HOME}/Área de trabalho" ] && rm -r "${HOME}/Área de trabalho"
+xdg-user-dirs-update
+
+# Fix Config File User Names
+lUser="$(whoami)"
+uName="${lUser#IFG0+}"
+
+## g-dolphin
+[ -f ${HOME}/.local/share/user-places.xbel ] && sed -i "s/_USERNAME_/${uName}/g" ${HOME}/.local/share/user-places.xbel
+
+## g-plasma
+[ -f ${HOME}/.config/ktrashrc ] && sed -i "s/_USERNAME_/${uName}/g" ${HOME}/.config/ktrashrc
+
+## gapp-audio
+# Ardour
+[ -f ${HOME}/.config/ardour8/config ] && sed -i "s/_USERNAME_/${uName}/g" ${HOME}/.config/ardour8/config
+[ -f ${HOME}/.config/ardour8/ui_config ] && sed -i "s/_USERNAME_/${uName}/g" ${HOME}/.config/ardour8/ui_config
+# Audacity
+[ -f ${HOME}/.config/audacity/audacity.cfg ] && sed -i "s/_USERNAME_/${uName}/g" ${HOME}/.config/audacity/audacity.cfg
+# lmms
+[ -f ${HOME}/.lmmsrc.xml ] && sed -i "s/_USERNAME_/${uName}/g" ${HOME}/.lmmsrc.xml
+
+# gapp-image
+# DigiKam
+[ -f ${HOME}/.config/digikamrc ] && sed -i "s/_USERNAME_/${uName}/g" ${HOME}/.config/digikamrc
+
+## dconf
+[ -d /etc/dconf/db/user.d/ ] && [ ! -d ${HOME}/.config/dconf ] && mkdir ${HOME}/.config/dconf/ && dconf compile ${HOME}/.config/dconf/user /etc/dconf/db/user.d/
+
+# Ensure .desktop files execution
+chmod +x ${HOME}/Desktop/*.desktop
+chmod +x ${HOME}/.config/autostart/*.desktop
+
+# Guest umask for public access
+[ "$uName" == "guest" ] && umask 000

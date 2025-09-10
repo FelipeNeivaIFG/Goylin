@@ -1,0 +1,71 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='g-desktop'
+pkgdesc='Goylin: Desktop'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group=('goylin')
+
+pkgver=26.0
+pkgrel=0
+arch=('x86_64')
+
+source=(
+	'skel.tar'
+	'user-dirs.defaults'
+	'goylin.tar'
+	'gWelcome'
+	'gSetResolution'
+	'gLogoutScript'
+	'profile'
+	'00-keyboard.conf'
+	'gManual.desktop'
+)
+
+md5sums=(
+	'SKIP' 'SKIP' 'SKIP' 'SKIP'
+	'SKIP' 'SKIP' 'SKIP' 'SKIP'
+	'SKIP'
+)
+
+install='pkg.install'
+
+noextract=('goylin.tar' 'skel.tar')
+
+depends=(
+	'xdg-user-dirs'	# Manage user directories like ~/Desktop and ~/Music
+	'xdg-desktop-portal'	# Desktop integration portals for sandboxed apps
+	'libnotify'	# Library for sending desktop notifications
+	'xdg-utils'	# Command line tools that assist applications with a variety of desktop integration tasks
+	'xf86-input-libinput'	# Generic input driver for the X.Org server based on libinput
+	'bluez'	# Daemons for the bluetooth protocol stack
+	'bluez-obex'	# Object Exchange daemon for sharing content
+	'xf86-input-wacom'	# X.Org Wacom tablet driver
+	'fuse2'	# Interface for userspace programs to export a filesystem to the Linux kernel
+	'fuse3'	# Interface for userspace programs to export a filesystem to the Linux kernel
+	'fuse-overlayfs'	# FUSE implementation of overlayfs
+	'fuse-common'	# Common files for fuse2/3 packages
+	'squashfuse'	# FUSE filesystem to mount squashfs archives
+	'libxml2-legacy'	# XML C parser and toolkit (legacy version)
+	'libwacom'	# Library to identify Wacom tablets and their features
+)
+
+package() {
+	install -Dm 644 -t ${pkgdir}/etc/ profile
+
+	install -Dm 644 -t ${pkgdir}/etc/xdg/ user-dirs.defaults
+
+	install -Dm 644 -t ${pkgdir}/etc/X11/xorg.conf.d/ 00-keyboard.conf
+
+	install -Dm 755 -t ${pkgdir}/usr/bin/ gLogoutScript
+	install -Dm 755 -t ${pkgdir}/usr/bin/ gWelcome
+	install -Dm 755 -t ${pkgdir}/usr/bin/ gSetResolution
+
+	install -Dm 644 -t ${pkgdir}/usr/share/applications/ gManual.desktop
+
+	install -Dm 644 -t ${pkgdir}/etc/skel skel.tar
+	tar xf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
+	rm ${pkgdir}/etc/skel/skel.tar
+
+	install -Dm 644 -t ${pkgdir}/usr/share/goylin/ goylin.tar
+	tar xf ${pkgdir}/usr/share/goylin/goylin.tar --overwrite --directory=${pkgdir}/usr/share/goylin/
+	rm ${pkgdir}/usr/share/goylin/goylin.tar
+}

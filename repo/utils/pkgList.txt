@@ -172,3 +172,11 @@ arandr
 pavucontrol
 network-manager-applet
 xorg-xwininfo
+
+xdg-user-dirs
+xdg-desktop-portal
+bluez
+bluez-obex
+xf86-input-wacom
+fuse-overlayfs
+libxml2-legacy

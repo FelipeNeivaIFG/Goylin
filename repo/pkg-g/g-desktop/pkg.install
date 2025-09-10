@@ -1,0 +1,27 @@
+#!/bin/bash
+
+_lockGFiles() {
+	chattr +i /etc/profile
+	chattr +i /etc/xdg/user-dirs.defaults
+	chattr +i /etc/X11/xorg.conf.d/00-keyboard.conf
+}
+
+_unlockGFiles() {
+	chattr -i /etc/profile
+	chattr -i /etc/xdg/user-dirs.defaults
+	chattr -i /etc/X11/xorg.conf.d/00-keyboard.conf
+}
+
+post_install() {
+	_lockGFiles
+
+	systemctl enable bluetooth
+}
+
+pre_upgrade() {
+	_unlockGFiles
+}
+
+post_upgrade() {
+	_lockGFiles
+}

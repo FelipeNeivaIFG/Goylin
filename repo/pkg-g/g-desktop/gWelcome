@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Open Goylin manual on fresh $HOME login and/or when requested
+
+manualRequest=0
+
+while getopts "m" opt; do
+	case $opt in
+		m) manualRequest=1;;
+		*) ;;
+	esac
+done
+
+[ $manualRequest -eq 0 ] && [ -f "${HOME}/.welcomed" ] && exit 0
+
+# response_code=$(curl -s -o /dev/null -w "%{http_code}" "http://repo.goias.ifg.edu.br/goylin-web/index.html")
+
+# if [ "$response_code" == "200" ]; then
+[ -f /usr/share/goylin/manual/index.html ] && /usr/bin/brave --app=file:///usr/share/goylin/manual/index.html --window-size=550,700 --new-window --password-store=basic
+[ $manualRequest -eq 0 ] && touch ${HOME}/.welcomed
+# fi

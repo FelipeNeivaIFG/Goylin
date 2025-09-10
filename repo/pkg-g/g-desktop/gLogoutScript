@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Reset Guest
+if [ $(whoami) == "guest" ]; then
+	[ -f /home/guest/.bashrc ] && rm -rf /home/guest/.*
+	[ -f /var/lib/AccountsService/users/guest ] && rm -f /var/lib/AccountsService/users/guest
+fi

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Get highest screen resolution from monitor
+output_name=$(xrandr | grep 'connected' | awk '{ print $1 }')
+highest_resolution=$(xrandr | grep "$output_name" -A 1 | grep -o '[0-9]\+x[0-9]\+' | sort -t 'x' -n -k2 | tail -n1)
+
+# Set max screen resolution on login
+[ "$DESKTOP_SESSION" == "i3" ] && xrandr --output "$output_name" --mode "$highest_restolution"
+[ "$DESKTOP_SESSION" == "plasmax11" ] && kscreen-doctor config output."$output_name".mode.71
+[ "$DESKTOP_SESSION" == "plasma" ] && kscreen-doctor config output."$output_name".mode.1
