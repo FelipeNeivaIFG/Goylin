@@ -1,0 +1,65 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='g-dolphin'
+pkgdesc='Goylin: Dolphin File Manager'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group=('goylin')
+
+pkgver=26.0
+pkgrel=0
+arch=('x86_64')
+
+source=('skel.tar')
+
+noextract=('skel.tar')
+
+md5sums=('SKIP')
+
+depends=(
+	'dolphin'	# KDE File Manager
+	'dolphin-plugins'	# Extra Dolphin plugins
+	'kio'	# Resource and network access abstraction
+	'kio-extras'	# Additional components to increase the functionality of KIO
+	'kio5'	# Resource and network access abstraction
+	'kio5-extras'	# Additional components to increase the functionality of KIO
+	'kimageformats'	# Image format plugins for Qt 6
+	'kimageformats5'	# Image format plugins for Qt5
+	'kio-gdrive'	# KIO Slave to access Google Drive
+	'audiocd-kio'	# Kioslave for accessing audio CDs -S
+	'kio-fuse'	# FUSE interface for KIO
+	'kio-zeroconf'	# Network Monitor for DNS-SD services (Zeroconf)
+	'kio-admin'	# Manage files as administrator using the admin:// KIO protocol
+	'ark'	# Archiving Tool
+	'libgphoto2'	# Digital camera access library
+	# OPT DEPS #
+	'ffmpegthumbs'	# dolphin - video thumbnails
+	'phonon-qt6-vlc'	# dolphin - Phonon VLC backend for Qt6
+	'kdegraphics-thumbnailers'	# dolphin - PDF and PS thumbnails
+	'icoutils'	# kio-extras | kio5-extras - Windows executable thumbnails
+	'libappimage'	# kio-extras | kio5-extras - AppImage thumbnails
+	'qt6-imageformats'	# kio-extras - thumbnails for additional image formats
+	'qt5-imageformats'	# kio5-extras - thumbnails for additional image formats
+	'taglib'	# kio-extras | kio5-extras - audio file thumbnails
+	'imath'	# kimageformats -  EXR format support
+	'jxrlib'	# kimageformats - JXR format support
+	'karchive'	# imageformats - plugin for Krita and OpenRaster images
+	'karchive5'	# imageformats - plugin for Krita and OpenRaster images
+	'libavif'	# imageformats | kimageformats5 - AVIF format support
+	'libheif'	# imageformats | kimageformats5 - HEIF format support
+	'libjxl'	# imageformats | kimageformats5 - JPEG-XL format support
+	'libraw'	# imageformats | kimageformats5 - RAW format support
+	'openexr'	# imageformats | kimageformats5 | kio5-extras - EXR format support | kio-extras - EXR format thumbnails
+	'arj'	# ark - ARJ format support
+	'lrzip'	# ark LRZ format support
+	'lzop'	# ark - LZO format support
+	'7zip'	 # ark - 7Z format support
+	'zip'	# Compressor/archiver for creating and modifying zipfiles
+	'unarchiver'	# ark - RAR format support
+	'unrar'	# ark - RAR decompression support
+	'unzip'	# For extracting and viewing files in .zip archives
+)
+
+package() {
+	install -vDm 644 -t ${pkgdir}/etc/skel skel.tar
+	tar  vxf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
+	rm -v ${pkgdir}/etc/skel/skel.tar
+}
