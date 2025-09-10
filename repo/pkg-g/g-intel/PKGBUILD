@@ -1,0 +1,38 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='g-intel'
+pkgdesc='Goylin: Intel'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group='goylin'
+
+pkgver=26.0
+pkgrel=0
+arch=('x86_64')
+
+source=('mkinitcpio.conf')
+
+md5sums=('SKIP')
+
+depends=(
+	'mkinitcpio'	# Modular initramfs image creation utility
+	'intel-ucode'	# Microcode update files for Intel CPUs
+	'mesa'	# Open-source OpenGL drivers
+	'lib32-mesa'	# Open-source OpenGL drivers - 32-bit
+	'vulkan-intel'	# Open-source Vulkan driver for Intel GPUs
+	'lib32-vulkan-intel'	# Open-source Vulkan driver for Intel GPUs - 32-bit
+	'vpl-gpu-rt'	# Intel VPL runtime implementation for Intel GPUs (Tiger Lake and newer)
+	'intel-media-driver'	# Intel Media Driver for VAAPI — Broadwell+ iGPUs
+	'vulkan-mesa-layers'	# Mesa's Vulkan layers
+	'lib32-vulkan-mesa-layers'	# Mesa's Vulkan layers - 32-bit
+	'intel-media-sdk'	# Legacy API for hardware video acceleration on Intel GPUs (Broadwell to Rocket Lake)
+	'intel-compute-runtime'	# Intel(R) Graphics Compute Runtime for oneAPI Level Zero and OpenCL(TM) Driver
+	'vulkan-icd-loader'	# Vulkan Installable Client Driver (ICD) Loader
+	'lib32-vulkan-icd-loader'	# Vulkan Installable Client Driver (ICD) Loader - 32-bit
+	'libvdpau-va-gl'	# VDPAU driver with OpenGL/VAAPI backend
+	'vulkan-validation-layers'	# Vulkan Validation Layers
+)
+
+install='pkg.install'
+
+package() {
+	install -vDm 644 -t ${pkgdir}/etc/ mkinitcpio.conf
+}
