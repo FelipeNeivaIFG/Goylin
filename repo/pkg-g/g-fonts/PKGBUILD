@@ -1,0 +1,22 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='g-fonts'
+pkgdesc='Goylin: Text Fonts'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group=('goylin')
+
+pkgver=26.0
+pkgrel=0
+arch=('x86_64')
+
+depends=(
+	'adobe-source-sans-fonts'	# A clean, modern sans-serif
+	'adobe-source-serif-fonts'	# Provides a high-quality serif option for documents
+	'adobe-source-code-pro-fonts'	# A top choice for terminals, editors, and coding
+	'ttf-opensans'	# Widely used for applications
+	'noto-fonts'	# Essential for comprehensive Unicode coverage, including emojis
+	'ttf-liberation-mono-nerd'	# Patched monospace font with icons; great for terminals
+	'ttf-bitstream-vera'	# Classic bitmap fonts for legacy compatibility
+	'ttf-hack-nerd'	# Patched mono font for coding/terminals
+	# AUR #
+	'ttf-ms-fonts'	# Critical for compatibility with Microsoft documents
+)

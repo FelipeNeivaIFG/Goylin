@@ -110,3 +110,12 @@ numlockx
 meson
 breeze-gtk
 breeze
+
+adobe-source-sans-fonts
+adobe-source-serif-fonts
+adobe-source-code-pro-fonts
+ttf-opensans
+noto-fonts
+ttf-liberation-mono-nerd
+ttf-bitstream-vera
+ttf-hack-nerd
