@@ -1,0 +1,34 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='g-amd'
+pkgdesc='Goylin: AMD'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group='goylin'
+
+pkgver=26.0
+pkgrel=0
+arch=('x86_64')
+
+source=('mkinitcpio.conf')
+
+md5sums=('SKIP')
+
+depends=(
+	'mkinitcpio'	# Modular initramfs image creation utility
+	'amd-ucode'	# Microcode update files for Amd CPUs
+	'mesa'	# Open-source OpenGL drivers
+	'lib32-mesa'	# Open-source OpenGL drivers - 32-bit
+	'vulkan-radeon'	# Open-source Vulkan driver for AMD GPUs - 32-bit
+	'lib32-vulkan-radeon'	# Open-source Vulkan driver for AMD GPUs
+	'vulkan-mesa-layers'	# Mesa's Vulkan layers
+	'lib32-vulkan-mesa-layers'	# Mesa's Vulkan layers - 32-bit
+	'libvdpau-va-gl'	# VDPAU driver with OpenGL/VAAPI backend
+	'vulkan-icd-loader'	# Vulkan Installable Client Driver (ICD) Loader
+	'lib32-vulkan-icd-loader'	# Vulkan Installable Client Driver (ICD) Loader - 32-bit
+	'vulkan-validation-layers'	# Vulkan Validation Layers
+)
+
+install='pkg.install'
+
+package() {
+	install -vDm 644 -t ${pkgdir}/etc/ mkinitcpio.conf
+}
