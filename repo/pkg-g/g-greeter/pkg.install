@@ -1,0 +1,28 @@
+#!/bin/bash
+
+_lockGFiles() {
+	chattr +i /etc/lightdm/lightdm.conf
+	chattr +i /etc/lightdm/slick-greeter.conf
+	chattr +i /etc/pam.d/lightdm
+	chattr +i /var/lib/lightdm/.cache/slick-greeter/state
+}
+
+_unlockGFiles() {
+	chattr -i /etc/lightdm/lightdm.conf
+	chattr -i /etc/lightdm/slick-greeter.conf
+	chattr -i /etc/pam.d/lightdm
+	chattr -i /var/lib/lightdm/.cache/slick-greeter/state
+}
+
+post_install() {
+	systemctl enable lightdm
+	_lockGFiles
+}
+
+pre_upgrade() {
+	_unlockGFiles
+}
+
+post_upgrade() {
+	_lockGFiles
+}

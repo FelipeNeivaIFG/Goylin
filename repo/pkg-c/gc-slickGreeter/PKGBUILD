@@ -1,0 +1,52 @@
+# Maintainer: Alexander Epaneshnikov <alex19ep@archlinux.org>
+# Maintainer: Caleb Maclennan <caleb@alerque.com>
+# Contributor: Sam Burgos <santiago.burgos1089@gmail.com>
+
+pkgname='gc-slickGreeter'
+pkgver=26.0
+pkgrel=0
+pkgdesc='Goylin: LightDM Custom Slick-Greeter'
+
+srcname=lightdm-slick-greeter
+srcver=2.2.2
+
+arch=('x86_64')
+
+license=('GPL3.0-only')
+
+url="https://github.com/linuxmint/slick-greeter"
+
+depends=('cairo' 'freetype2' 'gtk3' 'libcanberra' 'libxext' 'lightdm' 'pixman'
+		'python' 'xorg-server' 'xapp')
+
+optdepends=('numlockx: enable numerical keypad on supported keyboard')
+
+makedepends=('intltool' 'vala' 'gnome-common' 'meson')
+
+source=(
+	"${pkgname}-${srcver}.tar.gz::$url/archive/${srcver}.tar.gz"
+	'pt_BR.po'
+	)
+
+sha512sums=('9000de222c97a872d6d56a21ab889cedda60c0523533d7c43e3518f8b2221444d451d49d628979f0698d7375343fd349c73196722d928b933ee7041d2d5c4179' 'SKIP')
+b2sums=('b4afe74dee3f0081778444f01eb9fca32baef91c09938e6783f5e8b9f2a4f991ebd6b876577e4ba8e1941b30268ebc013bae10fd169544ae657092cbd43140e3' 'SKIP')
+
+build() {
+	cp -vf pt_BR.po slick-greeter-${srcver}/po
+
+	cd slick-greeter-${srcver}
+	arch-meson . build
+	meson compile -C build
+}
+
+check() {
+	cd slick-greeter-${srcver}
+	meson test -C build
+}
+
+package() {
+	cd slick-greeter-${srcver}
+	meson install -C build --destdir "$pkgdir"
+	# adjust launcher name
+	mv $pkgdir/usr/share/xgreeters/slick-greeter.desktop $pkgdir/usr/share/xgreeters/goylin-lightdm-greeter.desktop
+}

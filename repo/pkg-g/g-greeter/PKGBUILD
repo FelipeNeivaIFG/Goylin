@@ -1,0 +1,38 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='g-greeter'
+pkgdesc='Goylin: Lightdm Greeter'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group=('goylin')
+
+pkgver=26.0
+pkgrel=0
+arch=('x86_64')
+
+source=(
+	'lightdm.conf'
+	'slick-greeter.conf'
+	'lightdm'
+	'state'
+)
+
+md5sums=(
+	'SKIP' 'SKIP' 'SKIP' 'SKIP'
+)
+
+install='pkg.install'
+
+depends=(
+	'lightdm'	# A lightweight display manager
+	'numlockx'	# Turns on the numlock key in X11.
+	'gc-slickGreeter' # Custom Goylin slick-greeter for lightdm
+	'breeze-gtk'	# Breeze widget theme for GTK 2 and 3
+	'breeze'	# Breeze widgets
+)
+
+package() {
+	install -Dm 644 -t ${pkgdir}/etc/lightdm/ lightdm.conf
+	install -Dm 644 -t ${pkgdir}/etc/lightdm/ slick-greeter.conf
+	install -Dm 644 -t ${pkgdir}/etc/pam.d/ lightdm
+	install -Dm 644 -t ${pkgdir}/var/lib/lightdm/.cache/slick-greeter/ state
+	chmod 1770 ${pkgdir}/var/lib/lightdm/
+}
