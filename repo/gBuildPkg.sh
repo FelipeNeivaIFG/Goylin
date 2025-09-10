@@ -79,8 +79,8 @@ function _prepare() {
 
 		pkg-c)
 			pkgRepo="${cRepoName}"
-			[ ! -d "${pkgName}" ] && _msgAlert "${pkgName} not found!" && exit 1
 			cd "$pkgType"
+			[ ! -d "${pkgName}" ] && _msgAlert "${pkgName} not found!" && exit 1
 			;;
 
 		pkg-a)
