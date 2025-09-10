@@ -22,3 +22,9 @@ depends=(
 	'lib32-vulkan-icd-loader'	# Vulkan Installable Client Driver (ICD) Loader - 32-bit
 	'vulkan-validation-layers'	# Vulkan Validation Layers
 )
+
+install='pkg.install'
+
+package() {
+	install -Dm 644 -t ${pkgdir}/etc/ mkinitcpio.conf
+}
