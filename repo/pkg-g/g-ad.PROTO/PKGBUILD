@@ -41,15 +41,15 @@ depends=(
 )
 
 package() {
-	install -vDm 644 -t ${pkgdir}/etc/ krb5.conf
-	install -vDm 644 -t ${pkgdir}/etc/ nsswitch.conf
+	install -Dm 644 -t ${pkgdir}/etc/ krb5.conf
+	install -Dm 644 -t ${pkgdir}/etc/ nsswitch.conf
 
-	install -vDm 644 -t ${pkgdir}/etc/samba/ smb.conf
+	install -Dm 644 -t ${pkgdir}/etc/samba/ smb.conf
 
-	install -vDm 644 -t ${pkgdir}/etc/security/ pam_winbind.conf
+	install -Dm 644 -t ${pkgdir}/etc/security/ pam_winbind.conf
 
-	install -vDm 700 -t ${pkgdir}/usr/bin/ gLoginAD
+	install -Dm 700 -t ${pkgdir}/usr/bin/ gLoginAD
 
-	install -vDm 644 -t ${pkgdir}/etc/pam.d/ system-auth
-	install -vDm 644 -t ${pkgdir}/etc/pam.d/ su
+	install -Dm 644 -t ${pkgdir}/etc/pam.d/ system-auth
+	install -Dm 644 -t ${pkgdir}/etc/pam.d/ su
 }

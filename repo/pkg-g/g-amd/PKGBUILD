@@ -30,5 +30,5 @@ depends=(
 install='pkg.install'
 
 package() {
-	install -vDm 644 -t ${pkgdir}/etc/ mkinitcpio.conf
+	install -Dm 644 -t ${pkgdir}/etc/ mkinitcpio.conf
 }
