@@ -59,7 +59,7 @@ depends=(
 )
 
 package() {
-	install -vDm 644 -t ${pkgdir}/etc/skel skel.tar
-	tar  vxf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
-	rm -v ${pkgdir}/etc/skel/skel.tar
+	install -Dm 644 -t ${pkgdir}/etc/skel skel.tar
+	tar  xf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
+	rm ${pkgdir}/etc/skel/skel.tar
 }
