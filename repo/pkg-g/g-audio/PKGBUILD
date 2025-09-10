@@ -1,0 +1,31 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='g-audio'
+pkgdesc='Goylin: Audio'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group='goylin'
+
+pkgver=26.0
+pkgrel=0
+arch=('x86_64')
+
+depends=(
+	'pipewire'	# Low-latency audio/video router and processor
+	'lib32-pipewire-jack'	# Low-latency audio/video router and processor - 32-bit - JACK support
+	'lib32-pipewire-v4l2'	# Low-latency audio/video router and processor - 32-bit - V4L2 interceptor
+	'alsa-utils'	# Advanced Linux Sound Architecture - Utilities
+	'alsa-plugins'	# Additional ALSA plugins
+	'alsa-firmware'	# Firmware binaries for loader programs in alsa-tools and hotplug firmware
+	'sof-firmware'	# Sound Open Firmware
+	#
+	'gst-plugin-pipewire'	# pipewire - GStreamer plugin
+	'pipewire-alsa'	# pipewire - ALSA configuration
+	'pipewire-audio'	# pipewire - Audio support
+	'pipewire-ffado'	# pipewire - FireWire support
+	'pipewire-jack'	# pipewire - JACK replacement
+	'pipewire-libcamera'	# pipewire - Libcamera support
+	'pipewire-pulse'	# pipewire - PulseAudio replacement
+	'pipewire-roc'	# pipewire - ROC streaming
+	'pipewire-session-manager'	# pipewire - Session manager
+	'pipewire-v4l2'	# pipewire - V4L2 interceptor
+	'pipewire-zeroconf'	# pipewire - Zeroconf support
+)
