@@ -1,0 +1,28 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='g-intelOld'
+pkgdesc='Goylin: Intel w/ Vulkan'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group='goylin'
+
+pkgver=26.0
+pkgrel=0
+arch=('x86_64')
+
+source=('mkinitcpio.conf')
+
+md5sums=('SKIP')
+
+depends=(
+	'mkinitcpio'	# Modular initramfs image creation utility
+	'intel-ucode'	# Microcode update files for Intel CPUs
+	'mesa'	# Open-source OpenGL drivers
+	'lib32-mesa'	# Open-source OpenGL drivers - 32-bit
+	'libva-intel-driver'	# VA-API implementation for Intel G45 and HD Graphics family
+	'libvdpau-va-gl'	# VDPAU driver with OpenGL/VAAPI backend
+)
+
+install='pkg.install'
+
+package() {
+	install -vDm 644 -t ${pkgdir}/etc/ mkinitcpio.conf
+}
