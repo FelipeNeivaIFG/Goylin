@@ -13,5 +13,6 @@ installer/etc/systemd/timesyncd.conf
 
 repo/utils/repoConf.sh
 repo/blankdb/
+repo/pkg-a/
 
 utils/pacman_dev.conf
