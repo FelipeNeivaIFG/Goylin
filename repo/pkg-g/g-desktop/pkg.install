@@ -13,6 +13,8 @@ _unlockGFiles() {
 }
 
 post_install() {
+	printf "\nsource /etc/profile.goylin\n" | tee -a /etc/profile 1> /dev/null
+	
 	_lockGFiles
 
 	systemctl enable bluetooth

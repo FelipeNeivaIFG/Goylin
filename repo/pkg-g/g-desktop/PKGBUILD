@@ -15,7 +15,7 @@ source=(
 	'gWelcome'
 	'gSetResolution'
 	'gLogoutScript'
-	'profile'
+	'profile.goylin'
 	'00-keyboard.conf'
 	'gManual.desktop'
 )
@@ -49,7 +49,7 @@ depends=(
 )
 
 package() {
-	install -Dm 644 -t ${pkgdir}/etc/ profile
+	install -Dm 644 -t ${pkgdir}/etc/ profile.goylin
 
 	install -Dm 644 -t ${pkgdir}/etc/xdg/ user-dirs.defaults
 
