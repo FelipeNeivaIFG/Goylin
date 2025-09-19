@@ -1,0 +1,20 @@
+{
+    "KPackageStructure": "Plasma/LookAndFeel",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "felipe.neiva@ifg.edu.br",
+                "Name": "Goylin Visual Design Group"
+           }
+        ],
+        "Category": "",
+        "Description": "Goylin Dark Theme",
+        "Id": "goylindark.desktop",
+        "License": "GPLv2+",
+        "Name": "Goylin Dark",
+        "Website": "ifg.goias.edu.br"
+    },
+    "Keywords": "Desktop;Workspace;Appearance;Look and Feel;Logout;Lock;Suspend;Shutdown;Hibernate;",
+    "Keywords[pt_BR]": "Área de trabalho;Espaço de trabalho;Aparência;Aparência e Comportamento;Encerrar sessão;Bloquear;Suspender;Desligar;Hibernar;",
+    "X-Plasma-APIVersion": "1"
+}

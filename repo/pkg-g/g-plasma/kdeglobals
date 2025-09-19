@@ -1,0 +1,24 @@
+[KDE]
+LookAndFeelPackage=goylin.desktop
+
+[General]
+# Enable accent color based on the wallpaper
+accentColorFromWallpaper=true
+
+[PreviewSettings]
+# Limit remote file preview size to 10 MB
+MaximumRemoteSize=2048
+
+[Locale]
+TimeFormat=%H:%M
+CurrencyCode=BRL
+WeekStartDay=1
+
+[kwin][Global Shortcuts]
+# Zoom functionality for easier screen navigation
+view_zoom_in=Meta+=; Meta++
+view_zoom_out=Meta+- 
+
+# Add global shortcut for switching between virtual desktops
+switch_to_next_virtual_desktop=Meta+Right
+switch_to_previous_virtual_desktop=Meta+Left

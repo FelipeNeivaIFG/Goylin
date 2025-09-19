@@ -1,0 +1,10 @@
+[Show]
+forgetfileitemaction=false
+gdrivecontextmenuaction=true
+installFont=true
+kactivitymanagerd_fileitem_linking_plugin=false
+mountisoaction=false
+plasmavaultfileitemaction=false
+setAsWallpaper=false
+sharefileitemaction=true
+tagsfileitemaction=false

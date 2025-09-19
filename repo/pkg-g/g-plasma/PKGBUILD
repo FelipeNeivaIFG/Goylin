@@ -1,0 +1,86 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='g-plasma'
+pkgdesc='Goylin: Plasma Desktop'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group=('goylin')
+
+pkgver=26.0
+pkgrel=0
+arch=('x86_64')
+
+source=(
+	'kdeglobals'
+	'skel.tar'
+	'goylin.desktop.tar'
+	'goylindark.desktop.tar'
+)
+
+noextract=(
+	'skel.tar'
+	'goylin.desktop.tar'
+	'goylindark.desktop.tar'
+)
+
+md5sums=('SKIP' 'SKIP' 'SKIP' 'SKIP')
+
+install='pkg.install'
+
+depends=(
+	'plasma-desktop'	# KDE Plasma Desktop
+	'plasma-x11-session'	# Plasma X11 session
+	'polkit-kde-agent'	# Daemon providing a polkit authentication UI for KDE
+	'plasma5support'	# Support components for porting from KF5/Qt5 to KF6/Qt6
+	'plasma-integration'	# Qt Platform Theme integration plugins for the Plasma workspaces
+	'kwin'	# An easy to use, but flexible, composited Window Manager
+	'kwin-x11'	# An easy to use, but flexible, X Window Manager
+	'libplasma'	# Plasma library and runtime components
+	'libksysguard'	# Library to retrieve information on the current status of computer hardware
+	'libkscreen'	# KDE screen management software
+	'kdeplasma-addons'	# All kind of addons to improve your Plasma experience
+	'breeze-gtk'	# Breeze widget theme for GTK 2 and 3
+	'kde-gtk-config'	# Syncs KDE settings to GTK applications
+	'kgamma'	# Adjust your monitor gamma settings
+	'kwrited'	# KDE daemon listening for wall and write messages
+	'plasma-browser-integration'	# Components necessary to integrate browsers into the Plasma Desktop
+	'powerdevil'	# Manages the power consumption settings of a Plasma Shell
+	'xdg-desktop-portal-kde'	# A backend implementation for xdg-desktop-portal using Qt/KF5
+	'spectacle'	# KDE screenshot capture utility
+	'konsole'	# KDE terminal emulator
+	'kinfocenter'	# A utility that provides information about a computer system
+	'plasma-systemmonitor'	# An interface for monitoring system sensors, process information and other system resources
+	'plasma-disks'	# Monitors S.M.A.R.T. capable devices for imminent failure
+	'startup-notification'	# Libary to monitor and display application startup
+	'power-profiles-daemon'	# Makes power profiles handling available over D-Bus
+	'baloo'	# A framework for searching and managing metadata
+	'baloo-widgets'	# Widgets for Baloo
+	'kde-cli-tools'	# Tools based on KDE Frameworks 5 to better interact with the system
+	'purpose'	# Framework for providing abstractions to get the developers purposes fulfilled
+	'kaccounts-integration' # plasma-desktop - OpenDesktop integration plugin
+	'kdialog'	# A utility for displaying dialog boxes from shell scripts
+	'wacomtablet'	# GUI for Wacom Linux drivers that supports different button/pen layout profiles
+	# 'libaccounts-qt'	# plasma-desktop - OpenDesktop integration plugin
+	#
+	'bluedevil'	# plasma-desktop - Bluetooth applet | purpose - sharing via Bluetooth
+	'gtk3'	# kde-gtk-config - GTK3 apps support
+	'kscreen'	# plasma-desktop - screen management
+	'plasma-nm'	# plasma-desktop - Network manager applet
+	'plasma-pa'	# plasma-desktop - Audio volume applet
+	#DEV
+	# 'plasma-sdk'
+)
+
+package() {
+	install -Dm 644 -t ${pkgdir}/etc/xdg/ kdeglobals
+
+	install -Dm 644 -t ${pkgdir}/etc/skel skel.tar
+	tar xf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
+	rm ${pkgdir}/etc/skel/skel.tar
+
+	install -Dm 644 -t ${pkgdir}/usr/share/plasma/look-and-feel/goylin.desktop/ goylin.desktop.tar
+	tar xf ${pkgdir}/usr/share/plasma/look-and-feel/goylin.desktop/goylin.desktop.tar --overwrite --directory=${pkgdir}/usr/share/plasma/look-and-feel/goylin.desktop/
+	rm ${pkgdir}/usr/share/plasma/look-and-feel/goylin.desktop/goylin.desktop.tar
+
+	install -Dm 644 -t ${pkgdir}/usr/share/plasma/look-and-feel/goylindark.desktop/ goylindark.desktop.tar
+	tar xf ${pkgdir}/usr/share/plasma/look-and-feel/goylindark.desktop/goylindark.desktop.tar --overwrite --directory=${pkgdir}/usr/share/plasma/look-and-feel/goylindark.desktop/
+	rm ${pkgdir}/usr/share/plasma/look-and-feel/goylindark.desktop/goylindark.desktop.tar
+}

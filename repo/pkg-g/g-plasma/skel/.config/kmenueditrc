@@ -1,0 +1,5 @@
+[General]
+ShowHidden=false
+
+[MainWindow]
+ToolBarsMovable=Disabled

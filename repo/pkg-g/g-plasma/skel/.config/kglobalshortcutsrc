@@ -1,0 +1,25 @@
+[ksmserver]
+Halt Without Confirmation=none,,Desligar sem confirmação
+Lock Session=none,Meta+L\tScreensaver,Bloquear sessão
+Log Out=none,Ctrl+Alt+Del,Mostrar tela para encerrar sessão
+Log Out Without Confirmation=none,,Encerrar sessão sem confirmação
+LogOut=none,,Encerrar sessão
+Reboot=none,,Reiniciar
+Reboot Without Confirmation=none,,Reiniciar sem confirmação
+Shut Down=none,,Desligar
+
+[kwin]
+Kill Window=Alt+F4,Meta+Ctrl+Esc,Matar janela
+Overview=Meta+Tab,Meta+W,Alternar para visão geral
+Show Desktop=Meta+D,Meta+D,Espiar área de trabalho
+Walk Through Windows=Alt+Tab\t,Meta+Tab\tAlt+tab,Passear pelas janelas
+view_actual_size=none,Meta+0,Zoom para o tamanho atual
+view_zoom_in=Meta+=\tMeta++,Meta++\tMeta+=,Ampliar
+view_zoom_out=Meta+-,Meta+-,Reduzir
+
+[org_kde_powerdevil]
+Hibernate=none,Hibernate,Hibernar
+PowerDown=Power Down,Power Down,Desligar
+PowerOff=Power Off,Power Off,Desligar
+Sleep=none,Sleep,Suspender
+Turn Off Screen=none,none,Desligar a tela
