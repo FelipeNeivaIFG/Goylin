@@ -34,6 +34,7 @@ depends=(
 	'openldap'	# Lightweight Directory Access Protocol (LDAP) client and server
 	'bind'	# A complete, highly portable implementation of the DNS protocol
 	'python-pysmbc'	# Python 3 bindings for libsmbclient
+	'libwbclient'	# Winbind client library
 	#
 	'python-dnspython'	# samba - netads_dns.py, dnsresolver.py and traffic_packets.py | smbclient - samba_dnsupdate and samba_upgradedns in AD setup
 	'python-markdown'	# samba - ms_schema_markdown.py and ms_forest_updates_markdown.py | smbclient - for samba-tool domain schemeupgrade
