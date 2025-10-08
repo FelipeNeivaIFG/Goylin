@@ -36,12 +36,12 @@ singlePkg=0
 pkgName=""
 
 while getopts "ndp" opt; do
-    case $opt in
-        n) cacheNewRepo=1 ;;
+	case $opt in
+		n) cacheNewRepo=1 ;;
 		d) cachedRepoDeploy=1 ;;
 		p) singlePkg=1; pkgName=$2 ;;
-        *) _help ;;
-    esac
+		*) _help ;;
+	esac
 done
 
 ####################################################################################################
@@ -51,8 +51,8 @@ done
 function _prepare() {
 	_msgInfo "Preparing"
 
-	[ -d "blankdb" ] && rm -rf blankdb
-	mkdir -p blankdb
+	[ -d ".blankdb" ] && rm -rf .blankdb
+	mkdir -p .blankdb
 }
 
 function _blankRepo() {
@@ -70,7 +70,7 @@ function _blankRepo() {
 function _cacheRepo() {
 	_msgInfo "Caching PKGs from utils/pkgList.txt"
 
-	pacman -Syyw --disable-download-timeout --config utils/pacman_update.conf --noconfirm --cachedir "${repoLocalPath}${repoName}" --dbpath blankdb - < utils/pkgList.txt
+	pacman -Syyw --disable-download-timeout --config utils/pacman_update.conf --noconfirm --cachedir "${repoLocalPath}${repoName}" --dbpath .blankdb - < utils/pkgList.txt
 
 	_msgInfo "Adding PKGs to Repo"
 
@@ -83,7 +83,7 @@ function _cacheRepo() {
 function _cachePkg() {
 	_msgInfo "Caching $1"
 
-	pacman -Syyw --disable-download-timeout --config utils/pacman_update.conf --noconfirm --cachedir "${repoLocalPath}${repoName}" --dbpath blankdb $1
+	pacman -Syyw --disable-download-timeout --config utils/pacman_update.conf --noconfirm --cachedir "${repoLocalPath}${repoName}" --dbpath .blankdb $1
 	
 	_msgInfo "Adding PKGs to Repo"
 	[[ "$(ls "${repoLocalPath}$repoName" | grep "pkg.tar.zst")" ]] && repo-add -nR "${repoLocalPath}${repoName}/${repoName}.db.tar.gz" ${repoLocalPath}"$repoName"/*.pkg.tar.zst
@@ -101,8 +101,8 @@ function _deployCached() {
 function _finishUp() {
 	_msgInfo "Finishing"
 
-	_msg "Clean up blankdb"
-	rm -fr blankdb
+	_msg "Clean up .blankdb"
+	rm -fr .blankdb
 }
 
 ####################################################################################################

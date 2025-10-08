@@ -110,18 +110,16 @@ function _preBuild() {
 function _bootstrapChroot() {
 	_msgInfo "Bootstraping chroot"
 
-	chroot="/tmp/pkgRoot"
-
 	_msg "Ensure clean work directory"
 
-	[ -d "${chroot}" ] && rm -rf "${chroot}"
-	mkdir -p "${chroot}"
+	[ -d "${pkgRoot}" ] && rm -rf "${pkgRoot}"
+	mkdir -p "${pkgRoot}"
 
 	_msg "Building chroot"
 
-	mkarchroot -C "../../${pacmanConf}" "${chroot}/root" base-devel git 1> /dev/null
-	cp -f "../../${pacmanConf}" "${chroot}/root/etc/pacman.conf"
-	arch-nspawn -C "../../${pacmanConf}" "${chroot}/root" pacman -Syu 1> /dev/null
+	mkarchroot -C "../../${pacmanConf}" "${pkgRoot}/root" base-devel git 1> /dev/null
+	cp -f "../../${pacmanConf}" "${pkgRoot}/root/etc/pacman.conf"
+	arch-nspawn -C "../../${pacmanConf}" "${pkgRoot}/root" pacman -Syu 1> /dev/null
 }
 
 function _buildPKG() {
@@ -129,11 +127,11 @@ function _buildPKG() {
 
 	_msg "Building ${pkgName}"
 
-	makechrootpkg -c -r "${chroot}" #1> /dev/null
+	makechrootpkg -c -r "${pkgRoot}" #1> /dev/null
 
 	_msg "Clean up build files"
 
-	rm -rf "${chroot}"
+	rm -rf "${pkgRoot}"
 }
 
 ####################################################################################################
