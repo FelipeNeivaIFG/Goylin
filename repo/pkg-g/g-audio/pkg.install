@@ -1,0 +1,9 @@
+#!/bin/bash
+
+_hide_desktop() { [ -f "/usr/share/applications/$1" ] && sed -i '/^NoDisplay=/d; $aNoDisplay=true' "/usr/share/applications/$1"; }
+
+_hide_desktop_entry() { _hide_desktop "org.ffado.FfadoMixer.desktop"; }
+
+post_install() { _hide_desktop_entry; }
+
+post_upgrade() { _hide_desktop_entry; }

@@ -8,6 +8,8 @@ pkgver=26.0
 pkgrel=0
 arch=('x86_64')
 
+install='pkg.install'
+
 depends=(
 	'pipewire'	# Low-latency audio/video router and processor
 	'lib32-pipewire-jack'	# Low-latency audio/video router and processor - 32-bit - JACK support
