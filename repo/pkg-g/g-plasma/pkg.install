@@ -1,7 +1,21 @@
 #!/bin/bash
 
+_hide_desktop() { [ -f "/usr/share/applications/$1" ] && sed -i '/^NoDisplay=/d; $aNoDisplay=true' "/usr/share/applications/$1"; }
+
+_hide_desktop_entry() {
+	_hide_desktop "org.kde.kmenuedit.desktop"
+	_hide_desktop "lstopo.desktop"
+	_hide_desktop "assistant.desktop"
+	_hide_desktop "qdbusviewer.desktop"
+	_hide_desktop "linguist.desktop"
+	_hide_desktop "designer.desktop"
+	_hide_desktop "qvidcap.desktop"
+	_hide_desktop "qv4l2.desktop"
+}
+
 post_install() {
 	chattr +i /etc/xdg/kdeglobals
+	_hide_desktop_entry
 }
 
 pre_upgrade() {
@@ -10,4 +24,5 @@ pre_upgrade() {
 
 post_upgrade() {
 	chattr +i /etc/xdg/kdeglobals
+	_hide_desktop_entry
 }
