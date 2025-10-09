@@ -1,8 +1,9 @@
-# Update $HOME
-rsync -rlu /etc/skel/. $HOME
+#!/bin/bash
 
+# Update $HOME
 [ -d "${HOME}/Área de trabalho" ] && rm -r "${HOME}/Área de trabalho"
-xdg-user-dirs-update
+rsync -rlu /etc/skel/. $HOME
+xdg-user-dirs-update --set DESKTOP ${HOME}/Desktop
 
 # Fix Config File User Names
 lUser="$(whoami)"
