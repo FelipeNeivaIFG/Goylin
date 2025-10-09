@@ -10,7 +10,6 @@ arch=('x86_64')
 
 source=(
 	'skel.tar'
-	'user-dirs.defaults'
 	'goylin.tar'
 	'gWelcome'
 	'gSetResolution'
@@ -23,7 +22,6 @@ source=(
 md5sums=(
 	'SKIP' 'SKIP' 'SKIP' 'SKIP'
 	'SKIP' 'SKIP' 'SKIP' 'SKIP'
-	'SKIP'
 )
 
 install='pkg.install'
@@ -50,8 +48,6 @@ depends=(
 
 package() {
 	install -Dm 644 -t ${pkgdir}/etc/ profile.goylin
-
-	install -Dm 644 -t ${pkgdir}/etc/xdg/ user-dirs.defaults
 
 	install -Dm 644 -t ${pkgdir}/etc/X11/xorg.conf.d/ 00-keyboard.conf
 
