@@ -37,6 +37,15 @@ _enableServices() {
 	systemctl enable avahi-daemon
 }
 
+_hide_desktop() { [ -f "/usr/share/applications/$1" ] && sed -i '/^NoDisplay=/d; $aNoDisplay=true' "/usr/share/applications/$1"; }
+
+_hide_desktop_entry() {
+	_hide_desktop "bssh.desktop"
+	_hide_desktop "avahi-discover.desktop"
+	_hide_desktop "bvnc.desktop"
+	_hide_desktop "vim.desktop"
+}
+
 post_install() {
 	_enableServices
 
@@ -45,12 +54,12 @@ post_install() {
 
 	sed -i "s/NM_ONLINE_TIMEOUT=60/NM_ONLINE_TIMEOUT=10/g" /etc/systemd/system/network-online.target.wants/NetworkManager-wait-online.service
 
+	_hide_desktop_entry
+
 	_lockGFiles
 }
 
-pre_upgrade() {
-	_unlockGFiles
-}
+pre_upgrade() { _unlockGFiles; }
 
 post_upgrade() {
 	_enableServices
@@ -59,6 +68,8 @@ post_upgrade() {
 	cp -f /usr/share/goylin/icons/goylin.png /usr/share/pixmaps/archlinux-logo.png
 
 	# grub-mkconfig -o /boot/grub/grub.cfg
+
+	_hide_desktop_entry
 
 	_lockGFiles
 }
