@@ -5,6 +5,21 @@ _remove_files() {
 	[ -f /etc/xdg/autostart/picom.desktop ] && rm /etc/xdg/autostart/picom.desktop
 }
 
-post_install() { _remove_files; }
+_hide_desktop() { [ -f "/usr/share/applications/$1" ] && sed -i '/^NoDisplay=/d; $aNoDisplay=true' "/usr/share/applications/$1"; }
 
-post_upgrade() { _remove_files; }
+_hide_desktop_entry() {
+	_hide_desktop "arandr.desktop"
+	_hide_desktop "rofi-theme-selector.desktop"
+	_hide_desktop "rofi.desktop"
+	_hide_desktop "picom.desktop"
+}
+
+post_install() {
+	_remove_files
+	_hide_desktop_entry
+}
+
+post_upgrade() {
+	_remove_files
+	_hide_desktop_entry
+}
