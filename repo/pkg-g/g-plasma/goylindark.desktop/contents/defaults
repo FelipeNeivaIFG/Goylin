@@ -1,0 +1,14 @@
+[kdeglobals][General]
+ColorScheme=BreezeDark
+
+[kdeglobals][Icons]
+Theme=breeze-dark
+
+[plasmarc][Theme]
+name=default
+
+[kcminputrc][Mouse]
+cursorTheme=Breeze_Light
+
+[kwinrc][org.kde.kdecoration2]
+library=org.kde.breeze

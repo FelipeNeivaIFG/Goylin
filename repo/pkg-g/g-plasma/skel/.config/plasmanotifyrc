@@ -1,0 +1,6 @@
+[DoNotDisturb]
+WhenScreenMirrored=true
+WhenFullScreen=true
+
+[Notifications]
+NormalAlwaysOnTop=true

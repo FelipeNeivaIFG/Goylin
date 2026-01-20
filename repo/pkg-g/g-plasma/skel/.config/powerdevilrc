@@ -1,0 +1,10 @@
+[AC][Display]
+DisplayBrightness=100
+TurnOffDisplayWhenIdle=false
+UseProfileSpecificDisplayBrightness=true
+
+[AC][SuspendAndShutdown]
+PowerButtonAction=8
+
+[AC][Performance]
+PowerProfile=performance
