@@ -1,0 +1,17 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='g-a11y'
+pkgdesc='Goylin: A11y Acessibilidade'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group=('goylin')
+
+pkgver=26.0
+pkgrel=0
+arch=('x86_64')
+
+# depends=(
+# 	# 'orca'	# Screen reader for individuals who are blind or visually impaired
+# 	# 'espeak-ng'	# Multi-lingual software speech synthesizer
+# 	# 'espeakup'	# A light weight connector for espeak-ng and speakup
+# 	# 'corekeyboard'	# A virtual keyboard for X11 from the C Suite	# Better, but wont work on slick-greeter
+# 	# 'onboard'	# On-screen keyboard useful on tablet PCs or for mobility impaired users.	# Worst, but just works
+# )
