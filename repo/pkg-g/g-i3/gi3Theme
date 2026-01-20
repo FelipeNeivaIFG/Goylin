@@ -1,0 +1,5 @@
+#!/bin/bash
+
+nwall=$(find /usr/share/goylin/backgrounds/ -type f | shuf -n 1)
+xwallpaper --zoom ${nwall}
+wal -nti ${nwall} --saturate 0.8
