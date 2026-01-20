@@ -1,0 +1,8 @@
+#!/bin/bash
+
+post_install() { systemctl enable goylinGenWall.service; }
+
+pre_upgrade() { 
+	[ -d /usr/share/goylin/backgrounds ] && rm /usr/share/goylin/backgrounds/*
+	return 0
+}

@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Generate login quoted wallpaper
+qFile="/usr/share/goylin/quotes/gQuotes.txt"
+iImg="/usr/share/goylin/wallpapers/wall-current-src.jpg"
+oImg="/usr/share/goylin/wallpapers/wall-current.jpg"
+quote=$(shuf -n 1 "$qFile")
+
+[ -f "$oImg" ] && rm "$oImg"
+
+magick "$iImg" \
+	-gravity north \
+	-interline-spacing 10 \
+	-pointsize 18 \
+	-fill "rgba(255,255,255,0.8)" \
+	-font "/usr/share/goylin/quotes/CascadiaCodePL.ttf" \
+	-annotate -160+80 "$quote" \
+	"$oImg"
+
+exit 0
+

@@ -1,0 +1,11 @@
+[Unit]
+Description=Goylin: Generate quoted wallpaper
+After=goylinUp.service plymouth-start.service
+Before=display-manager.service plymouth-quit.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/gGenWall
+
+[Install]
+WantedBy=multi-user.target
