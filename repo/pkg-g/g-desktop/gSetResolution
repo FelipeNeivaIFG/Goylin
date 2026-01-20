@@ -1,0 +1,54 @@
+#!/bin/bash
+
+# Get connected outputs
+outputs=$(xrandr | grep -w 'connected' | awk '{ print $1 }')
+
+for output_name in $outputs; do
+	# Get highest resolution for this output
+	highest_resolution=$(xrandr | grep -A 1 "^$output_name connected" | grep -o '[0-9]\+x[0-9]\+' | sort -t 'x' -n -k2 | tail -n1)
+
+	# Apply based on desktop session
+	case "$DESKTOP_SESSION" in
+		i3)
+			xrandr --output "$output_name" --mode "$highest_resolution";;
+
+		plasmax11)
+			case "$highest_resolution" in
+				"1920x1080") plasma_mode=71 ;;
+				"1680x1050") plasma_mode=72 ;;
+				"1600x900") plasma_mode=73 ;;
+				"1280x1024") plasma_mode=74 ;;
+				"1440x900") plasma_mode=75 ;;
+				"1280x720") plasma_mode=76 ;;
+				"1024x768") plasma_mode=77 ;;
+				"800x600") plasma_mode=78 ;;
+				"640x480") plasma_mode=79 ;;
+				"720x400") plasma_mode=80 ;;
+
+				*) echo "Unknown Plasma-X11 Resolution"; exit 1;;
+			esac
+
+			kscreen-doctor config output."$output_name".mode."$plasma_mode"
+			;;
+
+		plasma)
+			case "$highest_resolution" in
+				"1920x1080") plasma_mode=1 ;;
+				"1680x1050") plasma_mode=2 ;;
+				"1600x900") plasma_mode=3 ;;
+				"1280x1024") plasma_mode=4 ;;
+				"1440x900") plasma_mode=5 ;;
+				"1280x720") plasma_mode=6 ;;
+				"1024x768") plasma_mode=7 ;;
+				"800x600") plasma_mode=8 ;;
+				"640x480") plasma_mode=9 ;;
+				"720x400") plasma_mode=10 ;;
+
+				*) echo "Unknown Plasma-Wayland Resolution"; exit 1;;
+			esac
+
+			kscreen-doctor config output."$output_name".mode."$plasma_mode";;
+		*)
+			;;
+	esac
+done

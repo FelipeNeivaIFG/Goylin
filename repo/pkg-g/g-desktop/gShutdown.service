@@ -1,0 +1,6 @@
+[Unit]
+Description=Shutdown system on Time
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/shutdown -h now

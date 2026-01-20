@@ -1,0 +1,18 @@
+#!/bin/sh
+
+_lockGFiles() { chattr +i /etc/xdg/user-dirs.defaults; }
+
+_unlockGFiles() { chattr -i /etc/xdg/user-dirs.defaults; }
+
+##
+
+post_install() {
+	_lockGFiles
+
+	systemctl enable bluetooth
+	systemctl enable gShutdown.timer
+}
+
+pre_upgrade() { _unlockGFiles; }
+
+post_upgrade() { _lockGFiles; }

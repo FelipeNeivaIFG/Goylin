@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/bin/gWelcome
+Hidden=false
+NoDisplay=true
+X-GNOME-Autostart-enable=true
+Icon=/usr/share/goylin/icons/goylin.svg
+Name=Manual Goylin
