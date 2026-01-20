@@ -1,0 +1,25 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='gapp-adm'
+pkgdesc='Goylin: Administrative Apps'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group=('goylin')
+
+pkgver=26.0
+pkgrel=0
+arch=('x86_64')
+
+install='pkg.install'
+
+depends=(
+	# 'thunderbird'	# Standalone mail and news reader from mozilla.org
+	# 'thunderbird-ublock-origin'	# Efficient blocker add-on for various browsers. Fast, potent, and lean
+	# 'thunderbird-i18n-pt-br'	# Portuguese (Brazilian) language pack for Thunderbird
+	# AUR #
+	# 'serpro-signer'	# Assinador Digital SERPRO : Aplicativo para geração e validação de assinaturas no padrão ICP-BRASIL
+	# 'serproid'	# PKCS#11 driver for cloud-based digital certificates issued by Serpro # Broken Dep jdk24, try again later
+	'ferdium-bin'	# A messaging browser that allows you to combine your favorite messaging services into one application
+	'google-chrome'	# The popular web browser by Google (Stable Channel)
+	# AUR DEPS #
+	# 'jdk8'	# GOV.br
+	# 'jre8'	# GOV.br
+)

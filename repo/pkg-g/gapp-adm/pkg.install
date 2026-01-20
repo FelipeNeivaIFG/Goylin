@@ -1,0 +1,51 @@
+#!/bin/bash
+
+_lockGFiles() {
+	chattr +i /etc/hosts
+}
+
+_unlockGFiles() {
+	chattr -i /etc/hosts
+}
+
+##
+
+_hide_desktop() {
+	file="/usr/share/applications/$1"
+	[ -f "${file}" ] && sed -i '/^NoDisplay=/d; $aNoDisplay=true' "${file}"
+	return 0
+}
+
+_hide_desktop_entry() {
+	_hide_desktop "electron37.desktop"
+	_hide_desktop "sun_java-jdk8.desktop"
+	_hide_desktop "sun-java-jdk8.desktop"
+	_hide_desktop "sun_java-jre8.desktop"
+	_hide_desktop "jmc-jdk8.desktop"
+	_hide_desktop "jconsole-jdk8.desktop"
+	_hide_desktop "policytool-jdk8.desktop"
+	_hide_desktop "policytool-jre8.desktop"
+	_hide_desktop "jvisualvm-jdk8.desktop"
+	_hide_desktop "jconsole-java-openjdk.desktop"
+	_hide_desktop "jshell-java-openjdk.desktop"
+}
+
+##
+
+post_install() {
+	_unlockGFiles
+
+	tee -a /etc/hosts > /dev/null <<'EOF'
+127.0.0.1   assinador-desktop.serpro.gov.br
+
+EOF
+
+	## Force java version for .org systems
+	# archlinux-java set java-8-jdk
+
+	_lockGFiles
+
+	_hide_desktop_entry
+}
+
+post_upgrade() { _hide_desktop_entry; }
