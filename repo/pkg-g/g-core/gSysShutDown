@@ -1,0 +1,43 @@
+#!/bin/bash
+
+plymouth change-mode --system-upgrade
+
+gSysUpdateMsg="Procurando atualizações..."
+plymouth display-message --text="${gSysUpdateMsg}"
+[ -f /var/lib/pacman/db.lck ] && rm -vf /var/lib/pacman/db.lck
+pacman -Sy
+
+gSysUpdateMsg="Atualizando Configurações do Sistema..."
+plymouth display-message --text="${gSysUpdateMsg}"
+pacman -S --overwrite "*" --noconfirm --needed g-patch
+pacman -S --overwrite "*" --noconfirm --needed $(pacman -Qe | grep "^g-" | cut -d" " -f1)
+
+gSysUpdateMsg="Atualizando lista de programas..."
+plymouth display-message --text="${gSysUpdateMsg}"
+pacman -S --overwrite "*" --noconfirm --needed $(pacman -Qe | grep "^gapp-" | cut -d" " -f1)
+
+gSysUpdateMsg="Atualizando perfil..."
+plymouth display-message --text="${gSysUpdateMsg}"
+pacman -S --overwrite "*" --noconfirm --needed $(pacman -Qe | grep "^gp-" | cut -d" " -f1)
+
+## Don´t fully upgrade. (Do i need to?)
+# gSysUpdateMsg="Atualizando pacotes..."
+# plymouth display-message --text="${gSysUpdateMsg}"
+# pacman -Su --noconfirm --needed
+
+gSysUpdateMsg="Removendo orfãos..."
+plymouth display-message --text="${gSysUpdateMsg}"
+pacman -Rsn $(pacman -Qtdq) --noconfirm
+
+gSysUpdateMsg="Limpando Cache..."
+plymouth display-message --text="${gSysUpdateMsg}"
+pacman -Scc --noconfirm
+
+gSysUpdateMsg="Limpando Logs..."
+plymouth display-message --text="${gSysUpdateMsg}"
+journalctl --vacuum-time=4weeks
+
+gSysUpdateMsg="Desligando..."
+plymouth display-message --text="${gSysUpdateMsg}"
+
+exit 0

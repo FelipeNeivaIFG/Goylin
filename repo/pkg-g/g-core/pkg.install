@@ -1,0 +1,84 @@
+#!/bin/bash
+
+_lockGFiles() {
+	chattr +i /usr/share/pixmaps/archlinux-logo.svg
+	chattr +i /usr/share/pixmaps/archlinux-logo.png
+	chattr +i /etc/issue
+	chattr +i /etc/motd
+	chattr +i /usr/lib/os-release
+	chattr +i /usr/share/plymouth/plymouthd.defaults
+	chattr +i /etc/systemd/sleep.conf
+	chattr +i /etc/ssh/sshd_config
+	chattr +i /etc/sudoers
+	chattr +i /etc/vconsole.conf
+	chattr +i /etc/systemd/system/network-online.target.wants/NetworkManager-wait-online.service
+}
+
+_unlockGFiles() {
+	chattr -i /usr/share/pixmaps/archlinux-logo.svg
+	chattr -i /usr/share/pixmaps/archlinux-logo.png
+	chattr -i /etc/issue
+	chattr -i /etc/motd
+	chattr -i /usr/lib/os-release
+	chattr -i /usr/share/plymouth/plymouthd.defaults
+	chattr -i /etc/systemd/sleep.conf
+	chattr -i /etc/ssh/sshd_config
+	chattr -i /etc/sudoers
+	chattr -i /etc/vconsole.conf
+	chattr -i /etc/systemd/system/network-online.target.wants/NetworkManager-wait-online.service
+}
+
+##
+
+_enableServices() {
+	systemctl enable NetworkManager
+	systemctl enable sshd
+	systemctl enable goylinUp.service
+	systemctl enable goylinDown.service
+	systemctl enable goylinSyncTime.service
+	systemctl enable systemd-timesyncd.service
+	systemctl enable avahi-daemon
+}
+
+##
+
+_hide_desktop() {
+	file="/usr/share/applications/$1"
+	[ -f "${file}" ] && sed -i '/^NoDisplay=/d; $aNoDisplay=true' "${file}"
+	return 0
+}
+
+_hide_desktop_entry() {
+	_hide_desktop "bssh.desktop"
+	_hide_desktop "avahi-discover.desktop"
+	_hide_desktop "bvnc.desktop"
+	_hide_desktop "vim.desktop"
+}
+
+##
+
+post_install() {
+	_enableServices
+
+	cp -f /usr/share/goylin/icons/goylin.svg /usr/share/pixmaps/archlinux-logo.svg
+	cp -f /usr/share/goylin/icons/goylin.png /usr/share/pixmaps/archlinux-logo.png
+
+	sed -i "s/NM_ONLINE_TIMEOUT=60/NM_ONLINE_TIMEOUT=10/g" /etc/systemd/system/network-online.target.wants/NetworkManager-wait-online.service
+
+	_lockGFiles
+
+	_hide_desktop_entry
+}
+
+pre_upgrade() { _unlockGFiles; }
+
+post_upgrade() {
+	_enableServices
+
+	cp -f /usr/share/goylin/icons/goylin.svg /usr/share/pixmaps/archlinux-logo.svg
+	cp -f /usr/share/goylin/icons/goylin.png /usr/share/pixmaps/archlinux-logo.png
+
+	_lockGFiles
+
+	_hide_desktop_entry
+}

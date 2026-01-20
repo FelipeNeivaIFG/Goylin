@@ -1,0 +1,20 @@
+#!/bin/bash
+
+plymouth change-mode --updates
+plymouth display-message --text="Inicializando..."
+
+# Dirty bugfix forcing adding b43 to kernel
+lsmod | grep -q b43 || modprobe b43
+
+# Clean Guest
+[ -f /var/lib/AccountsService/users/guest ] && rm -f /var/lib/AccountsService/users/guest
+[ -f /home/guest/.bashrc ] && rm -rf /home/guest/.*
+
+# Screen brightness for login
+ddcutil --disable-dynamic-sleep setvcp 10 100 --display 1
+ddcutil --disable-dynamic-sleep setvcp 10 100 --display 2 &> /dev/null
+
+# gOCSwrapper is enabled after AD register by gLoginAD
+[ -f /usr/bin/gOCSwrapper ] && /usr/bin/ocsinventory-agent -f -t $HOSTNAME
+
+exit 0

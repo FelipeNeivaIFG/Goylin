@@ -1,0 +1,15 @@
+[Unit]
+Description=Goylin: Update on Shutdown
+After=network-online.target plymouth-start.service
+Before=shutdown.target reboot.target halt.target poweroff.target plymouth-quit.service
+Conflicts=umount.target final.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStop=/usr/sbin/gSysShutDown
+ExecStopPost=/bin/sync
+TimeoutStopSec=infinity
+
+[Install]
+WantedBy=multi-user.target
