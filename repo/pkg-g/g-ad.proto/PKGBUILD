@@ -1,0 +1,63 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='g-ad.PROTO'
+pkgdesc='Goylin: AD - PROTO'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group=('goylin')
+
+pkgver=26.0
+pkgrel=0
+arch=('x86_64')
+
+source=(
+	'gLoginAD'
+	'krb5.conf'
+	'nsswitch.conf'
+	'pam_winbind.conf'
+	'smb.conf'
+	'su'
+	'system-auth'
+	'ocsinventory-agent.cfg'
+)
+
+md5sums=(
+	'SKIP' 'SKIP' 'SKIP' 'SKIP'
+	'SKIP' 'SKIP' 'SKIP' 'SKIP'
+)
+
+install='pkg.install'
+
+depends=(
+	'samba'	# SMB Fileserver and AD Domain server
+	'smbclient'	# Tools to access a server's filespace and printers via SMB
+	'krb5'	# The Kerberos network authentication system
+	'pam'	# PAM (Pluggable Authentication Modules) library
+	'pam-krb5'	# PAM module providing Kerberos v5 support
+	'openldap'	# Lightweight Directory Access Protocol (LDAP) client and server
+	'bind'	# A complete, highly portable implementation of the DNS protocol
+	'python-pysmbc'	# Python 3 bindings for libsmbclient
+	# AUR #
+	'ocsinventory-agent'	# Hardware and software inventory tool (client)
+	# DEPS #
+	'python-dnspython'	# samba - netads_dns.py, dnsresolver.py and traffic_packets.py | smbclient - samba_dnsupdate and samba_upgradedns in AD setup
+	'python-markdown'	# samba - ms_schema_markdown.py and ms_forest_updates_markdown.py | smbclient - for samba-tool domain schemeupgrade
+	'python-cryptography'	# samba - lockout_tests.py gp_cert_auto_enroll_ext.py gpo.py
+	# AUR DEPS #
+	'perl-proc-daemon'	# ocsinventory-agent
+	'perl-proc-pid-file'	# ocsinventory-agent
+)
+
+package() {
+	install -Dm 644 -t ${pkgdir}/etc/ krb5.conf
+	install -Dm 644 -t ${pkgdir}/etc/ nsswitch.conf
+
+	install -Dm 644 -t ${pkgdir}/etc/samba/ smb.conf
+
+	install -Dm 644 -t ${pkgdir}/etc/security/ pam_winbind.conf
+
+	install -Dm 644 -t ${pkgdir}/etc/ocsinventory/ ocsinventory-agent.cfg
+
+	install -Dm 700 -t ${pkgdir}/usr/bin/ gLoginAD
+
+	install -Dm 644 -t ${pkgdir}/etc/pam.d/ system-auth
+	install -Dm 644 -t ${pkgdir}/etc/pam.d/ su
+}
