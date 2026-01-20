@@ -1,0 +1,20 @@
+MenuBar=Disabled
+
+[MainWindow]
+MenuBar=Disabled
+
+[ContextMenu]
+ShowCopyToOtherSplitView=false
+ShowMoveToOtherSplitView=false
+ShowOpenInSplitView=false
+ShowOpenTerminal=false
+
+[General]
+BrowseThroughArchives=true
+
+[KFileDialog Settings]
+Places Icons Auto-resize=false
+Places Icons Static Size=22
+
+[PreviewSettings]
+Plugins=appimagethumbnail,cursorthumbnail,fontthumbnail,textthumbnail,ffmpegthumbs,audiothumbnail,djvuthumbnail,blenderthumbnail,mobithumbnail,gsthumbnail,rawthumbnail,glycin-heif,avif,evince,comicbookthumbnail,opendocumentthumbnail,kraorathumbnail,ebookthumbnail,windowsexethumbnail,heif,glycin-image-rs,librsvg,glycin-svg,webp-pixbuf,imagethumbnail,windowsimagethumbnail,exrthumbnail,jpegthumbnail,svgthumbnail,jxl,glycin-jxl,directorythumbnail
