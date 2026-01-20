@@ -1,0 +1,28 @@
+#!/bin/bash
+
+_lockGFiles() {
+	chattr +i /etc/hosts
+	chattr +i /usr/share/applications/brave-browser.desktop
+	}
+
+_unlockGFiles() {
+	chattr -i /etc/hosts
+	chattr -i /usr/share/applications/brave-browser.desktop
+	}
+
+post_install() {
+	_unlockGFiles
+
+	# Disable Brave Browser Updates and Alerts
+	tee -a /etc/hosts > /dev/null <<'EOF'
+
+0.0.0.0   updates-cdn.bravesoftware.com
+0.0.0.0   updates.bravesoftware.com
+0.0.0.0   updates-cdn2.brave.com
+
+EOF
+
+	sed -i 's/^Exec=brave/Exec=brave --disable-features=OutdatedBuildDetector/g' /usr/share/applications/brave-browser.desktop
+
+	_lockGFiles
+}
