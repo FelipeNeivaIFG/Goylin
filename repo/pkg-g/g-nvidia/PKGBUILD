@@ -1,0 +1,21 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='g-nvidia'
+pkgdesc='Goylin: Nvidia'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group='goylin'
+
+pkgver=26.0
+pkgrel=0
+arch=('x86_64')
+
+depends=(
+	'nvidia-open'
+	'nvidia-open-lts'
+	'nvidia-utils'
+	'lib32-nvidia-utils'
+	'vulkan-nouveau'
+	'lib32-vulkan-nouveau'
+	'egl-wayland'
+	'cuda'
+	'vulkan-headers'
+)
