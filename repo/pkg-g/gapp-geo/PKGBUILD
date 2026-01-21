@@ -1,0 +1,48 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='gapp-geo'
+pkgdesc='Goylin: Geotecnologia Apps'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group=('goylin')
+
+pkgver=26.0
+pkgrel=0
+arch=('x86_64')
+
+install='pkg.install'
+
+depends=(
+	'qgis'	# Geographic Information System (GIS) that supports vector, raster & database formats
+	'marble'	# Desktop Globe
+	# AUR #
+	'google-earth-pro'	# 3D interface to explore the globe, terrain, streets, buildings and other planets.
+	'saga-gis'	# A Geographic Information System (GIS) software with immense capabilities for geodata processing and analysis.
+	'grass'	# Geospatial data management and analysis, image processing, graphics/maps production, spatial modeling and visualizatio
+	# CUSTOM #
+	'gc-hortafacil' # HortaFacil
+	# DEPS #
+	'marble-common'	# Common libraries and plugins for Marble
+	'libwlocate'	# marble - WLAN based geolocation
+	'gpsd'	# marble - GPS based geolocation
+	'postgresql'	# saga-gis - Sophisticated object-relational DBMS | grass
+	'vigra'	# saga-gis - Computer vision library
+	'python-vigra'	#!! Dependency conflict with gapp-cad freecad !!# vigra - Computer vision library - Python bindings
+	'liblas'	# saga-gis - C/C++ library for reading and writing the very common LAS LiDAR format
+	'libharu'	# saga-gis - C library for generating PDF documents
+	'libsvm'	# saga-gis - A library for Support Vector Machines classification 'swig'
+	'fcgi'	# qgis - Map server
+	'gpsbabel'	# qgis - GPS Tools plugin
+	'python-psycopg2'	# qgis - A PostgreSQL database adapter for the Python programming language.
+	'python-owslib'	# qgis - Python package for client programming with Open Geospatial Consortium
+	'python-pygments'	# qgis - Python syntax highlighter
+	'python-lxml'	# qgis - Python3 binding for the libxml2 and libxslt libraries
+	'gdal'	# qgis - A translator library for raster and vector geospatial data formats
+	'python-jinja'	# qgis - A simple pythonic template language written in Python
+	'python-numpy'	# qgis - Scientific tools for Python
+	'python-scipy'	# qgis - Open-source software for mathematics, science, and engineering
+	'python-gdal'	# qgis - Python bindings for GDAL
+	'gsl'	# qgis - The GNU Scientific Library (GSL) is a modern numerical library for C & C++
+	'python-yaml' # qgis - Python bindings for YAML, using fast libYAML library
+	'postgis'	# A spatial database extender for PostgreSQL
+	'libxml2-legacy'	# google-earth-pro - XML C parser and toolkit (legacy version)
+	'sqlite'	# grass
+)
