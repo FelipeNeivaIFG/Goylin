@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Sketchup Web
+Comment=Launch Sketchup Web
+Exec=chromium --window-size=1920,1080 --new-window --app=https://www.sketchup.com/app
+Icon=/usr/share/icons/sketchupWeb.png
+Type=Application
+Categories=Graphics;3DGraphics;
+StartupNotify=true

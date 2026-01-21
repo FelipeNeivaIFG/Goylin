@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Autocad Web
+Comment=Launch Autocad Web
+Exec=chromium --window-size=1920,1080 --new-window --app=https://web.autocad.com/
+Icon=/usr/share/icons/autocadWeb.png
+Type=Application
+Categories=Graphics;3DGraphics;
+StartupNotify=true
