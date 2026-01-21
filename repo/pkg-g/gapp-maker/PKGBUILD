@@ -1,0 +1,47 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='gapp-maker'
+pkgdesc='Goylin: Maker Apps'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group=('goylin')
+pkgver=26.0
+pkgrel=0
+arch=('x86_64')
+
+source=('skel.tar')
+
+noextract=('skel.tar')
+
+md5sums=('SKIP')
+
+install='pkg.install'
+
+depends=(
+	'prusa-slicer'	# G-code generator for 3D printers (Prusa fork of Slic3r)
+	'slicer-udev'	# udev rules for Slic3r-like software
+	'kicad'	# Electronic schematic and printed circuit board (PCB) design tools
+	'freecad'	# Feature based parametric 3D CAD modeler
+	'openscad'	# The programmers solid 3D CAD modeller | freecad - OpenSCAD support
+	'opencascade'	# SDK intended for development of applications dealing with 3D CAD data
+	# DEPS #
+	'graphviz'	# freecad - dependency graph support
+	# AUR #
+	'blender-3.6-bin'	# A fully integrated 3D graphics creation suite # LTS for old hardware
+	'visicut-git'	# A user-friendy, platform-independent tool for preparing, saving and sending jobs to laser cutters.
+	'logisim-evolution'	# An educational tool for designing and simulating digital logic circuits
+	'linuxcnc'	# Controls CNC machines.
+	'orca-slicer-bin'	# Orca Slicer is a fork of Bambu Studio. It was previously known as BambuStudio-SoftFever
+	'bambustudio-bin'	# PC Software for BambuLab's 3D printers # RUN ERROR LANG
+	'universal-gcode-sender-platform'	# Java based GRBL gcode sender
+	# AUR DEPS #
+	'bwidget'	# linuxcnc
+	'python-yapps2'	# linuxcnc
+)
+
+## AUR BUILD DEPS ##
+# linuxcnc (tclx)
+
+package() {
+	install -Dm 644 -t ${pkgdir}/etc/skel skel.tar
+	tar xf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
+	rm ${pkgdir}/etc/skel/skel.tar
+}
