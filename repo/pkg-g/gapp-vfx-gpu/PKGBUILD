@@ -1,0 +1,46 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='gapp-vfx-gpu'
+pkgdesc='Goylin: VFX Apps - GPU Available'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group=('goylin')
+
+pkgver=26.0
+pkgrel=0
+arch=('x86_64')
+
+source=('skel.tar')
+
+noextract=('skel.tar')
+
+md5sums=('SKIP')
+
+depends=(
+	'blender'	# A fully integrated 3D graphics creation suite # LTS for old hardware
+	'opentoonz'	# Software for producing a 2D animation
+	# 'pencil2d'	# Easy, intuitive tool to make 2D hand-drawn animations
+	# CUSTOM #
+	'gc-fspy'	# cross platform app for still image camera matching
+	# AUR #
+	'magicavoxel'	# A free lightweight 8-bit voxel art editor and GPU based interactive path
+	# 'tahoma2d'	# Software for producing a 2D/Stop Motion animation # BROKEN PKGBUILD, try appimage
+	'pixelorama-bin'	# A free & open-source 2D sprite editor, made with the Godot Engine
+	'davinci-resolve'	# Professional A/V post-production software suite from Blackmagic Design
+	'meshroom-bin'	# Meshroom is a free, open-source 3D Reconstruction Software
+	'upscayl-bin'	#  Free and Open Source AI Image Upscaler # Not supported by Intel Ivy
+	'friction'	# Motion graphics and animation app
+	# DEPS #
+	'libdecor'	# blender - better wayland support
+	# AUR DEPS #
+	'blender-plugin-fspy' # blender addon for supporting fSpy project files
+	'davinci-ffmpeg-encoder-plugin'	# davinci-ffmpeg-encoder-plugin
+	'opencl-mesa'	# davinci - CPU opencl support
+	'qt5-websockets'	# davinci
+	'libpng12'	# davinci
+	'gconf' # fspy
+)
+
+package() {
+	install -vDm 644 -t ${pkgdir}/etc/skel skel.tar
+	tar vxf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
+	rm -v ${pkgdir}/etc/skel/skel.tar
+}
