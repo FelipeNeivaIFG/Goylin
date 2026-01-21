@@ -1,0 +1,35 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='gapp-maker-gpu'
+pkgdesc='Goylin: Maker Apps - GPU Available'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group=('goylin')
+pkgver=26.0
+pkgrel=0
+arch=('x86_64')
+
+install='pkg.install'
+
+depends=(
+	'prusa-slicer'	# G-code generator for 3D printers (Prusa fork of Slic3r)
+	'slicer-udev'	# udev rules for Slic3r-like software
+	'kicad'	# Electronic schematic and printed circuit board (PCB) design tools
+	'freecad'	# Feature based parametric 3D CAD modeler
+	'openscad'	# The programmers solid 3D CAD modeller | freecad - OpenSCAD support
+	'opencascade'	# SDK intended for development of applications dealing with 3D CAD data
+	'blender'	# A fully integrated 3D graphics creation suite # LTS for old hardware
+	# DEPS #
+	'graphviz'	# freecad - dependency graph support
+	# AUR #
+	'visicut-git'	# A user-friendy, platform-independent tool for preparing, saving and sending jobs to laser cutters.
+	'logisim-evolution'	# An educational tool for designing and simulating digital logic circuits
+	'linuxcnc'	# Controls CNC machines.
+	'orca-slicer-bin'	# Orca Slicer is a fork of Bambu Studio. It was previously known as BambuStudio-SoftFever
+	'bambustudio-nvidia-bin'	# PC Software for BambuLab's 3D printers # RUN ERROR LANG
+	'universal-gcode-sender-platform'	# Java based GRBL gcode sender
+	# AUR DEPS #
+	'bwidget'	# linuxcnc
+	'python-yapps2'	# linuxcnc
+)
+
+## AUR BUILD DEPS ##
+# linuxcnc (tclx)
