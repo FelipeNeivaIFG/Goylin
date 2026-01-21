@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE lmms-config-file>
+<lmms version="1.2.2">
+  <MidiAlsaRaw device="default"/>
+  <MidiJack device="lmms"/>
+  <Midialsaseq device="default"/>
+  <app openlastproject="0" nanhandler="1" disablebackup="0" displaydbfs="0" configured="1" nommpz="0" nomsgaftersetup="0" language="pt"/>
+  <audioalsa channels="2" device="null"/>
+  <audiojack channels="2" clientname="lmms"/>
+  <audiooss channels="2" device="/dev/dsp"/>
+  <audiopa channels="2" device="default"/>
+  <audioportaudio backend="" device=""/>
+  <audiosdl device=""/>
+  <audiosndio channels="2" device=""/>
+  <midioss device="/dev/midi"/>
+  <mixer mididev="Jack-MIDI" audiodev="JACK (JACK Audio Connection Kit)" framesperaudiobuffer="2048" hqaudio="0"/>
+  <paths sf2dir="/home/_USERNAME_/Documentos/lmms/samples/soundfonts/" vstdir="plugins/vst/" workingdir="" gigdir="/home/_USERNAME_/Documentos/lmms/samples/gig/" defaultsf2="" stkdir="/usr/share/stk/rawwaves/" backgroundartwork="" laddir="plugins/ladspa/" artwork="data:/themes/default/"/>
+  <tooltips disabled="0"/>
+  <ui displaywaveform="0" enableautosave="1" smoothscroll="0" syncvstplugins="1" enablerunningautosave="0" disableautoquit="1" vstalwaysontop="0" compacttrackbuttons="0" vstembedmethod="xembed" saveinterval="2" printnotelabels="0" animateafp="1" oneinstrumenttrackwindow="0"/>
+  <recentfiles>
+    <file path="data:/projects/templates/default.mpt"/>
+    <file path="/usr/share/lmms/projects/demos/CapDan/CapDan-ZeroSumGame-OriginalByZakarra.mmpz"/>
+    <file path="/usr/share/lmms/projects/demos/CapDan/CapDan-ReggaeTry.mmpz"/>
+    <file path="/usr/share/lmms/projects/demos/Alf42red-Mauiwowi.mmpz"/>
+    <file path="/usr/share/lmms/projects/demos/Saber-FinalStep.mmpz"/>
+    <file path="/usr/share/lmms/projects/demos/Namitryus-K-Project.mmpz"/>
+    <file path="/usr/share/lmms/projects/demos/EsoXLB-CPU.mmpz"/>
+    <file path="/usr/share/lmms/projects/demos/DnB.mmpz"/>
+    <file path="/usr/share/lmms/projects/demos/Ashore.mmpz"/>
+    <file path="/usr/share/lmms/projects/demos/Oglsdl-Dr8v2.mmpz"/>
+  </recentfiles>
+</lmms>

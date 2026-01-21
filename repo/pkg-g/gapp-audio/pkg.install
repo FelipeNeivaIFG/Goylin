@@ -1,0 +1,20 @@
+#!/bin/bash
+
+_hide_desktop() {
+	file="/usr/share/applications/$1"
+	[ -f "${file}" ] && sed -i '/^NoDisplay=/d; $aNoDisplay=true' "${file}"
+	return 0
+}
+
+_hide_desktop_entry() {
+	_hide_desktop "xjadeo.desktop"
+	_hide_desktop "zynaddsubfx-jack-multi.desktop"
+	_hide_desktop "zynaddsubfx-alsa.desktop"
+	_hide_desktop "zynaddsubfx-oss.desktop"
+}
+
+##
+
+post_install() { _hide_desktop_entry; }
+
+post_upgrade() { _hide_desktop_entry; }

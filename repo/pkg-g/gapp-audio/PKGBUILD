@@ -1,0 +1,56 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='gapp-audio'
+pkgdesc='Goylin: Audio Apps'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group=('goylin')
+
+pkgver=26.0
+pkgrel=0
+arch=('x86_64')
+
+source=('skel.tar')
+
+noextract=('skel.tar')
+
+md5sums=('SKIP')
+
+install='pkg.install'
+
+depends=(
+	'audacity'	# A program that lets you manipulate digital audio waveforms
+	'ardour'	# Professional-grade digital audio workstation
+	'mixxx'	# Free, open source software for digital DJing
+	# 'qtractor'	# Audio/MIDI multitrack sequencer
+	'lmms'	# The Linux MultiMedia Studio
+	# 'jjazzlab-bin'	# A complete and open application dedicated to backing tracks generation.
+	'bespokesynth' # A software modular synth
+	'zynaddsubfx'	# Opensource software synthesizer capable of making a countless number of instruments.
+	# 'hydrogen'	# An advanced drum machine
+	'cardinal' # Virtual modular synthesizer
+	'realtime-privileges'	# Realtime privileges for users
+	'jacktrip'	# Multi-machine audio network performance over the Internet
+	# AUR #
+	'jack-keyboard'	#	Virtual MIDI keyboard that uses JACK MIDI.
+	'x32edit'	#	Remote control and programm Behringer X32 consoles
+	'xairedit'	#	Remote control program for Behringer X-AIR mixers
+	# DEPS #
+	'ffmpeg' # audacity - for additional import/export capabilities
+	'harvid'	# ardour - for video timeline and MP3 export
+	'xjadeo'	# ardour - for video monitoring
+	'libcurl-gnutls'	# x32edit
+	'python-jedi'	# bespokesynth - for code completion
+	'cardinal-clap'	# cardinal - CLAP plugin
+	'cardinal-data'	# cardinal - data
+	'cardinal-lv2'	# cardinal - LV2 plugin
+	'pipewire-jack'	# jack
+	# AUR DEPS #
+	'audacity-plugins'	# audacity - Additional Nyquist plugins for Audacity
+	'lmms-orgmaker-samples'	# lmms - The set of samples used in Cave Story and other Pixel games.
+	'leet-plugins'	#	ardour - LADSPA plugins especially for use with Ardour
+)
+
+package() {
+	install -Dm 644 -t ${pkgdir}/etc/skel skel.tar
+	tar xf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
+	rm ${pkgdir}/etc/skel/skel.tar
+}
