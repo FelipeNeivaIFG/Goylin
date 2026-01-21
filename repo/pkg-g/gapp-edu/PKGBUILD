@@ -1,0 +1,41 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='gapp-edu'
+pkgdesc='Goylin: Educational Apps'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group=('goylin')
+
+pkgver=26.0
+pkgrel=0
+arch=('x86_64')
+
+install='pkg.install'
+
+depends=(
+	'kbruch'	# Exercise Fractions
+	'geogebra'	# Dynamic mathematics software with interactive graphics, algebra and spreadsheet
+	'kalzium'	# Periodic Table of Elements
+	'kgeography'	# Geography Trainer
+	'step'	# Interactive Physical Simulator
+	# 'scratch'	# Create and share your own interactive stories, games, music and art
+	'kstars'	# Desktop Planetarium
+	'ktouch'	# Touch Typing Tutor
+	'gbrainy'	# A brain teaser game and trainer to have fun and to keep your brain trained
+	'marble'	# Desktop Globe
+	'kturtle'	# Educational Programming Environment
+	'minuet'	# A KDE Software for Music Education
+	'leocad'	# A CAD program for creating virtual LEGO models
+	# AUR #
+	'turbowarp-desktop-bin'	# Scratch MOD
+	'openboard'	# Interactive whiteboard software for schools and universities
+	'portugol-studio-bin'	# Ambiente de Programação didático para a linguagem Portugol 2.0.
+	'fractalnow'	# Provides users with tools to generate pictures of various types of fractals quickly and easily
+	'stellarium-bin'	# Software which renders realistic skies in real time with OpenGL
+	'chemtool'	# A small program for drawing chemical structures
+	'principia'	# Physics-based sandbox building game.
+	'cosmonium-bin'	# 3D astronomy and space exploration program.
+	# DEPS #
+	'xplanet'	# kstars -  XPlanet support
+	'povray'	# leocad - required for rendering features
+	'marble-common'	# marble - Common libraries and plugins
+	'libwlocate'	# marble - WLAN based geolocation
+)
