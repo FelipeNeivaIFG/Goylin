@@ -8,12 +8,6 @@ pkgver=26.0
 pkgrel=0
 arch=('x86_64')
 
-source=('skel.tar')
-
-noextract=('skel.tar')
-
-md5sums=('SKIP')
-
 depends=(
 	'blender'	# A fully integrated 3D graphics creation suite # LTS for old hardware
 	'opentoonz'	# Software for producing a 2D animation
@@ -38,9 +32,3 @@ depends=(
 	'libpng12'	# davinci
 	'gconf' # fspy
 )
-
-package() {
-	install -vDm 644 -t ${pkgdir}/etc/skel skel.tar
-	tar vxf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
-	rm -v ${pkgdir}/etc/skel/skel.tar
-}
