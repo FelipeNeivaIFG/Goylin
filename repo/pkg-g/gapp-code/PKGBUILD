@@ -1,0 +1,51 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='gapp-code'
+pkgdesc='Goylin: Code Apps'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group=('goylin')
+pkgver=26.0
+pkgrel=0
+arch=('x86_64')
+
+install='pkg.install'
+
+depends=(
+	'neovim'	# Fork of Vim aiming to improve user experience, plugins, and GUIs.
+	'git'	# the fast distributed version control system
+	# 'pycharm-community-edition'	# Python IDE for Professional Developers
+	# 'intellij-idea-community-edition'	# IDE for Java, Groovy and other programming languages with advanced refactoring features
+	# 'r'	# Language and environment for statistical computing and graphics
+	'gcc'	# The GNU Compiler Collection - C and C++ frontends
+	'python'	# The Python programming language
+	'nodejs'	# Evented I/O for V8 javascript
+	'jdk-openjdk'	# OpenJDK Java 23 development kit
+	# 'go'	# Core compiler tools for the Go programming language
+	# 'rust'	# Systems programming language focused on safety, speed and concurrency
+	# 'dotnet-sdk'	# The .NET Core SDK
+	# 'perl'	# A highly capable, feature-rich programming language
+	# 'ruby'	# An object-oriented language for quick and easy programming
+	'cmake'	# A cross-platform open-source make system
+	'ninja'	# Small build system with a focus on speed
+	'make'	# GNU make utility to maintain groups of programs
+	'gdb'	# The GNU Debugger
+	'boost'	# Free peer-reviewed portable C++ source libraries (development headers)
+	# 'pkgconf'	# Package compiler and linker metadata toolkit
+	# 'sqlite'	# A C library that implements an SQL database engine
+	# 'postgresql'	# Sophisticated object-relational DBMS
+	# AUR #
+	# 'android-studio'	# The official Android IDE
+	'typora-free'	# A minimal markdown editor and reader.
+	'vscodium-bin'	# VS Code without MS branding/telemetry/licensing.
+	# DEPS #
+	'libdbusmenu-glib'	# vscodium-bin
+	'python-pynvim'	# neovim - for Python plugin support
+	'xclip'	# neovim - for clipboard support on X11
+	'wl-clipboard'	# neovim - for clipboard support on wayland
+	'lib32-gcc-libs'	# gcc - for generating code for 32-bit ABI
+	'python-pipx'	# python - for installing Python software not packaged on Arch Linux
+	'npm'	# nodejs - JavaScript package manager
+	'java-rhino' # jdk-opendjk - for some JavaScript support
+	# 'aspnet-targeting-pack'	# dotnet-sdk - Build ASP.NET Core applications
+	# 'ruby-stdlib'	# ruby - Full Ruby StdLib including default gems, bundled gems and tools
+	'libgit2'	# git - A linkable library for Git
+)
