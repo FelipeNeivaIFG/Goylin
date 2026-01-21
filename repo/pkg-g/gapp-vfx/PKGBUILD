@@ -1,0 +1,45 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='gapp-vfx'
+pkgdesc='Goylin: VFX Apps'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group=('goylin')
+
+pkgver=26.0
+pkgrel=0
+arch=('x86_64')
+
+source=('skel.tar')
+
+noextract=('skel.tar')
+
+md5sums=('SKIP')
+
+install='pkg.install'
+
+depends=(
+	'opentoonz'	# Software for producing a 2D animation
+	# 'pencil2d'	# Easy, intuitive tool to make 2D hand-drawn animations
+	# CUSTOM #
+	'gc-fspy'	# cross platform app for still image camera matching
+	# AUR #
+	# 'tahoma2d'	# Software for producing a 2D/Stop Motion animation # BROKEN PKGBUILD, try appimage
+	'pixelorama-bin'	# A free & open-source 2D sprite editor, made with the Godot Engine
+	'blender-3.6-bin'	# A fully integrated 3D graphics creation suite # LTS for old hardware
+	'magicavoxel'	# A free lightweight 8-bit voxel art editor and GPU based interactive path
+	'friction'	# Motion graphics and animation app
+	# DEPS #
+	'libdecor'	# blender - better wayland support
+	# AUR DEPS #
+	'blender-plugin-fspy' # blender - addon for supporting fSpy project files
+	'gconf' # fspy
+)
+
+package() {
+	install -Dm 644 -t ${pkgdir}/etc/skel skel.tar
+	tar xf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
+	rm ${pkgdir}/etc/skel/skel.tar
+
+	# install -vDm 644 -t ${pkgdir}/usr/share/blender/3.6/scripts/addons addons.tar
+	# tar vxf ${pkgdir}/usr/share/blender/3.6/scripts/addons/addons.tar --overwrite --directory=${pkgdir}/usr/share/blender/3.6/scripts/addons/
+	# rm -v ${pkgdir}/usr/share/blender/3.6/scripts/addons/addons.tar
+}
