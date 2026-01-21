@@ -1,0 +1,25 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='gapp-data-gpu'
+pkgdesc='Goylin: Data Analize Apps - GPU Available'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group=('goylin')
+
+pkgver=26.0
+pkgrel=0
+arch=('x86_64')
+
+depends=(
+	'octave'	# A high-level language, primarily intended for numerical computations
+	'r'	# Language and environment for statistical computing and graphics
+	# AUR #
+	'meshroom-bin'	# Meshroom is a free, open-source 3D Reconstruction Software
+	'rstudio-desktop-bin'	# integrated development environment (IDE) for R
+	# CUSTOM #
+	'gc-sisvar'
+	# DEPS #
+	'clang'	# rstudio-desktop-bin
+	'blas-openblas'	# r - faster linear algebra
+	'gcc-fortran'	# r - needed to compile some CRAN packages
+	'texlive-latex'	# r - latex sty files
+	'cuda'	# meshroom-bin
+)
