@@ -1,0 +1,102 @@
+🔒 Guia Rápido de Sobrevivência Hacker - 102 🔒
+
+Bem-vindo ao nível 2 da sua jornada hacker!
+🎮 Agora que você já abriu o terminal e explorou arquivos,
+é hora de navegar pelo sistema como um verdadeiro ninja do Linux.
+Vamos aprender a se mover entre diretórios e descobrir segredos escondidos! 🥷
+,,/(⌐■_■),,/
+
+
+⚔️ 1. Comandos Essenciais
+
+1.1 - cd (Change Directory) → Mude de Sala!
+O comando cd é sua porta mágica para viajar pelo sistema de arquivos.
+Como usar:
+
+cd [diretório]
+
+📌 Exemplo:
+
+cd Documentos
+
+Se você está na sua home (~), isso te leva para ~/Documentos.
+Visualize assim:Imagine o Linux como uma casa gigante.
+Ao abrir o terminal, você está na sala principal (sua home, ~).
+Há portas para "Documentos", "Downloads", "Música", etc.;
+Usar cd Documentos é como entrar na sala "Documentos".
+Lá dentro, use ls para ver o que tem!
+Outros truques com cd:
+
+'cd': Volta direto para sua home (~), não importa onde você esteja.
+'cd ..': Sobe um nível na árvore de diretórios.
+
+📌 Exemplo:
+
+Se você está em ~/Documentos e usa 'cd ..', volta para ~.
+Se está em ~ e usa 'cd ..', sobe para /home, onde estão as homes de todos os usuários.
+
+
+🔍 Dica Ninja:Perdido no sistema? Use:
+
+pwd
+
+(Print Working Directory) Mostra o caminho completo de onde você está, tipo um GPS do Linux!
+
+
+1.2 - 🪄 Jutsu Secreto: Autocompletar com TAB
+
+A tecla TAB (acima do Caps Lock) é sua melhor amiga! Ela completa comandos,
+nomes de arquivos e diretórios automaticamente.
+
+Como funciona:
+
+Digite 'cd Docu' e pressione TAB → o terminal completa para 'cd Documentos'.
+Se digitar 'cd Do' e pressionar TAB, e houver várias opções (ex.: "Documentos" e "Downloads"),
+o terminal mostra todas as possibilidades ao pressionar TAB duas vezes.
+
+Onde usar:
+
+Nomes de arquivos
+Diretórios
+Comandos
+Parâmetros
+
+📌 Exemplo:
+
+Digite 'ls Dow' e pressione TAB. O terminal pode completar para 'ls Downloads'.;
+Use isso para economizar tempo e evitar erros! 🚀
+
+
+🥚 2. Easter Eggs no Terminal
+
+O Linux é cheio de segredos e brincadeiras escondidas, os famosos easter eggs!;
+O terminal pode ser sério, mas também é um playground para hackers curiosos.
+
+ _______________________________________
+/ Use o comando 'cowsay' para se divertir \
+| com uma vaquinha que fala no terminal!  |
+|                                        |
+| 📌 Exemplo:                               |
+|   cowsay "Olá, mundo!"                 |
+|                                        |
+| A vaca vai repetir sua mensagem em     |
+| forma de arte ASCII.                   |
+\ Experimente mensagens diferentes!      /
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+
+---
+
+
+🎉 Parabéns por completar o nível 102 da jornada hacker!
+
+Continue praticando. Cada comando é uma nova técnica.
+Cada falha, uma chance de aprender.
+
+Nos vemos no próximo desafio:
+
+~/Documentos/.HACKER103 ? 👀

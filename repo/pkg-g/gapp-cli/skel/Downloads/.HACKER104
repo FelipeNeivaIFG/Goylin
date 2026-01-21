@@ -1,0 +1,97 @@
+🔒 Guia Rápido de Sobrevivência Hacker - 104 🔒
+
+Nível 4: A Arte de Limpar o Caminho (ou: Deletando com Sabedoria!)
+
+Boas-vindas ao nível 104, jovem hacker!
+Agora que você já sabe criar, mover e renomear arquivos,;
+chegou a hora de aprender a remover o que não é mais necessário.
+
+
+⚠️ Atenção:
+
+No Linux, remover é coisa séria.
+Diferente de clicar na lixeira com o mouse, no terminal o que vai, dificilmente volta.
+Vamos aprender com responsabilidade. 🧼🧙‍♂️
+
+
+🗑️ 1. Remover Arquivos com rm
+
+O comando rm serve para apagar arquivos.
+Simples, direto e... sem volta.
+
+rm nome_do_arquivo.txt
+
+📌 Exemplo:
+
+rm nao_abrir.txt
+
+💡 Dica Ninja:
+Antes de apagar, use ls para ter certeza do que há na pasta!
+
+
+🚫 2. Remover Diretórios Vazios com rmdir
+
+Se a pasta estiver vazia, você pode usar:
+
+rmdir nome_da_pasta
+
+📌 Exemplo:
+
+rmdir base_secreta
+
+Se a pasta tiver arquivos dentro, esse comando não funciona.
+
+
+🔥 3. Remover Diretórios com Tudo Dentro: rm -r
+
+Use com muito cuidado! Esse comando apaga a pasta e tudo que está dentro dela.
+
+rm -r nome_da_pasta
+
+📌 Exemplo:
+
+rm -r TreinamentoNinja
+
+⚠️ IMPORTANTE:
+
+Esse comando é irreversível.
+Certifique-se de que realmente quer apagar!
+
+
+🎯 Missão Hacker do Nível 104
+
+1. Crie uma pasta chamada teste_remocao
+2. Dentro dela, crie dois arquivos com touch: um.txt e dois.txt
+3. Liste o conteúdo com ls
+4. Apague apenas um arquivo com rm
+5. Depois, remova a pasta inteira (com o outro arquivo ainda dentro) usando rm -r
+
+
+📌 Checklist para Deletar com Sabedoria:
+
+✅ Usar ls para ver o que há na pasta  
+✅ Confirmar se não vai apagar nada importante  
+✅ Usar rm para arquivos  
+✅ Usar rmdir para pastas vazias  
+✅ Usar rm -r com consciência (e respeito pela máquina!)
+
+
+🐣 Easter Egg do Nível 104: cmatrix
+
+Se você sempre quis ver o terminal parecer uma cena do Matrix, esse comando é pra você!
+
+cmatrix
+
+🎬 Isso ativa uma chuva de códigos verdes, estilo hacker cinematográfico!
+
+Para cancelar e voltar ao terminal normal pressione:
+
+Ctrl + C
+
+-- Combinação de comandos no teclado são feitos segurando a primeira tecla,
+e dando um clique na segunda. No caso, segure a tecla 'Ctrl' e clique na tecla 'C'
+
+
+🔐 O próximo desafio está escondido em:
+
+📌 EM BREVE

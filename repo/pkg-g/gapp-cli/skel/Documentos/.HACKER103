@@ -1,0 +1,107 @@
+🔒 Guia Rápido de Sobrevivência Hacker - 103 🔒
+
+Você já explorou diretórios com ls,leu arquivos com cat, se movimentou com cd.
+Até conversou com uma vaca usando cowsay.
+Agora...
+
+Está na hora de manipular arquivos de verdade! 💻🧙‍♀️
+
+Seja bem-vindo(a) ao nível 103!
+Aqui você vai criar, mover e remover arquivos e diretórios,
+ferramentas básicas de qualquer aventureiro hacker! 🗃️⚙️
+
+,,/(⌐■_■),,/
+
+
+⚒️ 1. Criando Arquivos e Diretórios
+
+1.1 - touch (Toque de Criação)
+Use este comando para criar arquivos vazios.
+
+touch nome_do_arquivo.txt
+
+📌 Exemplo:
+
+touch missão_secreta.txt
+
+Cria um arquivo chamado missão_secreta.txt no diretório atual.
+
+
+1.2 - mkdir (Make Directory)
+Use para criar novas pastas!
+
+mkdir nome_da_pasta
+
+📌 Exemplo:
+
+mkdir PlanosFuturos
+
+Cria um diretório com esse nome na pasta atual.
+
+
+📥 Missão 1:
+
+Crie um diretório chamado Treinamento e um arquivo dentro dele chamado dia1.txt.
+
+Dica:
+mkdir Treinamento
+cd Treinamento
+touch dia1.txt
+ls
+
+
+🧳 2. Movendo e Renomeando Arquivos
+
+2.1 - mv (Move)
+Esse comando serve para mover arquivos ou renomeá-los.
+
+📦 Mover:
+
+mv arquivo destino/
+
+📌 Exemplo:
+
+mv dia1.txt ../
+
+Move o arquivo para o diretório anterior, mantendo o seu nome.
+(use cd .. para voltar e verificar).
+
+✏️ Renomear:
+
+mv antigo novo
+
+📌 Exemplo:
+
+mv antigo.txt novo.txt
+
+Troca o nome do arquivo antigo.txt para novo.txt.
+
+mv antigo.txt destino/novo.txt
+
+Move o arquivo para o diretório "destino" e
+troca o nome do arquivo antigo.txt para novo.txt.
+
+
+🧪 Desafio Hacker do Dia:
+
+1- Crie uma pasta chamada base_secreta
+2 - Dentro dela, crie um arquivo chamado senha.txt
+3 - Renomeie senha.txt para nao_abrir.txt
+4 - Volte para sua home com 'cd ~'
+
+💡 Dica: use pwd sempre que estiver perdido.
+Quer conferir se deu certo? Use ls a cada passo!
+
+
+🐣 Easter Egg do Nível 103: figlet
+
+Quer deixar o terminal mais estiloso? Use:
+
+figlet "Seu Nome"
+
+✨ Isso escreve seu nome em arte ASCII gigante!
+
+
+🔓 A próxima parte está guardada em:
+
+** EM BREVE! **

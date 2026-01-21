@@ -1,0 +1,153 @@
+🔒 Guia Rápido de Sobrevivência - HACKER 101 🔒
+
+Bem-vindo ao mundo épico do Linux, onde o terminal é sua varinha mágica para explorar o universo digital!
+🧙‍♂️ Prepare-se para desvendar segredos, dominar comandos e se sentir um verdadeiro hacker.
+
+\,,/(⌐■_■)\,,/
+
+
+👶 Para Iniciantes (n00bs)
+
+Não tema o terminal! Ele pode parecer intimidador, mas é seu melhor amigo para explorar o Linux.
+Aqui, você vai aprender os comandos básicos e os primeiros passos para navegar nesse sistema incrível.
+Teste, explore, quebre (com cuidado) e descubra arquivos escondidos.
+O Linux está cheio de surpresas! 😎
+
+
+⚔️ 1. Terminal: Sua Arma Secreta
+
+O terminal (ou CLI, *Command Line Interface*) é onde a mágica acontece.
+Vamos abri-lo e começar!
+
+1.1 - Como abrir o terminal:
+- Procure por “Terminal” no menu do sistema.
+
+1.2 - Escolha seu estilo de terminal:
+- Kitty : Leve, rápido e cheio de recursos modernos.
+- Cool Retro Term : Visual retrô, perfeito para se sentir na Matrix! 🕸️
+- Konsole : Simples e direto, padrão em ambientes KDE.
+
+Escolha o que combina com sua vibe, jovem hacker! 🚀
+
+
+🌍 2. Explorando o Terminal
+
+O terminal é seu portal para o coração do Linux.
+Com alguns comandos, você pode ir a qualquer lugar (se tiver permissão, claro!).
+
+
+2.1 - Diretórios e Arquivos
+
+Pense no sistema de arquivos como uma árvore gigante:
+
+/ (raiz)
+├── root/ (área secreta do sistema)
+├── home/
+│   ├── seu_id_do_SUAP/ (sua casa!)
+│   │   └── texto1.txt
+│   └── outro_usuario/
+│       ├── texto2.txt
+│       └── script.sh
+└── etc/ (configurações do sistema)
+    └── skel/
+
+No Linux, tudo é um arquivo!
+Imagens, textos, até diretórios.
+
+Quando você abre o terminal, está na sua *home*:
+
+$ /home/seu_id_do_SUAP/
+
+Dica Ninja: O símbolo `~` é um atalho para sua *home*.
+Então, `~` = `/home/seu_id_do_SUAP/`.
+Use sem moderação! 🥷
+
+
+2.2 - Comandos Essenciais
+
+Executar comandos é fácil:
+digite, pressione *ENTER* e veja a mágica!
+Alguns comandos aceitam flags (opções com `-`) e parâmetros (como nomes de arquivos).
+
+Formato básico:
+
+comando -flag parâmetro
+
+
+2.2.1 - `ls` (listar arquivos e diretórios)
+
+- `ls`: Mostra os arquivos e diretórios na pasta atual.
+- `ls Documentos`: Lista o conteúdo da pasta “Documentos”.
+- `ls -a`: Revela arquivos ocultos (aqueles que começam com `.`, como `.bashrc`).
+- `ls -lah`: Lista tudo com detalhes (`-l`), incluindo ocultos (`-a`), e tamanhos legíveis (`-h`).
+
+📌 Exemplo:
+
+ls -lah
+
+Mostra algo como:
+-rw-r--r-- 1 seu_id_do_SUAP 4.0K out 10 10:00 texto1.txt
+drwxr-xr-x 2 seu_id_do_SUAP 4.0K out 10 10:00 Documentos
+
+
+2.2.2 - `cat` (ler arquivos)
+
+- `cat arquivo`: Exibe o conteúdo de um arquivo no terminal.
+
+📌 Exemplo:
+
+cat .bashrc
+
+Mostra o arquivo de configuração do seu shell.
+
+Curiosidade:
+Tente usar `cat` em uma imagem (ex.: `cat imagem.jpg`).
+Você verá um monte de caracteres estranhos, porque tudo no Linux é tratado como arquivo! 😜
+
+
+🧪 3. Hora de Explorar!
+
+Agora que você conhece `ls` e `cat`, está pronto para sua primeira missão hacker.;
+Encontre o arquivo oculto .HACKER102 na sua *home*!
+
+Passos:
+1. Use `ls -a` para listar arquivos ocultos.
+2. Use `cat .HACKER102` para ler o conteúdo.
+
+⚠️ Atenção: O Linux é "case sensitive"!;
+Isso significa que `.HACKER102` é diferente de `.hacker102` ou `.HaCkEr102`.
+Digite com cuidado!
+
+
+👑 4. EasterEgg
+
+Comandos são poderosos, mas exigem precisão.
+Tente digitar errado, como `sl` ao invés de `ls`, e veja o que acontece.
+
+
+🎉 Parabéns, Jovem Hacker!
+
+Você deu seus primeiros passos no caminho do Linux! Continue explorando, testando e aprendendo.
+A próxima fase está escondida no arquivo .HACKER102. Desbloqueie-o e continue a aventura! 🔐
+
+Dica final: Fuja do medo, abrace o terminal e divirta-se hackeando (eticamente)! 🚀
+
+       .^. .  _
+      /: ||`\/ \~  ,
+     , [   &    / \ y'
+    {v':   `\   / `&~-,
+    'y. '    |`   .  ' /
+     \   '  .       , y
+      v .        '     v
+      V  .~.      .~.  V
+      : (  0)    (  0) :
+       i `'`      `'` j
+        i     __    ,j
+         `%`~....~'&
+       <~o' /  \/` \-s,
+      o.~'.  )(  r  .o ,.
+      o',  %``\/``& : 'bF
+      d', ,ri.~~-~.ri , +h
+      `oso' d`~..~`b 'sos`
+         d`+ II +`b
+         i_:_yi_;_y

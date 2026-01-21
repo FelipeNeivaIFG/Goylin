@@ -1,0 +1,70 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='gapp-cli'
+pkgdesc='Goylin: Audio Apps'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group=('goylin')
+
+pkgver=26.0
+pkgrel=0
+arch=('x86_64')
+
+source=('.clirc' 'skel.tar')
+
+md5sums=('SKIP' 'SKIP')
+
+noextract=('skel.tar')
+
+install='pkg.install'
+
+depends=(
+	'btop'	# A monitor of system resources, bpytop ported to C++
+	'ranger'	# Simple, vim-like file manager
+	'fd'	# Simple, fast and user-friendly alternative to find
+	'bat'	# Cat clone with syntax highlighting and git integration
+	'ncdu'	# Disk usage analyzer with an ncurses interface
+	'duf'	# Disk Usage/Free Utility
+	'fastfetch'	# A feature-rich and performance oriented neofetch like system information tool
+	'yt-dlp'	# A youtube-dl fork with additional features and fixes
+	'alacritty'	# A cross-platform, GPU-accelerated terminal emulator
+	'cool-retro-term'	# A good looking terminal emulator which mimics the old cathode display
+	'kitty'	# A modern, hackable, featureful, OpenGL-based terminal emulator
+	'sl'	# Steam Locomotive runs across your terminal when you type "sl" as you meant to type "ls"
+	'cmatrix'	# A curses-based scrolling 'Matrix'-like screen
+	'cowsay'	# Configurable talking cow (and a bit more)
+	'lolcat'	# Okay, no unicorns. But rainbows!!
+	'toilet'	# Free replacement for the FIGlet utility
+	'asciiquarium'	# An aquarium/sea animation in ASCII art
+	'xorg-xeyes'	# Follow the mouse/SHAPE extension X demo
+	'nyancat'	# Nyancat rendered in your terminal.
+	# AUR #
+	'typespeed'	# Test your typing speed, and get your fingers' CPS.
+	'funny-manpages'	# A set of miscellaneous humorous manpages (don't take them too seriously!).
+	'oneko'	# A cat that chases around your cursor
+	'pokemon-colorscripts-git'	# Print Pokemon ASCII art in the terminal
+	# DEPS #
+	'ueberzug'	# ranger - The default thumbnails image previewer
+	'python-pygments'	# kitty - syntax highlighting in kitty +kitten diff
+	'atool'	# ranger - for previews of archives
+	'elinks'	# ranger - for previews of html pages
+	'ffmpegthumbnailer'	# ranger - for video previews
+	'highlight'	# ranger - for syntax highlighting of code
+	'imagemagick'	# ranger - auto-rotate image previews based on EXIF data
+	'libcaca'	# ranger - for ASCII-art image previews
+	'lynx'	# ranger - for previews of html pages
+	'mediainfo'	# ranger - for viewing information about media files
+	'odt2txt'	# ranger - for OpenDocument texts
+	'perl-image-exiftool'	# ranger - for viewing information about media files
+	'poppler'	# ranger - for pdf previews
+	'python-chardet'	# ranger - in case of encoding detection problems
+	'python-pillow'	# ranger - for in-terminal preview of images in Kitty
+	'transmission-cli'	# ranger - for viewing bittorrent information
+	'w3m'	# ranger - for previews of images and html pages
+)
+
+package() {
+	install -Dm 644 -t ${pkgdir}/etc/skel/ .clirc
+
+	install -Dm 644 -t ${pkgdir}/etc/skel/ skel.tar
+	tar xf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel
+	rm ${pkgdir}/etc/skel/skel.tar
+}
