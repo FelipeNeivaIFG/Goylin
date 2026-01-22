@@ -1,0 +1,32 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='gapp-write'
+pkgdesc='Goylin: Write Apps'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group=('goylin')
+
+pkgver=26.0
+pkgrel=0
+arch=('x86_64')
+
+source=('skel.tar')
+
+noextract=('skel.tar')
+
+md5sums=('SKIP')
+
+depends=(
+	'scribus'	# Desktop publishing software
+	'fontforge'	# Outline and bitmap font editor
+	# AUR #
+	'scenarist'	# Screenwriting software to create screenplays which oriented at international standards in the field of film production
+	'hyphen-pt-br'	#	scribus -  hyphenation patterns
+	# AUR DEPS #
+	'qt5-webengine'	# scenarist
+	'qt5-webchannel' # scenarist
+)
+
+package() {
+	install -Dm 644 -t ${pkgdir}/etc/skel skel.tar
+	tar xf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
+	rm ${pkgdir}/etc/skel/skel.tar
+}
