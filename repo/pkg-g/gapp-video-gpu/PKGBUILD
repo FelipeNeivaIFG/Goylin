@@ -1,0 +1,58 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='gapp-video-gpu'
+pkgdesc='Goylin: Video Apps - GPU Available'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group=('goylin')
+
+pkgver=26.0
+pkgrel=0
+arch=('x86_64')
+
+source=('skel.tar')
+
+noextract=('skel.tar')
+
+md5sums=('SKIP')
+
+depends=(
+	'kdenlive'	# A non-linear video editor for Linux using the MLT video framework
+	'handbrake'	# Multithreaded video transcoder
+	'flowblade'	# Multitrack non-linear video editor
+	# AUR #
+	'yt-dlg'	# A cross platform front-end GUI of the popular yt-dlp
+	'davinci-resolve'	# Professional A/V post-production software suite from Blackmagic Design
+	'obs-studio-git'	# Free, open source software for live streaming and recording
+	'makemkv'	# DVD and Blu-ray to MKV converter
+	# DEPS #
+	'frei0r-plugins'	# kdenlive - Collection of video effect plugins
+	'bigsh0t'	# kdenlive -  VR360 effects
+	'dvgrab'	# kdenlive - for firewire capture
+	'ffmpeg'	# kdenlive - for FFmpeg plugin | yt-dlp - for video post-processing
+	'kimageformats'	# kdenlive - support for dds, xcf, exr, psd, and more image formats
+	'mediainfo'	# kdenlive - for technical clip information
+	'opencv'	# kdenlive - for motion tracking | frei0r-plugins - facebl0r and facedetect plugins
+	'opentimelineio'	# kdenlive - timeline export/import
+	'python-openai-whisper'	# kdenlive - speech to text (Whisper engine)
+	'python-srt_equalizer'	# kdenilve - speech to text (Whisper engine)
+	'python-vosk'	# kdenlive - speech to text (VOSK engine)
+	'qt6-imageformats'	# kdenlive - support for tiff, webp, and more image formats
+	'gst-plugins-good'	# handbrake - for video previews
+	'gst-libav'	# handbrake - for video previews | pitivi - Additional multimedia codecs
+	'libdvdcss'	# handbrake - for decoding encrypted DVDs
+	'sndio'	# obs-studio - Sndio input client
+	'libfdk-aac'	# obs-studio - FDK AAC codec support
+	'gavl'	# frei0r-plugins - rgbparade, scale0tilt and vectorscope plugins
+	'cairo'	# frei0r-plugins - cairoaffineblend, cairoblend, cairogradient and cairoimagegrid plugins
+	'faac'	# openshot - for exporting audio using AAC
+	# AUR DEPS #
+	'davinci-ffmpeg-encoder-plugin'	# davinci-ffmpeg-encoder-plugin
+	'opencl-mesa'	# davinci - CPU opencl support
+	'qt5-websockets'	# davinci
+	'libpng12'	# davinci
+)
+
+package() {
+	install -Dm 644 -t ${pkgdir}/etc/skel skel.tar
+	tar xf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
+	rm ${pkgdir}/etc/skel/skel.tar
+}
