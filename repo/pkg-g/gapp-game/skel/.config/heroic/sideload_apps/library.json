@@ -1,0 +1,328 @@
+{
+	"games": [
+		{
+			"runner": "sideload",
+			"app_name": "a7zHPXqnoMFZUcMkf1bQYc",
+			"title": "0 A.D.",
+			"install": {
+				"executable": "/usr/bin/0ad",
+				"platform": "Linux",
+				"is_dlc": false
+			},
+			"folder_name": "/usr/bin",
+			"art_cover": "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/4f315989358cc0f3f7869f569887743d.png",
+			"is_installed": true,
+			"art_square": "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/4f315989358cc0f3f7869f569887743d.png",
+			"canRunOffline": true,
+			"browserUrl": "",
+			"customUserAgent": "",
+			"launchFullScreen": false
+		},
+		{
+			"runner": "sideload",
+			"app_name": "b1qCaF7YcQMDvthkPWc1D2",
+			"title": "Mari0",
+			"install": {
+				"executable": "/usr/bin/mari0",
+				"platform": "Linux",
+				"is_dlc": false
+			},
+			"folder_name": "/usr/bin",
+			"art_cover": "https://cdn2.steamgriddb.com/grid/70a86cf3a9815116ae9403288173c50e.png",
+			"is_installed": true,
+			"art_square": "https://cdn2.steamgriddb.com/grid/70a86cf3a9815116ae9403288173c50e.png",
+			"canRunOffline": true,
+			"browserUrl": "",
+			"customUserAgent": "",
+			"launchFullScreen": false
+		},
+		{
+			"runner": "sideload",
+			"app_name": "qv1hNUcg31KQkGYUAjt8vG",
+			"title": "KPatience",
+			"install": {
+				"executable": "/usr/bin/kpat",
+				"platform": "Linux",
+				"is_dlc": false
+			},
+			"folder_name": "/usr/bin",
+			"art_cover": "https://cdn2.steamgriddb.com/grid/96f188042a7ef88f9247742923b1da1f.png",
+			"is_installed": true,
+			"art_square": "https://cdn2.steamgriddb.com/grid/96f188042a7ef88f9247742923b1da1f.png",
+			"canRunOffline": true,
+			"browserUrl": "",
+			"customUserAgent": "",
+			"launchFullScreen": false
+		},
+		{
+			"runner": "sideload",
+			"app_name": "ntxPqzMtSaFHYpPtBfAbzS",
+			"title": "Knights",
+			"install": {
+				"executable": "/usr/bin/knights",
+				"platform": "Linux",
+				"is_dlc": false
+			},
+			"folder_name": "/usr/bin",
+			"art_cover": "https://images.chesscomfiles.com/uploads/v1/images_users/tiny_mce/pdrpnht/phpS4dYZx.png",
+			"is_installed": true,
+			"art_square": "https://images.chesscomfiles.com/uploads/v1/images_users/tiny_mce/pdrpnht/phpS4dYZx.png",
+			"canRunOffline": true,
+			"browserUrl": "",
+			"customUserAgent": "",
+			"launchFullScreen": false
+		},
+		{
+			"runner": "sideload",
+			"app_name": "aHkjPF4QtaVtKYisquUTbb",
+			"title": "Principia",
+			"install": {
+				"executable": "/usr/bin/principia",
+				"platform": "Linux",
+				"is_dlc": false
+			},
+			"folder_name": "/usr/bin",
+			"art_cover": "https://m-cdn.phonearena.com/images/articles/103122-image/principia.jpg",
+			"is_installed": true,
+			"art_square": "https://m-cdn.phonearena.com/images/articles/103122-image/principia.jpg",
+			"canRunOffline": true,
+			"browserUrl": "",
+			"customUserAgent": "",
+			"launchFullScreen": false
+		},
+		{
+			"runner": "sideload",
+			"app_name": "kdrQq35Pea2Ra5kovCSwwA",
+			"title": "Sudoku",
+			"install": {
+				"executable": "/usr/bin/gnome-sudoku",
+				"platform": "Linux",
+				"is_dlc": false
+			},
+			"folder_name": "/usr/bin",
+			"art_cover": "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/baa0d842b5b6931a67c16e2c54c7a4f7.png",
+			"is_installed": true,
+			"art_square": "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/baa0d842b5b6931a67c16e2c54c7a4f7.png",
+			"canRunOffline": true,
+			"browserUrl": "",
+			"customUserAgent": "",
+			"launchFullScreen": false
+		},
+		{
+			"runner": "sideload",
+			"app_name": "dUPmLipgUnT14Wf8sq1kGc",
+			"title": "Osu Lazer",
+			"install": {
+				"executable": "/usr/bin/osu-lazer",
+				"platform": "Linux",
+				"is_dlc": false
+			},
+			"folder_name": "/usr/bin",
+			"art_cover": "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/64d532818f5a11ed28dfc6a1a7128060.png",
+			"is_installed": true,
+			"art_square": "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/64d532818f5a11ed28dfc6a1a7128060.png",
+			"canRunOffline": true,
+			"browserUrl": "",
+			"customUserAgent": "",
+			"launchFullScreen": false
+		},
+		{
+			"runner": "sideload",
+			"app_name": "vrVByQcqe11uBRJ3WgaKqS",
+			"title": "Powder Toy",
+			"install": {
+				"executable": "/usr/bin/powder-toy",
+				"platform": "Linux",
+				"is_dlc": false
+			},
+			"folder_name": "/usr/bin",
+			"art_cover": "https://cdn2.steamgriddb.com/grid/acf381ea902fa04e7b63e073ea28a839.png",
+			"is_installed": true,
+			"art_square": "https://cdn2.steamgriddb.com/grid/acf381ea902fa04e7b63e073ea28a839.png",
+			"canRunOffline": true,
+			"browserUrl": "",
+			"customUserAgent": "",
+			"launchFullScreen": false
+		},
+		{
+			"runner": "sideload",
+			"app_name": "1YGCQ8NGEe9tNFKhCeQGeJ",
+			"title": "Hedgewars",
+			"install": {
+				"executable": "/usr/bin/hedgewars",
+				"platform": "Linux",
+				"is_dlc": false
+			},
+			"folder_name": "/usr/bin",
+			"art_cover": "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/745cd59c307a0ad8b95a27a5c904528b.png",
+			"is_installed": true,
+			"art_square": "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/745cd59c307a0ad8b95a27a5c904528b.png",
+			"canRunOffline": true,
+			"browserUrl": "",
+			"customUserAgent": "",
+			"launchFullScreen": false
+		},
+		{
+			"runner": "sideload",
+			"app_name": "gwpnajWti4ktt8ouQjUPAp",
+			"title": "Shattered Pixel Dungeon",
+			"install": {
+				"executable": "/usr/bin/shattered-pixel-dungeon",
+				"platform": "Linux",
+				"is_dlc": false
+			},
+			"folder_name": "/usr/bin",
+			"art_cover": "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/c64e76c0d4b39f0ac9012cbcc54c59d1.png",
+			"is_installed": true,
+			"art_square": "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/c64e76c0d4b39f0ac9012cbcc54c59d1.png",
+			"canRunOffline": true,
+			"browserUrl": "",
+			"customUserAgent": "",
+			"launchFullScreen": false
+		},
+		{
+			"runner": "sideload",
+			"app_name": "wjJehWyGmR2K5aFK4LDRBu",
+			"title": "Re Volt",
+			"install": {
+				"executable": "/usr/bin/rvgl",
+				"platform": "Linux",
+				"is_dlc": false
+			},
+			"folder_name": "/usr/bin",
+			"art_cover": "https://cdn2.steamgriddb.com/grid/8d2acb449be3bc858a00d4146c54bf3f.png",
+			"is_installed": true,
+			"art_square": "https://cdn2.steamgriddb.com/grid/8d2acb449be3bc858a00d4146c54bf3f.png",
+			"canRunOffline": true,
+			"browserUrl": "",
+			"customUserAgent": "",
+			"launchFullScreen": false
+		},
+		{
+			"runner": "sideload",
+			"app_name": "46YR1DgPHtvjiHjWTVtMUY",
+			"title": "Typefighters",
+			"install": {
+				"executable": "/usr/lib/typefighters/Typefighters.x86",
+				"platform": "Linux",
+				"is_dlc": false
+			},
+			"folder_name": "/usr/lib/typefighters",
+			"art_cover": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/434290/capsule_616x353.jpg?t=1667054237",
+			"is_installed": true,
+			"art_square": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/434290/capsule_616x353.jpg?t=1667054237",
+			"canRunOffline": true,
+			"browserUrl": "",
+			"customUserAgent": "",
+			"launchFullScreen": false
+		},
+		{
+			"runner": "sideload",
+			"app_name": "w1YyPKmEwBVKBZtxyrM6e9",
+			"title": "vvvvvv",
+			"install": {
+				"executable": "/usr/bin/vvvvvv",
+				"platform": "Linux",
+				"is_dlc": false
+			},
+			"folder_name": "/usr/bin",
+			"art_cover": "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/108c7bfcc061d2f1342fc1167f8fd600.png",
+			"is_installed": true,
+			"art_square": "https://cdn2.steamgriddb.com/file/sgdb-cdn/grid/108c7bfcc061d2f1342fc1167f8fd600.png",
+			"canRunOffline": true,
+			"browserUrl": "",
+			"customUserAgent": "",
+			"launchFullScreen": false
+		},
+		{
+			"runner": "sideload",
+			"app_name": "j6pDsVynu8JKvYRB2BSqxi",
+			"title": "Trigger Rally",
+			"install": {
+				"executable": "/usr/games/trigger-rally",
+				"platform": "linux",
+				"is_dlc": false
+			},
+			"folder_name": "/usr/games",
+			"art_cover": "https://cdn2.steamgriddb.com/grid/3eeaea336c5a4bd2581be537727089e1.png",
+			"is_installed": true,
+			"art_square": "https://cdn2.steamgriddb.com/grid/3eeaea336c5a4bd2581be537727089e1.png",
+			"canRunOffline": true,
+			"browserUrl": "",
+			"customUserAgent": "",
+			"launchFullScreen": false
+		},
+		{
+			"runner": "sideload",
+			"app_name": "gRRKPyUZBLxiZHuFifE8in",
+			"title": "GBrainy",
+			"install": {
+				"executable": "/usr/bin/gbrainy",
+				"platform": "linux",
+				"is_dlc": false
+			},
+			"folder_name": "/usr/bin",
+			"art_cover": "/home/admin/.config/heroic/images-cache/1de81aba83c1a454f791cb6018fe2e22090f7b4a05928ee4ee6d1960b6cc5afa",
+			"is_installed": true,
+			"art_square": "/home/admin/.config/heroic/images-cache/1de81aba83c1a454f791cb6018fe2e22090f7b4a05928ee4ee6d1960b6cc5afa",
+			"canRunOffline": true,
+			"browserUrl": "",
+			"customUserAgent": "",
+			"launchFullScreen": false
+		},
+		{
+			"runner": "sideload",
+			"app_name": "vTxyoo3vxd8oBon7aidV8q",
+			"title": "Mahjongg",
+			"install": {
+				"executable": "/usr/bin/gnome-mahjongg",
+				"platform": "linux",
+				"is_dlc": false
+			},
+			"folder_name": "/usr/bin",
+			"art_cover": "/home/admin/.config/heroic/images-cache/00bca424a42f720d8c67362791fff244854ee21dd8d9a0dd77c1512f4527e6c5",
+			"is_installed": true,
+			"art_square": "/home/admin/.config/heroic/images-cache/00bca424a42f720d8c67362791fff244854ee21dd8d9a0dd77c1512f4527e6c5",
+			"canRunOffline": true,
+			"browserUrl": "",
+			"customUserAgent": "",
+			"launchFullScreen": false
+		},
+		{
+			"runner": "sideload",
+			"app_name": "3MpqpTcKSjUk9ieqk3JQnK",
+			"title": "Mines",
+			"install": {
+				"executable": "/usr/bin/gnome-mines",
+				"platform": "linux",
+				"is_dlc": false
+			},
+			"folder_name": "/usr/bin",
+			"art_cover": "/home/admin/.config/heroic/images-cache/89fa4a0571cf466474925ae4f051a1f2d5e49b1451536e56b5cc8c80673ef35e",
+			"is_installed": true,
+			"art_square": "/home/admin/.config/heroic/images-cache/89fa4a0571cf466474925ae4f051a1f2d5e49b1451536e56b5cc8c80673ef35e",
+			"canRunOffline": true,
+			"browserUrl": "",
+			"customUserAgent": "",
+			"launchFullScreen": false
+		},
+		{
+			"runner": "sideload",
+			"app_name": "9PzqfH7dXXyPLwPx9KeDkk",
+			"title": "Klotski",
+			"install": {
+				"executable": "/usr/bin/gnome-klotski",
+				"platform": "linux",
+				"is_dlc": false
+			},
+			"folder_name": "/usr/bin",
+			"art_cover": "/home/admin/.config/heroic/images-cache/f36b913a95199de4fc460fdbff6b0087099e5d0b111fae8e7cf6e34b26210b6c",
+			"is_installed": true,
+			"art_square": "/home/admin/.config/heroic/images-cache/f36b913a95199de4fc460fdbff6b0087099e5d0b111fae8e7cf6e34b26210b6c",
+			"canRunOffline": true,
+			"browserUrl": "",
+			"customUserAgent": "",
+			"launchFullScreen": false
+		}
+	]
+}

@@ -1,0 +1,54 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='gapp-game'
+pkgdesc='Goylin: Games'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group='goylin'
+
+pkgver=26.0
+pkgrel=0
+arch=('x86_64')
+
+source=('skel.tar')
+
+noextract=('skel.tar')
+
+md5sums=('SKIP')
+
+depends=(
+	# 'steam' # <- This will make a mess for sure... ^_^
+	# 'gamescope'	# SteamOS session compositing window manager
+	# 'scummvm'	# A 'virtual machine' for several classic graphical point-and-click adventure games.
+	'0ad'	# Cross-platform, 3D and historically-based real-time strategy game
+	'mari0'	# The Mario game with Portal gun mechanics
+	'kpat'	# Offers a selection of solitaire card games
+	'hedgewars'	# Turn-based strategy artillery game similiar to Worms
+	'shattered-pixel-dungeon'	# A roguelike dungeon crawler with randomized levels and enemies, and hundreds of items
+	'knights'	# Chess board by KDE with XBoard protocol support
+	'gnome-sudoku'	# Test your logic skills in this number grid puzzle
+	'principia'	# Physics-based sandbox building game.
+	'gnome-mines'	# Clear hidden mines from a minefield
+	'gnome-mahjongg'	# Disassemble a pile of tiles by removing matching pairs
+	'gnome-klotski'	# Slide blocks to solve the puzzle
+	'gbrainy'	# A brain teaser game and trainer to have fun and to keep your brain trained
+	# AUR #
+	'typefighters-bin'	# competitive multiplayer game where two players battle each other using their typing skills(free version)
+	'heroic-games-launcher-bin'	# An Open source Game Launcher
+	# 'itch-bin' # <- This will make a mess for sure... ^_^
+	'osu-lazer-bin'	# The future of osu! and the beginning of an open era! Commonly known by the codename osu!lazer. Pew pew.
+	'powder-toy'	# Desktop version of the classic falling sand physics sandbox, simulates air pressure, velocity & heat!
+	'rvgl-bin'	# Rewrite of Re-Volt, popular R/C car racing game from 1999.
+	'rvgl-io-tag'	# Additional Battle Tag levels for RVGL.
+	'vvvvvv'	# A retro-styled 2D platformer
+	'trigger'	# Free OpenGL rally car racing game
+	# DEPS #
+	'lib32-libxrandr'	# typefighters
+	'pipewire-jack'	# enforce insted of default JACK
+	# AUR DEPS #
+	'osu-mime'	# osu-lazer-bin
+)
+
+package() {
+	install -Dm 644 -t ${pkgdir}/etc/skel/ skel.tar
+	tar xf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel
+	rm ${pkgdir}/etc/skel/skel.tar
+}

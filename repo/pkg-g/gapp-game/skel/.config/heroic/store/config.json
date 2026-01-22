@@ -1,0 +1,66 @@
+{
+	"language": "pt_BR",
+	"window-props": {
+		"x": 0,
+		"y": 28,
+		"width": 1920,
+		"height": 1016,
+		"maximized": true
+	},
+	"settings": {
+		"checkUpdatesInterval": 10,
+		"enableUpdates": false,
+		"addDesktopShortcuts": false,
+		"addStartMenuShortcuts": false,
+		"autoInstallDxvk": false,
+		"autoInstallVkd3d": false,
+		"autoInstallDxvkNvapi": false,
+		"addSteamShortcuts": false,
+		"preferSystemLibs": false,
+		"checkForUpdatesOnStartup": false,
+		"autoUpdateGames": false,
+		"customWinePaths": [],
+		"defaultInstallPath": "",
+		"libraryTopSection": "disabled",
+		"defaultSteamPath": "",
+		"defaultWinePrefix": "",
+		"hideChangelogsOnStartup": true,
+		"language": "pt_BR",
+		"maxWorkers": 0,
+		"minimizeOnLaunch": false,
+		"nvidiaPrime": false,
+		"enviromentOptions": [],
+		"wrapperOptions": [],
+		"showFps": false,
+		"useGameMode": false,
+		"wineCrossoverBottle": "Heroic",
+		"winePrefix": "",
+		"wineVersion": {
+			"bin": "/usr/bin/wine",
+			"name": "Wine Default - wine-10.2",
+			"type": "wine",
+			"wineserver": "/usr/bin/wineserver"
+		},
+		"enableEsync": false,
+		"enableFsync": false,
+		"enableMsync": false,
+		"eacRuntime": false,
+		"battlEyeRuntime": false,
+		"framelessWindow": false,
+		"beforeLaunchScriptPath": "",
+		"afterLaunchScriptPath": "",
+		"disableUMU": false,
+		"verboseLogs": false,
+		"darkTrayIcon": false,
+		"experimentalFeatures": {
+			"enableNewDesign": false,
+			"enableHelp": false,
+			"cometSupport": false
+		},
+		"customCSS": "body.midnightMirage {\n--navbar-active: #000000;\n--navbar-inactive: #000000;\n--navbar-active-background: #000000;\n--navbar-accent: #000000;\n--navbar-background: #000000;\n--divider: #000000;\n}"
+	},
+	"theme": "midnightMirage",
+	"games": {
+		"recent": []
+	}
+}
