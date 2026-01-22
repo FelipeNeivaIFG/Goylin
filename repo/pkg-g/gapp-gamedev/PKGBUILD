@@ -1,0 +1,16 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='gapp-gamedev'
+pkgdesc='Goylin: Game Dev Apps'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group=('goylin')
+
+pkgver=26.0
+pkgrel=0
+arch=('x86_64')
+
+depends=(
+	'godot'	# Advanced cross-platform 2D and 3D game engine
+	# AUR #
+	'gb-studio-bin'	# Visual retro game maker
+	# 'unityhub'	# Standalone application to find, download, and manage Unity
+)
