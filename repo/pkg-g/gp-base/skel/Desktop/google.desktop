@@ -1,0 +1,5 @@
+[Desktop Entry]
+Icon=/usr/share/goylin/icons/google.ico
+Name=Google
+Type=Application
+Exec=brave --disable-features=OutdatedBuildDetector %U https://www.google.com.br

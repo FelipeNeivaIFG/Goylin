@@ -1,0 +1,21 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='gp-base'
+pkgdesc='Goylin: Profile - Base'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group=('goylin')
+
+pkgver=26.0
+pkgrel=0
+arch=('x86_64')
+
+source=('skel.tar')
+
+noextract=('skel.tar')
+
+md5sums=('SKIP')
+
+package() {
+	install -Dm 644 -t ${pkgdir}/etc/skel/ skel.tar
+	tar xf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel
+	rm ${pkgdir}/etc/skel/skel.tar
+}
