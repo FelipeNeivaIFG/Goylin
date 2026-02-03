@@ -1,0 +1,191 @@
+[Added Associations]
+
+# Audio Formats
+audio/aac=vlc.desktop;
+audio/mp4=vlc.desktop;
+audio/mpeg=vlc.desktop;
+audio/mpegurl=vlc.desktop;
+audio/ogg=vlc.desktop;
+audio/vnd.rn-realaudio=vlc.desktop;
+audio/vorbis=vlc.desktop;
+audio/x-flac=vlc.desktop;
+audio/x-mp3=vlc.desktop;
+audio/x-ms-wma=vlc.desktop;
+audio/x-oggflac=vlc.desktop;
+audio/x-vorbis=vlc.desktop;
+audio/x-vorbis+ogg=vlc.desktop;
+audio/x-wav=vlc.desktop;
+audio/x-aac=vlc.desktop;
+audio/x-alac=vlc.desktop;  # Added: ALAC (Apple Lossless)
+audio/x-wma=vlc.desktop;   # Added: Windows Media Audio
+audio/x-ape=vlc.desktop;   # Added: Monkey's Audio (APE)
+audio/x-opus=vlc.desktop;  # Added: Opus
+
+# Image Formats
+image/*=org.gnome.Shotwell-Viewer.desktop;
+image/avif=org.gnome.Shotwell-Viewer.desktop;
+image/bmp=org.gnome.Shotwell-Viewer.desktop;
+image/heif=org.gnome.Shotwell-Viewer.desktop;
+image/jpeg=org.gnome.Shotwell-Viewer.desktop;
+image/png=org.gnome.Shotwell-Viewer.desktop;
+image/webp=org.gnome.Shotwell-Viewer.desktop;
+image/x-icns=org.gnome.Shotwell-Viewer.desktop;
+image/gif=org.gnome.Shotwell-Viewer.desktop;
+image/tiff=org.gnome.Shotwell-Viewer.desktop;
+image/svg+xml=org.gnome.Shotwell-Viewer.desktop;
+image/x-xcf=org.gnome.Shotwell-Viewer.desktop; # Added: GIMP file format
+image/heic=org.gnome.Shotwell-Viewer.desktop;  # Added: High Efficiency Image Coding (HEIC)
+image/jp2=org.gnome.Shotwell-Viewer.desktop;   # Added: JPEG 2000
+
+# Video Formats
+video/*=vlc.desktop;
+video/mp4=vlc.desktop;
+video/mpeg=vlc.desktop;
+video/x-flv=vlc.desktop;   # Added: Flash Video (FLV)
+video/x-matroska=vlc.desktop; # Added: Matroska (MKV)
+video/quicktime=vlc.desktop; # Added: QuickTime video (MOV)
+video/webm=vlc.desktop;   # Added: WebM
+video/x-msvideo=vlc.desktop; # Added: AVI (Audio Video Interleave)
+
+# Document Types
+application/json=org.kde.kwrite.desktop;
+application/vnd.openxmlformats-officedocument.presentationml.presentation=onlyoffice.desktop;
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=onlyoffice.desktop;
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=onlyoffice.desktop;
+application/x-docbook+xml=org.kde.kwrite.desktop;
+application/x-yaml=org.kde.kwrite.desktop;
+application/xml=org.kde.kwrite.desktop;
+text/markdown=org.kde.kwrite.desktop;
+text/plain=org.kde.kwrite.desktop;
+text/x-cmake=org.kde.kwrite.desktop;
+application/pdf=org.gnome.Evince.desktop;evince.desktop  # Added: PDF
+application/rtf=org.kde.kwrite.desktop;  # Added: Rich Text Format (RTF)
+application/epub+zip=calibre-desktop.desktop; # Added: ePub
+application/x-mobipocket-ebook=calibre-desktop.desktop; # Added: MOBI
+application/x-odt=libreoffice.desktop;   # Added: OpenDocument Text (ODT)
+application/x-ods=libreoffice.desktop;   # Added: OpenDocument Spreadsheet (ODS)
+application/x-odp=libreoffice.desktop;   # Added: OpenDocument Presentation (ODP)
+
+# Compressed File Formats
+application/gzip=ark.desktop;
+application/x-bzip2=ark.desktop;
+application/x-lzip=ark.desktop;
+application/x-lzma=ark.desktop;
+application/x-tar=ark.desktop;
+application/zip=ark.desktop;
+application/x-rar=ark.desktop;
+application/x-7z-compressed=ark.desktop;
+application/x-xz=ark.desktop;
+application/x-tar.gz=ark.desktop;
+application/x-tar.bz2=ark.desktop;
+application/x-tar.xz=ark.desktop;
+application/x-tar.lz=ark.desktop;
+application/x-tar.lzma=ark.desktop;
+application/x-archive=ark.desktop;  # Added: Generic archive format
+
+# Directory
+inode/directory=org.kde.dolphin.desktop;
+
+# Scheme Handlers
+x-scheme-handler/about=brave-browser.desktop;
+x-scheme-handler/geo=google-maps-geo-handler.desktop;
+x-scheme-handler/http=brave-browser.desktop;
+x-scheme-handler/https=brave-browser.desktop;
+x-scheme-handler/mailto=thunderbird.desktop;  # Added: Email handler (mailto)
+
+[Default Applications]
+
+# Audio Formats
+audio/aac=vlc.desktop;
+audio/mp4=vlc.desktop;
+audio/mpeg=vlc.desktop;
+audio/mpegurl=vlc.desktop;
+audio/ogg=vlc.desktop;
+audio/vnd.rn-realaudio=vlc.desktop;
+audio/vorbis=vlc.desktop;
+audio/x-flac=vlc.desktop;
+audio/x-mp3=elisa.desktop;
+audio/x-ms-wma=vlc.desktop;
+audio/x-oggflac=vlc.desktop;
+audio/x-vorbis=vlc.desktop;
+audio/x-vorbis+ogg=vlc.desktop;
+audio/x-wav=vlc.desktop;
+audio/x-aac=vlc.desktop;
+audio/x-alac=vlc.desktop;  # Added: ALAC (Apple Lossless)
+audio/x-wma=vlc.desktop;   # Added: Windows Media Audio
+audio/x-ape=vlc.desktop;   # Added: Monkey's Audio (APE)
+audio/x-opus=vlc.desktop;  # Added: Opus
+
+# Image Formats
+image/avif=org.gnome.Shotwell-Viewer.desktop;
+image/bmp=org.gnome.Shotwell-Viewer.desktop;
+image/heif=org.gnome.Shotwell-Viewer.desktop;
+image/jpeg=org.gnome.Shotwell-Viewer.desktop;
+image/png=org.gnome.Shotwell-Viewer.desktop;
+image/webp=org.gnome.Shotwell-Viewer.desktop;
+image/x-icns=org.gnome.Shotwell-Viewer.desktop;
+image/gif=org.gnome.Shotwell-Viewer.desktop;
+image/tiff=org.gnome.Shotwell-Viewer.desktop;
+image/svg+xml=org.gnome.Shotwell-Viewer.desktop;
+image/x-xcf=org.gnome.Shotwell-Viewer.desktop; # Added: GIMP file format
+image/heic=org.gnome.Shotwell-Viewer.desktop;  # Added: High Efficiency Image Coding (HEIC)
+image/jp2=org.gnome.Shotwell-Viewer.desktop;   # Added: JPEG 2000
+
+# Compressed File Formats
+application/gzip=ark.desktop;
+application/x-bzip2=ark.desktop;
+application/x-lzip=ark.desktop;
+application/x-lzma=ark.desktop;
+application/x-tar=ark.desktop;
+application/zip=ark.desktop;
+application/x-rar=ark.desktop;
+application/x-7z-compressed=ark.desktop;
+application/x-xz=ark.desktop;
+application/x-tar.gz=ark.desktop;
+application/x-tar.bz2=ark.desktop;
+application/x-tar.xz=ark.desktop;
+application/x-tar.lz=ark.desktop;
+application/x-tar.lzma=ark.desktop;
+application/x-archive=ark.desktop;  # Added: Generic archive format
+
+# Document Types
+application/json=org.kde.kwrite.desktop;
+application/vnd.openxmlformats-officedocument.presentationml.presentation=onlyoffice.desktop;
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=onlyoffice.desktop;
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=onlyoffice.desktop;
+application/x-docbook+xml=org.kde.kwrite.desktop;
+application/x-yaml=org.kde.kwrite.desktop;
+text/markdown=org.kde.kwrite.desktop;
+text/plain=org.kde.kwrite.desktop;
+text/x-cmake=org.kde.kwrite.desktop;
+application/pdf=org.gnome.Evince.desktop;evince.desktop  # Added: PDF
+application/rtf=org.kde.kwrite.desktop;  # Added: Rich Text Format (RTF)
+application/epub+zip=calibre-desktop.desktop; # Added: ePub
+application/x-mobipocket-ebook=calibre-desktop.desktop; # Added: MOBI
+application/x-odt=libreoffice.desktop;   # Added: OpenDocument Text (ODT)
+application/x-ods=libreoffice.desktop;   # Added: OpenDocument Spreadsheet (ODS)
+application/x-odp=libreoffice.desktop;   # Added: OpenDocument Presentation (ODP)
+
+# Windows Types
+application/x-ms-dos-executable=wine.desktop
+application/x-msi=wine.desktop
+application/x-ms-windows-program=wine.desktop
+application/x-ms-windows-installer=wine.desktop
+application/x-ms-dos-batch=wine.desktop
+application/x-wine-extension-dll=wine.desktop
+
+# Directory
+inode/directory=org.kde.dolphin.desktop;
+
+# Scheme Handlers
+x-scheme-handler/about=brave-browser.desktop;
+x-scheme-handler/geo=google-maps-geo-handler.desktop;
+x-scheme-handler/http=brave-browser.desktop;
+x-scheme-handler/https=brave-browser.desktop;
+x-scheme-handler/mailto=thunderbird.desktop;  # Added: Email handler (mailto)
+
+# Fonts
+application/x-font-ttf=font-manager.desktop
+application/x-font-otf=font-manager.desktop
+application/vnd.ms-opentype=font-manager.desktop
+application/x-font-woff=font-manager.desktop
