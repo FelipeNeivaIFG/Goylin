@@ -1,0 +1,31 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='gc-sisvar'
+pkgdesc='Goylin: Sisvar'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group=('goylin')
+
+pkgver=26.0
+pkgrel=0
+arch=('x86_64')
+
+source=(
+	'sisvar.tar'
+	'sisvar.desktop'
+	'sisvaricon.png'
+)
+
+noextract=('sisvar.tar')
+
+md5sums=('SKIP' 'SKIP' 'SKIP')
+
+install='pkg.install'
+
+package() {
+	install -Dm 644 -t ${pkgdir}/opt/sisvar sisvar.tar
+	tar vxf ${pkgdir}/opt/sisvar/sisvar.tar --overwrite --directory=${pkgdir}/opt/sisvar
+	chmod -v 755 ${pkgdir}/opt/sisvar/start.sh
+	rm -v ${pkgdir}/opt/sisvar/sisvar.tar
+
+	install -Dm 644 -t ${pkgdir}/usr/share/applications sisvar.desktop
+	install -Dm 644 -t ${pkgdir}/usr/share/icons sisvaricon.png
+}

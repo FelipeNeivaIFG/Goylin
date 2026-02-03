@@ -1,0 +1,3 @@
+#!/bin/bash
+
+pre_upgrade() { [ -d /opt/sisvar ] && rm -r /opt/sisvar/; }
