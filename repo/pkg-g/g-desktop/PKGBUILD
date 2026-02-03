@@ -11,12 +11,10 @@ arch=('x86_64')
 source=(
 	'skel.tar'
 	'goylin.tar'
-	'gWelcome'
 	'gSetResolution'
 	'gLogoutScript'
 	'gProfile.sh'
 	'00-keyboard.conf'
-	'gManual.desktop'
 	'user-dirs.defaults'
 	'99-gLockNetwork.rules'
 	'gShutdown.service'
@@ -26,7 +24,7 @@ source=(
 md5sums=(
 	'SKIP' 'SKIP' 'SKIP' 'SKIP'
 	'SKIP' 'SKIP' 'SKIP' 'SKIP'
-	'SKIP' 'SKIP' 'SKIP' 'SKIP'
+	'SKIP' 'SKIP'
 )
 
 install='pkg.install'
@@ -66,10 +64,7 @@ package() {
 	install -Dm 644 -t ${pkgdir}/etc/systemd/system/ gShutdown.timer
 
 	install -Dm 755 -t ${pkgdir}/usr/bin/ gLogoutScript
-	install -Dm 755 -t ${pkgdir}/usr/bin/ gWelcome
 	install -Dm 755 -t ${pkgdir}/usr/bin/ gSetResolution
-
-	install -Dm 644 -t ${pkgdir}/usr/share/applications/ gManual.desktop
 
 	install -Dm 644 -t ${pkgdir}/etc/skel skel.tar
 	tar xf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel/
