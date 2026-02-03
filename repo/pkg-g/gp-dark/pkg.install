@@ -1,0 +1,19 @@
+#!/bin/bash
+
+_lockGFiles() { chattr +i /etc/xdg/kdeglobals; }
+
+_unlockGFiles() { chattr -i /etc/xdg/kdeglobals; }
+
+_setProfile() { sed -i "s/goylin.desktop/goylindark.desktop/g" /etc/xdg/kdeglobals; }
+
+post_install() {
+	_unlockGFiles
+	_setProfile
+	_lockGFiles
+}
+
+post_upgrade() {
+	_unlockGFiles
+	_setProfile
+	_lockGFiles
+}
