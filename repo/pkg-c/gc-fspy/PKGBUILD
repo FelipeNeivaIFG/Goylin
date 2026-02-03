@@ -1,0 +1,24 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='gc-fspy'
+pkgdesc='Goylin:fspy'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group='goylin'
+
+pkgver=26.0
+pkgrel=0
+arch=('x86_64')
+
+source=('fspy.7z' 'fspy.desktop')
+
+noextract=('fspy.7z')
+
+md5sums=('SKIP' 'SKIP')
+
+install='pkg.install'
+
+depends=('gconf' '7zip')
+
+package() {
+	install -Dm 755 -t ${pkgdir}/usr/share/applications/ fspy.desktop
+	install -Dm 644 -t ${pkgdir}/opt/ fspy.7z
+}

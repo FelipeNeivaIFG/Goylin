@@ -1,0 +1,19 @@
+#!/bin/bash
+
+_unpackZip() {
+	7z x /opt/fspy.7z -o/opt
+	rm /opt/fspy.7z
+	chmod a+rx -R /opt/fspy/
+}
+
+pre_upgrade() {
+	[ -d /opt/fspy/ ] && rm -r /opt/fspy/
+}
+
+post_install() {
+	_unpackZip
+}
+
+post_upgrade() {
+	_unpackZip
+}

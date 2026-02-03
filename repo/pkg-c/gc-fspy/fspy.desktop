@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Value=1.0
+Type=Application
+Name=Fspy
+GenericName=Fspy
+Comment=Fspy
+Icon=/opt/fspy/fspy.png
+Exec=/opt/fspy/fspy
+Categories=Graphics;
+Path=/opt/fspy/
