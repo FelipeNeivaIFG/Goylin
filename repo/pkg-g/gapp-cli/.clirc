@@ -3,5 +3,5 @@ pokemon-colorscripts -r --no-title
 alias find="fd"
 # alias cat="bat"
 alias top="btop"
-alias du="ncdu"
+# alias du="ncdu"
 alias df="duf"
