@@ -2,42 +2,38 @@
 
 plymouth change-mode --system-upgrade
 
-gSysUpdateMsg="Procurando atualizações..."
-plymouth display-message --text="${gSysUpdateMsg}"
+plymouth display-message --text="Procurando atualizações..."
 [ -f /var/lib/pacman/db.lck ] && rm -vf /var/lib/pacman/db.lck
 pacman -Sy
 
-gSysUpdateMsg="Atualizando Configurações do Sistema..."
-plymouth display-message --text="${gSysUpdateMsg}"
+plymouth display-message --text="Atualizando perfil..."
 pacman -S --overwrite "*" --noconfirm --needed g-patch
-pacman -S --overwrite "*" --noconfirm --needed $(pacman -Qe | grep "^g-" | cut -d" " -f1)
-
-gSysUpdateMsg="Atualizando lista de programas..."
-plymouth display-message --text="${gSysUpdateMsg}"
-pacman -S --overwrite "*" --noconfirm --needed $(pacman -Qe | grep "^gapp-" | cut -d" " -f1)
-
-gSysUpdateMsg="Atualizando perfil..."
-plymouth display-message --text="${gSysUpdateMsg}"
 pacman -S --overwrite "*" --noconfirm --needed $(pacman -Qe | grep "^gp-" | cut -d" " -f1)
 
-## Don´t fully upgrade. (Do i need to?)
-# gSysUpdateMsg="Atualizando pacotes..."
-# plymouth display-message --text="${gSysUpdateMsg}"
-# pacman -Su --noconfirm --needed
+if [ -f /etc/gUpdate ]; then
+	plymouth display-message --text="Atualizando Configurações do Sistema..."
+	pacman -S --overwrite "*" --noconfirm --needed $(pacman -Qe | grep "^g-" | cut -d" " -f1)
 
-gSysUpdateMsg="Removendo orfãos..."
-plymouth display-message --text="${gSysUpdateMsg}"
+	plymouth display-message --text="Atualizando lista de programas..."
+	pacman -S --overwrite "*" --noconfirm --needed $(pacman -Qe | grep "^gapp-" | cut -d" " -f1)
+
+	rm -f /etc/gUpdate
+
+	if [ -f /etc/gUpgrade ]; then
+		plymouth display-message --text="Atualizando pacotes..."
+		pacman -Su --noconfirm --needed && rm -f /etc/gUpgrade
+	fi
+fi
+
+plymouth display-message --text="Removendo orfãos..."
 pacman -Rsn $(pacman -Qtdq) --noconfirm
 
-gSysUpdateMsg="Limpando Cache..."
-plymouth display-message --text="${gSysUpdateMsg}"
+plymouth display-message --text="Limpando Cache..."
 pacman -Scc --noconfirm
 
-gSysUpdateMsg="Limpando Logs..."
-plymouth display-message --text="${gSysUpdateMsg}"
+plymouth display-message --text="Limpando Logs..."
 journalctl --vacuum-time=4weeks
 
-gSysUpdateMsg="Desligando..."
-plymouth display-message --text="${gSysUpdateMsg}"
+plymouth display-message --text="Desligando..."
 
 exit 0

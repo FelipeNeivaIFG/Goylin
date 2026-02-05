@@ -14,6 +14,8 @@ noextract=('skel.tar')
 
 md5sums=('SKIP')
 
+install='pkg.install'
+
 package() {
 	install -Dm 644 -t ${pkgdir}/etc/skel/ skel.tar
 	tar xf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel

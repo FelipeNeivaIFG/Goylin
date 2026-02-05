@@ -1,12 +1,12 @@
 #!/bin/bash
 
-_removeFromSkel () {
-	echo "Removing skell file: $1"
-	[ -f /etc/skel/"$1" ] rm -rf /etc/skel/"$1"
-}
+_enableUpgrade () { touch /etc/gUpgrade; }	#  Full system upgrade
+
+_enableUpdate () { touch /etc/gUpdate; }	# Update Goylin PKGs
+
+_removeFromSkel () { [ -f /etc/skel/"$1" ] rm -rf /etc/skel/"$1"; }
 
 _removeFromHome () {
-	echo "Removing user file: $1"
 	for userInHome in /home/*; do
 		userHome=$(basename $userInHome)
 		[ -f /home/"$userHome"/"$1" ] && rm -rf /home/"$userHome"/"$1"
@@ -14,7 +14,6 @@ _removeFromHome () {
 }
 
 _cleanDots () {
-	echo "Cleaning user Dots"
 	for userInHome in /home/*; do
 		userHome=$(basename $userInHome)
 		rm -rf /home/"$userHome"/.*
@@ -22,7 +21,6 @@ _cleanDots () {
 }
 
 _cleanDesktop () {
-	echo "Cleaning user Desktop"
 	for userInHome in /home/*; do
 		userHome=$(basename $userInHome)
 		rm -f /home/"$userHome"/Desktop/*.desktop

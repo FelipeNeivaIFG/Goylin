@@ -1,0 +1,9 @@
+#!/bin/bash
+
+_enableUpgrade () { touch /etc/gUpgrade; }	#  Full system upgrade
+
+_enableUpdate () { touch /etc/gUpdate; }	# Update Goylin PKGs
+
+# post_install() {}
+
+# post_upgrade() {}
