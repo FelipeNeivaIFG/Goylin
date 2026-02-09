@@ -1,0 +1,30 @@
+[options]
+HoldPkg = pacman glibc
+Architecture = auto
+Color
+ILoveCandy
+CheckSpace
+UseSyslog
+ParallelDownloads = 5
+SigLevel = Required DatabaseOptional
+LocalFileSigLevel = Optional
+
+##
+## Replace "[DEV REPO]" with Development Repo IP and rename to "pacman_dev.conf"
+##
+
+[goylin-repo]
+SigLevel = Optional TrustAll
+Server = http://[DEV REPO]/goylin-repo
+
+[goylin-repo-a]
+SigLevel = Optional TrustAll
+Server = http://[DEV REPO]/goylin-repo-a
+
+[goylin-repo-g]
+SigLevel = Optional TrustAll
+Server = http://[DEV REPO]/goylin-repo-g
+
+[goylin-repo-c]
+SigLevel = Optional TrustAll
+Server = http://[DEV REPO]/goylin-repo-c
