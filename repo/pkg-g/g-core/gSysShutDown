@@ -10,7 +10,7 @@ plymouth display-message --text="Atualizando perfil..."
 pacman -S --overwrite "*" --noconfirm --needed g-patch
 pacman -S --overwrite "*" --noconfirm --needed $(pacman -Qe | grep "^gp-" | cut -d" " -f1)
 
-if [ -f /etc/gUpdate ]; then
+if [[ -f /etc/gUpdate || -f /etc/gUpgrade ]]; then
 	plymouth display-message --text="Atualizando Configurações do Sistema..."
 	pacman -S --overwrite "*" --noconfirm --needed $(pacman -Qe | grep "^g-" | cut -d" " -f1)
 
