@@ -1,0 +1,7 @@
+#
+## Set DNS IP and rename to hosts
+#
+
+127.0.0.1   localhost
+127.0.1.1   GOITESTE.ifg.br                  GOITESTE
+[IP DNS]    ifg.br                           IFG0
