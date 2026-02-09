@@ -1,0 +1,12 @@
+repoUser=""
+gRepoPasswd=""
+repoSrv="0.0.0.0"
+repoDev="0.0.0.0"
+repoRemotePath="/var/www/html/"
+repoLocalPath="/srv/http/"
+repoName="goylin-repo"
+aRepoName="${repoName}-a" # AUR
+gRepoName="${repoName}-g" # GOYLIN
+cRepoName="${repoName}-c" # CUSTOM
+wRepoName="${repoName}-w" # WIP - DEV build only
+pkgRoot="../../.pkgRoot"
