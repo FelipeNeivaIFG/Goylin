@@ -42,6 +42,7 @@ depends=(
 	'img2pdf'	# pdfarranger - support for image files
 	'vlc-plugin-x264'	# vlc - H264/AVC support
 	'vlc-plugin-x265'	# vlc - H265/HEVC support
+	'vlc-plugins-all'	# vlc plugins
 	'aalib'	# vlc - ASCII art video output
 	'alsa-lib'	# vlc - ALSA audio output
 	'fluidsynth'	# vlc - FluidSynth based MIDI playback plugin
