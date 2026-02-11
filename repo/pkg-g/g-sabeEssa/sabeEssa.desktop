@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Value=1.0
+Type=Application
+Name=Sabe essa?
+GenericName=Sabe essa?
+Comment=Curiosidades aleatórias!
+Icon=/opt/sabeEssa/sabeEssa.png
+Exec=/opt/sabeEssa/sabeEssa.x86_64
+Categories=;
+Path=/opt/sabeEssa/
