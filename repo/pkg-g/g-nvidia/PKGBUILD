@@ -9,13 +9,12 @@ pkgrel=0
 arch=('x86_64')
 
 depends=(
-	'nvidia-open'
 	'nvidia-open-lts'
 	'nvidia-utils'
 	'lib32-nvidia-utils'
-	'vulkan-nouveau'
-	'lib32-vulkan-nouveau'
 	'egl-wayland'
 	'cuda'
 	'vulkan-headers'
+	'libvdpau'
+	'lib32-libvdpau'
 )
