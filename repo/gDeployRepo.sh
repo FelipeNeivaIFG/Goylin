@@ -6,8 +6,8 @@ cd "$(dirname $(readlink -f "$0"))" || exit 1
 ###                                        Source                                                ###
 ####################################################################################################
 
-. ../utils/gMsg.sh
-. utils/gConfig.sh
+. ../installer/utils/msg.sh
+. utils/repoConf.sh
 
 ####################################################################################################
 ###                                        Help                                                  ###
@@ -81,7 +81,7 @@ function _deployRepo() {
 
 clear; _msgOk "-- gDeployRepo --"
 
-[ $deployAur -eq 1 ] && repoToDeploy="$aurRepoName" && _deployRepo
+[ $deployAur -eq 1 ] && repoToDeploy="$aRepoName" && _deployRepo
 [ $deployGoylin -eq 1 ] && repoToDeploy="$gRepoName" && _deployRepo
 [ $deployCustom -eq 1 ] && repoToDeploy="$cRepoName" && _deployRepo
 [ $deployDefault -eq 1 ] && repoToDeploy="$repoName" && _deployRepo
