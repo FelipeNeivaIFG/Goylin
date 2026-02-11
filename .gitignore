@@ -24,6 +24,9 @@ repo/.pkgRoot/
 repo/pkg-a/
 repo/pkg-w/
 
+repo/pkg-g/g-ad.GOI/gLoginAD
+repo/pkg-g/g-ad.GOI/ocsinventory-agent.cfg
+
 repo/pkg-c/gc-fspy/fspy.7z
 repo/pkg-c/gc-hortafacil/hortafacil
 repo/pkg-c/gc-sisvar/sisvar
