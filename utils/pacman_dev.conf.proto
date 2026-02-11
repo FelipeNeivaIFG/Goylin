@@ -13,18 +13,27 @@ LocalFileSigLevel = Optional
 ## Replace "[DEV REPO]" with Development Repo IP and rename to "pacman_dev.conf"
 ##
 
+# Base
 [goylin-repo]
 SigLevel = Optional TrustAll
 Server = http://[DEV REPO]/goylin-repo
 
+# AUR
 [goylin-repo-a]
 SigLevel = Optional TrustAll
 Server = http://[DEV REPO]/goylin-repo-a
 
+# GOYLIN
 [goylin-repo-g]
 SigLevel = Optional TrustAll
 Server = http://[DEV REPO]/goylin-repo-g
 
+# CUSTOM
 [goylin-repo-c]
 SigLevel = Optional TrustAll
 Server = http://[DEV REPO]/goylin-repo-c
+
+# WIP
+[goylin-repo-w]
+SigLevel = Optional TrustAll
+Server = http://[DEV REPO]/goylin-repo-w
