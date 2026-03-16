@@ -2,7 +2,7 @@
 
 _hide_desktop() {
 	file="/usr/share/applications/$1"
-	[ -f "${file}" ] && sed -i '/^NoDisplay=/d; $aNoDisplay=true' "${file}"
+	[ -f "${file}" ] && sed -i 's/^NoDisplay=.*/NoDisplay=true/; t; $aNoDisplay=true' "$file"
 	return 0
 }
 
