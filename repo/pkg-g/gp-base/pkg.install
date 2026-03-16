@@ -6,4 +6,7 @@ _enableUpdate () { touch /etc/gUpdate; }	# Update Goylin PKGs
 
 # post_install() {}
 
-# post_upgrade() {}
+post_upgrade() {
+	_enableUpdate
+	# _enableUpgrade
+}

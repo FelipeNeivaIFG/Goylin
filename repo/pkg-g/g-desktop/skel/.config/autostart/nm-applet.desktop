@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Icon=application-x-shellscript
+Name=nm-applet
+Exec=/usr/bin/nm-applet
+X-KDE-AutostartScript=true

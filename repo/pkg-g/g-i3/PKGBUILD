@@ -5,7 +5,7 @@ url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
 pkgver=26.0
-pkgrel=0
+pkgrel=1
 arch=('x86_64')
 
 source=(
@@ -30,7 +30,6 @@ depends=(
 	'xorg-xrandr'	# Primitive command line interface to RandR extension
 	'arandr'	# Provide a simple visual front end for XRandR 1.2.
 	'pavucontrol'	# PulseAudio Volume Control
-	'network-manager-applet'	# Applet for managing network connections
 	# AUR #
 	'pa-applet-git'	# PulseAudio control applet
 	# DEPS #

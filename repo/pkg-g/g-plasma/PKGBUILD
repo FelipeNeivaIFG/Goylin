@@ -5,7 +5,7 @@ url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
 pkgver=26.0
-pkgrel=0
+pkgrel=1
 arch=('x86_64')
 
 source=(
@@ -26,6 +26,8 @@ md5sums=(
 	'SKIP' 'SKIP' 'SKIP' 'SKIP'
 	'SKIP'
 )
+
+conflicts=('plasma-nm')
 
 install='pkg.install'
 
@@ -67,7 +69,7 @@ depends=(
 	'bluedevil'	# plasma-desktop - Bluetooth applet | purpose - sharing via Bluetooth
 	'gtk3'	# kde-gtk-config - GTK3 apps support
 	'kscreen'	# plasma-desktop - screen management
-	'plasma-nm'	# plasma-desktop - Network manager applet
+	# 'plasma-nm'	# plasma-desktop - Network manager applet	# Security issue for sharing wifi password with qrcode. Replaced by nm-applet on g-desktop
 	'plasma-pa'	# plasma-desktop - Audio volume applet
 	'blas-openblas'	# Ensure for more compatible gapp-* then 'blas'
 	# DEV #

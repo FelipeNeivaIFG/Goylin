@@ -219,7 +219,7 @@ bar{
 exec pa-applet &
 
 # Network Manager Apllet
-exec nm-applet &
+# exec nm-applet & # g-desktop will run it as default
 
 # Theme Changer
 exec_always gi3Theme
