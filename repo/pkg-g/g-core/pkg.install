@@ -73,12 +73,12 @@ post_install() {
 pre_upgrade() { _unlockGFiles; }
 
 post_upgrade() {
-	_enableServices
+	# _enableServices
 
 	cp -f /usr/share/goylin/icons/goylin.svg /usr/share/pixmaps/archlinux-logo.svg
 	cp -f /usr/share/goylin/icons/goylin.png /usr/share/pixmaps/archlinux-logo.png
 
 	_lockGFiles
 
-	_hide_desktop_entry
+	# _hide_desktop_entry
 }

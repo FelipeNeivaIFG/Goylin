@@ -30,8 +30,11 @@ _cleanDesktop () {
 # pre_upgrade() {
 # }
 
-# post_upgrade() {
-# }
+post_upgrade() {
+	# fix gSysShutDown for dealing with conflicts
+	sed -i 's/pacman -Sy/pacman -Sy --overwrite "*" --noconfirm --ask=4 --needed g-core \&\& touch \/etc\/gUpdate \&\& exit 0/g' /usr/sbin/gSysShutDown
+	#
+}
 
 # post_install() {
 # }
