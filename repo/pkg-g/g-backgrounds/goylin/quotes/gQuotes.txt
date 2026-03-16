@@ -194,7 +194,7 @@
 "YOU DIED!"\n-- Dark Souls --
 "Obrigado, Mario! Mas nossa Princesa está em outro castelo!"\n-- Toad : Super Mario Bros --
 "Stay awhile, and listen!"\n-- Decard Cain :  Diablo 2 --
-“...”"\n-- Link : Zelda --
+"..."\n-- Link : Zelda --
 "É hora de chutar bundas e mascar chiclete... e eu já estou sem chiclete."\n-- Duke Nukem --
 "Querer algo não te dá o direito de tê-lo."\n-- Ezio Auditore : Assassin's Creed 2 --
 "Get over here!"\n-- Scorpion : Mortal Kombat --
@@ -221,7 +221,7 @@
 "Aqueles que podem fazer você acreditar em absurdos podem fazer você cometer atrocidades."\n-- Voltaire --
 "Quando o saque se torna um modo de vida, os homens criam um sistema legal que o autoriza e um código moral que o glorifica."\n-- Frédéric Bastiat --
 "Quanto mais corrupto é o Estado, mais numerosas são as leis."\n-- Montesquieu --
-"A menor minoria na Terra é o indivíduo. Aqueles que negam os direitos individuais não podem se dizer defenssores das minorias."\n-- Ayn Rand --
+"A menor minoria na Terra é o indivíduo. Aqueles que negam os direitos individuais não podem se dizer defensores das minorias."\n-- Ayn Rand --
 "A diferença entre a estupidez e a genialidade é que a genialidade tem limites."\n-- Albert Einstein --
 "Não se sente à mesa onde se fala dos outros, porque quando você se levanta, o próximo assunto é você."\n-- Shakur --
 "A ovelha passará a vida inteira temendo o lobo, apenas para ser comida pelo pastor."\n-- Provérbio Africano --
@@ -266,3 +266,121 @@
 "Nunca discuta com um burro. De longe não dá pra saber quem é quem."\n-- Ditado Popular --
 "Nunca atribua à malícia o que pode ser adequadamente explicado pela estupidez."\n-- Navalha de Hanlon --
 "Em igualdade de condições, a explicação mais simples é geralmente a mais provável."\n-- Navalha de Ockham --
+"Fatos não significam nada para quem já decidiu que sua narrativa é mais importante do que a realidade."\n-- Thomas Sowell --
+"Contra a estupidez, somos praticamente indefesos."\n-- Dietrich Bonhoeffer --
+"Aqueles que não conseguem lembrar o passado estão condenados a repeti-lo."\n-- George Santayana --
+"A liberdade é a própria vida. Sem liberdade, o homem deixa de ser humano."\n-- Rose Wilder Lane --
+"Não há justiça em seguir leis injustas"\n-- Aaron Swartz --
+"Ainda que meus grilhões sejam pesados, minha mente é livre e insubmissa"\n-- Luiz Gama --
+"Prefiro as desordens da liberdade ao sossego da escravidão"\n-- André Rebouças --
+:):\n-- Emoticon the Schödinger --
+"Só se vê bem com o coração. O essencial é invisível para os olhos"\n-- Raposa : O Pequeno Príncipe --
+"No início de todo filme de desastre, tem cientista sendo ignorado"\n-- Ditado Impopular --
+"Per aspera ad astra"\n"Através das dificuldades, até as estrelas"
+"Não adentre a noite apenas com ternura."\n-- Dylan Thomas --
+"Nada é mais permanente que uma solução temporária"\n-- Ditado Impopular --
+"É melhor ser dividido pela verdade, do que ser unido pelo erro."\n-- Martino Lutero --
+"Mas quanto importaria que o pior estivesse morto, se o melhor estivesse morrendo?"\n-- G.K. Chesterton --
+"O mundo precisa de menos vítimas e mais responsáveis."\n-- Thomas Sowell --
+"Nenhum vento é favorável para quem não sabe aonde vai."\n-- Sêneca --
+"Somos todos loucos aqui. Eu sou louco. Você é louca."\n-- Cheshire : Alice no país das maravilhas --
+"Se você não sabe para onde está indo, qualquer caminho serve."\n-- Cheshire : Alice no país das maravilhas --
+"Com o tempo, uma imprensa cínica, mercenária, demagógica e corrupta formará um público tão vil como ela mesma."\n-- Joseph Pulitzer --
+"Nunca interrompa seu inimigo enquanto ele estiver cometendo um erro."\n-- Napoleão Bonaparte --
+"Então é assim que a liberdade morre, com um estrondoso aplauso."\n-- Padmé Amidala : Star Wars --
+"Não há tirania mais cruel do que a que se exerce à sombra das leis e com as cores da justiça."\n-- Montesquieu --
+"O passado está escrito, mas cabe a nós escrever o futuro."\n-- Jean-Luc Piccard : Star Trek --
+"Se tivermos de ser condenados, que seja por aquilo que realmente somos."\n-- Jean-Luc Piccard : Star Trek --
+"As coisas só são impossíveis até deixarem de ser!"\n-- Jean-Luc Piccard : Star Trek --
+"Nossa missão é seguir adiante, e ela está apenas começando. […] Ainda há muito a fazer. Ainda há tanto a aprender."\n-- Jean-Luc Piccard : Star Trek --
+"Não há desafio maior do que o estudo da filosofia."\n-- Jean-Luc Piccard : Star Trek --
+"É possível não cometer nenhum erro e ainda assim perder. Isso não é uma fraqueza; isso é a vida."\n-- Jean-Luc Piccard : Star Trek --
+"O caminho da suspeita legítima para a paranoia desenfreada é muito mais curto do que imaginamos."\n-- Jean-Luc Piccard : Star Trek --
+"Aproveite o hoje, pois nada sabemos do amanhã."\n-- Jean-Luc Piccard : Star Trek --
+"Toda unanimidade é burra."\n-- Nelson Rodrigues --
+"Vida longa e próspera."\n-- Spock : Star Trek --
+"A lógica é o começo da sabedoria, não o fim."\n-- Spock : Star Trek --
+"O homem ou aceita a vida como ela se apresenta, encara-a de frente e a conquista, ou se afasta dela e lentamente definha."\n-- Dr. Boyce : Star Trek --
+"Você pode descobrir que possuir algo não é tão prazeroso quanto desejá-lo. Isso não é lógico, mas frequentemente é verdade."\n-- Spock : Star Trek --
+"Viva agora; faça do agora sempre o tempo mais precioso. O agora nunca voltará."\n-- Jean-Luc Piccard : Star Trek --
+"Às vezes, um sentimento é tudo o que nós, humanos, temos para nos guiar."\n-- Kirk : Star Trek --
+"Com o primeiro elo, a corrente é forjada. O primeiro discurso censurado, o primeiro pensamento proibido, a primeira liberdade negada, nos acorrenta a todos irrevogavelmente."\n-- Jean-Luc Piccard : Star Trek --
+"Os preconceitos que as pessoas sentem umas pelas outras desaparecem quando elas se conhecem."\n-- Kirk : Star Trek --
+"Fatos insuficientes sempre convidam ao perigo."\n-- Spock : Star Trek --
+"Talvez o homem não tenha sido feito para o paraíso. Talvez ele tenha sido feito para lutar, para arranhar o caminho até o fim."\n-- Kirk : Star Trek --
+"A mudança é o processo essencial de toda existência."\n-- Spock : Star Trek --
+"Sem seguidores, o mal não pode se espalhar."\n-- Spock : Star Trek --
+"Curioso como vocês, humanos, conseguem frequentemente obter aquilo que não desejam."\n-- Spock : Star Trek --
+"Uma espécie que escraviza outros seres dificilmente é superior — mentalmente ou de qualquer outra forma."\n-- Kirk : Star Trek --
+"Mundos inteiros giram graças a atos de imaginação."\n-- Doctor Who --
+"Não faz sentido ser adulto se às vezes você não pode ser infantil."\n-- Doctor Who --
+"Sempre há algo para observar se você abrir os olhos!"\n-- Doctor Who --
+"A vida depende da mudança e da renovação."\n-- Doctor Who --
+"Algumas pessoas vivem mais em 20 anos do que outras em 80. Não é o tempo que importa, é a pessoa."\n-- Doctor Who --
+"Nada é triste até acabar, e então tudo o é."\n-- Doctor Who --
+"Tudo tem que acabar algum dia. Caso contrário, nada jamais teria começado."\n-- Doctor Who --
+"Você quer armas? Estamos em uma biblioteca. Livros! As melhores armas do mundo."\n-- Doctor Who --
+"No fim, todos nós somos histórias. Apenas faça com que seja uma boa, certo?"\n-- Doctor Who --
+"Coragem não é apenas não sentir medo, sabe. É sentir medo e ainda assim fazer o que precisa ser feito."\n-- Doctor Who --
+"Nunca seja cruel. Nunca seja covarde. O ódio é sempre tolo. O amor é sempre sábio. Sempre tente ser agradável, mas nunca deixe de ser gentil."\n-- Doctor Who --
+"Às vezes, as únicas escolhas que você tem são ruins, mas mesmo assim é preciso escolher."\n-- Doctor Who --
+"Eu poderia lhe mostrar tudo, se você deixasse de ter medo daquilo que não entende."\n-- Doctor Who --
+"Uma linha reta pode ser a menor distância entre dois pontos, mas de forma alguma é a mais interessante."\n-- Doctor Who --
+"Em 900 anos de tempo e espaço, nunca conheci alguém que não fosse importante."\n-- Doctor Who --
+"Quem eu sou é onde eu me coloco. Onde eu me coloco é onde eu caio."\n-- Doctor Who --
+"Gravatas borboleta são legais"\n-- Doctor Who --
+"Se eu não vou atrás de você fico sozinho... ficar sozinho dói mais do que se machucar."\n-- Monkey D. Luffy :  One Piece --
+"Aqueles que não respeitam o passado, estão condenados a repeti-lo"\n-- Nico Robin : One Piece --
+"A dor é uma defesa do corpo e não sentir isso não o torna mais forte."\n-- Dr. Chopper : One Piece --
+"Não aconteceu nada!"\n-- Roronoa Zoro :  One Piece --
+"Estou bem com meu passado, pois estou feliz no meu presente."\n-- Nami : One Piece --
+"Nós não estamos procurando pela morte, estamos lutando pela vida!!"\n-- God Usopp : One Piece --
+"A morte não é desculpa para quebrar uma promessa."\n-- Brook : One Piece --
+"Se você é apaixonado pela flor, mas não pela raiz, ficará decepcionado no outono."\n-- Ditado Popular --
+"A vantagem de ser inteligente é que podemos fingir ser imbecis. O contrário é impossivel."\n-- Ditado Popular --
+"A obsessão humana por propósito é apenas uma distração da absurdidade da existência."\n-- Albert Camus --
+"Nada me perturba mais do que a glorificação da estupidez."\n-- Carl Sagan --
+"Somos poeira de estrelas."\n-- Carl Sagan --
+"O homem que não lê não tem vantagem alguma sobre o homem que não sabe ler."\n-- Mark Twain --
+"O 'bem-estar do povo', em particular, sempre foi o álibi dos tiranos."\n-- Albert Camus --
+"Quando o governo teme as pessoas, isso é liberdade. Quando as pessoas temem o governo, isso é tirania."\n-- Thomas Jefferson --
+"Uma nação de ovelhas gerará um governo de lobos."\n-- Edward R. Murrow --
+"Na politica, a estupidez não é uma desvantagem."\n-- Napoleão Bonaparte --
+"A politica não tem relação com a moral."\n-- Nicolau Maquiavel --
+"Concorde com a pessoa, discordar faz ela falar mais."\n-- Ditado Impopular --
+"Não adianta tomar banho de ervas se o encosto é você!"\n-- Ditado Impopular --
+"O mal destroi até a si mesmo"\n-- Aristóteles --
+"O homem que faz uma pergunta pode ser tolo por um minuto, mas o homem que não pergunta é um tolo para a vida inteira"\n-- Confúcio --
+"Politicamente, a fraqueza do argumento sempre foi que aqueles que escolhem o mal menor esquecem muito rapidamente que escolheram o mal."\n-- Hanna Arendt --
+"A triste verdade é que a maior parte do mal é feita por pessoas que nunca decidem ser boas ou más"\n-- Hanna Arendt --
+"Os desejos transformam reais em escravos, e a paciência transforma escravos em reis."\n-- Ditado Popular --
+"Sempre que você se encontra do lado da maioria, é hora de refletir."\n-- Ditado Popular --
+"Um sinal de inteligência é estar ciente da própria ignorância."\n-- Ditado Popular --
+"Apoie seus amigos como você apoia celebridades que não sabem que você existe"\n-- Ditado Impopular --
+"Fiz tudo que pude, e pude pouco"\n-- Ditado Impopular --
+"A lingua de uma pessoa pode lhe dar o gosto do seu coração"\n-- Ibn Qayyim Al-Jawziyya --
+"Quanto mais perfeitamente você se encaixa na sociedade, menos livre você é na realidade."\n-- Ditado Popular --
+"A sorte é o que acontece quando a preparação encontra a oportunidade"\n-- Ditado Popular --
+"Afaste-se das pessoas que se fazem de vítimas de situações que elas mesmas criaram."\n-- Ditado Popular --
+"Além de não ser fácil, ainda é dificil."\n-- Ditado Impopular --
+"Se você vir uma luz no fim do túnel, saia da frente, é o trem."\n-- Ditado Impopular --
+"Tudo passa, mas geralmente é por cima de você."\n-- Ditado Impopular --
+"Se nada deu certo, é porque deu errado."\n-- Ditado Impopular --
+"A confiança do inocente é a ferramenta mais útil do mentiroso."\n-- Stephen King --
+"Nunca subestime o poder de pessoas estúpidas em grandes grupos."\n-- George Carlin --
+"Se você não tem um lugar a mesa, provavelmente está no cardápio"\n-- Elizabeth Warren --
+"Quando você quer ajudar as pessoas, você diz a verdade. Quando quer ajudar a si mesmo, diz a elas o que elas querem ouvir."\n-- Thomas Sowell --
+"Toda atrocidade na história começa quando alguem decide quem conta como humano."\n-- Sharon McMahon --
+"Quando um rei sente que seu povo está prestes a se rebelar, ele declara guerra a outro país."\n-- Napoleão Bonaparte --
+"Quando um predador quer devorar os seus, primeiro o acusa de cheirar a bode."\n-- Provérbio Africano --
+"Não sou um pássaro, e nenhuma rede me aprisiona. Sou um ser humano livre, com uma vontade independente."\n-- Charlotte Brontë --
+"Qualquer alegado 'direito' de um homem, que exige a violação dos direitos de outro, não é e não pode ser um direito."\n-- Ayn Rand --
+"Não satisfeito com os sofrimentos reais, o ansioso se impôe aos imaginários."\n-- Ditado Impopular --
+"A ciência está longe de ser um instrumento perfeito de conhecimento. É apenas o melhor que temos."\n-- Carl Sagan --
+"Você nunca encontrará justiça em um país onde os bandidos fazem as leis."\n-- Bob Marley --
+"Aquele que planta uma árvore, sabendo que nunca se sentará à sua sombra, pelo menos começou a entender o significado da vida."\n-- Rabindranath Tagore --
+"Não corrija um tolo, ele irá odiá-lo. Corrija um homem sábio, e ele irá apreciá-lo."\n-- Bruce Lee --
+"Nem todas as tempestades vêm para destruir sua vida, algumas vêm para limpar seu caminho"\n-- Paulo Coelho --
+"A liberdade custou muito sangue e sofrimento para ser renunciada por uma retórica tão barata."\n-- Thomas Sowell --
+"Algumas pessoas nunca entendem o que você traz para a mesa até verem você em outra mesa."\n-- Prashha Dutra --
+"Nossas preferências não determinam o que é verdade"\n-- Carl Sagan --
