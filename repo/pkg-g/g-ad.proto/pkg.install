@@ -24,6 +24,9 @@ post_install() {
 	systemctl enable smb
 	systemctl enable nmb
 	_lockGFiles
+
+	# Temp fix for broken xdotool version:
+	ln -s /usr/lib/libxdo.so.4 /usr/lib/libxdo.so.3
 }
 
 pre_upgrade() {

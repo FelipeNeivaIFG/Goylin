@@ -35,12 +35,14 @@ depends=(
 	'openldap'	# Lightweight Directory Access Protocol (LDAP) client and server
 	'bind'	# A complete, highly portable implementation of the DNS protocol
 	'python-pysmbc'	# Python 3 bindings for libsmbclient
+	'rustdesk-bin'	# Yet another remote desktop software, written in Rust. Works out of the box, no configuration required.
 	# AUR #
 	'ocsinventory-agent'	# Hardware and software inventory tool (client)
 	# DEPS #
 	'python-dnspython'	# samba - netads_dns.py, dnsresolver.py and traffic_packets.py | smbclient - samba_dnsupdate and samba_upgradedns in AD setup
 	'python-markdown'	# samba - ms_schema_markdown.py and ms_forest_updates_markdown.py | smbclient - for samba-tool domain schemeupgrade
 	'python-cryptography'	# samba - lockout_tests.py gp_cert_auto_enroll_ext.py gpo.py
+	'xdotool'	# rustdesk-bin
 	# AUR DEPS #
 	'perl-proc-daemon'	# ocsinventory-agent
 	'perl-proc-pid-file'	# ocsinventory-agent
