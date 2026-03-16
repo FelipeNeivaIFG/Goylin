@@ -49,6 +49,7 @@ depends=(
 	'libwacom'	# Library to identify Wacom tablets and their features
 	'network-manager-applet'	# Applet for managing network connections # Use as default and replace plasma-nm for security
 	# DEPS #
+	'nm-connection-editor'	# network-manager-applet
 	'blas-openblas'	# Ensure for more compatible gapp-* then 'blas'
 )
 
