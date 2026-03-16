@@ -80,5 +80,5 @@ post_upgrade() {
 
 	_lockGFiles
 
-	# _hide_desktop_entry
+	_hide_desktop_entry
 }
