@@ -6,13 +6,28 @@ _unlockGFiles() { chattr -i /etc/xdg/user-dirs.defaults; }
 
 ##
 
+_hide_desktop() {
+	file="/usr/share/applications/$1"
+	[ -f "${file}" ] && sed -i '/^NoDisplay=/d; $aNoDisplay=true' "${file}"
+	return 0
+}
+
+_hide_desktop_entry() { _hide_desktop "nm-connection-editor.desktop"; }
+
+##
+
 post_install() {
 	_lockGFiles
 
 	systemctl enable bluetooth
 	systemctl enable gShutdown.timer
+
+	_hide_desktop_entry
 }
 
 pre_upgrade() { _unlockGFiles; }
 
-post_upgrade() { _lockGFiles; }
+post_upgrade() {
+	_lockGFiles
+	_hide_desktop_entry
+}
