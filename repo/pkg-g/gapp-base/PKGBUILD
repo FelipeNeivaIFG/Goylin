@@ -32,7 +32,6 @@ depends=(
 	# AUR #
 	'onlyoffice-bin'	# An office suite that combines text, spreadsheet and presentation editors
 	'brave-bin'	# Web browser that blocks ads and trackers by default
-	'rustdesk-bin'	# Yet another remote desktop software, written in Rust. Works out of the box, no configuration required.
 	'hyphen-pt-br'	# Portuguese (Brazil) hyphenation rules
 	'pinta'	# Drawing/editing program modeled after Paint.NET. It's goal is to provide a simplified alternative to GIMP for casual users
 	# DEPS #
@@ -112,7 +111,6 @@ depends=(
 	'ttf-dejavu'	# onlyoffice-bin
 	'ttf-carlito'	# onlyoffice-bin
 	'gst-plugins-ugly'	# onlyoffice-bin
-	'xdotool'	# rustdesk-bin
 )
 
 package() {
