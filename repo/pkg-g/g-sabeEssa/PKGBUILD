@@ -5,7 +5,7 @@ url='https://github.com/FelipeNeivaIFG/Goylin'
 group='goylin'
 
 pkgver=26.0
-pkgrel=0
+pkgrel=1
 arch=('x86_64')
 
 source=('sabeEssa.x86_64' 'sabeEssa.desktop' 'sabeEssa.png')
