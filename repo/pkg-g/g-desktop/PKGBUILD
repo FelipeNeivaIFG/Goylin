@@ -5,7 +5,7 @@ url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
 pkgver=26.0
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 
 source=(
@@ -44,7 +44,7 @@ depends=(
 	'fuse3'	# Interface for userspace programs to export a filesystem to the Linux kernel
 	'fuse-overlayfs'	# FUSE implementation of overlayfs
 	'fuse-common'	# Common files for fuse2/3 packages
-	'squashfuse'	# FUSE filesystem to mount squashfs archives
+	# 'squashfuse'	# FUSE filesystem to mount squashfs archives
 	'libxml2-legacy'	# XML C parser and toolkit (legacy version)
 	'libwacom'	# Library to identify Wacom tablets and their features
 	'network-manager-applet'	# Applet for managing network connections # Use as default and replace plasma-nm for security

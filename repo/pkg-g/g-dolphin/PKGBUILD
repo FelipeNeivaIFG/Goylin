@@ -5,7 +5,7 @@ url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
 pkgver=26.0
-pkgrel=0
+pkgrel=1
 arch=('x86_64')
 
 source=(
@@ -40,7 +40,7 @@ depends=(
 	'phonon-qt6-vlc'	# dolphin - Phonon VLC backend for Qt6
 	'kdegraphics-thumbnailers'	# dolphin - PDF and PS thumbnails
 	'icoutils'	# kio-extras | kio5-extras - Windows executable thumbnails
-	'libappimage'	# kio-extras | kio5-extras - AppImage thumbnails
+	# 'libappimage'	# kio-extras | kio5-extras - AppImage thumbnails
 	'qt6-imageformats'	# kio-extras - thumbnails for additional image formats
 	'qt5-imageformats'	# kio5-extras - thumbnails for additional image formats
 	'taglib'	# kio-extras | kio5-extras - audio file thumbnails
