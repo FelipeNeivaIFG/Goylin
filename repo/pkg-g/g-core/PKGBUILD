@@ -5,7 +5,7 @@ url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
 pkgver=26.0
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 
 source=(
@@ -86,6 +86,7 @@ depends=(
 	'reflector'	# A Python 3 module and script to retrieve and filter the latest Pacman mirror list.
 	# 'memtest86+'	# Advanced memory diagnostic tool legacy BIOS version # Boot is Slow AF!
 	'which'	# A utility to show the full path of commands
+	'v4l2loopback-dkms'	# v4l2-loopback device – module sources
 	# AUR #
 	'b43-firmware'	# Firmware for Broadcom B43 wireless networking chips
 	# DEPS #
