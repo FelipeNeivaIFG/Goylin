@@ -5,7 +5,7 @@ url='https://github.com/FelipeNeivaIFG/Goylin'
 group=('goylin')
 
 pkgver=26.0
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 
 source=('skel.tar')
@@ -34,6 +34,7 @@ depends=(
 	'brave-bin'	# Web browser that blocks ads and trackers by default
 	'hyphen-pt-br'	# Portuguese (Brazil) hyphenation rules
 	'pinta'	# Drawing/editing program modeled after Paint.NET. It's goal is to provide a simplified alternative to GIMP for casual users
+	'iriunwebcam-bin'	# Use your phone's camera as a wireless webcam in your PC
 	# DEPS #
 	'gst-plugins-base-libs'	# libreoffice - for multimedia content, e.g. in Impress | # vlc - for libgst plugins
 	'libpaper'	# libreoffice - takes care of papersize
