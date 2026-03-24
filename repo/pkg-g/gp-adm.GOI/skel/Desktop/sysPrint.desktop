@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=SysPrint
+Comment=Sistema de Impressao IFG
+Exec=brave --disable-features=OutdatedBuildDetector --app=https://print.goias.ifg.edu.br/#/ --window-size=600,600 --new-window --password-store=basic
+Icon=yast-printer
+Type=Application
