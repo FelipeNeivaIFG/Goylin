@@ -1,0 +1,5 @@
+[Desktop Entry]
+Icon=/usr/share/goylin/icons/suap_icon.png
+Name=Suap
+Type=Application
+Exec=brave https://suap.ifg.edu.br

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=OpenBoard
+Comment=Quadro digital interativo
+Type=Application
+Exec=openboard %f
+Terminal=false
+Icon=ch.openboard.OpenBoard
+StartupNotify=true
+MimeType=application/ubz
+Categories=Education;

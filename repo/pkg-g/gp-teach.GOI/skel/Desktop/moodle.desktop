@@ -1,0 +1,6 @@
+[Desktop Entry]
+Icon=/usr/share/goylin/icons/moodle_icon.svg
+Name=Moodle
+Type=Application
+Exec=brave https://moodle.ifg.edu.br
+
