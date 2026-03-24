@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Sisvar
+Exec=sh /opt/sisvar/start.sh
+Type=Application
+StartupNotify=true
+Terminal=false
+Icon=/usr/share/icons/sisvaricon.png
+StartupWMClass=sisvar.exe

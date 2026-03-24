@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=QCAD
+StartupWMClass=QCAD
+GenericName=CAD Software
+Exec=qcad %F
+X-MultipleArgs=true
+Icon=/usr/lib/qcad/scripts/qcad_icon.png
+Terminal=false
+Type=Application
+Categories=Graphics;VectorGraphics;Engieneering;Construction;Science;
+MimeType=application/dxf;image/vnd.dxf;
+StartupNotify=true

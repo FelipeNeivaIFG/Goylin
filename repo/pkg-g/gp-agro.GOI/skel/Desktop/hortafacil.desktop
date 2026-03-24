@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Horta Fácil
+Exec=sh /opt/hortafacil/start.sh
+Type=Application
+StartupNotify=true
+Terminal=false
+Comment=Auxilia no dimensionamento e no calendário de cultivo de pequenas hortas
+Icon=/usr/share/icons/hortafacilicon.png
+StartupWMClass=hortafacil.exe
