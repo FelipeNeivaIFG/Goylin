@@ -26,6 +26,7 @@ repo/pkg-w/
 
 repo/pkg-g/g-ad.GOI/gLoginAD
 repo/pkg-g/g-ad.GOI/ocsinventory-agent.cfg
+repo/pkg-g/g-backgrounds.GOI/goylin/backgrounds
 
 repo/pkg-c/gc-fspy/fspy.7z
 repo/pkg-c/gc-hortafacil/hortafacil
