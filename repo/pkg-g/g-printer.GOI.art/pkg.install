@@ -1,0 +1,25 @@
+#!/bin/bash
+
+_hide_desktop() {
+	file="/usr/share/applications/$1"
+	[ -f "${file}" ] && sed -i 's/^NoDisplay=.*/NoDisplay=true/; t; $aNoDisplay=true' "$file"
+	return 0
+}
+
+_hide_desktop_entry() {
+	_hide_desktop "system-config-printer.desktop"
+	_hide_desktop "cups.desktop"
+	_hide_desktop "hplip.desktop"
+	_hide_desktop "hp-uiscan.desktop"
+}
+
+##
+
+post_install() {
+	systemctl enable cups
+	systemctl enable cups-browsed
+
+	_hide_desktop_entry
+}
+
+post_upgrade() { _hide_desktop_entry; }
