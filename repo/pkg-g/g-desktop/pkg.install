@@ -4,6 +4,13 @@ _lockGFiles() { chattr +i /etc/xdg/user-dirs.defaults; }
 
 _unlockGFiles() { chattr -i /etc/xdg/user-dirs.defaults; }
 
+_removeFromHome () {
+	for userInHome in /home/*; do
+		userHome=$(basename $userInHome)
+		[ -f /home/"$userHome"/"$1" ] && rm -rf /home/"$userHome"/"$1"
+	done
+}
+
 ##
 
 _hide_desktop() {
@@ -30,4 +37,5 @@ pre_upgrade() { _unlockGFiles; }
 post_upgrade() {
 	_lockGFiles
 	_hide_desktop_entry
+	_removeFromHome ".config/mimeapp.list" # Remove old mimeapp for pkgrel 3 update
 }
