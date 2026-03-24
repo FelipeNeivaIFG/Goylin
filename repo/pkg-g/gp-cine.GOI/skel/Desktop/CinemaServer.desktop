@@ -1,0 +1,6 @@
+[Desktop Entry]
+Icon=network-server
+Name[pt_BR]=Servidor Cinema
+Name=Servidor Cinema
+Type=Application
+Exec=dolphin smb://10.11.232.253/CinemaServer

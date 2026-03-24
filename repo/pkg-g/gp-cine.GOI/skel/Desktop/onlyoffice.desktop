@@ -1,0 +1,25 @@
+[Desktop Entry]
+Version=1.0
+Name=ONLYOFFICE
+GenericName=Editor de documentos
+Type=Application
+Exec=/usr/bin/onlyoffice-desktopeditors %U
+Terminal=false
+Icon=onlyoffice-desktopeditors
+Actions=NewDocument;NewSpreadSheet;NewPresentation;
+
+[Desktop Action NewDocument]
+Name=Novo documento
+Exec=/usr/bin/onlyoffice-desktopeditors --new:word
+
+[Desktop Action NewSpreadSheet]
+Name=Nova planilha
+Exec=/usr/bin/onlyoffice-desktopeditors --new:cell
+
+[Desktop Action NewPresentation]
+Name=Nova apresentação
+Exec=/usr/bin/onlyoffice-desktopeditors --new:slide
+
+[Desktop Action NewPresentation]
+Name=Nova apresentação
+Exec=/usr/bin/onlyoffice-desktopeditors --new:slide

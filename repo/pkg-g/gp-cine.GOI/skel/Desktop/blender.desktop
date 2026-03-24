@@ -1,0 +1,16 @@
+[Desktop Entry]
+Name=Blender-3.6
+GenericName=3D modeler
+GenericName[pt_BR]=Modelador 3D
+Comment=3D modeling, animation, rendering and post-production
+Comment[pt_BR]=Modelagem 3D, animação, renderização e pós-produção
+Keywords=3d;cg;modeling;animation;painting;sculpting;texturing;video editing;video tracking;rendering;render engine;cycles;game engine;python;
+Exec=blender-3.6 %f
+Icon=blender-3.6
+Terminal=false
+Type=Application
+PrefersNonDefaultGPU=true
+X-KDE-RunOnDiscreteGpu=true
+Categories=Graphics;3DGraphics;
+MimeType=application/x-blender;
+StartupNotify=true
