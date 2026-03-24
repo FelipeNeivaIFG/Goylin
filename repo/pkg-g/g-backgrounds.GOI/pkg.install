@@ -1,0 +1,7 @@
+#!/bin/bash
+
+clean_up_folder() { [ -d /usr/share/goylin/backgrounds ] && rm /usr/share/goylin/backgrounds/*; }
+
+pre_install() { clean_up_folder; }
+
+pre_upgrade() { clean_up_folder; }

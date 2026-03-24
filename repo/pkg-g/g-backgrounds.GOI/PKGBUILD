@@ -1,0 +1,28 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='g-backgrounds.GOI'
+pkgdesc='Goylin: Backgrounds.GOI'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group=('goylin')
+
+pkgver=26.0
+pkgrel=1
+arch=('x86_64')
+
+source=('goylin.tar')
+
+noextract=('goylin.tar')
+
+md5sums=('SKIP')
+
+depends=(
+	'imagemagick' 	# An image viewing/manipulation program
+)
+
+install='pkg.install'
+
+package() {
+	install -Dm 644 -t ${pkgdir}/usr/share/goylin goylin.tar
+	tar xf ${pkgdir}/usr/share/goylin/goylin.tar --overwrite --directory=${pkgdir}/usr/share/goylin
+	rm ${pkgdir}/usr/share/goylin/goylin.tar
+	chmod -R a+r ${pkgdir}/usr/share/goylin/backgrounds/
+}
