@@ -1,0 +1,2 @@
+## Enable Domain Admin users
+%G_PROTO ALL=(ALL:ALL) NOPASSWD: ALL

@@ -58,7 +58,12 @@ package() {
 
 	install -Dm 644 -t ${pkgdir}/etc/ocsinventory/ ocsinventory-agent.cfg
 
+	install -Dm 440 -t ${pkgdir}/etc/sudoers.d/ proto-sudoers
+
+	install -Dm 644 -t ${pkgdir}/etc/polkit-1/rules.d/ 89-gLockNetwork-PROTO.rules
+
 	install -Dm 700 -t ${pkgdir}/usr/bin/ gLoginAD
+	install -Dm 700 -t ${pkgdir}/usr/bin/ gOCSwrapper.disabled
 
 	install -Dm 644 -t ${pkgdir}/etc/pam.d/ system-auth
 	install -Dm 644 -t ${pkgdir}/etc/pam.d/ su
