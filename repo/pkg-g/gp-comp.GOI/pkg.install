@@ -1,0 +1,15 @@
+#!/bin/bash
+
+_enableUpgrade () { touch /etc/gUpgrade; }	#  Full system upgrade
+
+_enableUpdate () { touch /etc/gUpdate; }	# Update Goylin PKGs
+
+_setProfile() { 
+	chattr -i /usr/lib/os-release
+	sed -i "s/Base/Informatica.GOI/g" /usr/lib/os-release
+	chattr +i /usr/lib/os-release
+}
+
+post_install() { _setProfile; }
+
+post_upgrade() { _setProfile; }
