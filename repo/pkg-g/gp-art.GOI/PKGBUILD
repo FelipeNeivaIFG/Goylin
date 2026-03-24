@@ -1,0 +1,28 @@
+# Maintainer: Felipe Neiva <felipe.neiva@ifg.edu.br>
+pkgname='gp-art.GOI'
+pkgdesc='Goylin: Profile - Arts.GOI'
+url='https://github.com/FelipeNeivaIFG/Goylin'
+group=('goylin')
+
+pkgver=26.0
+pkgrel=0
+arch=('x86_64')
+
+source=(
+	'skel.tar'
+	'LAB.nmconnection'
+)
+
+noextract=('skel.tar')
+
+md5sums=('SKIP' 'SKIP')
+
+install='pkg.install'
+
+package() {
+	install -Dm 644 -t ${pkgdir}/etc/skel/ skel.tar
+	tar xf ${pkgdir}/etc/skel/skel.tar --overwrite --directory=${pkgdir}/etc/skel
+	rm ${pkgdir}/etc/skel/skel.tar
+
+	install -Dm 600 -t ${pkgdir}/etc/NetworkManager/system-connections/ LAB.nmconnection
+}
