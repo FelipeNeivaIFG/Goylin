@@ -1,0 +1,2 @@
+## Enable Domain Admin users
+%G_GOI_TI ALL=(ALL:ALL) NOPASSWD: ALL

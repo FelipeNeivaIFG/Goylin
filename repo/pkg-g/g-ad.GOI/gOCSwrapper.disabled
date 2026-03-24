@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# gOCSwrapper is enabled after AD register by gLoginAD
+# Wrapper to run OCS agent on login and set CURRENT_USER accountinfo
+
+if [ -z "$PAM_USER" ] || [ "$PAM_USER" = "root" ] || [ "$PAM_USER" = "admin" ]; then
+	exit 0
+fi
+
+/usr/bin/ocsinventory-agent -f --nosoftware -t $HOSTNAME &
