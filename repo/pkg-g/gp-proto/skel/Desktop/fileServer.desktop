@@ -1,0 +1,10 @@
+[Desktop Entry]
+Exec=dolphin smb://PROTO-FILE-SERVER --new-window
+Icon=network-server
+Name=Servidor de Arquivos
+StartupWMClass=dolphin
+Type=Application
+X-DocPath=dolphin/index.html
+X-DBUS-ServiceName=org.kde.dolphin
+MimeType=inode/directory;
+InitalPreference=10

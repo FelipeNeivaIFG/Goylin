@@ -1,0 +1,10 @@
+[Desktop Entry]
+Exec=dolphin gdrive:/
+Icon=folder-gdrive
+Name=GoogleDrive
+StartupWMClass=dolphin
+Type=Application
+X-DocPath=dolphin/index.html
+X-DBUS-ServiceName=org.kde.dolphin
+MimeType=inode/directory;
+InitalPreference=10
