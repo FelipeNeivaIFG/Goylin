@@ -3,6 +3,7 @@
 *.tar
 *.tar.gz
 *.log
+*.nmconnection
 wip_*
 
 iso/isoOut/
